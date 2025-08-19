@@ -1,12 +1,13 @@
+@use 'sass:map';
 // Mixin for setting font properties
 @mixin font($properties) {
-    font-style: map-get($properties, style);
-    font-variant: map-get($properties, variant);
-    font-weight: map-get($properties, weight);
-    font-size: map-get($properties, size);
-    line-height: map-get($properties, lineHeight);
-    font-family: map-get($properties, family);
-    text-transform: map-get($properties, transform);
+    font-style: map.get($properties, style);
+    font-variant: map.get($properties, variant);
+    font-weight: map.get($properties, weight);
+    font-size: map.get($properties, size);
+    line-height: map.get($properties, lineHeight);
+    font-family: map.get($properties, family);
+    text-transform: map.get($properties, transform);
   }
 
   // Flexbox mixin
@@ -112,8 +113,8 @@
   // Responsive mixins
   // Mixin principale per media queries
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -122,16 +123,16 @@
 }
 
 // Mixin per container responsive
-@mixin container($size: lg) {
+@mixin container($size: desktop) {
   width: 100%;
   margin: 0 auto;
   padding: 0 $padding;
   
-  @if map-has-key($container-max-widths, $size) {
-    max-width: map-get($container-max-widths, $size);
+  @if map.has-key($container-max-widths, $size) {
+    max-width: map.get($container-max-widths, $size);
   }
   
-  @include respond-to(sm) {
+  @include respond-to(smartphone) {
     padding: 0 $padding * 2;
   }
 }

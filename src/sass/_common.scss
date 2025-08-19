@@ -935,15 +935,14 @@ strong {
     
     &__title {
         font-size: 1.2rem;
-        @include respond-to(tablet) {
-            font-size: clamp(1.2rem, 5vw, 4rem);
-        }
         font-weight: 700;
         line-height: 1.2;
         margin-bottom: 1.5rem;
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         text-align: left;
-        
+        @include respond-to(tablet) {
+            font-size: clamp(1.2rem, 5vw, 4rem);
+        }
         @media (max-width: 768px) {
             font-size: 2.5rem;
         }

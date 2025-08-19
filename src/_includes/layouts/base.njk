@@ -1,8 +1,36 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+
+  <!-- Viewport per responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Titolo dinamico -->
   <title>{{ title }}</title>
+
+  <!-- SEO base -->
+  <meta name="description" content="{{ description | safe }}">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description | safe }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/og-image.jpg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description | safe }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.jpg">
+
+  <!-- Favicon e manifest -->
+  <link rel="icon" href="{{ site.favicon }}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
