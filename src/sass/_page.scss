@@ -1,0 +1,30 @@
+main {
+    margin-top: $margin * 8;
+}
+.home main {
+    margin-top: 0;
+}
+#hero {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    margin: 0 ($margin * 4);
+}
+
+#footer {
+    z-index: 2;
+    border: 1px solid var(--neutral-eaeaea);
+    background-color: $footer-bg;
+    padding: $padding * 2;
+    margin: $margin * 2;
+    .main-navigation .nav-wrapper{
+        justify-content: center;
+    }
+    .brand {
+        text-align: center;
+        padding: inherit;
+    }
+    .credits {
+        text-align: center;
+    }
+}

@@ -1,0 +1,14 @@
+// _responsive.scss - Solo override globali
+@include respond-to(smartphone) {
+    // Fix globali per tablet
+    body {
+      font-size: 16px; // Previene zoom su iOS
+    }
+  }
+  
+  @include respond-to(tablet) {
+    // Fix globali per desktop
+    .container {
+      max-width: map-get($container-max-widths, desktop);
+    }
+  }

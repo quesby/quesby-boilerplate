@@ -5,9 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "build:css": "sass src/sass:src/assets/css",
+    "watch:css": "sass --watch src/sass:src/assets/css",
+    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
+    "serve:no-watch": "npx @11ty/eleventy --watch"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.2",
+    "concurrently": "^8.2.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-link-attributes": "^4.0.1",
+    "sass": "^1.79.4"
   }
 }
