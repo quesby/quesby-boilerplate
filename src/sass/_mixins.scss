@@ -10,6 +10,25 @@
     text-transform: map.get($properties, transform);
   }
 
+// Mixin per generare le regole @font-face
+@mixin font-face($font-family, $font-path, $weights: (), $display: swap) {
+  @each $weight, $file in $weights {
+    @font-face {
+      font-family: $font-family;
+      src: url('#{$font-path}/#{$file}.ttf') format('truetype');
+      font-weight: $weight;
+      font-display: $display;
+    }
+  }
+}
+
+// Mappa per il Font
+@mixin apply-map($map) {
+  @each $key, $value in $map {
+    #{$key}: $value;
+  }
+}
+
   // Flexbox mixin
 @mixin flex-container(
     $direction: row,

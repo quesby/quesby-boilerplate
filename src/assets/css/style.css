@@ -110,7 +110,7 @@ button, input, select, textarea {
   --headlines-fg: oklch(100% 0 89.9deg);
   --nav-item-fg: black;
   --button-fg: oklch(100% 0 0deg);
-  --site-bg: oklch(26.2% 0.145 281.1deg);
+  --site-bg: black;
   --site-bg-2: oklch(17.76% 0 89.9deg);
   --site-bg-hover: oklch(5% 0 0deg);
   --site-bg-radial: radial-gradient(oklch(17.76% 0 89.9deg) 25%, oklch(0% 0 0deg));

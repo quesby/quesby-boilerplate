@@ -1,8 +1,12 @@
 // TYPOGRAPHY
+$font-text: 'Geist', sans-serif;
+$font-headers: 'Geist', sans-serif;
+$font-slogans: 'Geist', sans-serif;
+$font-mono: 'Geist Mono', monospace;
 //navigation
 
 // COLORS
-$cpal-1: oklch(0.00% 0.000 0.0); //oklch(21.77% 0.036 251.3);
+$cpal-1: oklch(0.00% 0.000 0.0);
 $cpal-3: oklch(26.20% 0.145 281.1);
 $cpal-4: oklch(50.28% 0.239 287.0);
 $cpal-5: oklch(100.00% 0.000 89.9);
@@ -21,7 +25,7 @@ $nav-item-fg: black;
 $button-fg: oklch(100% 0 0);
 $button-secondary-fg: oklch(15% 0.000 0);
 //backgrounds
-$site-bg: $cpal-3;
+$site-bg: black;
 $site-bg-2: oklch(100.00% 0.000 89.9);
 $site-bg-3: oklch(95.81% 0.000 89.9);
 $site-bg-radial: radial-gradient(oklch(95.81% 0.000 89.9) 25%,  oklch(100.00% 0.000 89.9));

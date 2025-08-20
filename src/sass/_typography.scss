@@ -1,23 +1,4 @@
 // TYPOGRAPHY - defines all the typography
-// Mixin per generare le regole @font-face
-@mixin font-face($font-family, $font-path, $weights: (), $display: swap) {
-  @each $weight, $file in $weights {
-    @font-face {
-      font-family: $font-family;
-      src: url('#{$font-path}/#{$file}.ttf') format('truetype');
-      font-weight: $weight;
-      font-display: $display;
-    }
-  }
-}
-
-// Mappa per il Font
-@mixin apply-map($map) {
-  @each $key, $value in $map {
-    #{$key}: $value;
-  }
-}
-
 @font-face {
   font-family: 'Geist';
   src: url('/assets/fonts/Geist-VariableFont_wght.ttf') format('truetype-variations');
@@ -59,10 +40,6 @@ $typo-material: (
   font-feature-settings: 'liga'
  );
 
-$font-text: 'Geist', sans-serif;
-$font-headers: 'Geist', sans-serif;
-$font-slogans: 'Geist', sans-serif;
-$font-mono: 'Geist Mono', monospace;
 $typo-header-items: (
   style: normal,
   variant: normal,
