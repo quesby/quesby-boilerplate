@@ -56,18 +56,20 @@ button, input, select, textarea {
   } */
 :root {
   --text-fg: oklch(31.85% 0.018 18.1deg);
-  --link-fg: oklch(73.9% 0 89.9deg);
+  --link-fg: rgb(229.5, 229.5, 229.5);
   --headlines-fg: oklch(0% 0 0deg);
   --nav-item-fg: oklch(31.85% 0.018 18.1deg);
-  --button-fg: oklch(15.68% 0.015 278.2deg);
-  --site-bg: oklch(100% 0 89.9deg);
+  --button-fg: oklch(100% 0 0deg);
+  --button-secondary-fg: oklch(15% 0 0deg);
+  --site-bg: oklch(99% 0 89.9deg);
   --site-bg-2: oklch(95.81% 0 89.9deg);
   --site-bg-hover: oklch(100% 0 89.9deg);
   --site-bg-radial: radial-gradient(oklch(95.81% 0 89.9deg) 25%, oklch(100% 0 89.9deg));
-  --navigation-bg: oklch(100% 0 89.9deg);
+  --navigation-bg: var(--site-bg);
   --subnav-bg: oklch(100% 0 89.9deg);
-  --button-bg: oklch(90.97% 0 89.9deg);
-  --divider: oklch(33.9% 0 89.9deg);
+  --button-bg: oklch(15% 0 0deg);
+  --button-secondary-bg: oklch(100% 0 0deg);
+  --divider: hsl(0, 0%, -50%);
   --cpal-1: oklch(0% 0 0deg);
   --cpal-3: oklch(26.2% 0.145 281.1deg);
   --cpal-4: oklch(50.28% 0.239 287deg);
@@ -77,15 +79,6 @@ button, input, select, textarea {
   --brand-green: oklch(56.04% 0.148 151.7deg);
   --brand-white: oklch(96.8% 0.007 115.7deg);
   --brand-red: oklch(54.7% 0.204 25.4deg);
-  --jet: oklch(39% 0.012 320.6deg);
-  --turquoise: oklch(78.07% 0.124 185.7deg);
-  --forest-green: oklch(58.48% 0.143 144.9deg);
-  --snow: oklch(83.9% 0 89.9deg);
-  --silver-lake-blue: oklch(64.36% 0.098 254deg);
-  --beaver: oklch(63.76% 0.026 69.4deg);
-  --earth-yellow: oklch(77.52% 0.1 75.8deg);
-  --buff: oklch(72.21% 0.099 67.1deg);
-  --prussian-blue: oklch(26.03% 0.067 245.9deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -112,11 +105,11 @@ button, input, select, textarea {
 }
 
 .dark {
-  --text-fg: oklch(83.9% 0 89.9deg);
+  --text-fg: white;
   --link-fg: oklch(87.02% 0 89.9deg);
   --headlines-fg: oklch(100% 0 89.9deg);
-  --nav-item-fg: white;
-  --button-fg: oklch(15.68% 0.015 278.2deg);
+  --nav-item-fg: black;
+  --button-fg: oklch(100% 0 0deg);
   --site-bg: oklch(26.2% 0.145 281.1deg);
   --site-bg-2: oklch(17.76% 0 89.9deg);
   --site-bg-hover: oklch(5% 0 0deg);
@@ -134,15 +127,6 @@ button, input, select, textarea {
   --brand-green: oklch(56.04% 0.148 151.7deg);
   --brand-white: oklch(96.8% 0.007 115.7deg);
   --brand-red: oklch(54.7% 0.204 25.4deg);
-  --jet: oklch(39% 0.012 320.6deg);
-  --turquoise: oklch(78.07% 0.124 185.7deg);
-  --forest-green: oklch(58.48% 0.143 144.9deg);
-  --snow: oklch(83.9% 0 89.9deg);
-  --silver-lake-blue: oklch(64.36% 0.098 254deg);
-  --beaver: oklch(63.76% 0.026 69.4deg);
-  --earth-yellow: oklch(77.52% 0.1 75.8deg);
-  --buff: oklch(72.21% 0.099 67.1deg);
-  --prussian-blue: oklch(26.03% 0.067 245.9deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -174,6 +158,7 @@ button, input, select, textarea {
   --headlines-fg: oklch(24.2% 0.037 74.8deg);
   --nav-item-fg: oklch(31.85% 0.018 18.1deg);
   --button-fg: oklch(27% 0.016 67deg);
+  --button-secondary-fg: oklch(27% 0.016 67deg);
   --site-bg: oklch(94.4% 0.028 88.8deg);
   --site-bg-2: oklch(91.59% 0.04 86.1deg);
   --site-bg-hover: oklch(99.4% 0.028 88.8deg);
@@ -181,6 +166,7 @@ button, input, select, textarea {
   --navigation-bg: oklch(91.59% 0.04 86.1deg);
   --subnav-bg: oklch(100% 0.04 86.1deg);
   --button-bg: oklch(83.68% 0.045 80.5deg);
+  --button-secondary-bg: oklch(83.68% 0.045 80.5deg);
   --divider: oklch(81.85% 0.018 18.1deg);
   --cpal-1: oklch(0% 0 0deg);
   --cpal-3: oklch(26.2% 0.145 281.1deg);
@@ -191,15 +177,6 @@ button, input, select, textarea {
   --brand-green: oklch(56.04% 0.148 151.7deg);
   --brand-white: oklch(96.8% 0.007 115.7deg);
   --brand-red: oklch(54.7% 0.204 25.4deg);
-  --jet: oklch(39% 0.012 320.6deg);
-  --turquoise: oklch(78.07% 0.124 185.7deg);
-  --forest-green: oklch(58.48% 0.143 144.9deg);
-  --snow: oklch(83.9% 0 89.9deg);
-  --silver-lake-blue: oklch(64.36% 0.098 254deg);
-  --beaver: oklch(63.76% 0.026 69.4deg);
-  --earth-yellow: oklch(77.52% 0.1 75.8deg);
-  --buff: oklch(72.21% 0.099 67.1deg);
-  --prussian-blue: oklch(26.03% 0.067 245.9deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -522,9 +499,9 @@ strong {
 
 .sepia {
   --form-bg: #faf6f0;
-  --form-focus-border: oklch(63.76% 0.026 69.4deg);
+  --form-focus-border: black;
   --form-placeholder: #8b7355;
-  --form-accent: oklch(63.76% 0.026 69.4deg);
+  --form-accent: black;
   --button-bg-hover: #e6d7c3;
   --accent-red: #c53030;
   --accent-green: #2f855a;
@@ -626,19 +603,28 @@ strong {
   padding: 0 50px;
 }
 
-.button a {
+.button {
   display: block;
   padding: 0.5em 1em;
-  border: 1px solid color-mix(in oklch, var(--button-bg), black 75%);
+  border: 1px solid color-mix(in oklch, var(--button-bg), black 5%);
   border-radius: 25px;
   color: var(--button-fg);
   background-color: var(--button-bg);
 }
-.button.large a {
+.button.large {
   display: block;
   padding: 1em 1.75em;
   border-radius: 50px;
   font-size: 2em;
+}
+.button.secondary {
+  color: var(--button-secondary-fg);
+  border: 1px solid color-mix(in oklch, var(--button-secondary-bg), black 100%);
+  background-color: var(--button-secondary-bg);
+}
+
+.cta-wrapper > .button {
+  margin: 10px;
 }
 
 .logo .logo-text {
@@ -1320,14 +1306,14 @@ strong {
   }
 }
 @font-face {
-  font-family: "Noto Sans";
-  src: url("/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype-variations");
+  font-family: "Geist";
+  src: url("/assets/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
   font-weight: 100 900;
   font-stretch: 75% 125%;
 }
 @font-face {
-  font-family: "Noto Serif";
-  src: url("/assets/fonts/NotoSerif-VariableFont_wdth,wght.ttf") format("truetype-variations");
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations");
   font-weight: 100 500;
   font-stretch: 75% 125%;
 }
@@ -1338,7 +1324,7 @@ strong {
   font-style: normal;
 }
 body {
-  font-family: "Noto Serif", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: normal;
   font-style: normal;
   font-size: 15px;
@@ -1351,7 +1337,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Geist", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -1395,7 +1381,7 @@ a {
 }
 
 .button {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 .material-symbols {
@@ -1422,7 +1408,7 @@ a {
   font-weight: 100;
   font-size: 6rem;
   line-height: 1;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 .heading-4 {
@@ -1431,7 +1417,7 @@ a {
   font-weight: 100;
   font-size: 2.5rem;
   line-height: 1;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
 #slogan .subtitle {
@@ -1461,7 +1447,7 @@ a {
   font-weight: 700;
   font-size: 2.75rem;
   line-height: 1;
-  font-family: "Noto Serif", sans-serif;
+  font-family: "Geist", sans-serif;
   text-transform: uppercase;
 }
 @media screen and (min-width: 650px) {
@@ -1470,6 +1456,10 @@ a {
   }
 }
 
+header {
+  position: relative;
+  border-bottom: 1px solid color-mix(in oklch, var(--navigation-bg), black 5%);
+}
 header .container {
   display: flex;
   flex-direction: row;
@@ -1478,16 +1468,59 @@ header .container {
   align-content: wrap;
   flex-wrap: nowrap;
 }
-header .container .navigation ul {
+header .container .navigation {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--navigation-bg);
+  padding: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   align-content: wrap;
   flex-wrap: nowrap;
+  transition: opacity 0.1s ease-in-out;
+}
+header .container .navigation.active {
+  z-index: 100;
+  display: block;
+  opacity: 1;
+}
+header .container .navigation ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  align-content: stretch;
+  flex-wrap: nowrap;
+  width: calc(100% - 20px);
+  padding: 0 15px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: color-mix(in oklch, var(--navigation-bg), black 15%);
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+header .container .navigation ul li {
+  border-bottom: 1px dashed color-mix(in oklch, var(--navigation-bg), black 15%);
 }
 header .container .navigation ul li a {
-  padding: 0.5em 1em;
+  font-size: 1rem;
+  color: var(--nav-item-fg);
+  text-align: left;
+  padding: 1em 0.75em;
+}
+@media screen and (min-width: 1440px) {
+  header .container .navigation ul li a {
+    padding: 0.5em 1em;
+  }
 }
 
 h1 {

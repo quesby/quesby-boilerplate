@@ -1,12 +1,57 @@
 header {
+    position: relative;
+    border-bottom: 1px solid color-mix(in oklch, var(--navigation-bg), black 5%);
     .container {
         @include flex-container(row, space-between, center, wrap);
         .navigation {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+            top: 70px;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--navigation-bg);
+            padding: ($padding);
+            @include flex-container(column, flex-start, flex-start, wrap);
+            transition: opacity .1s ease-in-out;
+            &.active {
+                z-index: 100;
+                display: block;
+                opacity: 1;
+            }
             ul {
-                @include flex-container(row, space-between, center, wrap);
+                @include flex-container(column, stretch, stretch, stretch);
+                width: calc(100% - $padding);
+                padding: 0 ($padding * 0.75);
+                border-style: dashed;
+                border-width: 1px;
+                border-color: color-mix(in oklch, var(--navigation-bg), black 15%);
+                border-top-width: 0;
+                border-bottom-width: 0;
                 li {
+                    border-bottom: 1px dashed color-mix(in oklch, var(--navigation-bg), black 15%);
                     a {
-                        padding: 0.5em 1em;
+                        font-size: 1rem;
+                        color: var(--nav-item-fg);
+                        text-align: left;
+                        padding: 1em .75em;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(laptop) {
+        .container {
+            .navigation {
+                ul {
+                    //@include flex-container(row, space-between, center, wrap);
+                    li {
+                        a {
+                            padding: 0.5em 1em;
+                        }
                     }
                 }
             }

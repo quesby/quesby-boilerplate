@@ -13,52 +13,46 @@ $brand-green: oklch(56.04% 0.148 151.7);
 $brand-white: oklch(96.80% 0.007 115.7);
 $brand-red: oklch(54.70% 0.204 25.4);
 
-$jet: oklch(39.00% 0.012 320.6 / 1.000);
-$turquoise: oklch(78.07% 0.124 185.7 / 1.000);
-$forest-green: oklch(58.48% 0.143 144.9 / 1.000);
-$snow: oklch(83.90% 0.000 89.9);
-$silver-lake-blue: oklch(64.36% 0.098 254.0 / 1.000);
-$beaver: oklch(63.76% 0.026 69.4 / 1.000);
-$earth-yellow: oklch(77.52% 0.100 75.8 / 1.000);
-$turquoise: oklch(78.07% 0.124 185.7 / 1.000);
-$buff: oklch(72.21% 0.099 67.1 / 1.000);
-$prussian-blue: oklch(26.03% 0.067 245.9 / 1.000);
 //foregrounds
-$text-fg: $snow;
+$text-fg: black;
 $link-fg: color.adjust($text-fg, $lightness: -10%);
 $headlines-fg: oklch(100.00% 0.000 89.9);
-$nav-item-fg: white;
-$button-fg: oklch(15.68% 0.015 278.2);
+$nav-item-fg: black;
+$button-fg: oklch(100% 0 0);
+$button-secondary-fg: oklch(15% 0.000 0);
 //backgrounds
 $site-bg: $cpal-3;
 $site-bg-2: oklch(100.00% 0.000 89.9);
 $site-bg-3: oklch(95.81% 0.000 89.9);
 $site-bg-radial: radial-gradient(oklch(95.81% 0.000 89.9) 25%,  oklch(100.00% 0.000 89.9));
-$site-bg-linear-emphasy: linear-gradient(to left, transparent 80%,  $cpal-3 80%);
+$site-bg-linear-emphasy: linear-gradient(to left, transparent 80%,  black 80%);
 $navigation-bg: $site-bg;
 $footer-bg: $site-bg;
-$button-bg: oklch(90.97% 0.000 89.9);
+$button-bg: oklch(15% 0 0);
+$button-secondary-bg: oklch(100% 0 0);
 
 // LIGHT THEME
 $theme-light: (
   text-fg: oklch(31.85% 0.018 18.1),
-  link-fg: color.adjust($snow, $lightness: -10%),
+  link-fg: color.adjust(white, $lightness: -10%),
   headlines-fg: oklch(0.00% 0.000 0.0),
   nav-item-fg: oklch(31.85% 0.018 18.1),
   button-fg: $button-fg,
-  site-bg: oklch(100.00% 0.000 89.9),
+  button-secondary-fg: $button-secondary-fg,
+  site-bg: oklch(99% 0.000 89.9),
   site-bg-2: oklch(95.81% 0.000 89.9),
   site-bg-hover: color.adjust(oklch(100.00% 0.000 89.9), $lightness: 5%),
   site-bg-radial: radial-gradient(oklch(95.81% 0.000 89.9) 25%,  oklch(100.00% 0.000 89.9)),
-  navigation-bg: oklch(100.00% 0.000 89.9),
+  navigation-bg: var(--site-bg),
   subnav-bg: color.adjust(oklch(100.00% 0.000 89.9), $lightness: 10%),
-  button-bg: oklch(90.97% 0.000 89.9),
-  divider: color.adjust($snow, $lightness: -50%)
+  button-bg: $button-bg,
+  button-secondary-bg: $button-secondary-bg,
+  divider: color.adjust(black, $lightness: -50%)
 );
 
 // DARK THEME
 $theme-dark: (
-  text-fg: $snow,
+  text-fg: white,
   link-fg: color.adjust(oklch(97.02% 0.000 89.9), $lightness: -10%),
   headlines-fg: oklch(100.00% 0.000 89.9),
   nav-item-fg: $nav-item-fg,
@@ -80,6 +74,7 @@ $theme-sepia: (
   headlines-fg: oklch(24.20% 0.037 74.8),
   nav-item-fg: oklch(31.85% 0.018 18.1),
   button-fg: oklch(27.00% 0.016 67.0),
+  button-secondary-fg: oklch(27.00% 0.016 67.0),
   site-bg: oklch(94.40% 0.028 88.8),
   site-bg-2: oklch(91.59% 0.040 86.1),
   site-bg-hover: color.adjust(oklch(94.40% 0.028 88.8), $lightness: 5%),
@@ -87,6 +82,7 @@ $theme-sepia: (
   navigation-bg: oklch(91.59% 0.040 86.1),
   subnav-bg: color.adjust(oklch(91.59% 0.040 86.1), $lightness: 10%),
   button-bg: oklch(83.68% 0.045 80.5),
+  button-secondary-bg: oklch(83.68% 0.045 80.5),
   divider: color.adjust(oklch(31.85% 0.018 18.1), $lightness: 50%)
 );
 
@@ -128,16 +124,6 @@ $palette: (
   brand-green: $brand-green,
   brand-white: $brand-white,
   brand-red: $brand-red,
-  // Named colors
-  jet: $jet,
-  turquoise: $turquoise,
-  forest-green: $forest-green,
-  snow: $snow,
-  silver-lake-blue: $silver-lake-blue,
-  beaver: $beaver,
-  earth-yellow: $earth-yellow,
-  buff: $buff,
-  prussian-blue: $prussian-blue,
   // Neutral grays and blacks
   neutral-111: oklch(17.76% 0.000 89.9),
   neutral-191919: oklch(21.34% 0.000 89.9),
