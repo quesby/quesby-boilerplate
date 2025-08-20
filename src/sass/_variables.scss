@@ -2,106 +2,106 @@
 //navigation
 
 // COLORS
-$cpal-1: #000000; //#0D1B2A;
-$cpal-3: #3ad1c3ff;
-$cpal-4: #9ed8a3;
-$cpal-5: #fff;
-$cpal-6: #30AD7B;
+$cpal-1: oklch(0.00% 0.000 0.0); //oklch(21.77% 0.036 251.3);
+$cpal-3: oklch(26.20% 0.145 281.1);
+$cpal-4: oklch(50.28% 0.239 287.0);
+$cpal-5: oklch(100.00% 0.000 89.9);
+$cpal-6: oklch(66.77% 0.132 161.8);
 
-$brand-orange: #FCC407;
-$brand-green: #008C45;
-$brand-white: #F4F5F0;
-$brand-red: #CD212A;
+$brand-orange: oklch(84.68% 0.172 87.6);
+$brand-green: oklch(56.04% 0.148 151.7);
+$brand-white: oklch(96.80% 0.007 115.7);
+$brand-red: oklch(54.70% 0.204 25.4);
 
-$jet: #484349ff;
-$turquoise: #3ad1c3ff;
-$forest-green: #3a9141ff;
-$snow: #cacaca;
-$silver-lake-blue: #6290c8ff;
-$beaver: #96897bff;
-$earth-yellow: #dbad6aff;
-$turquoise: #3ad1c3ff;
-$buff: #cf995fff;
-$prussian-blue: #002642ff;
+$jet: oklch(39.00% 0.012 320.6 / 1.000);
+$turquoise: oklch(78.07% 0.124 185.7 / 1.000);
+$forest-green: oklch(58.48% 0.143 144.9 / 1.000);
+$snow: oklch(83.90% 0.000 89.9);
+$silver-lake-blue: oklch(64.36% 0.098 254.0 / 1.000);
+$beaver: oklch(63.76% 0.026 69.4 / 1.000);
+$earth-yellow: oklch(77.52% 0.100 75.8 / 1.000);
+$turquoise: oklch(78.07% 0.124 185.7 / 1.000);
+$buff: oklch(72.21% 0.099 67.1 / 1.000);
+$prussian-blue: oklch(26.03% 0.067 245.9 / 1.000);
 //foregrounds
 $text-fg: $snow;
 $link-fg: color.adjust($text-fg, $lightness: -10%);
-$headlines-fg: #fff;
+$headlines-fg: oklch(100.00% 0.000 89.9);
 $nav-item-fg: white;
-$button-fg: #0b0c13;
+$button-fg: oklch(15.68% 0.015 278.2);
 //backgrounds
-$site-bg: #000;
-$site-bg-2: #FFF;
-$site-bg-3: #f1f1f1;
-$site-bg-radial: radial-gradient(#f1f1f1 25%,  #fff);
+$site-bg: $cpal-3;
+$site-bg-2: oklch(100.00% 0.000 89.9);
+$site-bg-3: oklch(95.81% 0.000 89.9);
+$site-bg-radial: radial-gradient(oklch(95.81% 0.000 89.9) 25%,  oklch(100.00% 0.000 89.9));
 $site-bg-linear-emphasy: linear-gradient(to left, transparent 80%,  $cpal-3 80%);
 $navigation-bg: $site-bg;
 $footer-bg: $site-bg;
-$button-bg: #e1e1e1;
+$button-bg: oklch(90.97% 0.000 89.9);
 
 // LIGHT THEME
 $theme-light: (
-  text-fg: #3b2f2f,
+  text-fg: oklch(31.85% 0.018 18.1),
   link-fg: color.adjust($snow, $lightness: -10%),
-  headlines-fg: #000,
-  nav-item-fg: #3b2f2f,
+  headlines-fg: oklch(0.00% 0.000 0.0),
+  nav-item-fg: oklch(31.85% 0.018 18.1),
   button-fg: $button-fg,
-  site-bg: #fff,
-  site-bg-2: #f1f1f1,
-  site-bg-hover: color.adjust(#fff, $lightness: 5%),
-  site-bg-radial: radial-gradient(#f1f1f1 25%,  #fff),
-  navigation-bg: #fff,
-  subnav-bg: color.adjust(#fff, $lightness: 10%),
-  button-bg: #e1e1e1,
+  site-bg: oklch(100.00% 0.000 89.9),
+  site-bg-2: oklch(95.81% 0.000 89.9),
+  site-bg-hover: color.adjust(oklch(100.00% 0.000 89.9), $lightness: 5%),
+  site-bg-radial: radial-gradient(oklch(95.81% 0.000 89.9) 25%,  oklch(100.00% 0.000 89.9)),
+  navigation-bg: oklch(100.00% 0.000 89.9),
+  subnav-bg: color.adjust(oklch(100.00% 0.000 89.9), $lightness: 10%),
+  button-bg: oklch(90.97% 0.000 89.9),
   divider: color.adjust($snow, $lightness: -50%)
 );
 
 // DARK THEME
 $theme-dark: (
   text-fg: $snow,
-  link-fg: color.adjust(#f5f5f5, $lightness: -10%),
-  headlines-fg: #fff,
+  link-fg: color.adjust(oklch(97.02% 0.000 89.9), $lightness: -10%),
+  headlines-fg: oklch(100.00% 0.000 89.9),
   nav-item-fg: $nav-item-fg,
   button-fg: $button-fg,
-  site-bg: #000,
-  site-bg-2: #111,
-  site-bg-hover: color.adjust(#000, $lightness: 5%),
-  site-bg-radial: radial-gradient(#111 25%,  #000),
-  navigation-bg: #000,
-  subnav-bg: #111,
-  button-bg: #484349ff,
-  divider: color.adjust(#f5f5f5, $lightness: -50%)
+  site-bg: $site-bg,
+  site-bg-2: oklch(17.76% 0.000 89.9),
+  site-bg-hover: color.adjust(oklch(0.00% 0.000 0.0), $lightness: 5%),
+  site-bg-radial: radial-gradient(oklch(17.76% 0.000 89.9) 25%,  oklch(0.00% 0.000 0.0)),
+  navigation-bg: oklch(0.00% 0.000 0.0),
+  subnav-bg: oklch(17.76% 0.000 89.9),
+  button-bg: oklch(39.00% 0.012 320.6 / 1.000),
+  divider: color.adjust(oklch(97.02% 0.000 89.9), $lightness: -50%)
 );
 
 // SEPIA THEME
 $theme-sepia: (
-  text-fg: #3b2f2f,
-  link-fg: color.adjust(#3b2f2f, $lightness: -10%),
-  headlines-fg: #2a1d0a,
-  nav-item-fg: #3b2f2f,
-  button-fg: #2c251e,
-  site-bg: #f4ecd8,
-  site-bg-2: #efe2c6,
-  site-bg-hover: color.adjust(#f4ecd8, $lightness: 5%),
-  site-bg-radial: radial-gradient(#efe2c6 25%, #f4ecd8),
-  navigation-bg: #efe2c6,
-  subnav-bg: color.adjust(#efe2c6, $lightness: 10%),
-  button-bg: #d9c7a9,
-  divider: color.adjust(#3b2f2f, $lightness: 50%)
+  text-fg: oklch(31.85% 0.018 18.1),
+  link-fg: color.adjust(oklch(31.85% 0.018 18.1), $lightness: -10%),
+  headlines-fg: oklch(24.20% 0.037 74.8),
+  nav-item-fg: oklch(31.85% 0.018 18.1),
+  button-fg: oklch(27.00% 0.016 67.0),
+  site-bg: oklch(94.40% 0.028 88.8),
+  site-bg-2: oklch(91.59% 0.040 86.1),
+  site-bg-hover: color.adjust(oklch(94.40% 0.028 88.8), $lightness: 5%),
+  site-bg-radial: radial-gradient(oklch(91.59% 0.040 86.1) 25%, oklch(94.40% 0.028 88.8)),
+  navigation-bg: oklch(91.59% 0.040 86.1),
+  subnav-bg: color.adjust(oklch(91.59% 0.040 86.1), $lightness: 10%),
+  button-bg: oklch(83.68% 0.045 80.5),
+  divider: color.adjust(oklch(31.85% 0.018 18.1), $lightness: 50%)
 );
 
 
 
 //social media
-$discord: #5865F2;
-$youtube: #FF0000;
-$twitch: #9146FF;
-$revolt: #FF4655;
-$twitter: #000000;
-$tiktok: #000000;
-$patreon: #000000;
-$kofi: #FF6433;
-$telegram: #26A5E4;
+$discord: oklch(57.74% 0.209 273.9);
+$youtube: oklch(62.80% 0.258 29.2);
+$twitch: oklch(59.08% 0.255 296.1);
+$revolt: oklch(66.77% 0.220 21.3);
+$twitter: oklch(0.00% 0.000 0.0);
+$tiktok: oklch(0.00% 0.000 0.0);
+$patreon: oklch(0.00% 0.000 0.0);
+$kofi: oklch(69.55% 0.199 37.3);
+$telegram: oklch(68.49% 0.139 236.8);
 
 // TRANSITIONS
 $transition: all .4s ease-in-out;
@@ -139,19 +139,19 @@ $palette: (
   buff: $buff,
   prussian-blue: $prussian-blue,
   // Neutral grays and blacks
-  neutral-111: #111111,
-  neutral-191919: #191919,
-  neutral-333: #333333,
-  neutral-555: #555555,
-  neutral-5a5a5a: #5a5a5a,
-  neutral-aaa: #aaaaaa,
-  neutral-eaeaea: #eaeaea,
-  neutral-f1f1f1: #f1f1f1,
-  neutral-1e1e1e: #1e1e1e,
+  neutral-111: oklch(17.76% 0.000 89.9),
+  neutral-191919: oklch(21.34% 0.000 89.9),
+  neutral-333: oklch(32.11% 0.000 89.9),
+  neutral-555: oklch(44.95% 0.000 89.9),
+  neutral-5a5a5a: oklch(46.76% 0.000 89.9),
+  neutral-aaa: oklch(73.80% 0.000 89.9),
+  neutral-eaeaea: oklch(93.70% 0.000 89.9),
+  neutral-f1f1f1: oklch(95.81% 0.000 89.9),
+  neutral-1e1e1e: oklch(23.50% 0.000 89.9),
   // Accents used in pricing
-  accent-green: #00ffa2,
-  accent-green-hover: #00cc85,
-  accent-yellow: #ffc857,
+  accent-green: oklch(88.08% 0.206 158.1),
+  accent-green-hover: oklch(74.54% 0.170 159.4),
+  accent-yellow: oklch(86.15% 0.142 82.7),
   // Derived brand variants
   brand-green-darker-15: color.adjust($brand-green, $lightness: -15%),
   brand-green-darker-5: color.adjust($brand-green, $lightness: -5%),

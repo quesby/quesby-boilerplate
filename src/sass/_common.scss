@@ -105,6 +105,17 @@ strong {
     background-color: var(--neutral-555); /* Colore più scuro quando il cursore è in hover */
 }
 
+// Containers
+.container {
+    display: block;
+    width: 100%;
+    padding: $padding;
+    margin: 0 auto;
+    &.boxed {
+        max-width: 1440px;
+    }
+}
+
 // forms
 // Stili base per tutti i temi
 .form-container {
@@ -449,7 +460,8 @@ strong {
     a {
         display: block;
         padding: .5em 1em;
-        border-radius: 2em;
+        border: 1px solid color-mix(in oklch, var(--button-bg), black 75%);
+        border-radius: $borderRadius-normal;
         color: var(--button-fg);
         background-color: var(--button-bg);
     }
@@ -457,9 +469,7 @@ strong {
         a {
             display: block;
             padding: 1em 1.75em;
-            border-radius: 2em;
-            color: var(--button-fg);
-            background-color: var(--button-bg);
+            border-radius: $borderRadius-large;
             font-size: 2em;
         }
     }

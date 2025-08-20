@@ -55,174 +55,174 @@ button, input, select, textarea {
     flex: 1 1 auto; // Example for flex property on flex items
   } */
 :root {
-  --text-fg: #3b2f2f;
-  --link-fg: rgb(176.5, 176.5, 176.5);
-  --headlines-fg: #000;
-  --nav-item-fg: #3b2f2f;
-  --button-fg: #0b0c13;
-  --site-bg: #fff;
-  --site-bg-2: #f1f1f1;
-  --site-bg-hover: hsl(0, 0%, 105%);
-  --site-bg-radial: radial-gradient(#f1f1f1 25%, #fff);
-  --navigation-bg: #fff;
-  --subnav-bg: hsl(0, 0%, 110%);
-  --button-bg: #e1e1e1;
-  --divider: rgb(74.5, 74.5, 74.5);
-  --cpal-1: #000000;
-  --cpal-3: #3ad1c3;
-  --cpal-4: #9ed8a3;
-  --cpal-5: #fff;
-  --cpal-6: #30AD7B;
-  --brand-orange: #FCC407;
-  --brand-green: #008C45;
-  --brand-white: #F4F5F0;
-  --brand-red: #CD212A;
-  --jet: #484349;
-  --turquoise: #3ad1c3;
-  --forest-green: #3a9141;
-  --snow: #cacaca;
-  --silver-lake-blue: #6290c8;
-  --beaver: #96897b;
-  --earth-yellow: #dbad6a;
-  --buff: #cf995f;
-  --prussian-blue: #002642;
-  --neutral-111: #111111;
-  --neutral-191919: #191919;
-  --neutral-333: #333333;
-  --neutral-555: #555555;
-  --neutral-5a5a5a: #5a5a5a;
-  --neutral-aaa: #aaaaaa;
-  --neutral-eaeaea: #eaeaea;
-  --neutral-f1f1f1: #f1f1f1;
-  --neutral-1e1e1e: #1e1e1e;
-  --accent-green: #00ffa2;
-  --accent-green-hover: #00cc85;
-  --accent-yellow: #ffc857;
-  --brand-green-darker-15: rgb(0, 63.5, 31.2964285714);
-  --brand-green-darker-5: rgb(0, 114.5, 56.4321428571);
-  --discord: #5865F2;
-  --youtube: #FF0000;
-  --twitch: #9146FF;
-  --revolt: #FF4655;
-  --twitter: #000000;
-  --tiktok: #000000;
-  --patreon: #000000;
-  --kofi: #FF6433;
-  --telegram: #26A5E4;
+  --text-fg: oklch(31.85% 0.018 18.1deg);
+  --link-fg: oklch(73.9% 0 89.9deg);
+  --headlines-fg: oklch(0% 0 0deg);
+  --nav-item-fg: oklch(31.85% 0.018 18.1deg);
+  --button-fg: oklch(15.68% 0.015 278.2deg);
+  --site-bg: oklch(100% 0 89.9deg);
+  --site-bg-2: oklch(95.81% 0 89.9deg);
+  --site-bg-hover: oklch(100% 0 89.9deg);
+  --site-bg-radial: radial-gradient(oklch(95.81% 0 89.9deg) 25%, oklch(100% 0 89.9deg));
+  --navigation-bg: oklch(100% 0 89.9deg);
+  --subnav-bg: oklch(100% 0 89.9deg);
+  --button-bg: oklch(90.97% 0 89.9deg);
+  --divider: oklch(33.9% 0 89.9deg);
+  --cpal-1: oklch(0% 0 0deg);
+  --cpal-3: oklch(26.2% 0.145 281.1deg);
+  --cpal-4: oklch(50.28% 0.239 287deg);
+  --cpal-5: oklch(100% 0 89.9deg);
+  --cpal-6: oklch(66.77% 0.132 161.8deg);
+  --brand-orange: oklch(84.68% 0.172 87.6deg);
+  --brand-green: oklch(56.04% 0.148 151.7deg);
+  --brand-white: oklch(96.8% 0.007 115.7deg);
+  --brand-red: oklch(54.7% 0.204 25.4deg);
+  --jet: oklch(39% 0.012 320.6deg);
+  --turquoise: oklch(78.07% 0.124 185.7deg);
+  --forest-green: oklch(58.48% 0.143 144.9deg);
+  --snow: oklch(83.9% 0 89.9deg);
+  --silver-lake-blue: oklch(64.36% 0.098 254deg);
+  --beaver: oklch(63.76% 0.026 69.4deg);
+  --earth-yellow: oklch(77.52% 0.1 75.8deg);
+  --buff: oklch(72.21% 0.099 67.1deg);
+  --prussian-blue: oklch(26.03% 0.067 245.9deg);
+  --neutral-111: oklch(17.76% 0 89.9deg);
+  --neutral-191919: oklch(21.34% 0 89.9deg);
+  --neutral-333: oklch(32.11% 0 89.9deg);
+  --neutral-555: oklch(44.95% 0 89.9deg);
+  --neutral-5a5a5a: oklch(46.76% 0 89.9deg);
+  --neutral-aaa: oklch(73.8% 0 89.9deg);
+  --neutral-eaeaea: oklch(93.7% 0 89.9deg);
+  --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
+  --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
+  --accent-green: oklch(88.08% 0.206 158.1deg);
+  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
+  --accent-yellow: oklch(86.15% 0.142 82.7deg);
+  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
+  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
+  --discord: oklch(57.74% 0.209 273.9deg);
+  --youtube: oklch(62.8% 0.258 29.2deg);
+  --twitch: oklch(59.08% 0.255 296.1deg);
+  --revolt: oklch(66.77% 0.22 21.3deg);
+  --twitter: oklch(0% 0 0deg);
+  --tiktok: oklch(0% 0 0deg);
+  --patreon: oklch(0% 0 0deg);
+  --kofi: oklch(69.55% 0.199 37.3deg);
+  --telegram: oklch(68.49% 0.139 236.8deg);
 }
 
 .dark {
-  --text-fg: #cacaca;
-  --link-fg: rgb(219.5, 219.5, 219.5);
-  --headlines-fg: #fff;
+  --text-fg: oklch(83.9% 0 89.9deg);
+  --link-fg: oklch(87.02% 0 89.9deg);
+  --headlines-fg: oklch(100% 0 89.9deg);
   --nav-item-fg: white;
-  --button-fg: #0b0c13;
-  --site-bg: #000;
-  --site-bg-2: #111;
-  --site-bg-hover: rgb(12.75, 12.75, 12.75);
-  --site-bg-radial: radial-gradient(#111 25%, #000);
-  --navigation-bg: #000;
-  --subnav-bg: #111;
-  --button-bg: #484349;
-  --divider: rgb(117.5, 117.5, 117.5);
-  --cpal-1: #000000;
-  --cpal-3: #3ad1c3;
-  --cpal-4: #9ed8a3;
-  --cpal-5: #fff;
-  --cpal-6: #30AD7B;
-  --brand-orange: #FCC407;
-  --brand-green: #008C45;
-  --brand-white: #F4F5F0;
-  --brand-red: #CD212A;
-  --jet: #484349;
-  --turquoise: #3ad1c3;
-  --forest-green: #3a9141;
-  --snow: #cacaca;
-  --silver-lake-blue: #6290c8;
-  --beaver: #96897b;
-  --earth-yellow: #dbad6a;
-  --buff: #cf995f;
-  --prussian-blue: #002642;
-  --neutral-111: #111111;
-  --neutral-191919: #191919;
-  --neutral-333: #333333;
-  --neutral-555: #555555;
-  --neutral-5a5a5a: #5a5a5a;
-  --neutral-aaa: #aaaaaa;
-  --neutral-eaeaea: #eaeaea;
-  --neutral-f1f1f1: #f1f1f1;
-  --neutral-1e1e1e: #1e1e1e;
-  --accent-green: #00ffa2;
-  --accent-green-hover: #00cc85;
-  --accent-yellow: #ffc857;
-  --brand-green-darker-15: rgb(0, 63.5, 31.2964285714);
-  --brand-green-darker-5: rgb(0, 114.5, 56.4321428571);
-  --discord: #5865F2;
-  --youtube: #FF0000;
-  --twitch: #9146FF;
-  --revolt: #FF4655;
-  --twitter: #000000;
-  --tiktok: #000000;
-  --patreon: #000000;
-  --kofi: #FF6433;
-  --telegram: #26A5E4;
+  --button-fg: oklch(15.68% 0.015 278.2deg);
+  --site-bg: oklch(26.2% 0.145 281.1deg);
+  --site-bg-2: oklch(17.76% 0 89.9deg);
+  --site-bg-hover: oklch(5% 0 0deg);
+  --site-bg-radial: radial-gradient(oklch(17.76% 0 89.9deg) 25%, oklch(0% 0 0deg));
+  --navigation-bg: oklch(0% 0 0deg);
+  --subnav-bg: oklch(17.76% 0 89.9deg);
+  --button-bg: oklch(39% 0.012 320.6deg);
+  --divider: oklch(47.02% 0 89.9deg);
+  --cpal-1: oklch(0% 0 0deg);
+  --cpal-3: oklch(26.2% 0.145 281.1deg);
+  --cpal-4: oklch(50.28% 0.239 287deg);
+  --cpal-5: oklch(100% 0 89.9deg);
+  --cpal-6: oklch(66.77% 0.132 161.8deg);
+  --brand-orange: oklch(84.68% 0.172 87.6deg);
+  --brand-green: oklch(56.04% 0.148 151.7deg);
+  --brand-white: oklch(96.8% 0.007 115.7deg);
+  --brand-red: oklch(54.7% 0.204 25.4deg);
+  --jet: oklch(39% 0.012 320.6deg);
+  --turquoise: oklch(78.07% 0.124 185.7deg);
+  --forest-green: oklch(58.48% 0.143 144.9deg);
+  --snow: oklch(83.9% 0 89.9deg);
+  --silver-lake-blue: oklch(64.36% 0.098 254deg);
+  --beaver: oklch(63.76% 0.026 69.4deg);
+  --earth-yellow: oklch(77.52% 0.1 75.8deg);
+  --buff: oklch(72.21% 0.099 67.1deg);
+  --prussian-blue: oklch(26.03% 0.067 245.9deg);
+  --neutral-111: oklch(17.76% 0 89.9deg);
+  --neutral-191919: oklch(21.34% 0 89.9deg);
+  --neutral-333: oklch(32.11% 0 89.9deg);
+  --neutral-555: oklch(44.95% 0 89.9deg);
+  --neutral-5a5a5a: oklch(46.76% 0 89.9deg);
+  --neutral-aaa: oklch(73.8% 0 89.9deg);
+  --neutral-eaeaea: oklch(93.7% 0 89.9deg);
+  --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
+  --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
+  --accent-green: oklch(88.08% 0.206 158.1deg);
+  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
+  --accent-yellow: oklch(86.15% 0.142 82.7deg);
+  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
+  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
+  --discord: oklch(57.74% 0.209 273.9deg);
+  --youtube: oklch(62.8% 0.258 29.2deg);
+  --twitch: oklch(59.08% 0.255 296.1deg);
+  --revolt: oklch(66.77% 0.22 21.3deg);
+  --twitter: oklch(0% 0 0deg);
+  --tiktok: oklch(0% 0 0deg);
+  --patreon: oklch(0% 0 0deg);
+  --kofi: oklch(69.55% 0.199 37.3deg);
+  --telegram: oklch(68.49% 0.139 236.8deg);
 }
 
 .sepia {
-  --text-fg: #3b2f2f;
-  --link-fg: rgb(30.6132075472, 24.3867924528, 24.3867924528);
-  --headlines-fg: #2a1d0a;
-  --nav-item-fg: #3b2f2f;
-  --button-fg: #2c251e;
-  --site-bg: #f4ecd8;
-  --site-bg-2: #efe2c6;
-  --site-bg-hover: rgb(249.61, 245.69, 235.89);
-  --site-bg-radial: radial-gradient(#efe2c6 25%, #f4ecd8);
-  --navigation-bg: #efe2c6;
-  --subnav-bg: rgb(250.1780821918, 246.2602739726, 237.8219178082);
-  --button-bg: #d9c7a9;
-  --divider: rgb(188.9339622642, 172.0660377358, 172.0660377358);
-  --cpal-1: #000000;
-  --cpal-3: #3ad1c3;
-  --cpal-4: #9ed8a3;
-  --cpal-5: #fff;
-  --cpal-6: #30AD7B;
-  --brand-orange: #FCC407;
-  --brand-green: #008C45;
-  --brand-white: #F4F5F0;
-  --brand-red: #CD212A;
-  --jet: #484349;
-  --turquoise: #3ad1c3;
-  --forest-green: #3a9141;
-  --snow: #cacaca;
-  --silver-lake-blue: #6290c8;
-  --beaver: #96897b;
-  --earth-yellow: #dbad6a;
-  --buff: #cf995f;
-  --prussian-blue: #002642;
-  --neutral-111: #111111;
-  --neutral-191919: #191919;
-  --neutral-333: #333333;
-  --neutral-555: #555555;
-  --neutral-5a5a5a: #5a5a5a;
-  --neutral-aaa: #aaaaaa;
-  --neutral-eaeaea: #eaeaea;
-  --neutral-f1f1f1: #f1f1f1;
-  --neutral-1e1e1e: #1e1e1e;
-  --accent-green: #00ffa2;
-  --accent-green-hover: #00cc85;
-  --accent-yellow: #ffc857;
-  --brand-green-darker-15: rgb(0, 63.5, 31.2964285714);
-  --brand-green-darker-5: rgb(0, 114.5, 56.4321428571);
-  --discord: #5865F2;
-  --youtube: #FF0000;
-  --twitch: #9146FF;
-  --revolt: #FF4655;
-  --twitter: #000000;
-  --tiktok: #000000;
-  --patreon: #000000;
-  --kofi: #FF6433;
-  --telegram: #26A5E4;
+  --text-fg: oklch(31.85% 0.018 18.1deg);
+  --link-fg: oklch(21.85% 0.018 18.1deg);
+  --headlines-fg: oklch(24.2% 0.037 74.8deg);
+  --nav-item-fg: oklch(31.85% 0.018 18.1deg);
+  --button-fg: oklch(27% 0.016 67deg);
+  --site-bg: oklch(94.4% 0.028 88.8deg);
+  --site-bg-2: oklch(91.59% 0.04 86.1deg);
+  --site-bg-hover: oklch(99.4% 0.028 88.8deg);
+  --site-bg-radial: radial-gradient(oklch(91.59% 0.04 86.1deg) 25%, oklch(94.4% 0.028 88.8deg));
+  --navigation-bg: oklch(91.59% 0.04 86.1deg);
+  --subnav-bg: oklch(100% 0.04 86.1deg);
+  --button-bg: oklch(83.68% 0.045 80.5deg);
+  --divider: oklch(81.85% 0.018 18.1deg);
+  --cpal-1: oklch(0% 0 0deg);
+  --cpal-3: oklch(26.2% 0.145 281.1deg);
+  --cpal-4: oklch(50.28% 0.239 287deg);
+  --cpal-5: oklch(100% 0 89.9deg);
+  --cpal-6: oklch(66.77% 0.132 161.8deg);
+  --brand-orange: oklch(84.68% 0.172 87.6deg);
+  --brand-green: oklch(56.04% 0.148 151.7deg);
+  --brand-white: oklch(96.8% 0.007 115.7deg);
+  --brand-red: oklch(54.7% 0.204 25.4deg);
+  --jet: oklch(39% 0.012 320.6deg);
+  --turquoise: oklch(78.07% 0.124 185.7deg);
+  --forest-green: oklch(58.48% 0.143 144.9deg);
+  --snow: oklch(83.9% 0 89.9deg);
+  --silver-lake-blue: oklch(64.36% 0.098 254deg);
+  --beaver: oklch(63.76% 0.026 69.4deg);
+  --earth-yellow: oklch(77.52% 0.1 75.8deg);
+  --buff: oklch(72.21% 0.099 67.1deg);
+  --prussian-blue: oklch(26.03% 0.067 245.9deg);
+  --neutral-111: oklch(17.76% 0 89.9deg);
+  --neutral-191919: oklch(21.34% 0 89.9deg);
+  --neutral-333: oklch(32.11% 0 89.9deg);
+  --neutral-555: oklch(44.95% 0 89.9deg);
+  --neutral-5a5a5a: oklch(46.76% 0 89.9deg);
+  --neutral-aaa: oklch(73.8% 0 89.9deg);
+  --neutral-eaeaea: oklch(93.7% 0 89.9deg);
+  --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
+  --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
+  --accent-green: oklch(88.08% 0.206 158.1deg);
+  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
+  --accent-yellow: oklch(86.15% 0.142 82.7deg);
+  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
+  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
+  --discord: oklch(57.74% 0.209 273.9deg);
+  --youtube: oklch(62.8% 0.258 29.2deg);
+  --twitch: oklch(59.08% 0.255 296.1deg);
+  --revolt: oklch(66.77% 0.22 21.3deg);
+  --twitter: oklch(0% 0 0deg);
+  --tiktok: oklch(0% 0 0deg);
+  --patreon: oklch(0% 0 0deg);
+  --kofi: oklch(69.55% 0.199 37.3deg);
+  --telegram: oklch(68.49% 0.139 236.8deg);
 }
 
 * {
@@ -304,6 +304,16 @@ strong {
 /* Effetto hover sul cursore della barra di scorrimento */
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--neutral-555); /* Colore più scuro quando il cursore è in hover */
+}
+
+.container {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.container.boxed {
+  max-width: 1440px;
 }
 
 .form-container {
@@ -490,9 +500,9 @@ strong {
 
 :root {
   --form-bg: #f8f9fa;
-  --form-focus-border: #3ad1c3;
+  --form-focus-border: oklch(26.2% 0.145 281.1deg);
   --form-placeholder: #6b7280;
-  --form-accent: #3ad1c3;
+  --form-accent: oklch(26.2% 0.145 281.1deg);
   --button-bg-hover: #e9ecef;
   --accent-red: #dc3545;
   --accent-green: #28a745;
@@ -501,9 +511,9 @@ strong {
 
 .dark {
   --form-bg: #1a1a1a;
-  --form-focus-border: #3ad1c3;
+  --form-focus-border: oklch(26.2% 0.145 281.1deg);
   --form-placeholder: #9ca3af;
-  --form-accent: #3ad1c3;
+  --form-accent: oklch(26.2% 0.145 281.1deg);
   --button-bg-hover: #374151;
   --accent-red: #f87171;
   --accent-green: #4ade80;
@@ -512,9 +522,9 @@ strong {
 
 .sepia {
   --form-bg: #faf6f0;
-  --form-focus-border: #96897b;
+  --form-focus-border: oklch(63.76% 0.026 69.4deg);
   --form-placeholder: #8b7355;
-  --form-accent: #96897b;
+  --form-accent: oklch(63.76% 0.026 69.4deg);
   --button-bg-hover: #e6d7c3;
   --accent-red: #c53030;
   --accent-green: #2f855a;
@@ -619,16 +629,15 @@ strong {
 .button a {
   display: block;
   padding: 0.5em 1em;
-  border-radius: 2em;
+  border: 1px solid color-mix(in oklch, var(--button-bg), black 75%);
+  border-radius: 25px;
   color: var(--button-fg);
   background-color: var(--button-bg);
 }
 .button.large a {
   display: block;
   padding: 1em 1.75em;
-  border-radius: 2em;
-  color: var(--button-fg);
-  background-color: var(--button-bg);
+  border-radius: 50px;
   font-size: 2em;
 }
 
@@ -1323,12 +1332,6 @@ strong {
   font-stretch: 75% 125%;
 }
 @font-face {
-  font-family: "SpaceMono-Bold";
-  src: url("/assets/fonts/SpaceMono-Bold.ttf") format("truetype-variations");
-  font-weight: 600 900;
-  font-stretch: 75% 125%;
-}
-@font-face {
   font-family: "Material Symbols";
   src: url("/static/fonts/MaterialSymbolsRounded-vf.woff2") format("woff2"), url("/static/fonts/MaterialSymbolsRounded-vf.ttf") format("truetype");
   font-weight: normal;
@@ -1487,6 +1490,45 @@ header .container .navigation ul li a {
   padding: 0.5em 1em;
 }
 
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: wrap;
+  flex-wrap: nowrap;
+}
+h1 span:first-child {
+  font-size: 1.55em;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+h1 span:last-child {
+  font-weight: 300;
+  letter-spacing: 0.75em;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: none;
+}
+
+#main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: wrap;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
 @media screen and (min-width: 650px) {
   body {
     font-size: 16px;
