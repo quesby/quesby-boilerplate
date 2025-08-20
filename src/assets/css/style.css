@@ -1355,7 +1355,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4.5em;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
 }
 
 h2 {
@@ -1452,16 +1467,36 @@ a {
   }
 }
 
+header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: wrap;
+  flex-wrap: nowrap;
+}
+header .container .navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: wrap;
+  flex-wrap: nowrap;
+}
+header .container .navigation ul li a {
+  padding: 0.5em 1em;
+}
+
 @media screen and (min-width: 650px) {
   body {
     font-size: 16px;
   }
-  .container {
+  .boxed {
     max-width: 630px;
   }
 }
 @media screen and (min-width: 1024px) {
-  .container {
+  .boxed {
     max-width: 1440px;
   }
 }

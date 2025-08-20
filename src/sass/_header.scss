@@ -1,0 +1,15 @@
+header {
+    .container {
+        @include flex-container(row, space-between, center, wrap);
+        .navigation {
+            ul {
+                @include flex-container(row, space-between, center, wrap);
+                li {
+                    a {
+                        padding: 0.5em 1em;
+                    }
+                }
+            }
+        }
+    }
+}
