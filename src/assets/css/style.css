@@ -603,6 +603,10 @@ strong {
   padding: 0 50px;
 }
 
+button {
+  cursor: pointer;
+}
+
 .button {
   display: block;
   padding: 0.5em 1em;
@@ -1516,6 +1520,12 @@ header .container .navigation ul li a {
   color: var(--nav-item-fg);
   text-align: left;
   padding: 1em 0.75em;
+}
+header .h-spacer {
+  flex-grow: 1;
+}
+header button {
+  padding: 0 0.5rem;
 }
 @media screen and (min-width: 1440px) {
   header .container .navigation ul li a {

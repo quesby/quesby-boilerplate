@@ -30,6 +30,17 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
 
+  <!-- Theme toggle -->
+  <script>
+    (function(){
+      var ls = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var root = document.documentElement;
+      if (ls === 'dark' || (!ls && prefersDark)) root.classList.add('dark');
+      else if (ls === 'sepia') root.classList.add('sepia');
+    })();
+  </script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>

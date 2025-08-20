@@ -43,6 +43,12 @@ header {
             }
         }
     }
+    .h-spacer {
+        flex-grow: 1;
+    }
+    button {
+        padding: 0 .5rem;
+    }
     @include respond-to(laptop) {
         .container {
             .navigation {

@@ -3,7 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <title>Decap CMS</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
-<body></body>
+<body>
+  <div id="nc-root"></div>
+  
+  <script>
+    // Load Decap CMS asynchronously
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js';
+      script.async = true;
+      
+      script.onload = function() {
+        // Wait a bit more to ensure everything is ready
+        setTimeout(function() {
+          if (typeof DecapCMS !== 'undefined') {
+            try {
+              DecapCMS.init();
+            } catch (error) {
+              console.error('Decap CMS initialization error:', error);
+            }
+          }
+        }, 200);
+      };
+      
+      script.onerror = function() {
+        console.error('Failed to load Decap CMS');
+      };
+      
+      document.head.appendChild(script);
+    })();
+  </script>
+</body>
 </html>
