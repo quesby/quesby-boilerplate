@@ -59,7 +59,7 @@ button, input, select, textarea {
   --link-fg: rgb(229.5, 229.5, 229.5);
   --headlines-fg: oklch(0% 0 0deg);
   --nav-item-fg: oklch(31.85% 0.018 18.1deg);
-  --button-fg: oklch(100% 0 0deg);
+  --button-fg: white;
   --button-secondary-fg: oklch(15% 0 0deg);
   --site-bg: oklch(99% 0 89.9deg);
   --site-bg-2: oklch(95.81% 0 89.9deg);
@@ -68,17 +68,14 @@ button, input, select, textarea {
   --navigation-bg: var(--site-bg);
   --subnav-bg: oklch(100% 0 89.9deg);
   --button-bg: oklch(15% 0 0deg);
-  --button-secondary-bg: oklch(100% 0 0deg);
+  --button-secondary-bg: white;
+  --border: oklch(85% 0 0deg);
   --divider: hsl(0, 0%, -50%);
-  --cpal-1: oklch(0% 0 0deg);
+  --cpal-1: black;
   --cpal-3: oklch(26.2% 0.145 281.1deg);
   --cpal-4: oklch(50.28% 0.239 287deg);
   --cpal-5: oklch(100% 0 89.9deg);
   --cpal-6: oklch(66.77% 0.132 161.8deg);
-  --brand-orange: oklch(84.68% 0.172 87.6deg);
-  --brand-green: oklch(56.04% 0.148 151.7deg);
-  --brand-white: oklch(96.8% 0.007 115.7deg);
-  --brand-red: oklch(54.7% 0.204 25.4deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -88,11 +85,6 @@ button, input, select, textarea {
   --neutral-eaeaea: oklch(93.7% 0 89.9deg);
   --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
   --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
-  --accent-green: oklch(88.08% 0.206 158.1deg);
-  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
-  --accent-yellow: oklch(86.15% 0.142 82.7deg);
-  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
-  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
   --discord: oklch(57.74% 0.209 273.9deg);
   --youtube: oklch(62.8% 0.258 29.2deg);
   --twitch: oklch(59.08% 0.255 296.1deg);
@@ -106,27 +98,26 @@ button, input, select, textarea {
 
 .dark {
   --text-fg: white;
-  --link-fg: oklch(87.02% 0 89.9deg);
+  --link-fg: rgb(229.5, 229.5, 229.5);
   --headlines-fg: oklch(100% 0 89.9deg);
-  --nav-item-fg: black;
-  --button-fg: oklch(100% 0 0deg);
+  --nav-item-fg: white;
+  --button-fg: white;
+  --button-secondary-fg: black;
   --site-bg: black;
   --site-bg-2: oklch(17.76% 0 89.9deg);
-  --site-bg-hover: oklch(5% 0 0deg);
-  --site-bg-radial: radial-gradient(oklch(17.76% 0 89.9deg) 25%, oklch(0% 0 0deg));
-  --navigation-bg: oklch(0% 0 0deg);
-  --subnav-bg: oklch(17.76% 0 89.9deg);
+  --site-bg-hover: rgb(12.75, 12.75, 12.75);
+  --site-bg-radial: radial-gradient(oklch(17.76% 0 89.9deg) 25%, black);
+  --navigation-bg: black;
+  --subnav-bg: rgb(25.5, 25.5, 25.5);
   --button-bg: oklch(39% 0.012 320.6deg);
-  --divider: oklch(47.02% 0 89.9deg);
-  --cpal-1: oklch(0% 0 0deg);
+  --button-secondary-bg: oklch(85% 0 0deg);
+  --border: oklch(25% 0 0deg);
+  --divider: rgb(127.5, 127.5, 127.5);
+  --cpal-1: black;
   --cpal-3: oklch(26.2% 0.145 281.1deg);
   --cpal-4: oklch(50.28% 0.239 287deg);
   --cpal-5: oklch(100% 0 89.9deg);
   --cpal-6: oklch(66.77% 0.132 161.8deg);
-  --brand-orange: oklch(84.68% 0.172 87.6deg);
-  --brand-green: oklch(56.04% 0.148 151.7deg);
-  --brand-white: oklch(96.8% 0.007 115.7deg);
-  --brand-red: oklch(54.7% 0.204 25.4deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -136,11 +127,6 @@ button, input, select, textarea {
   --neutral-eaeaea: oklch(93.7% 0 89.9deg);
   --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
   --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
-  --accent-green: oklch(88.08% 0.206 158.1deg);
-  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
-  --accent-yellow: oklch(86.15% 0.142 82.7deg);
-  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
-  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
   --discord: oklch(57.74% 0.209 273.9deg);
   --youtube: oklch(62.8% 0.258 29.2deg);
   --twitch: oklch(59.08% 0.255 296.1deg);
@@ -167,16 +153,13 @@ button, input, select, textarea {
   --subnav-bg: oklch(100% 0.04 86.1deg);
   --button-bg: oklch(83.68% 0.045 80.5deg);
   --button-secondary-bg: oklch(83.68% 0.045 80.5deg);
+  --border: oklch(75% 0.02 80deg);
   --divider: oklch(81.85% 0.018 18.1deg);
-  --cpal-1: oklch(0% 0 0deg);
+  --cpal-1: black;
   --cpal-3: oklch(26.2% 0.145 281.1deg);
   --cpal-4: oklch(50.28% 0.239 287deg);
   --cpal-5: oklch(100% 0 89.9deg);
   --cpal-6: oklch(66.77% 0.132 161.8deg);
-  --brand-orange: oklch(84.68% 0.172 87.6deg);
-  --brand-green: oklch(56.04% 0.148 151.7deg);
-  --brand-white: oklch(96.8% 0.007 115.7deg);
-  --brand-red: oklch(54.7% 0.204 25.4deg);
   --neutral-111: oklch(17.76% 0 89.9deg);
   --neutral-191919: oklch(21.34% 0 89.9deg);
   --neutral-333: oklch(32.11% 0 89.9deg);
@@ -186,11 +169,6 @@ button, input, select, textarea {
   --neutral-eaeaea: oklch(93.7% 0 89.9deg);
   --neutral-f1f1f1: oklch(95.81% 0 89.9deg);
   --neutral-1e1e1e: oklch(23.5% 0 89.9deg);
-  --accent-green: oklch(88.08% 0.206 158.1deg);
-  --accent-green-hover: oklch(74.54% 0.17 159.4deg);
-  --accent-yellow: oklch(86.15% 0.142 82.7deg);
-  --brand-green-darker-15: oklch(41.04% 0.148 151.7deg);
-  --brand-green-darker-5: oklch(51.04% 0.148 151.7deg);
   --discord: oklch(57.74% 0.209 273.9deg);
   --youtube: oklch(62.8% 0.258 29.2deg);
   --twitch: oklch(59.08% 0.255 296.1deg);
@@ -477,9 +455,9 @@ strong {
 
 :root {
   --form-bg: #f8f9fa;
-  --form-focus-border: oklch(26.2% 0.145 281.1deg);
+  --form-focus-border: lightblue;
   --form-placeholder: #6b7280;
-  --form-accent: oklch(26.2% 0.145 281.1deg);
+  --form-accent: lightblue;
   --button-bg-hover: #e9ecef;
   --accent-red: #dc3545;
   --accent-green: #28a745;
@@ -488,9 +466,9 @@ strong {
 
 .dark {
   --form-bg: #1a1a1a;
-  --form-focus-border: oklch(26.2% 0.145 281.1deg);
+  --form-focus-border: lightblue;
   --form-placeholder: #9ca3af;
-  --form-accent: oklch(26.2% 0.145 281.1deg);
+  --form-accent: lightblue;
   --button-bg-hover: #374151;
   --accent-red: #f87171;
   --accent-green: #4ade80;
@@ -1525,7 +1503,11 @@ header .h-spacer {
   flex-grow: 1;
 }
 header button {
+  color: var(--nav-item-fg);
   padding: 0 0.5rem;
+}
+header button path {
+  fill: var(--nav-item-fg);
 }
 @media screen and (min-width: 1440px) {
   header .container .navigation ul li a {

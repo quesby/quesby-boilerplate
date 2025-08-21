@@ -47,7 +47,11 @@ header {
         flex-grow: 1;
     }
     button {
+        color: var(--nav-item-fg);
         padding: 0 .5rem;
+        path {
+            fill: var(--nav-item-fg);
+        }
     }
     @include respond-to(laptop) {
         .container {

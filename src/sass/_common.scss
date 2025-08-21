@@ -308,9 +308,9 @@ strong {
 // Variabili specifiche per i temi delle form
 :root {
     --form-bg: #f8f9fa;
-    --form-focus-border: #{$cpal-3};
+    --form-focus-border: lightblue;
     --form-placeholder: #6b7280;
-    --form-accent: #{$cpal-3};
+    --form-accent: lightblue;
     --button-bg-hover: #e9ecef;
     --accent-red: #dc3545;
     --accent-green: #28a745;
@@ -320,9 +320,9 @@ strong {
 // Dark theme form override
 .dark {
     --form-bg: #1a1a1a;
-    --form-focus-border: #{$cpal-3};
+    --form-focus-border: lightblue;
     --form-placeholder: #9ca3af;
-    --form-accent: #{$cpal-3};
+    --form-accent: lightblue;
     --button-bg-hover: #374151;
     --accent-red: #f87171;
     --accent-green: #4ade80;

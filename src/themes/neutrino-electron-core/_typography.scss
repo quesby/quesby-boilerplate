@@ -1,0 +1,146 @@
+// TYPOGRAPHY - defines all the typography
+@font-face {
+  font-family: 'Geist';
+  src: url('/assets/fonts/Geist-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/assets/fonts/GeistMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 500;
+  font-stretch: 75% 125%;
+}
+
+$typo-header-items: (
+  style: normal,
+  variant: normal,
+  weight: 400,
+  size: 1.2rem,
+  lineHeight: 1,
+  family: $font-headers,
+  transform: uppercase
+);
+$typo-slogans: (
+  style: normal,
+  variant: normal,
+  weight: 700,
+  size: 2.75rem,
+  lineHeight: 1,
+  family: $font-slogans,
+  transform: uppercase
+);
+$typo-section-titles: (
+  style: normal,
+  variant: normal,
+  weight: 300,
+  size: 4rem,
+  lineHeight: 1,
+  family: $font-headers,
+  transform: uppercase
+);
+$typo-title-2: (
+  style: normal,
+  variant: normal,
+  weight: 100,
+  size: 6rem,
+  lineHeight: 1,
+  family: $font-headers,
+);
+$typo-title-4: (
+  style: normal,
+  variant: normal,
+  weight: 100,
+  size: 2.5rem,
+  lineHeight: 1,
+  family: $font-headers,
+);
+
+body {
+    font-family: $font-text;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+}
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: .25rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headers;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: $margin;
+}
+h1 {
+  @include respond-to(desktop) {
+    font-size: 4.5rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 4.5rem;
+  }
+  @include respond-to(tablet) {
+    font-size: 4.5rem;
+  }
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 2.75em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+}
+strong {
+  //font-weight: bold;
+}
+.button {
+  font-family: $font-headers;
+}
+
+//classes
+.material-symbols {
+  @include apply-map($typo-material);
+}
+.heading-2 {
+  @include font($typo-title-2);
+}
+.heading-4 {
+  @include font($typo-title-4);
+}
+#slogan {
+  .subtitle {
+    font-size: 2em;
+    font-weight: 200;
+  }
+}
+.page-title {
+  display: flex;
+  border-bottom: 3px solid color-mix(in srgb, var(--cpal-5) 35%, transparent);
+  padding: 0 0 25px 0;
+  margin: 35px 0 75px 0;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1.5px);
+    flex-grow: 1;
+    height: 3px;
+    background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
+  }
+}
+.slogan {
+  @include font($typo-slogans);
+  @include respond-to(smartphone) {
+    font-size: 1rem;
+  }
+}
