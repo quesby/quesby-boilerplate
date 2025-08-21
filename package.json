@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cross-env eleventy --serve",
-    "build": "cross-env eleventy",
-    "watch:css": "dotenv -e .env -- cross-env sass --watch src/sass:src/assets/css src/themes/$THEME:src/assets/css",
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "watch:css": "node scripts/watch.js",
     "build:css": "node scripts/build.js",
-    "serve": "concurrently \"npm run watch:css\" \"cross-env npx @11ty/eleventy --serve\"",
+    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
     "serve:no-watch": "npx @11ty/eleventy --watch"
   },
   "dependencies": {

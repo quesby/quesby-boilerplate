@@ -54,6 +54,302 @@ button, input, select, textarea {
   .item {
     flex: 1 1 auto; // Example for flex property on flex items
   } */
+@font-face {
+  font-family: "Geist";
+  src: url("/assets/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 500;
+  font-stretch: 75% 125%;
+}
+@font-face {
+  font-family: "Material Symbols";
+  src: url("/static/fonts/MaterialSymbolsRounded-vf.woff2") format("woff2"), url("/static/fonts/MaterialSymbolsRounded-vf.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Geist", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Geist", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.75em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  font-family: "Geist", sans-serif;
+}
+
+.material-symbols {
+  font-family: "Material Symbols";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+}
+
+.heading-2 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  font-size: 6rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+}
+
+.heading-4 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+}
+
+#slogan .subtitle {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.page-title {
+  display: flex;
+  border-bottom: 3px solid color-mix(in srgb, var(--cpal-5) 35%, transparent);
+  padding: 0 0 25px 0;
+  margin: 35px 0 75px 0;
+}
+.page-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1.5px);
+  flex-grow: 1;
+  height: 3px;
+  background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
+}
+
+.slogan {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 650px) {
+  .slogan {
+    font-size: 1rem;
+  }
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/assets/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 500;
+  font-stretch: 75% 125%;
+}
+body {
+  font-family: "Geist", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Geist", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1920px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.75em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  font-family: "Geist", sans-serif;
+}
+
+.material-symbols {
+  font-family: "Material Symbols";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+}
+
+.heading-2 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  font-size: 6rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+}
+
+.heading-4 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+}
+
+#slogan .subtitle {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.page-title {
+  display: flex;
+  border-bottom: 3px solid color-mix(in srgb, var(--cpal-5) 35%, transparent);
+  padding: 0 0 25px 0;
+  margin: 35px 0 75px 0;
+}
+.page-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1.5px);
+  flex-grow: 1;
+  height: 3px;
+  background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
+}
+
+.slogan {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1;
+  font-family: "Geist", sans-serif;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 650px) {
+  .slogan {
+    font-size: 1rem;
+  }
+}
+
 :root {
   --text-fg: oklch(31.85% 0.018 18.1deg);
   --link-fg: rgb(229.5, 229.5, 229.5);
@@ -271,188 +567,6 @@ strong {
   max-width: 1440px;
 }
 
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--text-fg);
-  transition: color 0.3s ease;
-}
-.form-label.required::after {
-  content: " *";
-  color: var(--accent-red, #dc3545);
-  font-weight: 700;
-}
-
-.form-input,
-.form-textarea,
-.form-select {
-  width: 100%;
-  padding: 0.875rem 1rem;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: var(--form-bg, var(--site-bg-2));
-  color: var(--text-fg);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-.form-input:focus,
-.form-textarea:focus,
-.form-select:focus {
-  outline: none;
-  border-color: var(--form-focus-border, var(--cpal-3));
-  box-shadow: 0 0 0 4px rgba(58, 209, 195, 0.1);
-  transform: translateY(-1px);
-}
-.form-input:hover,
-.form-textarea:hover,
-.form-select:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transform: translateY(-1px);
-}
-.form-input::placeholder,
-.form-textarea::placeholder,
-.form-select::placeholder {
-  color: var(--form-placeholder, var(--text-fg));
-  opacity: 0.6;
-}
-.form-input.error,
-.form-textarea.error,
-.form-select.error {
-  border-color: var(--accent-red, #dc3545);
-  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
-}
-.form-input.success,
-.form-textarea.success,
-.form-select.success {
-  border-color: var(--accent-green, #28a745);
-  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.1);
-}
-
-.form-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-select {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
-  appearance: none;
-}
-
-.form-checkbox,
-.form-radio {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-.form-checkbox input[type=checkbox],
-.form-checkbox input[type=radio],
-.form-radio input[type=checkbox],
-.form-radio input[type=radio] {
-  width: 1.25rem;
-  height: 1.25rem;
-  accent-color: var(--form-accent, var(--cpal-3));
-  cursor: pointer;
-}
-.form-checkbox label,
-.form-radio label {
-  cursor: pointer;
-  user-select: none;
-  color: var(--text-fg);
-}
-
-.form-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--button-fg);
-  background: linear-gradient(135deg, var(--button-bg) 0%, var(--button-bg-hover, var(--button-bg)) 100%);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.form-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-.form-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.form-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.form-button.primary {
-  background: linear-gradient(135deg, var(--cpal-3) 0%, var(--cpal-6) 100%);
-  color: white;
-}
-.form-button.secondary {
-  background: linear-gradient(135deg, var(--neutral-333) 0%, var(--neutral-555) 100%);
-  color: white;
-}
-.form-button.outline {
-  background: transparent;
-  border: 2px solid var(--button-bg);
-  color: var(--button-bg);
-}
-.form-button.outline:hover {
-  background: var(--button-bg);
-  color: var(--button-fg);
-}
-
-.form-message {
-  margin-top: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-.form-message.error {
-  background-color: rgba(220, 53, 69, 0.1);
-  color: var(--accent-red, #dc3545);
-  border: 1px solid rgba(220, 53, 69, 0.2);
-}
-.form-message.success {
-  background-color: rgba(40, 167, 69, 0.1);
-  color: var(--accent-green, #28a745);
-  border: 1px solid rgba(40, 167, 69, 0.2);
-}
-.form-message.info {
-  background-color: rgba(0, 123, 255, 0.1);
-  color: var(--accent-blue, #007bff);
-  border: 1px solid rgba(0, 123, 255, 0.2);
-}
-
 :root {
   --form-bg: #f8f9fa;
   --form-focus-border: lightblue;
@@ -511,62 +625,6 @@ strong {
     transform: translateY(0);
   }
 }
-.form-container {
-  animation: formSlideIn 0.6s ease-out;
-}
-
-.search-form {
-  position: relative;
-}
-.search-form .form-input {
-  padding-right: 3rem;
-}
-.search-form .search-button {
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: var(--form-placeholder);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-.search-form .search-button:hover {
-  color: var(--form-accent);
-  background-color: rgba(58, 209, 195, 0.1);
-}
-
-.contact-form .form-group:last-child {
-  margin-bottom: 2rem;
-}
-.contact-form .form-button {
-  min-width: 200px;
-}
-
-.auth-form {
-  max-width: 400px;
-}
-.auth-form .form-button {
-  width: 100%;
-  margin-top: 1rem;
-}
-.auth-form .form-footer {
-  text-align: center;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--divider);
-}
-.auth-form .form-footer a {
-  color: var(--form-accent);
-  text-decoration: none;
-}
-.auth-form .form-footer a:hover {
-  text-decoration: underline;
-}
-
 .boxed {
   display: block;
   width: 100%;
@@ -1287,155 +1345,242 @@ button {
     margin-bottom: 1.5rem;
   }
 }
-@font-face {
-  font-family: "Geist";
-  src: url("/assets/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
-  font-weight: 100 900;
-  font-stretch: 75% 125%;
-}
-@font-face {
-  font-family: "Geist Mono";
-  src: url("/assets/fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations");
-  font-weight: 100 500;
-  font-stretch: 75% 125%;
-}
-@font-face {
-  font-family: "Material Symbols";
-  src: url("/static/fonts/MaterialSymbolsRounded-vf.woff2") format("woff2"), url("/static/fonts/MaterialSymbolsRounded-vf.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-body {
-  font-family: "Geist", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 15px;
+.form-container {
+  animation: formSlideIn 0.6s ease-out;
 }
 
-p {
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 0.25rem;
+.search-form {
+  position: relative;
+}
+.search-form .form-input {
+  padding-right: 3rem;
+}
+.search-form .search-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--form-placeholder);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.search-form .search-button:hover {
+  color: var(--form-accent);
+  background-color: rgba(58, 209, 195, 0.1);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Geist", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+.contact-form .form-group:last-child {
+  margin-bottom: 2rem;
+}
+.contact-form .form-button {
+  min-width: 200px;
 }
 
-h1 {
-  font-size: 1.5rem;
+.auth-form {
+  max-width: 400px;
 }
-@media screen and (min-width: 1920px) {
-  h1 {
-    font-size: 4.5rem;
-  }
+.auth-form .form-button {
+  width: 100%;
+  margin-top: 1rem;
 }
-@media screen and (min-width: 1440px) {
-  h1 {
-    font-size: 4.5rem;
-  }
+.auth-form .form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--divider);
 }
-@media screen and (min-width: 1024px) {
-  h1 {
-    font-size: 4.5rem;
-  }
-}
-
-h2 {
-  font-size: 2.75em;
-}
-
-h3 {
-  font-size: 1.75em;
-}
-
-h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-a {
+.auth-form .form-footer a {
+  color: var(--form-accent);
   text-decoration: none;
 }
-
-.button {
-  font-family: "Geist", sans-serif;
+.auth-form .form-footer a:hover {
+  text-decoration: underline;
 }
 
-.material-symbols {
-  font-family: "Material Symbols";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-feature-settings: "liga";
-  font-feature-settings: "liga";
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.heading-2 {
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 100;
-  font-size: 6rem;
-  line-height: 1;
-  font-family: "Geist", sans-serif;
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.heading-4 {
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 100;
-  font-size: 2.5rem;
-  line-height: 1;
-  font-family: "Geist", sans-serif;
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-fg);
+  transition: color 0.3s ease;
 }
-
-#slogan .subtitle {
-  font-size: 2em;
-  font-weight: 200;
-}
-
-.page-title {
-  display: flex;
-  border-bottom: 3px solid color-mix(in srgb, var(--cpal-5) 35%, transparent);
-  padding: 0 0 25px 0;
-  margin: 35px 0 75px 0;
-}
-.page-title:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: calc(50% - 1.5px);
-  flex-grow: 1;
-  height: 3px;
-  background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
-}
-
-.slogan {
-  font-style: normal;
-  font-variant: normal;
+.form-label.required::after {
+  content: " *";
+  color: var(--accent-red, #dc3545);
   font-weight: 700;
-  font-size: 2.75rem;
-  line-height: 1;
-  font-family: "Geist", sans-serif;
-  text-transform: uppercase;
 }
-@media screen and (min-width: 650px) {
-  .slogan {
-    font-size: 1rem;
-  }
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--form-bg, var(--site-bg-2));
+  color: var(--text-fg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--form-focus-border, var(--cpal-3));
+  box-shadow: 0 0 0 4px rgba(58, 209, 195, 0.1);
+  transform: translateY(-1px);
+}
+.form-input:hover,
+.form-textarea:hover,
+.form-select:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+.form-input::placeholder,
+.form-textarea::placeholder,
+.form-select::placeholder {
+  color: var(--form-placeholder, var(--text-fg));
+  opacity: 0.6;
+}
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  border-color: var(--accent-red, #dc3545);
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
+}
+.form-input.success,
+.form-textarea.success,
+.form-select.success {
+  border-color: var(--accent-green, #28a745);
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.1);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+.form-checkbox,
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.form-checkbox input[type=checkbox],
+.form-checkbox input[type=radio],
+.form-radio input[type=checkbox],
+.form-radio input[type=radio] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--form-accent, var(--cpal-3));
+  cursor: pointer;
+}
+.form-checkbox label,
+.form-radio label {
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-fg);
+}
+
+.form-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--button-fg);
+  background: linear-gradient(135deg, var(--button-bg) 0%, var(--button-bg-hover, var(--button-bg)) 100%);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.form-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.form-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.form-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.form-button.primary {
+  background: linear-gradient(135deg, var(--cpal-3) 0%, var(--cpal-6) 100%);
+  color: white;
+}
+.form-button.secondary {
+  background: linear-gradient(135deg, var(--neutral-333) 0%, var(--neutral-555) 100%);
+  color: white;
+}
+.form-button.outline {
+  background: transparent;
+  border: 2px solid var(--button-bg);
+  color: var(--button-bg);
+}
+.form-button.outline:hover {
+  background: var(--button-bg);
+  color: var(--button-fg);
+}
+
+.form-message {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.form-message.error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--accent-red, #dc3545);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+.form-message.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--accent-green, #28a745);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+.form-message.info {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--accent-blue, #007bff);
+  border: 1px solid rgba(0, 123, 255, 0.2);
 }
 
 header {
@@ -1515,45 +1660,6 @@ header button path {
   }
 }
 
-h1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: wrap;
-  flex-wrap: nowrap;
-}
-h1 span:first-child {
-  font-size: 1.55em;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-}
-h1 span:last-child {
-  font-weight: 300;
-  letter-spacing: 0.75em;
-}
-
-h2 {
-  font-size: 1.1rem;
-  font-weight: 300;
-  text-transform: none;
-}
-
-#main .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: wrap;
-  flex-wrap: nowrap;
-  min-height: 100vh;
-}
-
-@media screen and (min-width: 1440px) {
-  h2 {
-    font-size: 2rem;
-  }
-}
 @media screen and (min-width: 650px) {
   body {
     font-size: 16px;
