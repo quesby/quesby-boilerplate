@@ -1,4 +1,7 @@
-@use 'sass:use';
+// Core (do not touch in themes)
+@use 'sass:map';
 @use 'sass:color';
+@use '../../sass/core';
 
-@forward '_variables.scss';
+@use 'theme-variables';
+

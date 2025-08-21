@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "eleventy --serve",
-    "build": "eleventy",
-    "build:css": "sass src/sass:src/assets/css",
-    "watch:css": "sass --watch src/sass:src/assets/css",
-    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
+    "dev": "cross-env eleventy --serve",
+    "build": "cross-env eleventy",
+    "watch:css": "dotenv -e .env -- cross-env sass --watch src/sass:src/assets/css src/themes/$THEME:src/assets/css",
+    "build:css": "node scripts/build.js",
+    "serve": "concurrently \"npm run watch:css\" \"cross-env npx @11ty/eleventy --serve\"",
     "serve:no-watch": "npx @11ty/eleventy --watch"
   },
   "dependencies": {
@@ -18,5 +18,10 @@
     "markdown-it": "^14.1.0",
     "markdown-it-link-attributes": "^4.0.1",
     "sass": "^1.79.4"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "dotenv-cli": "^10.0.0"
   }
 }
