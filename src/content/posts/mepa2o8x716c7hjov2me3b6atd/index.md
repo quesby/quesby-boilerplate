@@ -11,4 +11,11 @@ aliases: []
 tags: []
 draft: false
 ---
-test
+# Come aggiornare Astro
+
+Puoi usare il comando `@astrojs/upgrade`{.label} per aggiornare un progetto esistente.
+
+Oppure installarlo manualmente con `npm install astro@latest`{.command}, `pnpm upgrade astro --latest`{.command} o `yarn upgrade astro --latest`{.command}.
+
+Le variabili d'ambiente possono essere gestite con `import.meta.env`{.label}, introdotto in Astro 5.0.
+

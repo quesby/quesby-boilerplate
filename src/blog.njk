@@ -1,0 +1,31 @@
+---
+title: Neutrino - Electron | Blog
+layout: layouts/base.njk
+class: blog
+style: blog.css
+---
+<section>
+    <div class="boxed">
+        <h1>Blog</h1>
+        <h2>Si ma porkudìgel!</h2>
+    </div>
+</section>
+
+<section id="blog" class="blog-wrapper boxed">
+  {% for post in collections.posts %}
+    <div class="post">
+      <a href="/blog/{{ post.fileSlug }}">
+        <div class="post-wrapper">
+          {% if post.data.image %}
+            <img src="/content/posts/{{ post.fileSlug }}/{{ post.data.image }}" alt="{{ post.data.title }}" width="600" loading="lazy">
+          {% endif %}
+
+          <div class="post-summary">
+            <h3 class="post-title">{{ post.data.title }}</h3>
+            <p class="post-excerpt">{{ post.data.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
