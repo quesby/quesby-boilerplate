@@ -4,5 +4,6 @@
     "description": "An Eleventy boilerplate with Decap CMS",
     "logo": "/assets/logo.png",
     "favicon": "/assets/favicon.ico",
-    "theme": "neutrino-electron-core"
+    "theme": "neutrino-electron-core",
+    "contentPath": "C:/Users/Emiliano/Documents/00 - Emiliano Important/00 - Privat/GPS/Neutrino-Contents"
 }
