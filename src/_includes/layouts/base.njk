@@ -44,7 +44,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/skin.css">
 </head>
-<body>
+<body class="{{ class }}">
   {% include "partials/header.njk" %}
   <main>{{ content | safe }}</main>
   {% include "partials/footer.njk" %}
