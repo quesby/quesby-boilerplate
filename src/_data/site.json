@@ -5,5 +5,5 @@
     "logo": "/assets/logo.png",
     "favicon": "/assets/favicon.ico",
     "theme": "neutrino-electron-core",
-    "contentPath": "C:/Users/Emiliano/Documents/00 - Emiliano Important/00 - Privat/GPS/Neutrino-Contents"
+    "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
