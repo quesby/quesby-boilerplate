@@ -1,4 +1,5 @@
 // import Image from "@11ty/eleventy-img";
+import slugify from "slugify";
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
@@ -121,6 +122,33 @@ export default function(eleventyConfig) {
     console.log(`[📝] Collection posts: trovati ${posts.length} post`);
     console.log(`[🔍] Pattern usato: src/content/posts/*/*.md`);
     return posts;
+  });
+
+  eleventyConfig.addFilter("slugify", str =>
+    slugify(str, { lower: true, strict: true })
+  );
+
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => {
+      const input = (data.page?.inputPath || "").replace(/\\/g, "/");
+      if (input.includes("/content/posts/")) {
+        // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
+        const slug = data.slug || data.page.fileSlug;
+        return `/blog/${slug}/`;
+      }
+      return data.permalink;
+    },
+    layout: (data) => {
+      const input = (data.page?.inputPath || "").replace(/\\/g, "/");
+      if (input.includes("/content/posts/")) return "layouts/single-post.njk";
+      return data.layout;
+    },
+    tags: (data) => {
+      const input = (data.page?.inputPath || "").replace(/\\/g, "/");
+      if (!input.includes("/content/posts/")) return data.tags;
+      const prev = Array.isArray(data.tags) ? data.tags : (data.tags ? [data.tags] : []);
+      return Array.from(new Set([...prev, "blog"]));
+    },
   });
 
   return {

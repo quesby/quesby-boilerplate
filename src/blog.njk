@@ -3,6 +3,7 @@ title: Neutrino - Electron | Blog
 layout: layouts/base.njk
 class: blog
 style: blog.css
+permalink: /blog/
 ---
 <section>
     <div class="boxed">
@@ -14,7 +15,7 @@ style: blog.css
 <section id="blog" class="blog-wrapper boxed">
   {% for post in collections.posts %}
     <div class="post">
-      <a href="/blog/{{ post.fileSlug }}">
+      <a href="/blog/{{ post.data.slug }}/">
         <div class="post-wrapper">
           {% if post.data.image %}
             <img src="/content/posts/{{ post.fileSlug }}/{{ post.data.image }}" alt="{{ post.data.title }}" width="600" loading="lazy">
