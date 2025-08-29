@@ -1,6 +1,6 @@
 ---
 id: 01J4QW0Z9K6QH8E6Z2GQW7C1ZR
-title: Breaking News: ULID System Successfully Implemented
+title: "Breaking News: ULID System Successfully Implemented"
 slug: breaking-news-ulid-system-successfully-implemented
 description: Major milestone achieved as the new ULID-based content management system goes live.
 date: '2025-08-22'
