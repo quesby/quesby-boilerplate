@@ -4,17 +4,19 @@ layout: layouts/base.njk
 class: single-post
 style: single-post.css
 ---
-<article class="post">
-    <div class="feature-image">
-        {% if image %}
-            <img src="/content/posts/{{ page.fileSlug }}/{{ image }}" alt="{{ title }}" width="600" loading="lazy">
-        {% endif %}
-    </div>
-    <header class="boxed">
-        <h1 class="page-title">{{ title }}</h1>
-        <h2 class="page-subtitle">Si ma porkudìgel!</h2>
-        <p class="post-excerpt">{{ description }}</p>
-    </header>
-    <div class="boxed">{{ content | safe }}</div>
-    <footer></footer>
-</article>
+<div class="single-post container">
+    <article class="post">
+        <div class="feature-image">
+            {% if image %}
+                <img src="/content/posts/{{ page.fileSlug }}/{{ image }}" alt="{{ title }}" width="600" loading="lazy">
+            {% endif %}
+        </div>
+        <header class="boxed">
+            <h1 class="page-title">{{ title }}</h1>
+            <h2 class="page-subtitle">Si ma porkudìgel!</h2>
+            <p class="post-excerpt">{{ description }}</p>
+        </header>
+        <div class="boxed">{{ content | safe }}</div>
+        <footer></footer>
+    </article>
+</div>
