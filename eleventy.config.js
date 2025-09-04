@@ -167,8 +167,8 @@ export default function(eleventyConfig) {
     }
   });
 
-  // Filter to include markdown files
-  eleventyConfig.addFilter("includeMarkdown", function(markdownPath) {
+  // Filter to include markdown files with Expressive Code support
+  eleventyConfig.addFilter("includeMarkdown", async function(markdownPath) {
     try {
       // Path relative to src/_includes directory
       const fullPath = path.join(process.cwd(), 'src', '_includes', markdownPath);
@@ -179,7 +179,10 @@ export default function(eleventyConfig) {
       if (fs.existsSync(fullPath)) {
         const markdownContent = fs.readFileSync(fullPath, 'utf-8');
         console.log(`✅ Successfully loaded: ${markdownPath}`);
-        return md.render(markdownContent);
+        
+        // Usa il processore unified con Expressive Code
+        const result = await processor.process(markdownContent);
+        return result.toString();
       } else {
         console.warn(`⚠️  Markdown file not found: ${fullPath}`);
         return `<p>⚠️ Content not found: ${markdownPath}</p>`;

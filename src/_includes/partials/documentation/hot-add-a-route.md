@@ -11,7 +11,7 @@ That's it!
 Let's suppose we want to add a new page called "Greetings".
 We'll create the template /src/greetings.njk.
 Then we'll add the following code in eleventy.config.js in the **// Routes** section before return data.permalink;
-````js
+```js
 if (input.includes("/content/greetings/")) {
     // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
     const slug = data.slug || data.page.fileSlug;
