@@ -170,23 +170,3 @@ ol {
     font-weight: 200;
   }
 }
-.page-title {
-  display: flex;
-  padding: 0 0 25px 0;
-  margin: 35px 0 75px 0;
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: calc(50% - 1.5px);
-    flex-grow: 1;
-    height: 3px;
-    background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
-  }
-}
-.slogan {
-  @include font($typo-slogans);
-  @include respond-to(smartphone) {
-    font-size: 1rem;
-  }
-}

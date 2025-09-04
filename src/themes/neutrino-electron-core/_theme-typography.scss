@@ -71,66 +71,70 @@ p {
   line-height: 1.5;
   margin-bottom: .25rem;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-headers;
-  margin-bottom: ($margin * 0.5);
-  &:not(:first-child) {
-    margin-top: $margin * 1.75;
-  }
-}
-h3, h4, h5, h6 {
-  font-weight: 200;
-}
+
+// Better scaling ratios (max 50% increase instead of 100%+)
 h1 {
-  font-weight: 900;
-  font-size: 2.25rem;
-  @include respond-to(tablet) {
-    font-size: 4.5rem;
-  }
-  @include respond-to(laptop) {
-    font-size: 4.5rem;
-  }
-  @include respond-to(desktop) {
-    font-size: 4.5rem;
-  }
+  font-size: 2.5rem;    // Mobile
+  @include respond-to(tablet) { font-size: 3rem; }    // +20%
+  @include respond-to(laptop) { font-size: 3.5rem; }  // +17%
+  @include respond-to(desktop) { font-size: 4rem; }   // +14%
 }
+
 h2 {
-  font-weight: 900;
-  font-size: 1.75rem;
-  @include respond-to(tablet) {
-    font-size: 1.75rem;
-  }
-  @include respond-to(laptop) {
-    font-size: 2.75rem;
-  }
-  @include respond-to(desktop) {
-    font-size: 3.75rem;
-  }
+  font-size: 2rem;      // Mobile  
+  @include respond-to(tablet) { font-size: 2.25rem; } // +12.5%
+  @include respond-to(laptop) { font-size: 2.5rem; }  // +11%
+  @include respond-to(desktop) { font-size: 2.75rem; } // +10%
 }
+
 h3 {
-  font-size: 1.25rem;
-  @include respond-to(tablet) {
-    font-size: 1.5rem;
-  }
-  @include respond-to(laptop) {
-    font-size: 1.75rem;
-  }
-  @include respond-to(desktop) {
-    font-size: 2.75rem;
-  }
+  font-size: 1.5rem;    // Mobile
+  @include respond-to(tablet) { font-size: 1.75rem; } // +17%
+  @include respond-to(laptop) { font-size: 2rem; }    // +14%
+  @include respond-to(desktop) { font-size: 2.25rem; } // +12.5%
 }
+
 h4 {
-  font-size: 1.1rem;
-  @include respond-to(tablet) {
-    font-size: 1.25rem;
-  }
-  @include respond-to(laptop) {
-    font-size: 1.45rem;
-  }
-  @include respond-to(desktop) {
-    font-size: 2rem;
-  }
+  font-size: 1.25rem;   // Mobile
+  @include respond-to(tablet) { font-size: 1.375rem; } // +10%
+  @include respond-to(laptop) { font-size: 1.5rem; }   // +9%
+  @include respond-to(desktop) { font-size: 1.625rem; } // +8%
 }
+
+h1 { font-weight: 800; } // Heavy - most important
+h2 { font-weight: 700; } // Bold - second level
+h3 { font-weight: 600; } // Semi-bold - third level
+h4 { font-weight: 500; } // Medium - fourth level
+h5 { font-weight: 400; } // Regular - fifth level
+h6 { font-weight: 300; } // Light - least important
+// Current issue: H1 and H2 both use 900, H3-H6 all use 200
+
+h1, h2 { 
+  line-height: 1.1;  // Tight for large text (prevents too much spacing)
+}
+
+h3, h4 { 
+  line-height: 1.2;  // Slightly loose for medium text
+}
+
+h5, h6 { 
+  line-height: 1.3;  // More readable for smaller headings
+}
+
+body, p { 
+  line-height: 1.6;  // Better readability than current 1.5
+}
+
+// Current issue: All typography maps use lineHeight: 1 (too tight)
+
+// Fix body font-size (currently decreases on larger screens)
+body {
+  font-size: 16px;  // Mobile
+  @include respond-to(tablet) { font-size: 17px; }  // +6%
+  @include respond-to(laptop) { font-size: 18px; }  // +6%
+  @include respond-to(desktop) { font-size: 19px; } // +6%
+}
+
 a {
   text-decoration: none;
 }
@@ -155,27 +159,5 @@ strong {
   .subtitle {
     font-size: 2em;
     font-weight: 200;
-  }
-}
-.page-title {
-  display: flex;
-  margin: $margin 0;
-  @include respond-to(tablet) {
-    margin: 35px 0 75px 0;
-  }
-  &:after {
-    // content: "";
-    position: absolute;
-    left: 0;
-    top: calc(50% - 1.5px);
-    flex-grow: 1;
-    height: 3px;
-    background-color: color-mix(in srgb, var(--cpal-5) 35%, transparent);
-  }
-}
-.slogan {
-  @include font($typo-slogans);
-  @include respond-to(smartphone) {
-    font-size: 1rem;
   }
 }

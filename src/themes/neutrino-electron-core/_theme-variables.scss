@@ -29,13 +29,13 @@ $theme-light: (
 
 // DARK THEME
 $theme-dark: (
-  text-fg: white,
-  link-fg: color.adjust(white, $lightness: -10%),
+  text-fg: oklch(93% 0 0),
+  link-fg: oklch(68% 50% 265),
   headlines-fg: oklch(100.00% 0.000 89.9),
-  nav-item-fg: white,
+  nav-item-fg: oklch(93% 0 0),
   button-fg: white,
   button-secondary-fg: black,
-  site-bg: black,
+  site-bg: oklch(8% 0 0),
   site-bg-2: oklch(17.76% 0.000 89.9),
   site-bg-hover: color.adjust(black, $lightness: 5%),
   site-bg-radial: radial-gradient(oklch(17.76% 0.000 89.9) 25%, black),

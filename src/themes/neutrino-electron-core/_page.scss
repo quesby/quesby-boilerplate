@@ -1,0 +1,28 @@
+.page {
+    main {
+        max-width: 1024px;
+        margin: 0 auto;
+        .container {
+            max-width: 896px;
+            padding: 0 ($padding * 3);
+        }
+        section {
+            margin-bottom: $margin * 2;
+        }
+        .featured-image {
+            img {
+                width: 100%;
+                aspect-ratio: 16/7;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .page-header {
+            margin-top: -100px;
+            .container {
+                background-color: var(--site-bg);
+                padding: ($padding * 2) ($padding * 3);
+            }
+        }
+    }
+}

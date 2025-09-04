@@ -1,22 +1,25 @@
 ---
 title: Neutrino - Electron | Documentation
 layout: layouts/base.njk
-class: documentation
+class: page documentation
 style: documentation.css
 permalink: /documentation/
 ---
-<section>
-    <div class=" container boxed">
+
+<section class="featured-image">
+    <img src="/assets/images/documentation/ai-gen.webp" alt="Documentation" />
+</section>
+
+<section class="page-header">
+    <div class="container boxed">
         <h1 class="page-title">Documentation</h1>
         <h2 class="page-subtitle">A guide to the Neutrino Boilerplate.</h2>
-        <div class="intro">
-            <div class="flex-image">
-                <img src="/assets/images/documentation/ai-gen.webp" alt="Documentation" />
-            </div>
-            <div class="flex-content">
-                {{ "partials/documentation/intro.md" | includeMarkdown | safe }}
-            </div>
-        </div>
+    </div>
+</section>
+
+<section id="intro">
+    <div class="container boxed">
+        {{ "partials/documentation/intro.md" | includeMarkdown | safe }}
     </div>
 </section>
 
