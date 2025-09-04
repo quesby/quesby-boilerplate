@@ -114,8 +114,11 @@ ul, ol {
 .container {
     display: block;
     width: 100%;
-    padding: $padding;
+    padding: $padding * 0.25;
     margin: 0 auto;
+    @include respond-to(tablet) {
+        padding: $padding;
+    }
     &.boxed {
         max-width: 1440px;
     }

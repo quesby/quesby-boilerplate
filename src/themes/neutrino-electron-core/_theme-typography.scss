@@ -61,7 +61,10 @@ body {
     font-family: $font-text;
     font-weight: 300;
     font-style: normal;
-    font-size: 15px;
+    font-size: 18px;
+    @include respond-to(laptop) {
+      font-size: 16px;
+    }
 }
 p {
   font-weight: 300;
@@ -80,7 +83,7 @@ h3, h4, h5, h6 {
 }
 h1 {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   @include respond-to(tablet) {
     font-size: 4.5rem;
   }
@@ -93,7 +96,7 @@ h1 {
 }
 h2 {
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   @include respond-to(tablet) {
     font-size: 1.75rem;
   }
@@ -156,8 +159,10 @@ strong {
 }
 .page-title {
   display: flex;
-  padding: 0 0 25px 0;
-  margin: 35px 0 75px 0;
+  margin: $margin 0;
+  @include respond-to(tablet) {
+    margin: 35px 0 75px 0;
+  }
   &:after {
     // content: "";
     position: absolute;
