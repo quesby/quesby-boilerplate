@@ -1,5 +1,7 @@
 // import Image from "@11ty/eleventy-img";
 import slugify from "slugify";
+import MarkdownIt from 'markdown-it';
+import MarkdownItLinkAttributes from 'markdown-it-link-attributes';
 import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
@@ -128,6 +130,42 @@ export default function(eleventyConfig) {
     slugify(str, { lower: true, strict: true })
   );
 
+  // Configure markdown-it
+  const md = new MarkdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(MarkdownItLinkAttributes, {
+    pattern: /^https?:/,
+    attrs: {
+      target: '_blank',
+      rel: 'noopener'
+    }
+  });
+
+  // Filter to include markdown files
+  eleventyConfig.addFilter("includeMarkdown", function(markdownPath) {
+    try {
+      // Path relative to src/_includes directory
+      const fullPath = path.join(process.cwd(), 'src', '_includes', markdownPath);
+      
+      console.log(`🔍 Looking for markdown file: ${fullPath}`);
+      console.log(`🔍 File exists: ${fs.existsSync(fullPath)}`);
+      
+      if (fs.existsSync(fullPath)) {
+        const markdownContent = fs.readFileSync(fullPath, 'utf-8');
+        console.log(`✅ Successfully loaded: ${markdownPath}`);
+        return md.render(markdownContent);
+      } else {
+        console.warn(`⚠️  Markdown file not found: ${fullPath}`);
+        return `<p>⚠️ Content not found: ${markdownPath}</p>`;
+      }
+    } catch (error) {
+      console.error(`❌ Error loading ${markdownPath}:`, error);
+      return `<p>❌ Error loading content</p>`;
+    }
+  });
+
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: (data) => {
       const input = (data.page?.inputPath || "").replace(/\\/g, "/");
@@ -135,6 +173,11 @@ export default function(eleventyConfig) {
         // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
         const slug = data.slug || data.page.fileSlug;
         return `/blog/${slug}/`;
+      }
+      if (input.includes("/content/documentation/")) {
+        // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
+        const slug = data.slug || data.page.fileSlug;
+        return `/documentation/${slug}/`;
       }
       return data.permalink;
     },
