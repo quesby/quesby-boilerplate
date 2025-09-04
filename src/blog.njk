@@ -6,27 +6,29 @@ style: blog.css
 permalink: /blog/
 ---
 <section>
-    <div class="boxed">
+    <div class="container boxed">
         <h1 class="page-title">Blog</h1>
         <h2 class="page-subtitle">Si ma porkudìgel!</h2>
     </div>
 </section>
 
-<section id="blog" class="blog-wrapper boxed">
-  {% for post in collections.posts %}
-    <div class="post">
-      <a href="/blog/{{ post.data.slug }}/">
-        <div class="post-wrapper">
-          {% if post.data.image %}
-            <img src="/content/posts/{{ post.fileSlug }}/{{ post.data.image }}" alt="{{ post.data.title }}" width="600" loading="lazy">
-          {% endif %}
+<section id="blog">
+  <div class="container boxed blog-wrapper">
+    {% for post in collections.posts %}
+      <div class="post">
+        <a href="/blog/{{ post.data.slug }}/">
+          <div class="post-wrapper">
+            {% if post.data.image %}
+              <img src="/content/posts/{{ post.fileSlug }}/{{ post.data.image }}" alt="{{ post.data.title }}" width="600" loading="lazy">
+            {% endif %}
 
-          <div class="post-summary">
-            <h3 class="post-title">{{ post.data.title }}</h3>
-            <p class="post-excerpt">{{ post.data.description }}</p>
+            <div class="post-summary">
+              <h3 class="post-title">{{ post.data.title }}</h3>
+              <p class="post-excerpt">{{ post.data.description }}</p>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-  {% endfor %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
 </section>

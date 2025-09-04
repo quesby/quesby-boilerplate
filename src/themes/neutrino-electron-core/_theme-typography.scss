@@ -59,7 +59,7 @@ $typo-title-4: (
 
 body {
     font-family: $font-text;
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-size: 15px;
 }
@@ -70,14 +70,16 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-headers;
-  font-weight: 700;
-  // text-transform: uppercase;
   margin-bottom: ($margin * 0.5);
   &:not(:first-child) {
     margin-top: $margin * 1.75;
   }
 }
+h3, h4, h5, h6 {
+  font-weight: 200;
+}
 h1 {
+  font-weight: 900;
   font-size: 1.5rem;
   @include respond-to(tablet) {
     font-size: 4.5rem;
@@ -90,6 +92,7 @@ h1 {
   }
 }
 h2 {
+  font-weight: 900;
   font-size: 1.5rem;
   @include respond-to(tablet) {
     font-size: 1.75rem;
