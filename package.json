@@ -8,16 +8,25 @@
     "build": "eleventy",
     "watch:css": "node scripts/watch.js",
     "build:css": "node scripts/build.js",
+    "gen:ec-css": "node scripts/gen-ec-css.js",
     "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
     "serve:no-watch": "npx @11ty/eleventy --watch"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^4.0.2",
+    "@expressive-code/plugin-shiki": "^0.41.3",
     "concurrently": "^8.2.2",
+    "expressive-code": "^0.41.3",
     "markdown-it": "^14.1.0",
     "markdown-it-link-attributes": "^4.0.1",
-    "sass": "^1.79.4"
+    "rehype-expressive-code": "^0.41.3",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "sass": "^1.79.4",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "cross-env": "^10.0.0",

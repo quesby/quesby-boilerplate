@@ -6,6 +6,12 @@ import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
 import { execSync } from "child_process";
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeExpressiveCode from 'rehype-expressive-code';
+import rehypeStringify from 'rehype-stringify';
 
 dotenv.config();
 
@@ -129,6 +135,24 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("slugify", str =>
     slugify(str, { lower: true, strict: true })
   );
+
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeExpressiveCode, {
+      themes: ['github-light', 'github-dark'],
+      defaultProps: {
+        wrap: true
+      }
+    })
+    .use(rehypeStringify);
+
+  eleventyConfig.setLibrary("md", {
+    render(str) {
+      return processor.process(str).toString();
+    }
+  });
 
   // Configure markdown-it
   const md = new MarkdownIt({
