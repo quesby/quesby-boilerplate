@@ -21,4 +21,4 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outPath = path.resolve(__dirname, '../src/assets/css/expressive-code.css');
 
 fs.writeFileSync(outPath, fullStyles, 'utf8');
-console.log('✅ expressive-code.css generato con temi.');
+console.log('✅ expressive-code.css generated with themes.');

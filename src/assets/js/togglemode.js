@@ -1,7 +1,7 @@
   const toggleBtn = document.getElementById('theme-toggle');
   const root = document.documentElement;
 
-  // All'avvio: usa preferenza salvata o sistema
+  // On startup: use saved preference or system
   if (localStorage.getItem('theme') === 'dark' || 
      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     root.classList.add('dark');

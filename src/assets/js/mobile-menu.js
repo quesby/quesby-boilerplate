@@ -1,6 +1,6 @@
 /**
  * Mobile Menu Toggle
- * Gestisce l'apertura/chiusura del menu mobile
+ * Handles opening/closing of mobile menu
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
             mainNavigation.classList.toggle('active');
         });
         
-        // Chiudi menu quando si clicca fuori
+        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navToggle.contains(e.target) && !mainNavigation.contains(e.target)) {
                 mainNavigation.classList.remove('active');
             }
         });
         
-        // Chiudi menu con ESC
+        // Close menu with ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 mainNavigation.classList.remove('active');

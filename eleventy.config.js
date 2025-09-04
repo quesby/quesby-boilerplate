@@ -52,9 +52,9 @@ function copyDirectoryRecursive(source, destination) {
       }
     }
     
-    console.log(`✅ Contenuti copiati da: ${source} → ${destination}`);
+    console.log(`✅ Contents copied from: ${source} → ${destination}`);
   } catch (error) {
-    console.error(`❌ Errore durante la copia: ${error.message}`);
+    console.error(`❌ Error during copy: ${error.message}`);
     throw error;
   }
 }
@@ -85,14 +85,14 @@ function setupContentDirectory() {
   
   // Check if we need to copy contents
   if (!fs.existsSync(localContentDir) || fs.readdirSync(localContentDir).length === 0) {
-    console.log(`🔄 Setup automatico directory contenuti...`);
-    console.log(`📁 Percorso esterno: ${contentPath}`);
-    console.log(`📁 Directory locale: ${localContentDir}`);
+    console.log(`🔄 Automatic content directory setup...`);
+    console.log(`📁 External path: ${contentPath}`);
+    console.log(`📁 Local directory: ${localContentDir}`);
     
     // Copy contents from external path to local src/content
     copyDirectoryRecursive(contentPath, localContentDir);
   } else {
-    console.log(`✅ Directory contenuti già configurata: ${localContentDir}`);
+    console.log(`✅ Content directory already configured: ${localContentDir}`);
   }
 
   return localContentDir;
@@ -118,17 +118,17 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" });
   eleventyConfig.addPassthroughCopy({ "src/admin": "/admin" });
 
-  // Pass-through per i media dei contenuti - copia solo le directory dei post
+  // Pass-through for content media - copy only post directories
   eleventyConfig.addPassthroughCopy({ "src/content/posts": "/content/posts" });
 
-  // Variabile globale per i template Nunjucks
+  // Global variable for Nunjucks templates
   eleventyConfig.addGlobalData("theme", activeTheme);
 
   // add collections for posts and projects
   eleventyConfig.addCollection('posts', collection => {
     const posts = collection.getFilteredByGlob(['src/content/posts/*/*.md']);
-    console.log(`[📝] Collection posts: trovati ${posts.length} post`);
-    console.log(`[🔍] Pattern usato: src/content/posts/*/*.md`);
+    console.log(`[📝] Collection posts: found ${posts.length} posts`);
+    console.log(`[🔍] Pattern used: src/content/posts/*/*.md`);
     return posts;
   });
 
@@ -180,7 +180,7 @@ export default function(eleventyConfig) {
         const markdownContent = fs.readFileSync(fullPath, 'utf-8');
         console.log(`✅ Successfully loaded: ${markdownPath}`);
         
-        // Usa il processore unified con Expressive Code
+        // Use unified processor with Expressive Code
         const result = await processor.process(markdownContent);
         return result.toString();
       } else {
@@ -197,12 +197,12 @@ export default function(eleventyConfig) {
     permalink: (data) => {
       const input = (data.page?.inputPath || "").replace(/\\/g, "/");
       if (input.includes("/content/posts/")) {
-        // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
+        // Use slug from frontmatter, otherwise fallback to fileSlug
         const slug = data.slug || data.page.fileSlug;
         return `/blog/${slug}/`;
       }
       if (input.includes("/content/documentation/")) {
-        // Usa lo slug dal frontmatter, altrimenti fallback su fileSlug
+        // Use slug from frontmatter, otherwise fallback to fileSlug
         const slug = data.slug || data.page.fileSlug;
         return `/documentation/${slug}/`;
       }

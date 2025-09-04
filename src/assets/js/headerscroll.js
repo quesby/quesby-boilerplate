@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentScroll = window.scrollY;
   
       if (currentScroll > lastScroll) {
-        // Scorrendo verso il basso
+        // Scrolling down
         if (currentScroll > 0 && currentScroll < 500) {
           header.classList.add("sticky");
           header.classList.remove("sticked");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
           header.classList.remove("sticky");
         }
       } else {
-        // Scorrendo verso l'alto
+        // Scrolling up
         if (currentScroll < 500 && currentScroll > 0) {
           header.classList.add("sticky");
           header.classList.remove("sticked");
