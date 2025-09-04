@@ -98,23 +98,31 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-headers;
   font-weight: 700;
-  text-transform: uppercase;
   margin-bottom: $margin;
 }
 h1 {
+  font-size: 1.5rem;
+  @include respond-to(tablet) {
+    font-size: 2.5rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 3.5rem;
+  }
   @include respond-to(desktop) {
     font-size: 4.5rem;
   }
-  @include respond-to(laptop) {
-    font-size: 4.5rem;
-  }
-  @include respond-to(tablet) {
-    font-size: 4.5rem;
-  }
-  font-size: 1.5rem;
 }
 h2 {
-  font-size: 2.75em;
+  font-size: 1.5rem;
+  @include respond-to(tablet) {
+    font-size: 2.5rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 3.5rem;
+  }
+  @include respond-to(desktop) {
+    font-size: 4.5rem;
+  }
 }
 h3 {
   font-size: 1.75em;
@@ -129,6 +137,18 @@ a {
 }
 strong {
   //font-weight: bold;
+}
+ul {
+  padding-left: .5em;
+  li {
+    // list-style: disc;
+  }
+}
+ol {
+  padding-left: 1.5em;
+  li {
+    list-style: decimal;
+  }
 }
 .button {
   font-family: $font-headers;

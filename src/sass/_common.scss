@@ -81,6 +81,11 @@ img {
 strong {
     font-weight: 700;
 }
+ul {
+    li {
+        margin-bottom: $margin;
+    }
+}
 
 /* Personalizza l'intera barra di scorrimento */
 ::-webkit-scrollbar {

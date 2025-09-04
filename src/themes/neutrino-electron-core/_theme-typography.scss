@@ -71,31 +71,59 @@ p {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-headers;
   font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: $margin;
+  // text-transform: uppercase;
+  margin-bottom: ($margin * 0.5);
+  &:not(:first-child) {
+    margin-top: $margin * 1.75;
+  }
 }
 h1 {
-  @include respond-to(desktop) {
+  font-size: 1.5rem;
+  @include respond-to(tablet) {
     font-size: 4.5rem;
   }
   @include respond-to(laptop) {
     font-size: 4.5rem;
   }
-  @include respond-to(tablet) {
+  @include respond-to(desktop) {
     font-size: 4.5rem;
   }
-  font-size: 1.5rem;
 }
 h2 {
-  font-size: 2.75em;
+  font-size: 1.5rem;
+  @include respond-to(tablet) {
+    font-size: 1.75rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 2.75rem;
+  }
+  @include respond-to(desktop) {
+    font-size: 3.75rem;
+  }
 }
 h3 {
-  font-size: 1.75em;
+  font-size: 1.25rem;
+  @include respond-to(tablet) {
+    font-size: 1.5rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 1.75rem;
+  }
+  @include respond-to(desktop) {
+    font-size: 2.75rem;
+  }
 }
 h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+  font-size: 1.1rem;
+  @include respond-to(tablet) {
+    font-size: 1.25rem;
+  }
+  @include respond-to(laptop) {
+    font-size: 1.45rem;
+  }
+  @include respond-to(desktop) {
+    font-size: 2rem;
+  }
 }
 a {
   text-decoration: none;
@@ -128,7 +156,7 @@ strong {
   padding: 0 0 25px 0;
   margin: 35px 0 75px 0;
   &:after {
-    content: "";
+    // content: "";
     position: absolute;
     left: 0;
     top: calc(50% - 1.5px);

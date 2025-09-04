@@ -1,15 +1,15 @@
-## What is Neutrino Boilerplate?
+### What is Neutrino Boilerplate?
 
 **Neutrino** is a modern boilerplate based on Eleventy that allows you to create fast and performant websites.
 
-## Key Features
+### Key Features
 
 - ⚡ **Fast**: Built on Eleventy for optimal performance
 - 🎨 **Flexible**: Modular theme system
 - 📝 **Simple**: Content management with Markdown
 - 🔧 **Configurable**: Easy to customize
 
-## Why Neutrino?
+### Why Neutrino?
 
 Neutrino was born from the need to have a boilerplate that combines:
 
