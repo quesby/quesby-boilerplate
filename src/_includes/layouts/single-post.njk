@@ -1,9 +1,17 @@
 ---
 title: Neutrino - Electron | {{ title }}
-layout: layouts/base.njk
-class: single-post
+class: post
 style: single-post.css
 ---
+{% extends "layouts/base.njk" %}
+{% set postTitle = "Neutrino - Electron | " + title %}
+{% set postClass = "post" %}
+{% set postType = "article" %}
+{% if image %}
+  {% set postImage = site.url + "/content/posts/" + page.fileSlug + "/" + image %}
+{% endif %}
+
+{% block content %}
 <div class="single-post container">
     <article class="post">
         <div class="feature-image">
@@ -20,3 +28,4 @@ style: single-post.css
         <footer></footer>
     </article>
 </div>
+{% endblock %}
