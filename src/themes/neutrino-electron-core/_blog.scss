@@ -54,6 +54,9 @@
                 background-color: var(--site-bg);
                 padding: ($padding * 2) ($padding * 3);
             }
+            .post-date {
+                font-size: 0.75rem;
+            }
         }
     }
 }

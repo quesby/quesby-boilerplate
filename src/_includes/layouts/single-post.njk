@@ -9,14 +9,14 @@
 {% block content %}
 <div class="single-post container">
     <article class="post">
-        <div class="feature-image">
+        <div class="featured-image">
             {% if image %}
                 <img src="/content/posts/{{ page.fileSlug }}/{{ image }}" alt="{{ title }}" width="600" loading="lazy">
             {% endif %}
         </div>
         <header class="boxed">
+            <div class="post-date">{{ date | date("dd LLLL yyyy") }}</div>
             <h1 class="page-title">{{ title }}</h1>
-            <h2 class="page-subtitle">Si ma porkudìgel!</h2>
             <p class="post-excerpt">{{ description }}</p>
         </header>
         <div class="boxed">{{ content | safe }}</div>

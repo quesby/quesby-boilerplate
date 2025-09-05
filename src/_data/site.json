@@ -2,8 +2,8 @@
     "name": "Neutrino - Electron",
     "url": "https://theoddape.it",
     "description": "An Eleventy boilerplate with Decap CMS",
-    "logo": "/assets/logo.png",
-    "favicon": "/assets/favicon.ico",
+    "logo": "/assets/images/neutrino-logo.svg",
+    "favicon": "/assets/images/neutrino-logo.png",
     "theme": "neutrino-electron-core",
     "defaultVisualTheme": "dark",
     "contentPath": "${NEUTRINO_CONTENT_PATH}"
