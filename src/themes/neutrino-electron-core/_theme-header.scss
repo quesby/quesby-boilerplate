@@ -53,14 +53,29 @@ header {
             fill: var(--nav-item-fg);
         }
     }
-    @include respond-to(laptop) {
+}
+
+@include respond-to(laptop) {
+    header {
         .container {
-            .navigation {
+            #main-navigation {
+                z-index: 1;
+                position: relative;
+                display: inline-block;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                height: auto;
+                width: auto;
+                flex-grow: 0;
+                // @include flex-container(row, space-between, center, wrap);
                 ul {
-                    //@include flex-container(row, space-between, center, wrap);
+                    @include flex-container(row, flex-start, center, wrap);
                     li {
+                        border-bottom: none;
                         a {
-                            padding: 0.5em 1em;
+                            text-decoration: none;
+                            padding: 0.5em 2em;
                         }
                     }
                 }
