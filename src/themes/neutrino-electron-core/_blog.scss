@@ -9,6 +9,14 @@
         &:hover {
             background-color: var(--site-bg-3);
         }
+        .post-date {
+            font-size: 0.75rem;
+            color: var(--text-fg);
+        }
+        .post-title {
+            font-size: 1.35rem;
+            margin-bottom: 0;
+        }
         .post-excerpt {
             color: var(--text-fg);
         }
