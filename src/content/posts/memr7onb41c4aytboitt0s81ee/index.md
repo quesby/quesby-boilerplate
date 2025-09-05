@@ -5,7 +5,7 @@ slug: test-ulid-system-implementation
 description: Testing the new ULID-based content management system with dynamic permalinks.
 date: '2025-08-22'
 author: Green panda Studio
-image: test-ulid-system-implementation.md
+image: test-ulid-system-implementation.webp
 type: post
 createdAt: '2025-08-22T11:35:26.855Z'
 aliases: []

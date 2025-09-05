@@ -30,11 +30,9 @@ $theme-light: (
 // DARK THEME
 $theme-dark: (
   text-fg: oklch(93% 0 0),
-  link-fg: oklch(84% 27% 45),
-  link-fg-hover: oklch(84% 32% 35),
+  link-fg: oklch(68% 50% 265),
   headlines-fg: oklch(100.00% 0.000 89.9),
-  nav-item-fg: oklch(90% 0 0),
-  nav-item-fg-hover: oklch(100% 0 0),
+  nav-item-fg: oklch(93% 0 0),
   button-fg: white,
   button-secondary-fg: black,
   site-bg: oklch(8% 0 0),
@@ -109,8 +107,8 @@ $margin: 20px;
 
 // Borders
 $borderRadius-large: 50px;
-$borderRadius-normal: 15px;
-$borderRadius-small: 5px;
+$borderRadius-normal: 25px;
+$borderRadius-small: 7px;
 
 // Breakpoints system
 $breakpoints: (

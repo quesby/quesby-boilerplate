@@ -12,6 +12,7 @@ import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeExpressiveCode from 'rehype-expressive-code';
 import rehypeStringify from 'rehype-stringify';
+import { DateTime } from "luxon";
 
 dotenv.config();
 
@@ -165,6 +166,25 @@ export default function(eleventyConfig) {
       target: '_blank',
       rel: 'noopener'
     }
+  });
+
+  // Date formatting with Luxon
+  eleventyConfig.addFilter("date", (dateObj, format = "dd LLLL yyyy") => {
+    let dt;
+    
+    if (typeof dateObj === 'string') {
+      // try different string formats
+      dt = DateTime.fromISO(dateObj) || 
+           DateTime.fromSQL(dateObj) || 
+           DateTime.fromFormat(dateObj, 'yyyy-MM-dd');
+    } else if (dateObj instanceof Date) {
+      dt = DateTime.fromJSDate(dateObj);
+    } else {
+      // Fallback
+      dt = DateTime.fromJSDate(new Date(dateObj));
+    }
+    
+    return dt.setZone("utc").setLocale("it").toFormat(format);
   });
 
   // Filter to include markdown files with Expressive Code support

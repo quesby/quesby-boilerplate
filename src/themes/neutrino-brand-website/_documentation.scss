@@ -1,0 +1,26 @@
+.documentation {
+    .intro {
+        .flex-image {
+            margin: $margin 0;
+        }
+    }
+    @include respond-to(tablet) {
+        .intro {
+            // @include flex-container(row, center, center, wrap);
+            // .flex-image {
+            //     width: 50%;
+            //     height: auto;
+            //     padding: $padding 0;
+            //     margin-right: $margin * 2;
+            //     img {
+            //         width: 100%;
+            //         height: auto;
+            //         object-fit: cover;
+            //     }
+            // }
+            // .flex-content {
+            //     width: 50%;
+            // }
+        }
+    }
+}

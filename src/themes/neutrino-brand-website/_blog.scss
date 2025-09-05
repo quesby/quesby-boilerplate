@@ -1,32 +1,13 @@
 // Blog
-.blog {
-    .post {
-        border: 1px solid var(--border);
-        border-radius: $borderRadius-small;
-        background-color: var(--site-bg-2);
-        padding: $padding;
-        margin-bottom: $margin;
-        &:hover {
-            background-color: var(--site-bg-3);
-        }
-        .post-excerpt {
-            color: var(--text-fg);
-        }
-    }
-}
+// .blog {}
     
     // Single Post
-.single-post {
+.post {
     main {
         max-width: 1024px;
         margin: 0 auto;
         .container {
             max-width: 896px;
-            .post-summary {
-                h3 {
-                    font-size: 1.5rem;
-                }
-            }
             padding: 0 ($padding * 3);
         }
         section {

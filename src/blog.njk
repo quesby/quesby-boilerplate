@@ -1,7 +1,7 @@
 ---
 title: Neutrino - Electron | Blog
 layout: layouts/base.njk
-class: blog post
+class: blog
 style: blog.css
 permalink: /blog/
 ---
@@ -18,6 +18,7 @@ permalink: /blog/
       <div class="post">
         <a href="/blog/{{ post.data.slug }}/">
           <div class="post-wrapper">
+            <div class="post-date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
             {% if post.data.image %}
               <img src="/content/posts/{{ post.fileSlug }}/{{ post.data.image }}" alt="{{ post.data.title }}" width="600" loading="lazy">
             {% endif %}

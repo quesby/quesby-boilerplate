@@ -1,11 +1,6 @@
----
-title: Neutrino - Electron | {{ title }}
-class: post
-style: single-post.css
----
 {% extends "layouts/base.njk" %}
 {% set postTitle = "Neutrino - Electron | " + title %}
-{% set postClass = "post" %}
+{% set postClass = "single-post" %}
 {% set postType = "article" %}
 {% if image %}
   {% set postImage = site.url + "/content/posts/" + page.fileSlug + "/" + image %}

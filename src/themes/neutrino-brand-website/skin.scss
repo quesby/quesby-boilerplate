@@ -1,0 +1,16 @@
+// Core (do not touch in themes)
+@use 'sass:map';
+@use 'sass:color';
+@import '../../sass/core';
+
+@import "_theme-variables";
+@import "_theme-typography";
+@import "_base";
+@import "_forms";
+
+@import "_theme-header";
+@import "_page";
+@import "_home";
+@import "_blog";
+@import "_documentation";
+@import "_responsive";
