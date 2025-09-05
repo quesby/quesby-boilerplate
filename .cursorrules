@@ -1,0 +1,17 @@
+# CURSOR DIRECTIVES
+
+## Language Policy
+- All code comments must be in ENGLISH
+- All variable names must be in ENGLISH  
+- All compiler messages and outputs must be in ENGLISH
+- All documentation must be in ENGLISH
+- All commit messages must be in ENGLISH
+- Chat with user preferred in italian
+
+## Project Context
+This is Neutrino: Privacy-First Static Site Boilerplate - an international open source project targeting developers worldwide.
+
+## Code Style
+- Use English for all technical content
+- Maintain professional, clear English
+- Use standard web development terminology
