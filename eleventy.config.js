@@ -13,6 +13,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeExpressiveCode from 'rehype-expressive-code';
 import rehypeStringify from 'rehype-stringify';
 import { DateTime } from "luxon";
+// import * as cheerio from 'cheerio'; // Removed cheerio dependency
 
 dotenv.config();
 
@@ -150,8 +151,9 @@ export default function(eleventyConfig) {
     .use(rehypeStringify);
 
   eleventyConfig.setLibrary("md", {
-    render(str) {
-      return processor.process(str).toString();
+    async render(str) {
+      const result = await processor.process(str);
+      return result.toString();
     }
   });
 
@@ -269,6 +271,87 @@ export default function(eleventyConfig) {
     }
     
     return [];
+  });
+
+  // Add transform to generate TOC and add IDs to headings
+  eleventyConfig.addTransform("generateTOC", function(content, outputPath) {
+    // Only process HTML files in documentation
+    if (outputPath && outputPath.endsWith('.html') && outputPath.includes('/documentation/')) {
+      console.log(`Processing TOC for: ${outputPath}`);
+      
+      // Find all h2 elements using regex
+      const h2Regex = /<h2([^>]*)>(.*?)<\/h2>/gi;
+      const headings = [];
+      let match;
+      
+      // Extract headings and add IDs
+      content = content.replace(h2Regex, (match, attributes, title) => {
+        const cleanTitle = title.replace(/<[^>]*>/g, '').trim(); // Remove HTML tags
+        const anchor = cleanTitle
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .trim();
+        
+        headings.push({
+          title: cleanTitle,
+          anchor: anchor
+        });
+        
+        // Add ID to the h2 element if it doesn't already have one
+        const hasId = attributes.includes('id=');
+        if (!hasId) {
+          return `<h2${attributes} id="${anchor}">${title}</h2>`;
+        } else {
+          return match; // Keep existing ID
+        }
+      });
+      
+      // Generate TOC HTML
+      if (headings.length > 0) {
+        let tocHTML = '<nav class="documentation-toc">\n';
+        tocHTML += '  <h3>On this page</h3>\n';
+        tocHTML += '  <ul>\n';
+        
+        headings.forEach(heading => {
+          tocHTML += `    <li>\n`;
+          tocHTML += `      <a href="#${heading.anchor}">${heading.title}</a>\n`;
+          tocHTML += `    </li>\n`;
+        });
+        
+        tocHTML += '  </ul>\n';
+        tocHTML += '</nav>';
+        
+        // Insert TOC into the page
+        // Look for a placeholder first
+        if (content.includes('class="toc-placeholder"')) {
+          content = content.replace('<div class="toc-placeholder"></div>', tocHTML);
+          console.log(`Inserted TOC at placeholder for ${outputPath}`);
+        } else {
+          // Insert TOC after the first h1
+          const h1Regex = /(<h1[^>]*>.*?<\/h1>)/i;
+          if (h1Regex.test(content)) {
+            content = content.replace(h1Regex, `$1\n${tocHTML}`);
+            console.log(`Inserted TOC after h1 for ${outputPath}`);
+          } else {
+            // Insert TOC at the beginning of main content
+            const mainRegex = /(<main[^>]*>)/i;
+            if (mainRegex.test(content)) {
+              content = content.replace(mainRegex, `$1\n${tocHTML}`);
+              console.log(`Inserted TOC at beginning of main for ${outputPath}`);
+            } else {
+              console.log(`Could not find insertion point for TOC in ${outputPath}`);
+            }
+          }
+        }
+        
+        console.log(`Generated TOC with ${headings.length} headings for ${outputPath}`);
+      }
+      
+      return content;
+    }
+    
+    return content;
   });
 
   return {

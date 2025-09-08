@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
-class: post documentation
+class: documentation
 ---
 
 # Neutrino Theme System

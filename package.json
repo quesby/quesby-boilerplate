@@ -16,6 +16,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^4.0.2",
     "@expressive-code/plugin-shiki": "^0.41.3",
+    "cheerio": "^1.1.2",
     "concurrently": "^8.2.2",
     "expressive-code": "^0.41.3",
     "markdown-it": "^14.1.0",

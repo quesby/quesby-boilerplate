@@ -49,7 +49,23 @@
 <body class="{{ postClass or class }}">
   {% include "partials/header.njk" %}
   <div class="layout-wrapper">
-    <main>{% block content %}{{ content | safe }}{% endblock %}</main>
+    <main>
+      {% block content %}
+        {% if toc %}
+          <div class="content-wrapper">
+            <div class="content">
+              {{ content | safe }}
+            </div>
+            <aside>
+              {% set tocContent = content %}
+              {% include "partials/" + toc %}
+            </aside>
+          </div>
+        {% else %}
+          {{ content | safe }}
+        {% endif %}
+      {% endblock %}
+    </main>
     {% if aside %}
       <aside>{% include "partials/" + aside %}</aside>
     {% endif %}
