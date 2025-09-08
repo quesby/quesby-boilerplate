@@ -1,4 +1,18 @@
 .documentation {
+    .layout-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: $margin * 2;
+    }
+    aside {
+        width: 15em;
+    }
+    // main {}
+    @include respond-to(tablet) {
+        .layout-wrapper {
+            flex-direction: row-reverse;
+        }
+    }
     .intro {
         .flex-image {
             margin: $margin 0;
