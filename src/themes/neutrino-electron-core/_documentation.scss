@@ -1,21 +1,92 @@
 .documentation {
+    $asideWidth: 18em;
     .layout-wrapper {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: $margin * 2;
-    }
-    aside {
-        width: 15em;
-    }
-    // main {}
-    @include respond-to(tablet) {
-        .layout-wrapper {
-            flex-direction: row-reverse;
+        aside {
+            order: 1;
+            width: $asideWidth;
+            padding: $padding;
+            background-color: var(--site-bg-secondary);
+        }
+        main {
+            order: 2;
+            .content-wrapper {
+                // max-width: calc(map.get($container-max-widths, desktop) - 15em);
+                // gap: $margin * 2;
+                // .content {}
+                aside {
+                    position: sticky;
+                    top: 2rem;
+                    height: fit-content;
+                    padding: $padding;
+                }
+                h2 {
+                    scroll-margin-top: 2rem; // Offset for fixed header
+                    
+                    &::before {
+                      content: '';
+                      display: block;
+                      height: 2rem;
+                      margin-top: -2rem;
+                      visibility: hidden;
+                    }
+                }
+            }
         }
     }
-    .intro {
-        .flex-image {
-            margin: $margin 0;
+    .featured-image {
+        margin: $margin 0;
+        img {
+            aspect-ratio: 16/5;
+            object-fit: cover;
+        }
+    }
+    .documentation-toc {
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        h3 {
+            margin: 0 0 1rem 0;
+            font-size: 1.1rem;
+            color: var(--text-fg);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin-bottom: 0.5rem;
+                
+                a {
+                    color: var(--link-fg);
+                    font-size: 0.9rem;
+                    line-height: 1.4;
+                
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(tablet) {
+        .layout-wrapper {
+            grid-template-columns: $asideWidth 1fr;
+            gap: 2rem;
+            // margin: 0 auto;
+            aside {
+                position: static;
+            }
+            main {
+                display: grid;
+                grid-template-columns: 1fr $asideWidth;
+                gap: 2rem;
+                max-width: calc(map.get($container-max-widths, desktop) - $asideWidth);
+                // .content {}
+            }
         }
     }
     @include respond-to(tablet) {

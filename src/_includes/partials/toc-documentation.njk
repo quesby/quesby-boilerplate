@@ -1,0 +1,11 @@
+<nav class="documentation-toc">
+  <h3>On this page</h3>
+  <p>Debug: {{ content | generateTOC | length }} headings found</p>
+  <ul>
+    {% for heading in content | generateTOC %}
+      <li>
+        <a href="#{{ heading.anchor }}">{{ heading.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

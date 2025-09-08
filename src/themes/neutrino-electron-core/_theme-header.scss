@@ -1,6 +1,6 @@
 header {
     position: relative;
-    border-bottom: 1px solid color-mix(in oklch, var(--navigation-bg), black 5%);
+    border-bottom: 3px solid black;
     .container {
         @include flex-container(row, space-between, center, wrap);
         .logo {
@@ -17,7 +17,6 @@ header {
             width: 100vw;
             height: 100vh;
             background-color: var(--navigation-bg);
-            padding: ($padding);
             @include flex-container(column, flex-start, flex-start, wrap);
             transition: opacity .1s ease-in-out;
             &.active {

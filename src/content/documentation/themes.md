@@ -1,3 +1,10 @@
+---
+layout: layouts/base.njk
+aside: aside-documentation.njk
+toc: toc-documentation.njk
+class: post documentation
+---
+
 # Neutrino Theme System
 
 ## Overview

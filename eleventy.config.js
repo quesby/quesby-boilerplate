@@ -241,6 +241,36 @@ export default function(eleventyConfig) {
     },
   });
 
+  // Add aside index for documentation
+  eleventyConfig.addFilter("generateTOC", function(content) {
+    console.log("Content type:", typeof content);
+    
+    if (typeof content === 'string') {
+      const h2Regex = /^## (.+)$/gm;
+      const headings = [];
+      let match;
+      
+      while ((match = h2Regex.exec(content)) !== null) {
+        const title = match[1];
+        const anchor = title
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .trim();
+        
+        headings.push({
+          title: title,
+          anchor: anchor
+        });
+      }
+      
+      console.log("Found headings:", headings);
+      return headings;
+    }
+    
+    return [];
+  });
+
   return {
     dir: {
       input: "src",
