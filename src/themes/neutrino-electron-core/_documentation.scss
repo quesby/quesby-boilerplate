@@ -17,7 +17,9 @@
             .content-wrapper {
                 // max-width: calc(map.get($container-max-widths, desktop) - 15em);
                 // gap: $margin * 2;
-                // .content {}
+                .content {
+                    padding-top: $padding * 4;
+                }
                 aside {
                     position: sticky;
                     top: 2rem;

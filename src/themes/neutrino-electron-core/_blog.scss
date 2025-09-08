@@ -3,11 +3,11 @@
     .post {
         border: 1px solid var(--border);
         border-radius: $borderRadius-small;
-        background-color: var(--site-bg-2);
+        background-color: var(--site-bg-secondary);
         padding: $padding;
         margin-bottom: $margin;
         &:hover {
-            background-color: var(--site-bg-3);
+            background-color: var(--site-bg-hover);
         }
         .post-date {
             font-size: 0.75rem;
