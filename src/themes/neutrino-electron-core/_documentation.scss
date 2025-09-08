@@ -76,16 +76,16 @@
         .layout-wrapper {
             grid-template-columns: $asideWidth 1fr;
             gap: 2rem;
-            // margin: 0 auto;
             aside {
                 position: static;
             }
             main {
-                display: grid;
-                grid-template-columns: 1fr $asideWidth;
-                gap: 2rem;
-                max-width: calc(map.get($container-max-widths, desktop) - $asideWidth);
-                // .content {}
+                .content-wrapper {
+                    max-width: calc(map.get($container-max-widths, desktop) - $asideWidth);
+                    display: grid;
+                    grid-template-columns: 1fr $asideWidth;
+                    gap: 2rem;
+                }
             }
         }
     }

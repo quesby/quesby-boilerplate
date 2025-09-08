@@ -1,12 +1,4 @@
 <nav class="documentation-toc">
   <h3>On this page</h3>
-  {% set headings = await generateTOC(content) %}
-  <p>Debug: {{ headings | length }} headings found</p>
-  <ul>
-    {% for heading in headings %}
-      <li>
-        <a href="#{{ heading.anchor }}">{{ heading.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <p>No headings found</p>
 </nav>

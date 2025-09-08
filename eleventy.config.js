@@ -243,48 +243,18 @@ export default function(eleventyConfig) {
     },
   });
 
-  // Add aside index for documentation
-  eleventyConfig.addFilter("generateTOC", function(content) {
-    console.log("Content type:", typeof content);
-    
-    if (typeof content === 'string') {
-      const h2Regex = /^## (.+)$/gm;
-      const headings = [];
-      let match;
-      
-      while ((match = h2Regex.exec(content)) !== null) {
-        const title = match[1];
-        const anchor = title
-          .toLowerCase()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .trim();
-        
-        headings.push({
-          title: title,
-          anchor: anchor
-        });
-      }
-      
-      console.log("Found headings:", headings);
-      return headings;
-    }
-    
-    return [];
-  });
 
-  // Add transform to generate TOC and add IDs to headings
-  eleventyConfig.addTransform("generateTOC", function(content, outputPath) {
+  // Add transform to add IDs to headings and insert TOC in aside
+  eleventyConfig.addTransform("addHeadingIdsAndTOC", function(content, outputPath) {
     // Only process HTML files in documentation
     if (outputPath && outputPath.endsWith('.html') && outputPath.includes('/documentation/')) {
-      console.log(`Processing TOC for: ${outputPath}`);
+      console.log(`Adding heading IDs and TOC for: ${outputPath}`);
       
-      // Find all h2 elements using regex
+      // Find all h2 elements and add IDs
       const h2Regex = /<h2([^>]*)>(.*?)<\/h2>/gi;
       const headings = [];
-      let match;
+      let headingCount = 0;
       
-      // Extract headings and add IDs
       content = content.replace(h2Regex, (match, attributes, title) => {
         const cleanTitle = title.replace(/<[^>]*>/g, '').trim(); // Remove HTML tags
         const anchor = cleanTitle
@@ -293,21 +263,21 @@ export default function(eleventyConfig) {
           .replace(/\s+/g, '-')
           .trim();
         
-        headings.push({
-          title: cleanTitle,
-          anchor: anchor
-        });
-        
         // Add ID to the h2 element if it doesn't already have one
         const hasId = attributes.includes('id=');
         if (!hasId) {
+          headingCount++;
+          headings.push({
+            title: cleanTitle,
+            anchor: anchor
+          });
           return `<h2${attributes} id="${anchor}">${title}</h2>`;
         } else {
           return match; // Keep existing ID
         }
       });
       
-      // Generate TOC HTML
+      // Generate TOC HTML if we have headings
       if (headings.length > 0) {
         let tocHTML = '<nav class="documentation-toc">\n';
         tocHTML += '  <h3>On this page</h3>\n';
@@ -322,30 +292,11 @@ export default function(eleventyConfig) {
         tocHTML += '  </ul>\n';
         tocHTML += '</nav>';
         
-        // Insert TOC into the page
-        // Look for a placeholder first
-        if (content.includes('class="toc-placeholder"')) {
-          content = content.replace('<div class="toc-placeholder"></div>', tocHTML);
-          console.log(`Inserted TOC at placeholder for ${outputPath}`);
-        } else {
-          // Insert TOC after the first h1
-          const h1Regex = /(<h1[^>]*>.*?<\/h1>)/i;
-          if (h1Regex.test(content)) {
-            content = content.replace(h1Regex, `$1\n${tocHTML}`);
-            console.log(`Inserted TOC after h1 for ${outputPath}`);
-          } else {
-            // Insert TOC at the beginning of main content
-            const mainRegex = /(<main[^>]*>)/i;
-            if (mainRegex.test(content)) {
-              content = content.replace(mainRegex, `$1\n${tocHTML}`);
-              console.log(`Inserted TOC at beginning of main for ${outputPath}`);
-            } else {
-              console.log(`Could not find insertion point for TOC in ${outputPath}`);
-            }
-          }
-        }
+        // Replace the TOC placeholder in the aside
+        const tocPlaceholderRegex = /<nav class="documentation-toc">[\s\S]*?<\/nav>/gi;
+        content = content.replace(tocPlaceholderRegex, tocHTML);
         
-        console.log(`Generated TOC with ${headings.length} headings for ${outputPath}`);
+        console.log(`Added IDs to ${headingCount} headings and inserted TOC for ${outputPath}`);
       }
       
       return content;
