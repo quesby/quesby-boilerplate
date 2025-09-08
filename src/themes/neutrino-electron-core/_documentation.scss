@@ -7,6 +7,8 @@
         aside {
             order: 1;
             width: $asideWidth;
+            top: 2rem;
+            height: fit-content;
             padding: $padding;
             background-color: var(--site-bg-secondary);
         }
@@ -77,7 +79,8 @@
             grid-template-columns: $asideWidth 1fr;
             gap: 2rem;
             aside {
-                position: static;
+                position: sticky;
+                max-height: calc(100vh - 115px);
             }
             main {
                 .content-wrapper {
