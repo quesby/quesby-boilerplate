@@ -28,6 +28,7 @@
                 }
                 h2 {
                     scroll-margin-top: 2rem; // Offset for fixed header
+                    margin-top: $margin * 2;
                     
                     &::before {
                       content: '';
@@ -36,6 +37,9 @@
                       margin-top: -2rem;
                       visibility: hidden;
                     }
+                }
+                h3, h4, h5, h6 {
+                    margin-top: $margin * 2;
                 }
             }
         }
