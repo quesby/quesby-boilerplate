@@ -24,8 +24,8 @@ Before starting development, ensure you have the following installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/neutrino-electron-decap-starter.git
-   cd neutrino-electron-decap-starter
+   git clone https://github.com/greenpandastudio/neutrino-electron.git
+   cd neutrino-electron
    ```
 
 2. **Install dependencies:**

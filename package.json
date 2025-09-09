@@ -1,7 +1,16 @@
 {
-  "name": "11ty-decap-starter",
-  "version": "1.0.0",
-  "private": true,
+  "name": "neutrino-electron",
+  "version": "0.1.0",
+  "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
+  "homepage": "https://github.com/greenpandastudio/neutrino-electron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenpandastudio/neutrino-electron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greenpandastudio/neutrino-electron/issues"
+  },
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "eleventy --serve",
@@ -34,5 +43,10 @@
     "cross-env": "^10.0.0",
     "dotenv": "^17.2.1",
     "dotenv-cli": "^10.0.0"
+  },
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/neutrino-electron"
   }
 }

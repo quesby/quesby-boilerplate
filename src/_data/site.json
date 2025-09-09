@@ -1,7 +1,7 @@
 {
     "name": "Neutrino - Electron",
-    "url": "https://theoddape.it",
-    "description": "An Eleventy boilerplate with Decap CMS",
+    "url": "https://github.com/greenpandastudio/neutrino-electron",
+    "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
     "logo": "/assets/images/neutrino-logo.svg",
     "favicon": "/assets/images/neutrino-logo.png",
     "theme": "neutrino-electron-core",

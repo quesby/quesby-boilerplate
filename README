@@ -1,0 +1,97 @@
+# Neutrino - Privacy-First Static Site Boilerplate
+
+A modern Eleventy boilerplate with Decap CMS, built with content creators in mind.
+
+## ✨ Features
+
+- **Static Site Generation** with Eleventy 3.0
+- **Headless CMS** with Decap CMS
+- **Modular Theme System** with 2 included themes
+- **Privacy-First** approach
+- **SEO Optimized** with automatic sitemaps
+- **Responsive Design** out of the box
+- **Search Functionality** built-in
+- **Documentation System** with TOC generation
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/greenpandastudio/neutrino-electron.git
+cd neutrino-electron
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run serve
+```
+
+Visit `http://localhost:8080` to see your site.
+
+## 📚 Documentation
+
+Complete documentation is available at `/documentation/` including:
+
+- [Installation Guide](./src/content/documentation/installation.md)
+- [Configuration](./src/content/documentation/configuration.md)
+- [Theme System](./src/content/documentation/themes.md)
+- [Content Management](./src/content/documentation/content-management.md)
+- [Deployment](./src/content/documentation/deployment.md)
+
+## 🎨 Themes
+
+- **neutrino-electron-core** (default) - Clean, modern design
+- **neutrino-brand-website** - Brand-focused layout
+
+## ��️ Available Scripts
+
+- `npm run serve` - Start development server with CSS watching
+- `npm run dev` - Start development server without CSS watching
+- `npm run build` - Build for production
+- `npm run watch:css` - Watch CSS changes only
+
+## 📁 Project Structure
+
+```
+src/
+├── content/           # Content files (posts, pages, projects)
+├── themes/           # Theme system
+├── _includes/        # Nunjucks templates
+├── assets/           # Static assets (CSS, JS, images)
+└── admin/            # Decap CMS configuration
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+##  Acknowledgments
+
+- Built with [Eleventy](https://www.11ty.dev/)
+- CMS powered by [Decap CMS](https://decapcms.org/)
+- Icons by [Material Symbols](https://fonts.google.com/icons)
+
+---
+
+**Made with ❤️ for the open source community**
+
+## 💖 Support the Project
+
+If you find Neutrino useful, please consider supporting its development:
+
+- [GitHub Sponsors](https://github.com/sponsors/greenpandastudio)
+- [Buy Me a Coffee](https://buymeacoffee.com/greenpandastudio)
+- [Patreon](https://patreon.com/greenpandastudio)
+
+## 🎨 Premium Themes
+
+- **Corporate Pro** - Professional business theme
+- **E-commerce** - Online store template
+- **Portfolio** - Creative portfolio theme
+
+[View all premium themes →](https://greenpandastudio.com/themes)
