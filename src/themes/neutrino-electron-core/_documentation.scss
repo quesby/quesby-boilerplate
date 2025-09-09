@@ -9,8 +9,13 @@
             width: $asideWidth;
             top: 2rem;
             height: fit-content;
-            padding: $padding;
+            padding: ($padding * 2) $padding;
             background-color: var(--site-bg-secondary);
+            h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: $margin;
+            }
         }
         main {
             order: 2;
@@ -18,28 +23,31 @@
                 // max-width: calc(map.get($container-max-widths, desktop) - 15em);
                 // gap: $margin * 2;
                 .content {
-                    padding-top: $padding * 4;
+                    padding-top: $padding;
+                    h1 {
+                        padding-top: $padding * 4;
+                    }
+                    h2 {
+                        scroll-margin-top: 2rem; // Offset for fixed header
+                        margin-top: $margin * 2;
+                        
+                        &::before {
+                          content: '';
+                          display: block;
+                          height: 2rem;
+                          margin-top: -2rem;
+                          visibility: hidden;
+                        }
+                    }
+                    h3, h4, h5, h6 {
+                        margin-top: $margin * 2;
+                    }
                 }
                 aside {
                     position: sticky;
                     top: 2rem;
                     height: fit-content;
-                    padding: $padding;
-                }
-                h2 {
-                    scroll-margin-top: 2rem; // Offset for fixed header
-                    margin-top: $margin * 2;
-                    
-                    &::before {
-                      content: '';
-                      display: block;
-                      height: 2rem;
-                      margin-top: -2rem;
-                      visibility: hidden;
-                    }
-                }
-                h3, h4, h5, h6 {
-                    margin-top: $margin * 2;
+                    // padding: ($padding * 2) $padding;
                 }
             }
         }
@@ -58,7 +66,7 @@
         margin-bottom: 2rem;
         h3 {
             margin: 0 0 1rem 0;
-            font-size: 1.1rem;
+            // font-size: 1.1rem;
             color: var(--text-fg);
         }
         ul {
