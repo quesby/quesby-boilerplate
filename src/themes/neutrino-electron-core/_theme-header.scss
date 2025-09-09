@@ -1,5 +1,8 @@
 header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--navigation-bg);
     border-bottom: 3px solid black;
     .container {
         @include flex-container(row, space-between, center, wrap);

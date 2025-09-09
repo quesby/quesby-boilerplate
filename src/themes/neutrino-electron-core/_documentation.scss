@@ -1,5 +1,12 @@
 .documentation {
     $asideWidth: 18em;
+    .page-header {
+        @include flex-container(row, center, center, wrap);
+        figure {
+            overflow: hidden;
+            width: 50%;
+        }
+    }
     .layout-wrapper {
         display: grid;
         grid-template-columns: 1fr;
@@ -45,7 +52,7 @@
                 }
                 aside {
                     position: sticky;
-                    top: 2rem;
+                    top: 85px;
                     height: fit-content;
                     // padding: ($padding * 2) $padding;
                 }
@@ -94,6 +101,7 @@
             gap: 2rem;
             aside {
                 position: sticky;
+                top: 85px;
                 max-height: calc(100vh - 115px);
             }
             main {
