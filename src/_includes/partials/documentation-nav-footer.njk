@@ -1,0 +1,27 @@
+{# Documentation Navigation Footer - Next/Previous #}
+{%- set nextDoc = page.url | getNextDoc(collections.documentation) -%}
+{%- set prevDoc = page.url | getPrevDoc(collections.documentation) -%}
+
+{% if nextDoc or prevDoc %}
+<nav class="documentation-nav-footer">
+  <div class="nav-wrapper">
+    {% if prevDoc %}
+      <div class="nav-item nav-prev">
+        <a href="{{ prevDoc.url }}">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">{{ prevDoc.data.title }}</span>
+        </a>
+      </div>
+    {% endif %}
+    
+    {% if nextDoc %}
+      <div class="nav-item nav-next">
+        <a href="{{ nextDoc.url }}">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">{{ nextDoc.data.title }}</span>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}

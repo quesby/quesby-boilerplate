@@ -129,12 +129,32 @@ export default function(eleventyConfig) {
   // Global variable for Nunjucks templates
   eleventyConfig.addGlobalData("theme", activeTheme);
 
-  // add collections for posts and projects
+  // add collections for posts, projects, and documentation
   eleventyConfig.addCollection('posts', collection => {
     const posts = collection.getFilteredByGlob(['src/content/posts/*/*.md']);
     console.log(`[📝] Collection posts: found ${posts.length} posts`);
     console.log(`[🔍] Pattern used: src/content/posts/*/*.md`);
     return posts;
+  });
+
+  eleventyConfig.addCollection('documentation', collection => {
+    const docs = collection.getFilteredByGlob(['src/content/documentation/*.md']);
+    console.log(`[📚] Collection documentation: found ${docs.length} pages`);
+    console.log(`[🔍] Pattern used: src/content/documentation/*.md`);
+    return docs.sort((a, b) => {
+      // Sort by order field first, then by title
+      const orderA = a.data.order || 999;
+      const orderB = b.data.order || 999;
+      
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
+      
+      // If same order, sort by title
+      const titleA = a.data.title || a.fileSlug || '';
+      const titleB = b.data.title || b.fileSlug || '';
+      return titleA.localeCompare(titleB);
+    });
   });
 
   eleventyConfig.addFilter("slugify", str =>
@@ -143,6 +163,17 @@ export default function(eleventyConfig) {
 
   // Register SEO filters and utilities
   registerSEO(eleventyConfig);
+
+  // Documentation navigation filters
+  eleventyConfig.addFilter("getNextDoc", (currentUrl, docs) => {
+    const currentIndex = docs.findIndex(doc => doc.url === currentUrl);
+    return currentIndex < docs.length - 1 ? docs[currentIndex + 1] : null;
+  });
+
+  eleventyConfig.addFilter("getPrevDoc", (currentUrl, docs) => {
+    const currentIndex = docs.findIndex(doc => doc.url === currentUrl);
+    return currentIndex > 0 ? docs[currentIndex - 1] : null;
+  });
 
   const processor = unified()
     .use(remarkParse)

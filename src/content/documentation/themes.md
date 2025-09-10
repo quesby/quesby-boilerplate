@@ -1,8 +1,11 @@
 ---
+title: Theme System
+description: Complete guide to Neutrino Electron theme system and customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 6
 ---
 
 # Neutrino Theme System
@@ -384,6 +387,8 @@ The theme system integrates with Eleventy through:
 - **Watch Targets**: Eleventy watches theme files for changes
 - **Asset Pipeline**: Compiled CSS is served as static assets
 - **Template Variables**: Theme information accessible in Nunjucks templates
+
+{% include "partials/documentation-nav-footer.njk" %}
 
 ## Future Enhancements
 

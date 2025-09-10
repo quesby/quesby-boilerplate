@@ -1,8 +1,11 @@
 ---
+title: Deployment Guide
+description: Complete deployment guide for Neutrino Electron static sites
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 7
 ---
 
 # Deployment Guide
@@ -874,6 +877,8 @@ npx lighthouse http://localhost:8080 --output html
 - [ ] **Site accessibility**: All pages load correctly
 - [ ] **Form functionality**: Contact forms and CMS work
 - [ ] **Mobile responsiveness**: Site works on all devices
+
+{% include "partials/documentation-nav-footer.njk" %}
 - [ ] **SEO verification**: Meta tags and structured data
 - [ ] **Performance check**: Core Web Vitals within targets
 - [ ] **Security scan**: No vulnerabilities detected

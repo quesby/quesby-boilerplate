@@ -1,8 +1,11 @@
 ---
+title: Troubleshooting Guide
+description: Complete troubleshooting guide for Neutrino Electron issues
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 9
 ---
 
 # Troubleshooting Guide
@@ -834,6 +837,8 @@ npm run serve -- --watch
 #### **Bug Reports**
 When reporting issues, include:
 - Node.js version
+
+{% include "partials/documentation-nav-footer.njk" %}
 - Operating system
 - Error messages
 - Steps to reproduce

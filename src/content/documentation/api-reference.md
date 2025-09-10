@@ -1,8 +1,11 @@
 ---
+title: API Reference
+description: Complete API reference for Neutrino Electron functions and filters
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 10
 ---
 
 # API Reference
@@ -1049,6 +1052,8 @@ const command = `sass --no-source-map --style=compressed src/sass:src/assets/css
 - Validate frontmatter structure
 - Use consistent naming conventions
 - Implement proper draft management
+
+{% include "partials/documentation-nav-footer.njk" %}
 - Optimize media assets
 
 ### Build Process

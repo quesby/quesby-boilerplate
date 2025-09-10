@@ -1,8 +1,11 @@
 ---
+title: Development Guide
+description: Complete development guide for Neutrino Electron customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 5
 ---
 
 # Development Guide
@@ -914,6 +917,8 @@ NODE_ENV=production
 
 - **Use consistent frontmatter** across all content
 - **Validate content structure** before committing
+
+{% include "partials/documentation-nav-footer.njk" %}
 - **Keep content organized** in appropriate directories
 - **Use descriptive slugs** for better SEO
 

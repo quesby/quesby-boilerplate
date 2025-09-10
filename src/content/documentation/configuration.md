@@ -1,8 +1,11 @@
 ---
+title: Configuration Guide
+description: Complete configuration guide for Neutrino Electron site settings
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 class: documentation
+order: 3
 ---
 
 # Configuration Guide
@@ -414,6 +417,8 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Price", name: "price", widget: "number"}
       - {label: "Description", name: "description", widget: "markdown"}
+
+{% include "partials/documentation-nav-footer.njk" %}
 ```
 
 ### Custom Domain Setup

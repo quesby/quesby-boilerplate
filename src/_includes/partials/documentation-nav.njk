@@ -1,0 +1,17 @@
+{# Documentation Navigation Sidebar #}
+<nav class="documentation-nav">
+  <h3>Documentation</h3>
+  <ul>
+    {% for doc in collections.documentation %}
+      <li>
+        <a href="{{ doc.url }}" 
+           {% if page.url == doc.url %}class="active"{% endif %}>
+          {{ doc.data.title }}
+        </a>
+        {% if doc.data.description %}
+          <p class="nav-description">{{ doc.data.description }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
