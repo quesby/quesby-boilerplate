@@ -4,6 +4,7 @@ description: Complete API reference for Neutrino Electron functions and filters
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 10
 ---

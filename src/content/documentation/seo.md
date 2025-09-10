@@ -4,6 +4,7 @@ description: Complete guide to the advanced SEO system implemented in Neutrino E
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 8
 ---
@@ -250,5 +251,3 @@ Planned improvements include:
 ---
 
 For more information about content management and site configuration, see the [Content Management](/documentation/content-management/) and [Configuration](/documentation/configuration/) sections.
-
-{% include "partials/documentation-nav-footer.njk" %}

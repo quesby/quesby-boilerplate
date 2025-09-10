@@ -4,6 +4,7 @@ description: Complete configuration guide for Neutrino Electron site settings
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 3
 ---

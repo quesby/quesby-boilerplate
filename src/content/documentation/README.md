@@ -4,6 +4,7 @@ description: Complete guide to Neutrino Electron - privacy-first static site boi
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 1
 ---
@@ -69,5 +70,3 @@ Neutrino Electron is an open-source project. Contributions are welcome! Please s
 ---
 
 Ready to get started? Begin with our [Installation Guide](/documentation/installation/)!
-
-{% include "partials/documentation-nav-footer.njk" %}

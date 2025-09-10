@@ -4,6 +4,7 @@ description: Complete installation and setup guide for Neutrino Electron
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 2
 ---
@@ -205,5 +206,3 @@ After successful installation:
 - Windows 10/11
 - macOS 10.15+
 - Linux (any distribution with Node.js 18+)
-
-{% include "partials/documentation-nav-footer.njk" %}

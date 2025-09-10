@@ -4,6 +4,7 @@ description: Complete guide to content management in Neutrino Electron
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 4
 ---
@@ -697,8 +698,6 @@ This will show any content-related errors during the build process.
 - **Include relevant keywords** naturally in content
 - **Add alt text** to all images
 - **Use internal linking** to connect related content
-
-{% include "partials/documentation-nav-footer.njk" %}
 - **Keep content fresh** with regular updates
 
 This comprehensive content management guide covers all aspects of working with content in Neutrino, from basic creation to advanced optimization and troubleshooting.

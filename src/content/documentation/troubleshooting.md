@@ -4,6 +4,7 @@ description: Complete troubleshooting guide for Neutrino Electron issues
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
+navfooter: documentation-nav-footer.njk
 class: documentation
 order: 9
 ---
