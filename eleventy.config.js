@@ -14,6 +14,7 @@ import rehypeExpressiveCode from 'rehype-expressive-code';
 import rehypeStringify from 'rehype-stringify';
 import { DateTime } from "luxon";
 import filters from "./src/eleventy/filters.js";
+import rss from "./src/eleventy/utils/rss.js";
 // import * as cheerio from 'cheerio'; // Removed cheerio dependency
 
 // Import SEO utilities
@@ -345,6 +346,7 @@ export default function(eleventyConfig) {
 
   // Load filters
   filters(eleventyConfig);
+  rss(eleventyConfig);
 
   return {
     dir: {

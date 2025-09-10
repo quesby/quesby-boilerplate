@@ -24,6 +24,7 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@expressive-code/plugin-shiki": "^0.41.3",
     "cheerio": "^1.1.2",
     "concurrently": "^8.2.2",
