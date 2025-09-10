@@ -22,7 +22,6 @@ npm list --depth=0
 
 # 3. Check environment variables
 echo $NEUTRINO_CONTENT_PATH
-echo $THEME
 
 # 4. Validate configuration
 cat src/_data/site.json

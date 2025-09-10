@@ -15,6 +15,9 @@ import rehypeStringify from 'rehype-stringify';
 import { DateTime } from "luxon";
 // import * as cheerio from 'cheerio'; // Removed cheerio dependency
 
+// Import SEO utilities
+import { register as registerSEO } from "./src/eleventy/seo.js";
+
 dotenv.config();
 
 const site = JSON.parse(fs.readFileSync("./src/_data/site.json", "utf-8"));
@@ -137,6 +140,9 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("slugify", str =>
     slugify(str, { lower: true, strict: true })
   );
+
+  // Register SEO filters and utilities
+  registerSEO(eleventyConfig);
 
   const processor = unified()
     .use(remarkParse)

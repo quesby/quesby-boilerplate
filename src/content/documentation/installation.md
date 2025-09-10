@@ -201,4 +201,4 @@ After successful installation:
 
 - Windows 10/11
 - macOS 10.15+
-- Linux (Ubuntu 18.04+, CentOS 7+)
+- Linux (any distribution with Node.js 18+)

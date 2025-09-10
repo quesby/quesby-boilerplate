@@ -6,5 +6,8 @@
     "favicon": "/assets/images/neutrino-logo.png",
     "theme": "neutrino-electron-core",
     "defaultVisualTheme": "dark",
-    "contentPath": "${NEUTRINO_CONTENT_PATH}"
+    "contentPath": "${NEUTRINO_CONTENT_PATH}",
+    "socialImage": "/assets/images/og-image.jpg",
+    "twitter": "@neutrino_electron",
+    "language": "en-US"
 }
