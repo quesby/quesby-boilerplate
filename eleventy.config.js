@@ -72,7 +72,7 @@ function copyDirectoryRecursive(source, destination) {
 function setupContentDirectory() {
   // Expand and normalize the content path
   const raw = expandEnv(site.contentPath);
-  const resolvedRaw = raw && raw.trim().length ? raw : "content";
+  const resolvedRaw = raw && raw.trim().length ? raw : "src/content";
 
   // Resolve path relative to project root (process.cwd())
   const contentPath = path.isAbsolute(resolvedRaw)
