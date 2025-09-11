@@ -9,7 +9,7 @@ type: post
 id: memr7onb41c4aytboitt0s81ee
 createdAt: 2025-08-22T11:35:26.855Z
 description: Testing the new ULID-based content management system with dynamic permalinks.
-image: test-ulid-system-implementation.webp
+# image: test-ulid-system-implementation.webp
 aliases:
   - /blog/test-ulid-system-implementation/
 ---

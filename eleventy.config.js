@@ -1,4 +1,5 @@
 // import Image from "@11ty/eleventy-img";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import slugify from "slugify";
 import MarkdownIt from 'markdown-it';
 import MarkdownItLinkAttributes from 'markdown-it-link-attributes';
@@ -15,6 +16,7 @@ import rehypeStringify from 'rehype-stringify';
 import { DateTime } from "luxon";
 import filters from "./src/eleventy/filters.js";
 import rss from "./src/eleventy/utils/rss.js";
+import shortcodes from "./src/eleventy/shortcodes.js";
 // import * as cheerio from 'cheerio'; // Removed cheerio dependency
 
 // Import SEO utilities
@@ -108,10 +110,29 @@ function setupContentDirectory() {
 // Setup content directory before Eleventy configuration
 const localContentPath = setupContentDirectory();
 
+// Image shortcode function
+async function imageShortcode(src, alt, sizes = "100vw") {
+  let metadata = await Image(src, {
+    widths: [200, 480, 640, 960, 1280, "auto"],
+    formats: ["avif", "webp", "jpeg"],
+    outputDir: "./_site/assets/images/",
+    urlPath: "/assets/images/"
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 export default function(eleventyConfig) {
-  // eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  // eleventyConfig.addLiquidShortcode("image", imageShortcode);
-  // eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   const activeTheme = process.env.THEME || "neutrino-electron-core";
 
@@ -351,6 +372,7 @@ export default function(eleventyConfig) {
   // Load filters
   filters(eleventyConfig);
   rss(eleventyConfig);
+  shortcodes(eleventyConfig);
 
   return {
     dir: {
