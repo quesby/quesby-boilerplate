@@ -1,9 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main
-  # Per sviluppo locale, usa:
-  # name: test-repo
+  # name: git-gateway
   # branch: main
+  # Per sviluppo locale, usa:
+  name: test-repo
+  branch: main
 
 # Configurazione per sviluppo locale
 local_backend: true
@@ -16,6 +16,8 @@ collections:
     folder: "src/content/posts"
     create: true
     slug: "{{id}}--{{slug}}"
+    path: "{{slug}}/index"   # dice a Decap dove scrivere i file
+    extension: "md"
     fields:
       - {label: "ID (ULID)", name: "id", widget: "string", default: "{{now | date('YYYYMMDDHHmmss')}}"}
       - {label: "Title", name: "title", widget: "string"}
