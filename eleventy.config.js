@@ -133,9 +133,13 @@ export default function(eleventyConfig) {
 
   // add collections for posts, projects, and documentation
   eleventyConfig.addCollection('posts', collection => {
-    const posts = collection.getFilteredByGlob(['src/content/posts/*/*.md']);
+    // Support both old format (ULID only) and new format (ULID--slug)
+    const posts = collection.getFilteredByGlob([
+      'src/content/posts/*/index.md',  // Old format: ULID/index.md
+      'src/content/posts/*--*/index.md' // New format: ULID--slug/index.md
+    ]);
     console.log(`[📝] Collection posts: found ${posts.length} posts`);
-    console.log(`[🔍] Pattern used: src/content/posts/*/*.md`);
+    console.log(`[🔍] Patterns used: src/content/posts/*/index.md and src/content/posts/*--*/index.md`);
     return posts;
   });
 
