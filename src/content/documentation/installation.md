@@ -7,6 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 2
+lastUpdated: "2025-09-12"
 ---
 
 # Installation Guide
@@ -200,6 +201,16 @@ After successful installation:
 - **npm:** 8.0.0 or higher
 - **Memory:** 512MB RAM minimum
 - **Disk Space:** 100MB for the project, additional space for content
+
+## Key Dependencies
+
+Neutrino uses modern, well-maintained dependencies:
+
+- **Eleventy:** 3.0+ (Static site generator)
+- **Decap CMS:** Latest (Headless CMS)
+- **Sass:** 1.79+ (CSS preprocessor)
+- **Expressive Code:** 0.41+ (Syntax highlighting)
+- **Markdown-it:** 14.1+ (Markdown processor)
 
 ## Supported Platforms
 

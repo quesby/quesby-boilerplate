@@ -7,6 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 4
+lastUpdated: "2025-09-12"
 ---
 
 # Content Management Guide
@@ -241,6 +242,7 @@ collections:
       - {label: "Drafts", field: "draft", pattern: true}
       - {label: "Published", field: "draft", pattern: false}
     fields:
+      - {label: "ID", name: "id", widget: "ulid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
@@ -261,6 +263,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "ID", name: "id", widget: "ulid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Client", name: "client", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -271,6 +274,48 @@ collections:
       - {label: "Status", name: "status", widget: "select", options: ["planning", "in-progress", "completed", "on-hold"]}
       - {label: "Body", name: "body", widget: "markdown"}
 ```
+
+### Custom ULID Widget
+
+Neutrino includes a custom ULID widget for Decap CMS that automatically generates unique identifiers for content entries.
+
+#### Widget Features
+
+- **Automatic Generation**: ULIDs are generated automatically when creating new content
+- **Read-only Field**: Generated ULIDs cannot be edited manually to ensure uniqueness
+- **Regeneration**: Users can generate a new ULID if needed
+- **Visual Feedback**: Clear indication that the field is auto-generated
+
+#### Widget Configuration
+
+```yaml
+# In config.yml
+fields:
+  - {label: "ID", name: "id", widget: "ulid"}
+```
+
+#### Widget Behavior
+
+1. **On Content Creation**: A new ULID is automatically generated
+2. **On Content Edit**: Existing ULID is displayed (read-only)
+3. **Regeneration**: Users can click "Generate New ULID" to create a new one
+4. **Validation**: ULIDs are validated to ensure proper format
+
+#### Widget Styling
+
+The widget includes custom styling:
+- Monospace font for better readability
+- Read-only appearance with gray background
+- Generate button for creating new ULIDs
+- Helpful text explaining the auto-generation
+
+#### Technical Implementation
+
+The widget is implemented in `src/admin/ulid-widget.js` and includes:
+- Custom ULID generation algorithm
+- React components for control and preview
+- Integration with Decap CMS widget system
+- Automatic registration with the CMS
 
 ## Content Creation Workflow
 
@@ -384,13 +429,93 @@ src/content/media/
 - **PNG**: For images with transparency
 - **JPG**: For photos without transparency
 
-#### Image Shortcode Usage
+#### Responsive Image Shortcode
 
+Neutrino includes a powerful responsive image shortcode that automatically generates multiple formats and sizes for optimal performance.
+
+**Basic Usage:**
 ```njk
 {% raw %}
-{% image "/content/media/images/example.jpg", "Alt text", "responsive" %}
+{% image "hero/cover.jpg", "Site cover image", "(min-width: 768px) 75vw, 100vw" %}
 {% endraw %}
 ```
+
+**Parameters:**
+- `src`: Path to image (relative to `src/assets/images/`)
+- `alt`: Alt text (required for accessibility)
+- `sizes`: CSS sizes attribute (optional, defaults to "100vw")
+
+**Features:**
+- **Automatic optimization**: Generates AVIF and WebP formats
+- **Multiple sizes**: Creates 320px, 640px, 960px, 1280px, and original width
+- **Lazy loading**: Images load only when needed
+- **Accessibility**: Alt text is required
+- **Performance**: Optimized for Core Web Vitals
+
+**Example Output:**
+```html
+<figure>
+  <picture>
+    <source type="image/avif" srcset="/img/hero-cover-320.avif 320w, /img/hero-cover-640.avif 640w, /img/hero-cover-960.avif 960w, /img/hero-cover-1280.avif 1280w">
+    <source type="image/webp" srcset="/img/hero-cover-320.webp 320w, /img/hero-cover-640.webp 640w, /img/hero-cover-960.webp 960w, /img/hero-cover-1280.webp 1280w">
+    <img src="/img/hero-cover-1280.jpeg" alt="Site cover image" sizes="(min-width: 768px) 75vw, 100vw" loading="lazy" decoding="async">
+  </picture>
+</figure>
+```
+
+#### SVG Inline Shortcode
+
+For icons and graphics, use the SVG shortcode to inline SVG files with custom CSS classes.
+
+**Basic Usage:**
+```njk
+{% raw %}
+{% svg "assets/icons/github.svg", "icon-lg text-neutral-700" %}
+{% endraw %}
+```
+
+**Parameters:**
+- `svgPath`: Path to SVG file (relative to `src/`)
+- `className`: CSS classes to apply (optional)
+
+**Features:**
+- **Inline SVG**: Embeds SVG directly in HTML
+- **CSS classes**: Apply custom styling
+- **Performance**: No additional HTTP requests
+- **Scalable**: Perfect for icons and graphics
+
+**Example:**
+```njk
+{% raw %}
+<!-- Icon with custom classes -->
+{% svg "assets/icons/star.svg", "w-6 h-6 text-yellow-500" %}
+
+<!-- Icon without classes -->
+{% svg "assets/icons/arrow.svg" %}
+{% endraw %}
+```
+
+#### Automatic Markdown Image Processing
+
+Neutrino automatically processes standard Markdown images through the responsive image system.
+
+**Markdown Syntax:**
+```markdown
+![Alt text](/assets/images/example.jpg)
+```
+
+**Automatic Processing:**
+- Converts to responsive `<picture>` elements
+- Generates multiple formats (AVIF, WebP)
+- Applies lazy loading
+- Optimizes for performance
+
+**Configuration:**
+The system processes images in:
+- Blog posts (`src/content/posts/`)
+- Pages (`src/content/pages/`)
+- Projects (`src/content/projects/`)
+- Documentation (`src/content/documentation/`)
 
 ### Media Upload via CMS
 

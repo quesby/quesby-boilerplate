@@ -69,6 +69,11 @@
         {% if toc %}
           <div class="content-wrapper">
             <div class="content">
+                {% if lastUpdated %}
+                  <div class="last-updated">
+                    <small>Last updated: {{ lastUpdated | date("dd.MM.yyyy") }}</small>
+                  </div>
+                {% endif %}
               {{ content | safe }}
               {% if navfooter %}
                 {% include "partials/" + navfooter %}

@@ -7,6 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 10
+lastUpdated: "2025-09-12"
 ---
 
 # API Reference
@@ -275,6 +276,61 @@ Neutrino automatically creates collections for:
 - **`collections.documentation`** - Documentation pages
 - **`collections.news`** - News articles
 
+## Shortcodes
+
+### Image Shortcode
+
+#### **`{% image %}`** - Responsive Image
+
+Generates responsive images with multiple formats and sizes.
+
+**Syntax:**
+```njk
+{% image "path/to/image.jpg", "Alt text", "sizes" %}
+```
+
+**Parameters:**
+- `src` (String): Path to image relative to `src/assets/images/`
+- `alt` (String): Alt text for accessibility (required)
+- `sizes` (String): CSS sizes attribute (optional, defaults to "100vw")
+
+**Features:**
+- Generates AVIF and WebP formats
+- Creates multiple sizes: 320px, 640px, 960px, 1280px, original
+- Applies lazy loading and async decoding
+- Wraps in `<figure>` element
+
+**Example:**
+```njk
+{% image "hero/cover.jpg", "Site hero image", "(min-width: 768px) 75vw, 100vw" %}
+```
+
+### SVG Shortcode
+
+#### **`{% svg %}`** - Inline SVG
+
+Embeds SVG files directly in HTML with optional CSS classes.
+
+**Syntax:**
+```njk
+{% svg "path/to/icon.svg", "css-classes" %}
+```
+
+**Parameters:**
+- `svgPath` (String): Path to SVG file relative to `src/`
+- `className` (String): CSS classes to apply (optional)
+
+**Features:**
+- Inlines SVG content directly
+- Applies custom CSS classes
+- No additional HTTP requests
+- Perfect for icons and graphics
+
+**Example:**
+```njk
+{% svg "assets/icons/github.svg", "w-6 h-6 text-gray-600" %}
+```
+
 ## Template Functions
 
 ### Layout System
@@ -488,6 +544,29 @@ backend:
 - {label: "Price", name: "price", widget: "number", value_type: "float", min: 0}
 ```
 
+#### **ULID Widget (Custom)**
+
+```yaml
+- {label: "ID", name: "id", widget: "ulid"}
+```
+
+**Features:**
+- Automatically generates unique ULID identifiers
+- Read-only field to prevent manual editing
+- Regeneration capability for new ULIDs
+- Custom styling with monospace font
+- Integration with Decap CMS widget system
+
+**Usage:**
+```yaml
+collections:
+  - name: "posts"
+    fields:
+      - {label: "ID", name: "id", widget: "ulid"}
+      - {label: "Title", name: "title", widget: "string"}
+      # ... other fields
+```
+
 ## Build Scripts
 
 ### NPM Scripts
@@ -503,6 +582,11 @@ backend:
   }
 }
 ```
+
+**Script Descriptions:**
+- `dev`: Eleventy development server without CSS watching
+- `serve`: Full development environment with CSS watching
+- `serve:no-watch`: Eleventy development server without CSS watching
 
 #### **Build Scripts**
 
@@ -522,10 +606,16 @@ backend:
 {
   "scripts": {
     "watch:css": "node scripts/watch.js",
+    "build:css": "node scripts/build.js",
     "gen:ec-css": "node scripts/gen-ec-css.js"
   }
 }
 ```
+
+**Script Descriptions:**
+- `watch:css`: Watch and compile SCSS files during development
+- `build:css`: One-time CSS compilation for production
+- `gen:ec-css`: Generate Expressive Code CSS for syntax highlighting
 
 ### Build Scripts API
 

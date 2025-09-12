@@ -7,6 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 8
+lastUpdated: "2025-09-12"
 ---
 
 # SEO System

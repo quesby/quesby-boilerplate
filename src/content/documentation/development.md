@@ -7,6 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 5
+lastUpdated: "2025-09-12"
 ---
 
 # Development Guide
@@ -106,6 +107,14 @@ Neutrino provides several npm scripts for different development tasks:
   - Supports light and dark themes
   - Outputs to `src/assets/css/expressive-code.css`
 - **Use case**: When updating code highlighting themes
+
+#### **`npm run serve:no-watch`** - Eleventy Serve Without CSS Watching
+- **Purpose**: Start Eleventy development server without CSS compilation
+- **What it does**:
+  - Starts Eleventy in serve mode
+  - Watches for content and template changes
+  - No automatic CSS compilation
+- **Use case**: When working only on content/templates without style changes
 
 #### **`npm run build`** - Production Build
 - **Purpose**: Create production-ready static site
@@ -363,6 +372,104 @@ fs.writeFileSync(outPath, fullStyles, 'utf8');
 - Supports multiple themes
 - Integrates with Shiki highlighter
 - Outputs to `src/assets/css/expressive-code.css`
+
+## Shortcodes System
+
+Neutrino includes powerful shortcodes for media handling and content optimization.
+
+### Image Shortcode
+
+#### **Responsive Images with `{% image %}`**
+
+The image shortcode automatically generates responsive images with multiple formats and sizes.
+
+**Implementation:**
+```javascript
+// In src/eleventy/shortcodes.js
+async function imageShortcode(src, alt, sizes = "100vw") {
+  if (!alt) throw new Error(`Missing alt for ${src}`);
+  
+  const resolved = path.resolve("src/assets/images", 
+    src.replace(/^\/?src\/assets\/images\/?/, ""));
+  
+  const metadata = await Image(resolved, {
+    widths: [320, 640, 960, 1280, null],
+    formats: ["avif", "webp"],
+    outputDir: "./_site/img/",
+    urlPath: "/img/"
+  });
+  
+  return `<figure>${Image.generateHTML(metadata, {
+    alt, sizes, loading: "lazy", decoding: "async"
+  })}</figure>`;
+}
+```
+
+**Usage in Templates:**
+```njk
+{% image "hero/cover.jpg", "Site hero image", "(min-width: 768px) 75vw, 100vw" %}
+```
+
+**Features:**
+- **Format optimization**: Generates AVIF and WebP
+- **Size variants**: 320px, 640px, 960px, 1280px, original
+- **Lazy loading**: Images load when needed
+- **Accessibility**: Alt text required
+- **Performance**: Optimized for Core Web Vitals
+
+### SVG Shortcode
+
+#### **Inline SVG with `{% svg %}`**
+
+The SVG shortcode embeds SVG files directly in HTML with custom CSS classes.
+
+**Implementation:**
+```javascript
+// In src/eleventy/shortcodes.js
+function svgShortcode(svgPath, className = "") {
+  const fullPath = path.join(process.cwd(), 'src', svgPath);
+  const svgContent = fs.readFileSync(fullPath, 'utf8');
+  
+  if (!className) return svgContent;
+  
+  // Add or append CSS class to SVG element
+  return svgContent.replace(/<svg([^>]*)>/, 
+    `<svg$1 class="${className}">`);
+}
+```
+
+**Usage in Templates:**
+```njk
+{% svg "assets/icons/github.svg", "w-6 h-6 text-gray-600" %}
+```
+
+**Features:**
+- **Inline embedding**: No additional HTTP requests
+- **CSS classes**: Apply custom styling
+- **Scalable**: Perfect for icons and graphics
+- **Performance**: Reduces network requests
+
+### Automatic Markdown Processing
+
+Neutrino automatically processes standard Markdown images through the responsive image system.
+
+**Markdown Syntax:**
+```markdown
+![Alt text](/assets/images/example.jpg)
+```
+
+**Automatic Processing:**
+- Converts to responsive `<picture>` elements
+- Generates multiple formats (AVIF, WebP)
+- Applies lazy loading
+- Optimizes for performance
+
+**Configuration:**
+The system processes images in all content directories:
+- `src/content/posts/`
+- `src/content/pages/`
+- `src/content/projects/`
+- `src/content/documentation/`
 
 ## Template System
 
@@ -897,6 +1004,70 @@ NODE_ENV=production
   }
 }
 ```
+
+## Utility Scripts
+
+Neutrino includes several utility scripts for content management and migration tasks.
+
+### ULID Migration Script
+
+#### **`scripts/migrate-to-ulid-slug.js`**
+
+Migrates content from ULID-only folder structure to ULID--slug format.
+
+**Usage:**
+```bash
+# Dry run (test mode)
+node scripts/migrate-to-ulid-slug.js --dry-run
+
+# Actual migration
+node scripts/migrate-to-ulid-slug.js
+
+# Help
+node scripts/migrate-to-ulid-slug.js --help
+```
+
+**Features:**
+- Migrates from `[ULID]/index.md` to `[ULID]--[slug]/index.md`
+- Creates automatic backup before migration
+- Handles slug conflicts and validation
+- Adds aliases for old URLs
+- Dry-run mode for testing
+- Detailed logging and error reporting
+
+**Migration Process:**
+1. Creates backup of content directory
+2. Scans all ULID folders
+3. Extracts slug from frontmatter
+4. Renames folders to `ULID--slug` format
+5. Adds aliases for old URLs
+6. Removes old folders
+
+### Alias Cleanup Script
+
+#### **`scripts/fix-aliases.js`**
+
+Cleans up empty aliases in migrated posts.
+
+**Usage:**
+```bash
+node scripts/fix-aliases.js
+```
+
+**Features:**
+- Removes empty alias entries
+- Fixes malformed alias arrays
+- Processes all posts in content directory
+- Safe operation with error handling
+
+### Script Safety Features
+
+All utility scripts include:
+- **Backup creation** before destructive operations
+- **Dry-run mode** for testing changes
+- **Error handling** with detailed logging
+- **Validation** of input data
+- **Rollback capability** through backups
 
 ## Best Practices
 
