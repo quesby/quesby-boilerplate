@@ -29,18 +29,20 @@ $theme-light: (
 
 // DARK THEME
 $theme-dark: (
+  site-bg: oklch(16% 0% 0),
+  site-bg-secondary: oklch(22% 0 0),
+  site-bg-hover: oklch(25% 0 0),
+  site-bg-radial: radial-gradient(oklch(17.76% 0.000 89.9) 25%, black),
+  subnav-bg: color.adjust(black, $lightness: 10%),
   text-fg: oklch(93% 0 0),
-  link-fg: oklch(68% 50% 265),
+  link-fg: oklch(0.750.1367 299.15),// oklch(0.7685 0.1214 252.34),
+  link-fg-hover: oklch(0.6 0.1367 299.15),
   headlines-fg: oklch(100.00% 0.000 89.9),
-  nav-item-fg: oklch(93% 0 0),
+  navigation-bg: oklch(16% 0% 0),
+  nav-item-fg: oklch(90% 0 0),
+  nav-item-fg-hover: oklch(100% 0 0),
   button-fg: white,
   button-secondary-fg: black,
-  site-bg: oklch(8% 0 0),
-  site-bg-2: oklch(17.76% 0.000 89.9),
-  site-bg-hover: color.adjust(black, $lightness: 5%),
-  site-bg-radial: radial-gradient(oklch(17.76% 0.000 89.9) 25%, black),
-  navigation-bg: black,
-  subnav-bg: color.adjust(black, $lightness: 10%),
   button-bg: oklch(39.00% 0.012 320.6),
   button-secondary-bg: oklch(85% 0.000 0),
   border: oklch(25% 0 0),
@@ -107,8 +109,8 @@ $margin: 20px;
 
 // Borders
 $borderRadius-large: 50px;
-$borderRadius-normal: 25px;
-$borderRadius-small: 7px;
+$borderRadius-normal: 15px;
+$borderRadius-small: 5px;
 
 // Breakpoints system
 $breakpoints: (

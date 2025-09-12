@@ -219,7 +219,9 @@ export default function(eleventyConfig) {
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
-  const activeTheme = process.env.THEME || "neutrino-electron-core";
+  // Load theme from site.json configuration
+  const siteData = JSON.parse(fs.readFileSync('./src/_data/site.json', 'utf8'));
+  const activeTheme = siteData.theme || "neutrino-electron-core";
 
   // Watch folders
   eleventyConfig.addWatchTarget("src/_data");

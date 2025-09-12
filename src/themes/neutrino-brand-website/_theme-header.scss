@@ -1,8 +1,14 @@
 header {
-    position: relative;
-    border-bottom: 1px solid color-mix(in oklch, var(--navigation-bg), black 5%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--navigation-bg);
+    border-bottom: 3px solid black;
     .container {
         @include flex-container(row, space-between, center, wrap);
+        .logo {
+            width: 35px;
+        }
         .navigation {
             display: none;
             opacity: 0;
@@ -14,7 +20,6 @@ header {
             width: 100vw;
             height: 100vh;
             background-color: var(--navigation-bg);
-            padding: ($padding);
             @include flex-container(column, flex-start, flex-start, wrap);
             transition: opacity .1s ease-in-out;
             &.active {
@@ -33,6 +38,7 @@ header {
                 border-bottom-width: 0;
                 li {
                     border-bottom: 1px dashed color-mix(in oklch, var(--navigation-bg), black 15%);
+                    margin-bottom: 0;
                     a {
                         font-size: 1rem;
                         color: var(--nav-item-fg);
@@ -76,9 +82,15 @@ header {
                         a {
                             text-decoration: none;
                             padding: 0.5em 2em;
+                            &:hover {
+                                color: var(--nav-item-fg-hover);
+                            }
                         }
                     }
                 }
+            }
+            .togglenav {
+                display: none;
             }
         }
     }

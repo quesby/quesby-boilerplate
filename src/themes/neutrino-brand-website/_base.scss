@@ -52,7 +52,9 @@ body {
 a {
     display: inline-block;
     color: var(--link-fg);
-    text-decoration: underline;
+    &:hover {
+        color: var(--link-fg-hover);
+    }
 }
 h1, h2, h3, h4, h5, h6 {
     color: var(--headlines-fg);
@@ -271,10 +273,13 @@ button {
     border-radius: $borderRadius-small;
     padding: 1em 2em;
 }
+.expressive-code {
+    margin-bottom: $margin * 2;
+}
 .parallax-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Altezza del div, puoi modificare secondo le tue necessità */
+    height: 100vh;
     overflow: hidden;
     .background-video {
         position: absolute;
@@ -297,7 +302,7 @@ button {
         height: 100%;
         background-image: radial-gradient(circle, var(--cpal-1) 10%, transparent 10%);
         background-size: 5px 5px;
-        opacity: 0.2; /* Regola l'opacità secondo le tue esigenze */
+        opacity: 0.2;
         z-index: 1;
     }
  }

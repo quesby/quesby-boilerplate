@@ -10,7 +10,7 @@ style: home.css
             <span>Neutrino</span>
             <span>Electron</span>
         </h1>
-        <h2>An Eleventy boilerplate with Decap CMS</h2>
+        <h2>Git-powered content management made simple</h2>
         <div class="paragraph-l">
             <p>Realized with content creators in mind.</p>
         </div>
@@ -20,4 +20,34 @@ style: home.css
             <a href="/documentation/" class="button secondary">Learn more</a>
         </div>
     </div>
+</section>
+
+<section id="features">
+  <div class="container boxed">
+    <h2>Features</h2>
+    <div class="features-wrapper">
+      <div class="feature">
+        {% image "lightweight-fast.svg", "Lightweight & Fast" %}
+        <h3>Lightweight & Fast</h3>
+        <p>Built with Eleventy for optimal performance.</p>
+      </div>
+      <div class="feature">
+        {% image "git-repo.svg", "Git-based workflow" %}
+        <h3>Git-based workflow</h3>
+        <p>Edit and publish with your existing Git workflow. No database needed.</p>
+      </div>
+      <div class="feature">
+        {% image "markdown.svg", "Markdown & Front Matter" %}
+        <h3>Markdown & Front Matter</h3>
+        <p>Simple, structured content that works with any static site generator.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          {% svg "/assets/images/seo.svg", "seo-icon" %}
+        </div>
+        <h3>SEO-friendly</h3>
+        <p>Clean URLs, semantic HTML, fast loading, and full control over metadata.</p>
+      </div>
+    </div>
+  </div>
 </section>

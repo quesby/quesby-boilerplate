@@ -58,7 +58,7 @@ Configure your active theme in `src/_data/site.json`:
   "description": "An Eleventy boilerplate with Decap CMS",
   "logo": "/assets/images/neutrino-logo.svg",
   "favicon": "/assets/images/neutrino-logo.png",
-  "theme": "neutrino-electron-core",
+  "theme": "neutrino-brand-website",
   "defaultVisualTheme": "dark",
   "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }

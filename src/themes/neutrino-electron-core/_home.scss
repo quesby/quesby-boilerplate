@@ -1,4 +1,9 @@
 .home {
+    .layout-wrapper {
+        main {
+            // justify-content: center;
+        }
+    }
     h1 {
         @include flex-container(column, center, center, wrap);
         span:first-child {

@@ -81,15 +81,18 @@ Neutrino comes with two built-in themes:
 
 ### Setting the Theme
 
-#### Method 1: Environment Variable
-```bash
-THEME=neutrino-brand-website npm run serve
-```
+Configure your active theme in `src/_data/site.json`:
 
-#### Method 2: Site Configuration
 ```json
 {
-  "theme": "neutrino-brand-website"
+  "name": "Neutrino - Electron",
+  "url": "https://theoddape.it",
+  "description": "An Eleventy boilerplate with Decap CMS",
+  "logo": "/assets/images/neutrino-logo.svg",
+  "favicon": "/assets/images/neutrino-logo.png",
+  "theme": "neutrino-brand-website",
+  "defaultVisualTheme": "dark",
+  "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
 ```
 

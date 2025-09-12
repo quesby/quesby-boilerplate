@@ -1,13 +1,40 @@
 // Blog
-// .blog {}
+.blog {
+    .post {
+        border: 1px solid var(--border);
+        border-radius: $borderRadius-small;
+        background-color: var(--site-bg-secondary);
+        padding: $padding;
+        margin-bottom: $margin;
+        &:hover {
+            background-color: var(--site-bg-hover);
+        }
+        .post-date {
+            font-size: 0.75rem;
+            color: var(--text-fg);
+        }
+        .post-title {
+            font-size: 1.35rem;
+            margin-bottom: 0;
+        }
+        .post-excerpt {
+            color: var(--text-fg);
+        }
+    }
+}
     
     // Single Post
-.post {
+.single-post {
     main {
         max-width: 1024px;
         margin: 0 auto;
         .container {
             max-width: 896px;
+            .post-summary {
+                h3 {
+                    font-size: 1.5rem;
+                }
+            }
             padding: 0 ($padding * 3);
         }
         section {
@@ -26,6 +53,9 @@
             .container {
                 background-color: var(--site-bg);
                 padding: ($padding * 2) ($padding * 3);
+            }
+            .post-date {
+                font-size: 0.75rem;
             }
         }
     }

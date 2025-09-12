@@ -32,13 +32,14 @@ Nel file `src/_data/site.json`:
 
 ```json
 {
-  "theme": "neutrino-basic@1.0.0",
-  "themeOverrides": {
-    "neutrino-basic": {
-      "version": "1.0.0",
-      "customizations": ["colors", "typography", "layout"]
-    }
-  }
+  "name": "Neutrino - Electron",
+  "url": "https://theoddape.it",
+  "description": "An Eleventy boilerplate with Decap CMS",
+  "logo": "/assets/images/neutrino-logo.svg",
+  "favicon": "/assets/images/neutrino-logo.png",
+  "theme": "neutrino-brand-website",
+  "defaultVisualTheme": "dark",
+  "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
 ```
 

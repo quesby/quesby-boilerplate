@@ -1,4 +1,7 @@
 .home {
+    .layout-wrapper {
+        // main {}
+    }
     h1 {
         @include flex-container(column, center, center, wrap);
         span:first-child {
@@ -21,6 +24,23 @@
         .container {
             @include flex-container(column, center, center, wrap);
             min-height: 100vh;        
+        }
+    }
+
+    #features {
+        background-image: linear-gradient(to top, var(--cpal-3), var(--site-bg));
+        .features-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: $margin * 2;
+            .feature {
+                padding: $padding * 2;
+                border-radius: $borderRadius-normal;
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: 900;
+                }
+            }
         }
     }
 
