@@ -1,4 +1,4 @@
-// import Image from "@11ty/eleventy-img";
+import Image from "@11ty/eleventy-img";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import slugify from "slugify";
 import MarkdownIt from 'markdown-it';
@@ -129,6 +129,91 @@ async function imageShortcode(src, alt, sizes = "100vw") {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
+// Function to process markdown images with eleventy-img
+async function processMarkdownImages(content, outputPath) {
+  // Only process HTML files
+  if (!outputPath || !outputPath.endsWith('.html')) {
+    return content;
+  }
+
+  console.log(`🔍 Processing images in: ${outputPath}`);
+
+  // Regex to find markdown images: ![alt](src)
+  const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
+  
+  // Find all matches first
+  const matches = [];
+  let match;
+  while ((match = imageRegex.exec(content)) !== null) {
+    matches.push({
+      fullMatch: match[0],
+      alt: match[1],
+      src: match[2],
+      index: match.index
+    });
+  }
+
+  console.log(`📸 Found ${matches.length} images to process in ${outputPath}`);
+
+  // Process matches in reverse order to maintain indices
+  let processedContent = content;
+  for (let i = matches.length - 1; i >= 0; i--) {
+    const { fullMatch, alt, src, index } = matches[i];
+    
+    try {
+      // Skip if it's already a processed image or external URL
+      if (src.startsWith('http') || src.startsWith('data:')) {
+        continue;
+      }
+
+      // Resolve the image path
+      let imagePath;
+      if (src.startsWith('/assets/images/')) {
+        // Absolute path from site root
+        imagePath = path.resolve('src/assets/images', src.replace('/assets/images/', ''));
+      } else if (src.startsWith('assets/images/')) {
+        // Relative path from site root
+        imagePath = path.resolve('src/assets/images', src.replace('assets/images/', ''));
+      } else if (src.startsWith('./assets/images/')) {
+        // Relative path with ./
+        imagePath = path.resolve('src/assets/images', src.replace('./assets/images/', ''));
+      } else {
+        // Assume it's relative to assets/images
+        imagePath = path.resolve('src/assets/images', src);
+      }
+
+      // Check if image exists
+      if (!fs.existsSync(imagePath)) {
+        console.warn(`⚠️ Image not found: ${imagePath}`);
+        continue;
+      }
+
+      // Process image with eleventy-img
+      const metadata = await Image(imagePath, {
+        widths: [320, 640, 960, 1280, null],
+        formats: ["avif", "webp", "jpeg"],
+        outputDir: "./_site/img/",
+        urlPath: "/img/",
+      });
+
+      const imageAttributes = {
+        alt: alt || '',
+        sizes: "100vw",
+        loading: "lazy",
+        decoding: "async",
+      };
+
+      const replacement = `<figure>${Image.generateHTML(metadata, imageAttributes)}</figure>`;
+      processedContent = processedContent.substring(0, index) + replacement + processedContent.substring(index + fullMatch.length);
+    } catch (error) {
+      console.error(`❌ Error processing image ${src}:`, error);
+      // Keep original if processing fails
+    }
+  }
+
+  return processedContent;
+}
+
 export default function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
@@ -202,10 +287,49 @@ export default function(eleventyConfig) {
     return currentIndex > 0 ? docs[currentIndex - 1] : null;
   });
 
+  // Custom plugin to process images with eleventy-img
+  const rehypeImages = () => {
+    return (tree) => {
+      const visit = (node) => {
+        if (node.type === 'element' && node.tagName === 'img') {
+          const src = node.properties?.src;
+          const alt = node.properties?.alt || '';
+          
+          // Skip external URLs
+          if (src && (src.startsWith('http') || src.startsWith('data:'))) {
+            return;
+          }
+          
+          // Process local images with eleventy-img
+          if (src) {
+            console.log(`🖼️ Found image to process: ${src}`);
+            
+            // Replace the img element with a placeholder that we'll process later
+            node.type = 'element';
+            node.tagName = 'div';
+            node.properties = {
+              'data-image-src': src,
+              'data-image-alt': alt,
+              'data-image-placeholder': 'true'
+            };
+            node.children = [];
+          }
+        }
+        
+        if (node.children) {
+          node.children.forEach(visit);
+        }
+      };
+      
+      visit(tree);
+    };
+  };
+
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeImages)
     .use(rehypeExpressiveCode, {
       themes: ['github-light', 'github-dark'],
       defaultProps: {
@@ -233,6 +357,22 @@ export default function(eleventyConfig) {
       rel: 'noopener'
     }
   });
+
+  // Add custom image processing to markdown-it
+  md.renderer.rules.image = function (tokens, idx, options, env, renderer) {
+    const token = tokens[idx];
+    const src = token.attrGet('src');
+    const alt = token.attrGet('alt') || '';
+    
+    // Skip external URLs
+    if (src && (src.startsWith('http') || src.startsWith('data:'))) {
+      return `<img src="${src}" alt="${alt}">`;
+    }
+    
+    // For local images, we'll process them with eleventy-img
+    // This is a placeholder - we'll need to handle this differently
+    return `<img src="${src}" alt="${alt}">`;
+  };
 
   // Date formatting with Luxon
   eleventyConfig.addFilter("date", (dateObj, format = "dd LLLL yyyy") => {
@@ -308,6 +448,83 @@ export default function(eleventyConfig) {
   });
 
 
+  // Transform to process image placeholders with eleventy-img
+  eleventyConfig.addTransform("processImagePlaceholders", async function(content, outputPath) {
+    // Only process HTML files
+    if (!outputPath || !outputPath.endsWith('.html')) {
+      return content;
+    }
+
+    // Find all image placeholders
+    const placeholderRegex = /<div data-image-src="([^"]*)" data-image-alt="([^"]*)" data-image-placeholder="true"[^>]*><\/div>/g;
+    
+    let processedContent = content;
+    let match;
+    const placeholders = [];
+    
+    // Collect all placeholders
+    while ((match = placeholderRegex.exec(content)) !== null) {
+      placeholders.push({
+        fullMatch: match[0],
+        src: match[1],
+        alt: match[2],
+        index: match.index
+      });
+    }
+
+    console.log(`🖼️ Processing ${placeholders.length} image placeholders in ${outputPath}`);
+
+    // Process placeholders in reverse order to maintain indices
+    for (let i = placeholders.length - 1; i >= 0; i--) {
+      const { fullMatch, src, alt, index } = placeholders[i];
+      
+      try {
+        // Resolve the image path
+        let imagePath;
+        if (src.startsWith('/assets/images/')) {
+          imagePath = path.resolve('src/assets/images', src.replace('/assets/images/', ''));
+        } else if (src.startsWith('assets/images/')) {
+          imagePath = path.resolve('src/assets/images', src.replace('assets/images/', ''));
+        } else if (src.startsWith('./assets/images/')) {
+          imagePath = path.resolve('src/assets/images', src.replace('./assets/images/', ''));
+        } else {
+          imagePath = path.resolve('src/assets/images', src);
+        }
+
+        // Check if image exists
+        if (!fs.existsSync(imagePath)) {
+          console.warn(`⚠️ Image not found: ${imagePath}`);
+          continue;
+        }
+
+        // Process image with eleventy-img
+        const metadata = await Image(imagePath, {
+          widths: [320, 640, 960, 1280, null],
+          formats: ["avif", "webp", "jpeg"],
+          outputDir: "./_site/img/",
+          urlPath: "/img/",
+        });
+
+        const imageAttributes = {
+          alt: alt || '',
+          sizes: "100vw",
+          loading: "lazy",
+          decoding: "async",
+        };
+
+        const replacement = `<figure>${Image.generateHTML(metadata, imageAttributes)}</figure>`;
+        processedContent = processedContent.substring(0, index) + replacement + processedContent.substring(index + fullMatch.length);
+        
+        console.log(`✅ Processed image: ${src}`);
+      } catch (error) {
+        console.error(`❌ Error processing image ${src}:`, error);
+        // Keep original placeholder if processing fails
+      }
+    }
+
+    return processedContent;
+  });
+
   // Add transform to add IDs to headings and insert TOC in aside
   eleventyConfig.addTransform("addHeadingIdsAndTOC", function(content, outputPath) {
     // Only process HTML files in documentation
@@ -381,7 +598,7 @@ export default function(eleventyConfig) {
       includes: "_includes",
       data: "_data"
     },
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: false,
     htmlTemplateEngine: "njk",
     passthroughFileCopy: true
   };

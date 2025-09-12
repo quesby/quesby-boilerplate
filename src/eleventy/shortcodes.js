@@ -6,7 +6,7 @@ async function imageShortcode(src, alt, sizes="100vw") {
   const resolved = path.resolve("src/assets/images", src.replace(/^\/?src\/assets\/images\/?/, ""));
   const metadata = await Image(resolved, {
     widths: [320, 640, 960, 1280, null],
-    formats: ["avif","webp","jpeg"],
+    formats: ["avif","webp"],
     outputDir: "./_site/img/",
     urlPath: "/img/",
   });

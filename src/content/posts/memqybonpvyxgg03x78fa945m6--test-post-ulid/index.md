@@ -16,3 +16,7 @@ draft: false
 # Test Post
 
 This is a test post.
+
+{% image "src/assets/images/documentation/ai-gen.webp", "An AI generated image of a whirlpool of blue and yellow gas warping around a central point" %}
+
+![An AI generated image](/assets/images/documentation/ai-gen.webp)
