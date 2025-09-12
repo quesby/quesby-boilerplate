@@ -19,7 +19,7 @@ collections:
     path: "{{slug}}/index"   # dice a Decap dove scrivere i file
     extension: "md"
     fields:
-      - {label: "ID (ULID)", name: "id", widget: "string", default: "{{now | date('YYYYMMDDHHmmss')}}"}
+      - {label: "ID (ULID)", name: "id", widget: "ulid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string", hint: "URL-friendly version of the title"}
       - {label: "Description", name: "description", widget: "text", required: false}

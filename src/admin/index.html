@@ -15,16 +15,39 @@
       script.async = true;
       
       script.onload = function() {
-        // Wait a bit more to ensure everything is ready
-        setTimeout(function() {
-          if (typeof DecapCMS !== 'undefined') {
-            try {
-              DecapCMS.init();
-            } catch (error) {
-              console.error('Decap CMS initialization error:', error);
+        // Load ULID widget after Decap CMS is loaded
+        var ulidScript = document.createElement('script');
+        ulidScript.src = './ulid-widget.js';
+        ulidScript.async = true;
+        
+        ulidScript.onload = function() {
+          // Wait a bit more to ensure everything is ready
+          setTimeout(function() {
+            if (typeof DecapCMS !== 'undefined') {
+              try {
+                DecapCMS.init();
+              } catch (error) {
+                console.error('Decap CMS initialization error:', error);
+              }
             }
-          }
-        }, 200);
+          }, 200);
+        };
+        
+        ulidScript.onerror = function() {
+          console.error('Failed to load ULID widget');
+          // Still try to initialize Decap CMS even if ULID widget fails
+          setTimeout(function() {
+            if (typeof DecapCMS !== 'undefined') {
+              try {
+                DecapCMS.init();
+              } catch (error) {
+                console.error('Decap CMS initialization error:', error);
+              }
+            }
+          }, 200);
+        };
+        
+        document.head.appendChild(ulidScript);
       };
       
       script.onerror = function() {
