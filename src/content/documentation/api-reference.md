@@ -182,6 +182,120 @@ Includes and renders markdown files with Expressive Code support.
 </div>
 ```
 
+### Array Manipulation Filters
+
+#### **`sortBy(arr, attr, direction)`**
+
+Sorts an array by a specified attribute with support for nested properties and flexible direction.
+
+```javascript
+// In templates
+{{ collections.posts | sortBy("date", "desc") }}
+{{ collections.posts | sortBy("data.title", "asc") }}
+{{ projects | sortBy("featured", "desc") }}
+```
+
+**Parameters:**
+- `arr` (Array): Array to sort
+- `attr` (String): Attribute to sort by (supports nested properties like "data.date")
+- `direction` (String): Sort direction - "asc" (default) or "desc"
+
+**Features:**
+- **Nested Property Support**: Access `obj.date` or `obj.data.date` automatically
+- **Flexible Direction**: Sort ascending or descending
+- **Safe Fallback**: Handles missing properties gracefully
+- **Data Object Aware**: Works with Eleventy's data structure
+
+**Examples:**
+```njk
+<!-- Sort posts by date (newest first) -->
+{% for post in collections.posts | sortBy("date", "desc") %}
+  <article>{{ post.data.title }}</article>
+{% endfor %}
+
+<!-- Sort by title alphabetically -->
+{% for page in collections.documentation | sortBy("data.title", "asc") %}
+  <h3>{{ page.data.title }}</h3>
+{% endfor %}
+
+<!-- Sort by custom field -->
+{% for project in collections.projects | sortBy("data.featured", "desc") %}
+  <div>{{ project.data.name }}</div>
+{% endfor %}
+```
+
+#### **`limit(arr, n)`**
+
+Limits an array to the first n elements.
+
+```javascript
+// In templates
+{{ collections.posts | limit(5) }}
+{{ recentPosts | limit(3) }}
+```
+
+**Parameters:**
+- `arr` (Array): Array to limit
+- `n` (Number): Number of elements to keep
+
+**Example:**
+```njk
+<!-- Show only the 5 most recent posts -->
+{% for post in collections.posts | sortBy("date", "desc") | limit(5) %}
+  <article>{{ post.data.title }}</article>
+{% endfor %}
+```
+
+#### **`offset(arr, n)`**
+
+Skips the first n elements of an array.
+
+```javascript
+// In templates
+{{ collections.posts | offset(3) }}
+{{ allItems | offset(10) }}
+```
+
+**Parameters:**
+- `arr` (Array): Array to process
+- `n` (Number): Number of elements to skip
+
+**Example:**
+```njk
+<!-- Skip the first 3 posts (for pagination) -->
+{% for post in collections.posts | sortBy("date", "desc") | offset(3) %}
+  <article>{{ post.data.title }}</article>
+{% endfor %}
+```
+
+#### **Combined Usage**
+
+These filters can be chained together for powerful data manipulation:
+
+```njk
+<!-- Sort by date, skip first 5, then show next 10 -->
+{% for post in collections.posts | sortBy("date", "desc") | offset(5) | limit(10) %}
+  <article>
+    <h3>{{ post.data.title }}</h3>
+    <time>{{ post.date | date("dd LLLL yyyy") }}</time>
+  </article>
+{% endfor %}
+
+<!-- Featured projects first, then limit to 6 -->
+{% for project in collections.projects | sortBy("data.featured", "desc") | limit(6) %}
+  <div class="project">{{ project.data.name }}</div>
+{% endfor %}
+
+<!-- Pagination example -->
+{% set pageSize = 10 %}
+{% set currentPage = 1 %}
+{% set offset = (currentPage - 1) * pageSize %}
+{% for post in collections.posts | sortBy("date", "desc") | offset(offset) | limit(pageSize) %}
+  <article>{{ post.data.title }}</article>
+{% endfor %}
+```
+
+
 ## Global Data
 
 ### Site Configuration
