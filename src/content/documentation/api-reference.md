@@ -361,13 +361,15 @@ All blog posts from `src/content/posts/`.
 
 ```javascript
 // In templates
+{% raw %}
 {% for post in collections.posts %}
   <article>
-    <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    <h1><a href="{{ post.url }}">{{ post.data.title }}</a></h1>
     <time>{{ post.data.date | date("dd LLLL yyyy") }}</time>
     <p>{{ post.data.description }}</p>
   </article>
 {% endfor %}
+{% endraw %}
 ```
 
 **Collection Properties:**
@@ -1128,36 +1130,58 @@ const md = new MarkdownIt({
 
 #### **`addHeadingIdsAndTOC` Transform**
 
-Automatically adds IDs to headings and generates table of contents for documentation pages.
+Automatically adds IDs to headings and generates table of contents for documentation pages using Cheerio for robust HTML parsing.
+
+**Features:**
+- **Robust HTML Parsing**: Uses Cheerio instead of regex for accurate HTML processing
+- **Code Block Safe**: Automatically excludes code blocks from TOC generation
+- **Smart ID Generation**: Creates URL-friendly anchors from heading text
+- **Duplicate Prevention**: Skips headings that already have IDs
+- **Clean Text Extraction**: Properly handles HTML tags in heading content
 
 ```javascript
 // In eleventy.config.js
+import * as cheerio from 'cheerio';
+
 eleventyConfig.addTransform("addHeadingIdsAndTOC", function(content, outputPath) {
+  // Only process HTML files in documentation
   if (outputPath && outputPath.endsWith('.html') && outputPath.includes('/documentation/')) {
-    // Find all h2 elements and add IDs
-    const h2Regex = /<h2([^>]*)>(.*?)<\/h2>/gi;
-    const headings = [];
+    console.log(`Adding heading IDs and TOC for: ${outputPath}`);
     
-    content = content.replace(h2Regex, (match, attributes, title) => {
-      const cleanTitle = title.replace(/<[^>]*>/g, '').trim();
-      const anchor = cleanTitle
+    // Parse HTML with Cheerio
+    const $ = cheerio.load(content);
+    const headings = [];
+    let headingCount = 0;
+    
+    // Find all h2 elements and add IDs
+    $('h2').each(function() {
+      const $heading = $(this);
+      const title = $heading.text().trim();
+      
+      // Skip if already has an ID
+      if ($heading.attr('id')) {
+        return;
+      }
+      
+      // Generate anchor from title
+      const anchor = title
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')
         .replace(/\s+/g, '-')
         .trim();
       
-      const hasId = attributes.includes('id=');
-      if (!hasId) {
-        headings.push({
-          title: cleanTitle,
-          anchor: anchor
-        });
-        return `<h2${attributes} id="${anchor}">${title}</h2>`;
-      }
-      return match;
+      // Add ID to heading
+      $heading.attr('id', anchor);
+      headingCount++;
+      
+      // Add to headings array for TOC
+      headings.push({
+        title: title,
+        anchor: anchor
+      });
     });
     
-    // Generate TOC HTML
+    // Generate TOC HTML if we have headings
     if (headings.length > 0) {
       let tocHTML = '<nav class="documentation-toc">\n';
       tocHTML += '  <h3>On this page</h3>\n';
@@ -1172,14 +1196,28 @@ eleventyConfig.addTransform("addHeadingIdsAndTOC", function(content, outputPath)
       tocHTML += '  </ul>\n';
       tocHTML += '</nav>';
       
-      const tocPlaceholderRegex = /<nav class="documentation-toc">[\s\S]*?<\/nav>/gi;
-      content = content.replace(tocPlaceholderRegex, tocHTML);
+      // Replace the TOC placeholder in the aside
+      $('nav.documentation-toc').replaceWith(tocHTML);
+      
+      console.log(`Added IDs to ${headingCount} headings and inserted TOC for ${outputPath}`);
     }
+    
+    return $.html();
   }
   
   return content;
 });
 ```
+
+**Advantages over Regex-based approach:**
+- **Accurate Parsing**: Handles complex HTML structures correctly
+- **Code Block Exclusion**: Automatically skips content inside `<code>` blocks
+- **Better Performance**: More efficient for large HTML documents
+- **Error Prevention**: Avoids regex edge cases and special characters
+- **Maintainable**: Easier to extend and modify
+
+**Dependencies:**
+- `cheerio`: Server-side jQuery implementation for HTML parsing
 
 ## Error Handling
 
@@ -1231,7 +1269,7 @@ const command = `sass --no-source-map --style=compressed src/sass:src/assets/css
 
 #### **Asset Optimization**
 
-```javascript
+```
 // Image optimization (commented out in current config)
 // eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes) {
 //   let stats = await Image(src, {

@@ -17,7 +17,7 @@ import { DateTime } from "luxon";
 import filters from "./src/eleventy/filters.js";
 import rss from "./src/eleventy/utils/rss.js";
 import shortcodes from "./src/eleventy/shortcodes.js";
-// import * as cheerio from 'cheerio'; // Removed cheerio dependency
+import * as cheerio from 'cheerio';
 
 // Import SEO utilities
 import { register as registerSEO } from "./src/eleventy/seo.js";
@@ -533,31 +533,37 @@ export default function(eleventyConfig) {
     if (outputPath && outputPath.endsWith('.html') && outputPath.includes('/documentation/')) {
       console.log(`Adding heading IDs and TOC for: ${outputPath}`);
       
-      // Find all h2 elements and add IDs
-      const h2Regex = /<h2([^>]*)>(.*?)<\/h2>/gi;
+      // Parse HTML with Cheerio
+      const $ = cheerio.load(content);
       const headings = [];
       let headingCount = 0;
       
-      content = content.replace(h2Regex, (match, attributes, title) => {
-        const cleanTitle = title.replace(/<[^>]*>/g, '').trim(); // Remove HTML tags
-        const anchor = cleanTitle
+      // Find all h2 elements and add IDs
+      $('h2').each(function() {
+        const $heading = $(this);
+        const title = $heading.text().trim();
+        
+        // Skip if already has an ID
+        if ($heading.attr('id')) {
+          return;
+        }
+        
+        // Generate anchor from title
+        const anchor = title
           .toLowerCase()
           .replace(/[^\w\s-]/g, '')
           .replace(/\s+/g, '-')
           .trim();
         
-        // Add ID to the h2 element if it doesn't already have one
-        const hasId = attributes.includes('id=');
-        if (!hasId) {
-          headingCount++;
-          headings.push({
-            title: cleanTitle,
-            anchor: anchor
-          });
-          return `<h2${attributes} id="${anchor}">${title}</h2>`;
-        } else {
-          return match; // Keep existing ID
-        }
+        // Add ID to heading
+        $heading.attr('id', anchor);
+        headingCount++;
+        
+        // Add to headings array for TOC
+        headings.push({
+          title: title,
+          anchor: anchor
+        });
       });
       
       // Generate TOC HTML if we have headings
@@ -576,13 +582,12 @@ export default function(eleventyConfig) {
         tocHTML += '</nav>';
         
         // Replace the TOC placeholder in the aside
-        const tocPlaceholderRegex = /<nav class="documentation-toc">[\s\S]*?<\/nav>/gi;
-        content = content.replace(tocPlaceholderRegex, tocHTML);
+        $('nav.documentation-toc').replaceWith(tocHTML);
         
         console.log(`Added IDs to ${headingCount} headings and inserted TOC for ${outputPath}`);
       }
       
-      return content;
+      return $.html();
     }
     
     return content;
