@@ -392,7 +392,7 @@ export default function(eleventyConfig) {
       dt = DateTime.fromJSDate(new Date(dateObj));
     }
     
-    return dt.setZone("utc").setLocale("it").toFormat(format);
+    return dt.setZone("utc").setLocale("en").toFormat(format);
   });
 
   // Filter to include markdown files with Expressive Code support

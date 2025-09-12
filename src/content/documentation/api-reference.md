@@ -107,7 +107,7 @@ eleventyConfig.addPassthroughCopy({ "src/content/posts": "/content/posts" });
 
 #### **`date(dateObj, format)`**
 
-Formats dates using Luxon with Italian locale support.
+Formats dates using Luxon with English locale support.
 
 ```javascript
 // In templates
@@ -121,10 +121,10 @@ Formats dates using Luxon with Italian locale support.
 - `format` (String): Luxon format string (default: "dd LLLL yyyy")
 
 **Supported Formats:**
-- `"dd LLLL yyyy"` → "22 agosto 2025"
+- `"dd LLLL yyyy"` → "22 August 2025"
 - `"yyyy-MM-dd"` → "2025-08-22"
 - `"dd/MM/yyyy"` → "22/08/2025"
-- `"LLLL yyyy"` → "agosto 2025"
+- `"LLLL yyyy"` → "August 2025"
 
 **Example:**
 ```html

@@ -71,7 +71,7 @@
             <div class="content">
                 {% if lastUpdated %}
                   <div class="last-updated">
-                    <small>Last updated: {{ lastUpdated | date("dd.MM.yyyy") }}</small>
+                    <small>Last updated: {{ lastUpdated | date("MMMM yyyy") }}</small>
                   </div>
                 {% endif %}
               {{ content | safe }}
