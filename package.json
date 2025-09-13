@@ -19,7 +19,11 @@
     "build:css": "node scripts/build.js",
     "gen:ec-css": "node scripts/gen-ec-css.js",
     "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
-    "serve:no-watch": "npx @11ty/eleventy --watch"
+    "serve:no-watch": "npx @11ty/eleventy --watch",
+    "tools:import": "cd tools/legacy-content-importer && npm run import:neutrino",
+    "tools:import:dry": "cd tools/legacy-content-importer && npm run import:neutrino:dry",
+    "tools:import:config": "cd tools/legacy-content-importer && npm run import -- --config config.example.yml",
+    "tools:import:config:dry": "cd tools/legacy-content-importer && npm run import -- --config config.example.yml --dry-run"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",

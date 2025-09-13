@@ -53,7 +53,7 @@ npm install @11ty/eleventy-img
 
 Shortcodes are a clean way to embed optimized images directly in your templates. Create a file called `src/eleventy/shortcodes.js` and add the following:
 
-{% raw %}
+
 ```js
 import path from "node:path";
 import Image from "@11ty/eleventy-img";
@@ -82,11 +82,11 @@ export default (cfg) => {
   cfg.addNunjucksAsyncShortcode("image", imageShortcode);
 };
 ```
-{% endraw %}
+
 
 Then import it in your `eleventy.config.js`:
 
-{% raw %}
+
 ```js
 import shortcodes from "./src/eleventy/shortcodes.js";
 
@@ -94,15 +94,15 @@ export default function(eleventyConfig) {
   shortcodes(eleventyConfig);
 }
 ```
-{% endraw %}
+
 
 From now on you can write:
 
-{% raw %}
+
 ```njk
 {% image "src/assets/images/hero.jpg", "Homepage hero image" %}
 ```
-{% endraw %}
+
 
 …and Eleventy will output a `<picture>` element with AVIF, WebP, and all the necessary widths.
 
@@ -112,11 +112,11 @@ From now on you can write:
 
 Markdown images like:
 
-{% raw %}
+
 ```markdown
 ![Screenshot](/assets/images/app.png)
 ```
-{% endraw %}
+
 
 are convenient, but Eleventy doesn’t optimize them by default. To fix this, we can extend the Markdown pipeline so every image goes through `eleventy-img` behind the scenes. The idea is:
 

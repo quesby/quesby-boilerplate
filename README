@@ -12,6 +12,7 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 - **Responsive Design** out of the box
 - **Search Functionality** built-in
 - **Documentation System** with TOC generation
+- **Migration Tools** for easy content import
 
 ## 🚀 Quick Start
 
@@ -37,6 +38,7 @@ Complete documentation is available at `/documentation/` including:
 - [Configuration](./src/content/documentation/configuration.md)
 - [Theme System](./src/content/documentation/themes.md)
 - [Content Management](./src/content/documentation/content-management.md)
+- [Migration Tools](./src/content/documentation/migration-tools.md)
 - [Deployment](./src/content/documentation/deployment.md)
 
 ## 🎨 Themes
@@ -51,6 +53,12 @@ Complete documentation is available at `/documentation/` including:
 - `npm run build` - Build for production
 - `npm run watch:css` - Watch CSS changes only
 
+### Migration Tools
+
+- `npm run tools:import:dry` - Test content import (dry run)
+- `npm run tools:import:config:dry` - Test import with config file
+- `npm run tools:import:config` - Import content with config file
+
 ## 📁 Project Structure
 
 ```
@@ -60,6 +68,10 @@ src/
 ├── _includes/        # Nunjucks templates
 ├── assets/           # Static assets (CSS, JS, images)
 └── admin/            # Decap CMS configuration
+
+tools/
+├── legacy-content-importer/  # Migration tool for legacy content
+└── README.md                 # Tools documentation
 ```
 
 ## 🤝 Contributing
