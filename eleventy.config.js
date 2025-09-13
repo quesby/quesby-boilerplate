@@ -235,6 +235,7 @@ export default function(eleventyConfig) {
 
   // Pass-through for content media - copy only post directories
   eleventyConfig.addPassthroughCopy({ "src/content/posts": "/content/posts" });
+  eleventyConfig.addPassthroughCopy({ "src/content/media": "/content/media" });
 
   // Global variable for Nunjucks templates
   eleventyConfig.addGlobalData("theme", activeTheme);

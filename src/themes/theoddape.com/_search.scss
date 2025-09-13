@@ -1,0 +1,66 @@
+// Search - MiniSearch
+#search-trigger {
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: $borderRadius-small;
+    width: 12em;
+    padding: 0.5em;
+    cursor: pointer;
+    background-color: var(--site-bg-secondary);
+    &:hover {
+        background-color: var(--site-bg-hover);
+    }
+}
+#search-popup {
+    // display: none;
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    @include flex-container(column, flex-start, center, wrap);
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px); // Add blur effect
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    #search {
+        background-color: var(--site-bg-secondary);
+        width: 100%;
+        max-width: 650px;
+        max-height: 50vh;
+        padding: $padding;
+        border-radius: $borderRadius-normal;
+        box-shadow: 0 0 20px -12px black;
+        #q {
+            color: white;
+            border: 1px solid var(--link-fg);
+            border-radius: $borderRadius-small;
+            width: 100%;
+            padding: $padding;
+        }
+        #results {
+            z-index: 101;
+            overflow-y: scroll;
+            max-height: calc(100% - ($margin * 4));
+            margin-top: $margin;
+            background-color: oklch(26% 0 0);
+            li {
+                background-color: var(--site-bg-secondary);
+                padding: $padding;
+                border-radius: $borderRadius-small;
+                border: 1px solid var(--border);
+                margin-bottom: $margin;
+            }
+        }
+    }
+}

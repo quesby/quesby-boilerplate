@@ -4,7 +4,28 @@ import Image from "@11ty/eleventy-img";
 
 async function imageShortcode(src, alt, sizes="100vw") {
   if (!alt) throw new Error(`Missing alt for ${src}`);
-  const resolved = path.resolve("src/assets/images", src.replace(/^\/?src\/assets\/images\/?/, ""));
+  
+  // Try content/media first, then fallback to assets/images
+  let resolved;
+  if (src.startsWith('/content/media/') || src.startsWith('content/media/')) {
+    // Content media path
+    resolved = path.resolve("src/content/media", src.replace(/^\/?content\/media\/?/, ""));
+  } else {
+    // Assets images path (fallback)
+    resolved = path.resolve("src/assets/images", src.replace(/^\/?src\/assets\/images\/?/, ""));
+  }
+  
+  // Check if file exists, if not try the other location
+  if (!fs.existsSync(resolved)) {
+    if (src.startsWith('/content/media/') || src.startsWith('content/media/')) {
+      // Try assets/images as fallback
+      resolved = path.resolve("src/assets/images", src.replace(/^\/?content\/media\/?/, ""));
+    } else {
+      // Try content/media as fallback
+      resolved = path.resolve("src/content/media", src.replace(/^\/?src\/assets\/images\/?/, ""));
+    }
+  }
+  
   const metadata = await Image(resolved, {
     widths: [320, 640, 960, 1280, null],
     formats: ["avif","webp"],
