@@ -2,40 +2,48 @@ import path from "node:path";
 import fs from "fs";
 import Image from "@11ty/eleventy-img";
 
-async function imageShortcode(src, alt, sizes="100vw") {
+// Shortcode for images - ASYNC
+async function imageShortcode(src, alt = "", sizes = "100vw") {
+  if (!src) return "";
   if (!alt) throw new Error(`Missing alt for ${src}`);
-  
-  // Try content/media first, then fallback to assets/images
-  let resolved;
-  if (src.startsWith('/content/media/') || src.startsWith('content/media/')) {
-    // Content media path
-    resolved = path.resolve("src/content/media", src.replace(/^\/?content\/media\/?/, ""));
-  } else {
-    // Assets images path (fallback)
-    resolved = path.resolve("src/assets/images", src.replace(/^\/?src\/assets\/images\/?/, ""));
-  }
-  
-  // Check if file exists, if not try the other location
+
+  // Resolve always relative to "src/"
+  const resolved = path.resolve("src", src);
+
   if (!fs.existsSync(resolved)) {
-    if (src.startsWith('/content/media/') || src.startsWith('content/media/')) {
-      // Try assets/images as fallback
-      resolved = path.resolve("src/assets/images", src.replace(/^\/?content\/media\/?/, ""));
-    } else {
-      // Try content/media as fallback
-      resolved = path.resolve("src/content/media", src.replace(/^\/?src\/assets\/images\/?/, ""));
-    }
+    console.warn(`[imageShortcode] File not found: ${resolved}`);
+    return "";
   }
-  
+
   const metadata = await Image(resolved, {
+    widths: [320, 640, 960, 1280, null],
+    formats: ["avif", "webp"],
+    outputDir: "./_site/img/",
+    urlPath: "/img/",
+  });
+
+  return Image.generateHTML(metadata, {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async"
+  });
+}
+
+// Shortcode for images - SYNC
+function imageShortcodeSync(src, alt = "", sizes = "100vw") {
+  const resolved = path.resolve("src", src);
+  const metadata = Image.statsSync(resolved, {
     widths: [320, 640, 960, 1280, null],
     formats: ["avif","webp"],
     outputDir: "./_site/img/",
     urlPath: "/img/",
   });
-  return `<figure>${Image.generateHTML(metadata, {alt, sizes, loading:"lazy", decoding:"async"})}</figure>`;
+  return Image.generateHTML(metadata, { alt, sizes, loading:"lazy", decoding:"async" });
 }
 
-// Shortcode per SVG inline
+
+// Shortcode for SVG inline
 function svgShortcode(svgPath, className = "") {
   console.log(`[DEBUG] SVG shortcode called with: ${svgPath}, ${className}`);
   try {
@@ -44,7 +52,7 @@ function svgShortcode(svgPath, className = "") {
     const svgContent = fs.readFileSync(fullPath, 'utf8');
     console.log(`[DEBUG] SVG content length: ${svgContent.length}`);
     
-    // Rimuove i tag <svg> esistenti e aggiunge la classe
+    // Remove existing <svg> tags and add the class
     const cleanSvg = svgContent
       .replace(/<svg([^>]*)>/, `<svg$1 class="${className}"`)
       .replace(/<\/svg>/, '');
@@ -56,9 +64,18 @@ function svgShortcode(svgPath, className = "") {
   }
 }
 
+// Shortcode for simple images
+function imageSimpleShortcode(src, alt, className = "") {
+  // Ensure the path is correct
+  const imagePath = src.startsWith('/') ? src : `/${src}`;
+  return `<img src="${imagePath}" alt="${alt}" class="${className}" loading="lazy" decoding="async">`;
+}
+
 export default (cfg)=> {
   console.log('[DEBUG] Registering shortcodes...');
   cfg.addNunjucksAsyncShortcode("image", imageShortcode);
+  cfg.addNunjucksShortcode("imageSync", imageShortcodeSync);
+  cfg.addNunjucksShortcode("imageSimple", imageSimpleShortcode); // Add this line
   cfg.addNunjucksShortcode("svg", svgShortcode);
   console.log('[DEBUG] Shortcodes registered');
 };
