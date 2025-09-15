@@ -1,9 +1,15 @@
 import neutrino from "@neutrino/core";
 
 export default function (eleventyConfig) {
-  neutrino(eleventyConfig); // registra core
-
+  // Register core configuration
+  const coreConfig = neutrino(eleventyConfig);
+  
+  // Return merged configuration
   return {
-    dir: { input: "src", output: "dist" }
+    ...coreConfig,
+    dir: { 
+      input: "src", 
+      output: "dist" 
+    }
   };
 }
