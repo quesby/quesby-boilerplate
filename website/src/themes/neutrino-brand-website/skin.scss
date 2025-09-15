@@ -1,7 +1,7 @@
 // Core (do not touch in themes)
 @use 'sass:map';
 @use 'sass:color';
-@import '../../sass/core';
+@import "@neutrino/core/sass/core";
 
 @import "_theme-variables";
 @import "_theme-typography";

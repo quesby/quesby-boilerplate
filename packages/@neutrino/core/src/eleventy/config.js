@@ -155,6 +155,11 @@ export function createEleventyConfig() {
     eleventyConfig.addPassthroughCopy({ "src/content/posts": "/content/posts" });
     eleventyConfig.addPassthroughCopy({ "src/content/media": "/content/media" });
 
+    // Copy SCSS files from core to website
+    eleventyConfig.addPassthroughCopy({ 
+      "packages/@neutrino/core/src/sass": "/sass" 
+    });
+
     // Global variable for Nunjucks templates
     eleventyConfig.addGlobalData("theme", activeTheme);
 

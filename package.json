@@ -3,9 +3,10 @@
     "private": true,
     "version": "0.1.0",
     "scripts": {
-    "dev": "pnpm -F @neutrino/website dev",
-    "build": "pnpm -F @neutrino/website build",
-    "build:core": "pnpm -F @neutrino/core build"
+        "dev": "pnpm -F @neutrino/website dev",
+        "serve": "pnpm -F @neutrino/website serve",
+        "build": "pnpm -F @neutrino/website build",
+        "build:core": "pnpm -F @neutrino/core build"
     }
 }
   
