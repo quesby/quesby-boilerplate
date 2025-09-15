@@ -1,0 +1,15 @@
+{
+    "name": "neutrino-site",
+    "version": "0.1.0",
+    "scripts": {
+      "dev": "eleventy --serve",
+      "build": "eleventy",
+      "watch:css": "sass src/assets/scss:dist/assets/css --watch"
+    },
+    "dependencies": {
+      "@neutrino/core": "workspace:*",
+      "sass": "^1.77.0",
+      "minisearch": "^7.0.0"
+    }
+  }
+  
