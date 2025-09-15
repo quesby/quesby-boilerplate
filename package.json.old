@@ -1,0 +1,57 @@
+{
+  "name": "neutrino-electron",
+  "version": "0.1.0",
+  "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
+  "homepage": "https://github.com/greenpandastudio/neutrino-electron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greenpandastudio/neutrino-electron.git"
+  },
+  "bugs": {
+    "url": "https://github.com/greenpandastudio/neutrino-electron/issues"
+  },
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "watch:css": "node scripts/watch.js",
+    "build:css": "node scripts/build.js",
+    "gen:ec-css": "node scripts/gen-ec-css.js",
+    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
+    "serve:no-watch": "npx @11ty/eleventy --watch",
+    "tools:import": "cd tools/legacy-content-importer && npm run import:neutrino",
+    "tools:import:dry": "cd tools/legacy-content-importer && npm run import:neutrino:dry",
+    "tools:import:config": "cd tools/legacy-content-importer && npm run import -- --config config.example.yml",
+    "tools:import:config:dry": "cd tools/legacy-content-importer && npm run import -- --config config.example.yml --dry-run"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@expressive-code/plugin-shiki": "^0.41.3",
+    "cheerio": "^1.1.2",
+    "concurrently": "^8.2.2",
+    "expressive-code": "^0.41.3",
+    "markdown-it": "^14.1.0",
+    "markdown-it-link-attributes": "^4.0.1",
+    "rehype-expressive-code": "^0.41.3",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "sass": "^1.79.4",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "dotenv-cli": "^10.0.0"
+  },
+  "license": "MIT",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/neutrino-electron"
+  }
+}

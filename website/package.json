@@ -1,6 +1,7 @@
 {
-    "name": "neutrino-site",
+    "name": "@neutrino/website",
     "version": "0.1.0",
+    "type": "module",
     "scripts": {
       "dev": "eleventy --serve",
       "build": "eleventy",
@@ -8,6 +9,7 @@
     },
     "dependencies": {
       "@neutrino/core": "workspace:*",
+      "@11ty/eleventy": "^3.0.0",
       "sass": "^1.77.0",
       "minisearch": "^7.0.0"
     }
