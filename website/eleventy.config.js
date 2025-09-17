@@ -9,7 +9,7 @@ export default function (eleventyConfig) {
     ...coreConfig,
     dir: { 
       input: "src", 
-      output: "dist" 
+      output: "_site"  // Cambiato da "dist" a "_site"
     }
   };
 }

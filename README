@@ -16,17 +16,44 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 
 ## 🚀 Quick Start
 
+This project uses PNPM as package manager. Choose one of the following installation methods:
+
+### Option 1: Install PNPM globally (Recommended)
+
 ```bash
 # Clone the repository
 git clone https://github.com/greenpandastudio/neutrino-electron.git
 cd neutrino-electron
 
+# Install PNPM globally
+npm install -g pnpm@9
+
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run serve
+pnpm serve
 ```
+
+### Option 2: Use Corepack (if you have Node 20.18+ or 22 LTS)
+
+```bash
+# Clone the repository
+git clone https://github.com/greenpandastudio/neutrino-electron.git
+cd neutrino-electron
+
+# Enable Corepack and prepare PNPM
+corepack enable
+corepack prepare pnpm@9 --activate
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm serve
+```
+
+**Note:** If you encounter Corepack signature errors, use Option 1 instead.
 
 Visit `http://localhost:8080` to see your site.
 
@@ -46,18 +73,18 @@ Complete documentation is available at `/documentation/` including:
 - **neutrino-electron-core** (default) - Clean, modern design
 - **neutrino-brand-website** - Brand-focused layout
 
-## ��️ Available Scripts
+## 🛠️ Available Scripts
 
-- `npm run serve` - Start development server with CSS watching
-- `npm run dev` - Start development server without CSS watching
-- `npm run build` - Build for production
-- `npm run watch:css` - Watch CSS changes only
+- `pnpm serve` - Start development server with CSS watching
+- `pnpm dev` - Start development server without CSS watching
+- `pnpm build` - Build for production
+- `pnpm run css:watch` - Watch CSS changes only
 
 ### Migration Tools
 
-- `npm run tools:import:dry` - Test content import (dry run)
-- `npm run tools:import:config:dry` - Test import with config file
-- `npm run tools:import:config` - Import content with config file
+- `pnpm run tools:import:dry` - Test content import (dry run)
+- `pnpm run tools:import:config:dry` - Test import with config file
+- `pnpm run tools:import:config` - Import content with config file
 
 ## 📁 Project Structure
 

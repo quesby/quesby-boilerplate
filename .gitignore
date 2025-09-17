@@ -10,7 +10,7 @@ yarn-error.log*
 # Eleventy output
 _site/
 output/
-dist/
+# dist/  # Rimosso perché ora usiamo solo _site
 
 # Temporary files
 *.tmp
