@@ -2,8 +2,8 @@
 # Configuration for migrating vintagestoryitalia content to Neutrino
 
 # Source and target directories
-source: "D:/LocalSites/vintagestoryitalia/src/blog"
-target: "../../src/content/posts"
+source: "/home/theoddape/Websites/vintagestoryitalia/src/blog/"
+target: "/home/theoddape/Websites/theoddape.com/website/src/content/posts"
 
 # Default values
 author: "TheOddApe"

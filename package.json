@@ -7,7 +7,11 @@
         "dev": "pnpm -F @neutrino/website dev",
         "serve": "pnpm -F @neutrino/website serve",
         "build": "pnpm -F @neutrino/website build",
-        "build:core": "pnpm -F @neutrino/core build"
+        "build:core": "pnpm -F @neutrino/core build",
+        "tools:import": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js",
+        "tools:import:dry": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --dry-run",
+        "tools:import:config": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --config packages/@neutrino/core/src/tools/legacy-content-importer/vintagestoryitalia-config.yml",
+        "tools:import:config:dry": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --config packages/@neutrino/core/src/tools/legacy-content-importer/vintagestoryitalia-config.yml --dry-run"
     }
 }
   
