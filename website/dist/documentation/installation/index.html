@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+  <meta charset="utf-8">
+
+  <!-- Viewport per responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Enhanced SEO System --><!-- Dynamic Title -->
+  <title>Installation Guide</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Complete installation and setup guide for Neutrino Electron">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/greenpandastudio/neutrino-electron/documentation/installation/">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neutrino - Electron">
+  <meta property="og:title" content="Installation Guide">
+  <meta property="og:description" content="Complete installation and setup guide for Neutrino Electron">
+  <meta property="og:url" content="https://github.com/greenpandastudio/neutrino-electron/documentation/installation/">
+  
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Installation Guide">
+  
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@neutrino_electron">
+  <meta name="twitter:title" content="Installation Guide">
+  <meta name="twitter:description" content="Complete installation and setup guide for Neutrino Electron">
+  <meta name="twitter:image" content="/assets/images/og-image.jpg">
+
+  <!-- Favicon e manifest -->
+  <link rel="icon" href="/assets/images/neutrino-logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+
+  <!-- Theme toggle -->
+  <script>
+    (function(){
+      var ls = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var root = document.documentElement;
+      if (ls === 'dark' || (!ls && prefersDark)) root.classList.add('dark');
+      else if (ls === 'sepia') root.classList.add('sepia');
+    })();
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/skin.css">
+  <link rel="stylesheet" href="/assets/css/expressive-code.css">
+</head>
+<body class="documentation">
+  <header>
+    <div class="container boxed">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/images/neutrino-logo.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="h-spacer"></div>
+        <div id="main-navigation" class="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/documentation/">Documentation</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/admin/">Admin</a></li>
+    </ul>
+</div>
+        <div class="button" id="search-trigger">
+            <span>Search...</span>
+        </div>
+        <div class="togglemode">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 15a5 5 0 100-10 5 5 0 000 10zm9-4a1 1 0 100-2h-2a1 1 0 100 2h2zM5 12a1 1 0 100-2H3a1 1 0 000 2h2zm12.364 6.364a1 1 0 10-1.414-1.414l-1.415 1.414a1 1 0 101.415 1.415l1.414-1.415zM7.465 6.05A1 1 0 106.05 7.465L7.464 8.88a1 1 0 001.415-1.414L7.464 6.05zm9.9 0l-1.415 1.415A1 1 0 0017.364 8.88L18.78 7.465A1 1 0 0017.364 6.05zM6.05 16.95l1.415-1.415A1 1 0 106.05 14.12L4.636 15.535A1 1 0 106.05 16.95z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="togglenav">
+            <button id="nav-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="ic_fluent_navigation_24_filled" fill="#212121" fill-rule="nonzero">
+                            <path d="M3,17 L21,17 C21.5522847,17 22,17.4477153 22,18 C22,18.5128358 21.6139598,18.9355072 21.1166211,18.9932723 L21,19 L3,19 C2.44771525,19 2,18.5522847 2,18 C2,17.4871642 2.38604019,17.0644928 2.88337887,17.0067277 L3,17 L21,17 L3,17 Z M2.99987969,11 L20.9998797,10.9978344 C21.5521644,10.9977679 22,11.4454293 22,11.997714 C22,12.5105499 21.6140635,12.9332676 21.1167397,12.9910926 L21.0001203,12.9978344 L3.00012031,13 C2.44783557,13.0000664 2.00000001,12.5524051 2.00000001,12.0001203 C2.00000001,11.4872845 2.38593645,11.0645667 2.88326032,11.0067418 L2.99987969,11 L20.9998797,10.9978344 L2.99987969,11 Z M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 C22,6.51283584 21.6139598,6.93550716 21.1166211,6.99327227 L21,7 L3,7 C2.44771525,7 2,6.55228475 2,6 C2,5.48716416 2.38604019,5.06449284 2.88337887,5.00672773 L3,5 L21,5 L3,5 Z" id="🎨-Color"></path>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+  <div class="layout-wrapper">
+    <main>
+      
+        
+          <div class="content-wrapper">
+            <div class="content">
+                
+                  <div class="last-updated">
+                    <small>Last updated: September 2025</small>
+                  </div>
+                
+              <h1>Installation Guide</h1>
+<p>This guide will help you install and set up Neutrino, a privacy-first static site boilerplate built with Eleventy and Decap CMS.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before installing Neutrino, ensure you have the following installed on your system:</p>
+<ul>
+<li><strong>Node.js</strong> (version 18 or higher)</li>
+<li><strong>npm</strong> (comes with Node.js)</li>
+<li><strong>Git</strong> (for version control)</li>
+</ul>
+<h3>Checking Prerequisites</h3>
+<p>Verify your installations:</p>
+<div class="expressive-code"><style>.expressive-code{font-family:var(--ec-uiFontFml);font-size:var(--ec-uiFontSize);font-weight:var(--ec-uiFontWg);line-height:var(--ec-uiLineHt);text-size-adjust:none;-webkit-text-size-adjust:none}.expressive-code *:not(:is(svg, svg *)){all:revert;box-sizing:border-box}.expressive-code pre{display:flex;margin:0;padding:0;border:var(--ec-brdWd) solid var(--ec-brdCol);border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));background:var(--ec-codeBg)}.expressive-code pre:focus-visible{outline:3px solid var(--ec-focusBrd);outline-offset:-3px}.expressive-code pre > code{all:unset;display:block;flex:1 0 100%;padding:var(--ec-codePadBlk) 0;color:var(--ec-codeFg);font-family:var(--ec-codeFontFml);font-size:var(--ec-codeFontSize);font-weight:var(--ec-codeFontWg);line-height:var(--ec-codeLineHt)}.expressive-code pre{overflow-x:auto}.expressive-code pre.wrap .ec-line .code{white-space:pre-wrap;overflow-wrap:break-word;min-width:min(20ch, var(--ecMaxLine, 20ch))}.expressive-code pre.wrap .ec-line .code span.indent{white-space:pre}.expressive-code pre::-webkit-scrollbar,.expressive-code pre::-webkit-scrollbar-track{background-color:inherit;border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));border-top-left-radius:0;border-top-right-radius:0}.expressive-code pre::-webkit-scrollbar-thumb{background-color:var(--ec-sbThumbCol);border:4px solid transparent;background-clip:content-box;border-radius:10px}.expressive-code pre::-webkit-scrollbar-thumb:hover{background-color:var(--ec-sbThumbHoverCol)}.expressive-code .ec-line{direction:ltr;unicode-bidi:isolate;display:grid;grid-template-areas:'gutter code';grid-template-columns:auto 1fr;position:relative}.expressive-code .ec-line .gutter{grid-area:gutter;color:var(--ec-gtrFg)}.expressive-code .ec-line .gutter > *{pointer-events:none;user-select:none;-webkit-user-select:none}.expressive-code .ec-line .gutter ~ .code{--ecLineBrdCol:var(--ec-gtrBrdCol)}.expressive-code .ec-line.highlight .gutter{color:var(--ec-gtrHlFg)}.expressive-code .ec-line .code{grid-area:code;position:relative;box-sizing:content-box;padding-inline-start:calc(var(--ecIndent, 0ch) + var(--ec-codePadInl) - var(--ecGtrBrdWd));padding-inline-end:var(--ec-codePadInl);text-indent:calc(var(--ecIndent, 0ch) * -1)}.expressive-code .ec-line .code::before,.expressive-code .ec-line .code::after,.expressive-code .ec-line .code :where(*){text-indent:0}.expressive-code .ec-line .code{--ecGtrBrdWd:var(--ec-gtrBrdWd);border-inline-start:var(--ecGtrBrdWd) solid var(--ecLineBrdCol, transparent)}.expressive-code .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.expressive-code .ec-line.mark{--tmLineBgCol:var(--ec-tm-markBg)}.expressive-code .ec-line.mark .code{--ecLineBrdCol:var(--ec-tm-markBrdCol)}.expressive-code .ec-line.ins{--tmLineBgCol:var(--ec-tm-insBg);--tmLabel:var(--ec-tm-insDiffIndContent)}.expressive-code .ec-line.ins .code{--ecLineBrdCol:var(--ec-tm-insBrdCol)}.expressive-code .ec-line.ins .code::before{color:var(--ec-tm-insDiffIndCol)}.expressive-code .ec-line.del{--tmLineBgCol:var(--ec-tm-delBg);--tmLabel:var(--ec-tm-delDiffIndContent)}.expressive-code .ec-line.del .code{--ecLineBrdCol:var(--ec-tm-delBrdCol)}.expressive-code .ec-line.del .code::before{color:var(--ec-tm-delDiffIndCol)}.expressive-code .ec-line.mark,.expressive-code .ec-line.ins,.expressive-code .ec-line.del{background:var(--tmLineBgCol)}.expressive-code .ec-line.mark .code,.expressive-code .ec-line.ins .code,.expressive-code .ec-line.del .code{--ecGtrBrdWd:var(--ec-tm-lineMarkerAccentWd)}.expressive-code .ec-line.mark .code::before,.expressive-code .ec-line.ins .code::before,.expressive-code .ec-line.del .code::before{display:block;position:absolute;left:0;box-sizing:border-box;content:var(--tmLabel, ' ');padding-inline-start:var(--ec-tm-lineDiffIndMargLeft);text-align:center;white-space:pre}.expressive-code .ec-line.mark.tm-label .code::before,.expressive-code .ec-line.ins.tm-label .code::before,.expressive-code .ec-line.del.tm-label .code::before{background:var(--ecLineBrdCol);padding:0 calc(var(--ec-tm-lineMarkerLabelPadInl) + var(--ec-tm-lineMarkerAccentWd)) 0 var(--ec-tm-lineMarkerLabelPadInl);color:var(--ec-tm-lineMarkerLabelCol)}.expressive-code .ec-line mark{--tmInlineBgCol:var(--ec-tm-markBg);--tmInlineBrdCol:var(--ec-tm-markBrdCol)}.expressive-code .ec-line ins{--tmInlineBgCol:var(--ec-tm-insBg);--tmInlineBrdCol:var(--ec-tm-insBrdCol)}.expressive-code .ec-line del{--tmInlineBgCol:var(--ec-tm-delBg);--tmInlineBrdCol:var(--ec-tm-delBrdCol)}.expressive-code .ec-line mark,.expressive-code .ec-line ins,.expressive-code .ec-line del{all:unset;display:inline-block;position:relative;--tmBrdL:var(--ec-tm-inlMarkerBrdWd);--tmBrdR:var(--ec-tm-inlMarkerBrdWd);--tmRadL:var(--ec-tm-inlMarkerBrdRad);--tmRadR:var(--ec-tm-inlMarkerBrdRad);margin-inline:0.025rem;padding-inline:var(--ec-tm-inlMarkerPad);border-radius:var(--tmRadL) var(--tmRadR) var(--tmRadR) var(--tmRadL);background:var(--tmInlineBgCol);background-clip:padding-box}.expressive-code .ec-line mark.open-start,.expressive-code .ec-line ins.open-start,.expressive-code .ec-line del.open-start{margin-inline-start:0;padding-inline-start:0;--tmBrdL:0px;--tmRadL:0}.expressive-code .ec-line mark.open-end,.expressive-code .ec-line ins.open-end,.expressive-code .ec-line del.open-end{margin-inline-end:0;padding-inline-end:0;--tmBrdR:0px;--tmRadR:0}.expressive-code .ec-line mark::before,.expressive-code .ec-line ins::before,.expressive-code .ec-line del::before{content:'';position:absolute;pointer-events:none;display:inline-block;inset:0;border-radius:var(--tmRadL) var(--tmRadR) var(--tmRadR) var(--tmRadL);border:var(--ec-tm-inlMarkerBrdWd) solid var(--tmInlineBrdCol);border-inline-width:var(--tmBrdL) var(--tmBrdR)}.expressive-code .frame{all:unset;position:relative;display:block;--header-border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));--tab-border-radius:calc(var(--ec-frm-edTabBrdRad) + var(--ec-brdWd));--button-spacing:0.4rem;--code-background:var(--ec-frm-edBg);border-radius:var(--header-border-radius);box-shadow:var(--ec-frm-frameBoxShdCssVal)}.expressive-code .frame .header{display:none;z-index:1;position:relative;border-radius:var(--header-border-radius) var(--header-border-radius) 0 0}.expressive-code .frame.has-title pre,.expressive-code .frame.has-title code,.expressive-code .frame.is-terminal pre,.expressive-code .frame.is-terminal code{border-top:none;border-top-left-radius:0;border-top-right-radius:0}.expressive-code .frame .title:empty:before{content:'\a0'}.expressive-code .frame.has-title:not(.is-terminal){--button-spacing:calc(1.9rem + 2 * (var(--ec-uiPadBlk) + var(--ec-frm-edActTabIndHt)))}.expressive-code .frame.has-title:not(.is-terminal) .title{position:relative;color:var(--ec-frm-edActTabFg);background:var(--ec-frm-edActTabBg);background-clip:padding-box;margin-block-start:var(--ec-frm-edTabsMargBlkStart);padding:calc(var(--ec-uiPadBlk) + var(--ec-frm-edActTabIndHt)) var(--ec-uiPadInl);border:var(--ec-brdWd) solid var(--ec-frm-edActTabBrdCol);border-radius:var(--tab-border-radius) var(--tab-border-radius) 0 0;border-bottom:none;overflow:hidden}.expressive-code .frame.has-title:not(.is-terminal) .title::after{content:'';position:absolute;pointer-events:none;inset:0;border-top:var(--ec-frm-edActTabIndHt) solid var(--ec-frm-edActTabIndTopCol);border-bottom:var(--ec-frm-edActTabIndHt) solid var(--ec-frm-edActTabIndBtmCol)}.expressive-code .frame.has-title:not(.is-terminal) .header{display:flex;background:linear-gradient(to top, var(--ec-frm-edTabBarBrdBtmCol) var(--ec-brdWd), transparent var(--ec-brdWd)),linear-gradient(var(--ec-frm-edTabBarBg), var(--ec-frm-edTabBarBg));background-repeat:no-repeat;padding-inline-start:var(--ec-frm-edTabsMargInlStart)}.expressive-code .frame.has-title:not(.is-terminal) .header::before{content:'';position:absolute;pointer-events:none;inset:0;border:var(--ec-brdWd) solid var(--ec-frm-edTabBarBrdCol);border-radius:inherit;border-bottom:none}.expressive-code .frame.is-terminal{--button-spacing:calc(1.9rem + var(--ec-brdWd) + 2 * var(--ec-uiPadBlk));--code-background:var(--ec-frm-trmBg)}.expressive-code .frame.is-terminal .header{display:flex;align-items:center;justify-content:center;padding-block:var(--ec-uiPadBlk);padding-block-end:calc(var(--ec-uiPadBlk) + var(--ec-brdWd));position:relative;font-weight:500;letter-spacing:0.025ch;color:var(--ec-frm-trmTtbFg);background:var(--ec-frm-trmTtbBg);border:var(--ec-brdWd) solid var(--ec-brdCol);border-bottom:none}.expressive-code .frame.is-terminal .header::before{content:'';position:absolute;pointer-events:none;left:var(--ec-uiPadInl);width:2.1rem;height:0.56rem;line-height:0;background-color:var(--ec-frm-trmTtbDotsFg);opacity:var(--ec-frm-trmTtbDotsOpa);-webkit-mask-image:var(--ec-frm-trmIcon);-webkit-mask-repeat:no-repeat;mask-image:var(--ec-frm-trmIcon);mask-repeat:no-repeat}.expressive-code .frame.is-terminal .header::after{content:'';position:absolute;pointer-events:none;inset:0;border-bottom:var(--ec-brdWd) solid var(--ec-frm-trmTtbBrdBtmCol)}.expressive-code .frame pre{background:var(--code-background)}.expressive-code .copy{display:flex;gap:0.25rem;flex-direction:row;position:absolute;inset-block-start:calc(var(--ec-brdWd) + var(--button-spacing));inset-inline-end:calc(var(--ec-brdWd) + var(--ec-uiPadInl) / 2)}@media (scripting: none){.expressive-code .copy{display:none}}.expressive-code .copy{direction:ltr;unicode-bidi:isolate}.expressive-code .copy button{position:relative;align-self:flex-end;margin:0;padding:0;border:none;border-radius:0.2rem;z-index:1;cursor:pointer;transition-property:opacity, background, border-color;transition-duration:0.2s;transition-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94);width:2.5rem;height:2.5rem;background:var(--code-background);opacity:0.75}.expressive-code .copy button div{position:absolute;inset:0;border-radius:inherit;background:var(--ec-frm-inlBtnBg);opacity:var(--ec-frm-inlBtnBgIdleOpa);transition-property:inherit;transition-duration:inherit;transition-timing-function:inherit}.expressive-code .copy button::before{content:'';position:absolute;pointer-events:none;inset:0;border-radius:inherit;border:var(--ec-brdWd) solid var(--ec-frm-inlBtnBrd);opacity:var(--ec-frm-inlBtnBrdOpa)}.expressive-code .copy button::after{content:'';position:absolute;pointer-events:none;inset:0;background-color:var(--ec-frm-inlBtnFg);-webkit-mask-image:var(--ec-frm-copyIcon);-webkit-mask-repeat:no-repeat;mask-image:var(--ec-frm-copyIcon);mask-repeat:no-repeat;margin:0.475rem;line-height:0}.expressive-code .copy button:hover,.expressive-code .copy button:focus:focus-visible{opacity:1}.expressive-code .copy button:hover div,.expressive-code .copy button:focus:focus-visible div{opacity:var(--ec-frm-inlBtnBgHoverOrFocusOpa)}.expressive-code .copy button:active{opacity:1}.expressive-code .copy button:active div{opacity:var(--ec-frm-inlBtnBgActOpa)}.expressive-code .copy .feedback{--tooltip-arrow-size:0.35rem;--tooltip-bg:var(--ec-frm-tooltipSuccessBg);color:var(--ec-frm-tooltipSuccessFg);pointer-events:none;user-select:none;-webkit-user-select:none;position:relative;align-self:center;background-color:var(--tooltip-bg);z-index:99;padding:0.125rem 0.75rem;border-radius:0.2rem;margin-inline-end:var(--tooltip-arrow-size);opacity:0;transition-property:opacity, transform;transition-duration:0.2s;transition-timing-function:ease-in-out;transform:translate3d(0, 0.25rem, 0)}.expressive-code .copy .feedback::after{content:'';position:absolute;pointer-events:none;top:calc(50% - var(--tooltip-arrow-size));inset-inline-end:calc(-2 * (var(--tooltip-arrow-size) - 0.5px));border:var(--tooltip-arrow-size) solid transparent;border-inline-start-color:var(--tooltip-bg)}.expressive-code .copy .feedback.show{opacity:1;transform:translate3d(0, 0, 0)}@media (hover: hover){.expressive-code{}.expressive-code .copy button{opacity:0;width:2rem;height:2rem}.expressive-code .frame:hover .copy button:not(:hover),.expressive-code .frame:focus-within :focus-visible ~ .copy button:not(:hover),.expressive-code .frame .copy .feedback.show ~ button:not(:hover){opacity:0.75}}.expressive-code :nth-child(1 of .ec-line) .code{padding-inline-end:calc(2rem + var(--ec-codePadInl))}:root,:root:not([data-theme='github-light']) .expressive-code[data-theme='github-light']{--ec-brdRad:0.3rem;--ec-brdWd:1.5px;--ec-brdCol:#e1e4e8;--ec-codeFontFml:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;--ec-codeFontSize:0.85rem;--ec-codeFontWg:400;--ec-codeLineHt:1.65;--ec-codePadBlk:1rem;--ec-codePadInl:1.35rem;--ec-codeBg:#fff;--ec-codeFg:#24292e;--ec-codeSelBg:#0366d625;--ec-gtrFg:#1b1f2381;--ec-gtrBrdCol:#1b1f2333;--ec-gtrBrdWd:1.5px;--ec-gtrHlFg:#24292eab;--ec-uiFontFml:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';--ec-uiFontSize:0.9rem;--ec-uiFontWg:400;--ec-uiLineHt:1.65;--ec-uiPadBlk:0.25rem;--ec-uiPadInl:1rem;--ec-uiSelBg:#e2e5e9;--ec-uiSelFg:#2f363d;--ec-focusBrd:#2188ff;--ec-sbThumbCol:#959da533;--ec-sbThumbHoverCol:#959da5eb;--ec-tm-lineMarkerAccentMarg:0rem;--ec-tm-lineMarkerAccentWd:0.15rem;--ec-tm-lineMarkerLabelPadInl:0.2rem;--ec-tm-lineMarkerLabelCol:white;--ec-tm-lineDiffIndMargLeft:0.3rem;--ec-tm-inlMarkerBrdWd:1.5px;--ec-tm-inlMarkerBrdRad:0.2rem;--ec-tm-inlMarkerPad:0.15rem;--ec-tm-insDiffIndContent:'+';--ec-tm-delDiffIndContent:'-';--ec-tm-markBg:#9fb6ff80;--ec-tm-markBrdCol:#5570b3d0;--ec-tm-insBg:#94c68480;--ec-tm-insBrdCol:#4e7e41d0;--ec-tm-insDiffIndCol:#3a692fd0;--ec-tm-delBg:#fea09280;--ec-tm-delBrdCol:#ae594fd0;--ec-tm-delDiffIndCol:#97453dd0;--ec-frm-shdCol:#00000028;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #00000028;--ec-frm-edActTabBg:#fff;--ec-frm-edActTabFg:#2f363d;--ec-frm-edActTabBrdCol:transparent;--ec-frm-edActTabIndHt:1.5px;--ec-frm-edActTabIndTopCol:#f9826c;--ec-frm-edActTabIndBtmCol:#fff;--ec-frm-edTabsMargInlStart:0;--ec-frm-edTabsMargBlkStart:0;--ec-frm-edTabBrdRad:0.3rem;--ec-frm-edTabBarBg:#f6f8fa;--ec-frm-edTabBarBrdCol:#e1e4e8;--ec-frm-edTabBarBrdBtmCol:#e1e4e8;--ec-frm-edBg:#fff;--ec-frm-trmTtbFg:#2f363d;--ec-frm-trmTtbDotsFg:#2f363d;--ec-frm-trmTtbDotsOpa:0.15;--ec-frm-trmTtbBg:#fff;--ec-frm-trmTtbBrdBtmCol:#e1e4e8;--ec-frm-trmBg:#f6f8fa;--ec-frm-inlBtnFg:#24292e;--ec-frm-inlBtnBg:#24292e;--ec-frm-inlBtnBgIdleOpa:0;--ec-frm-inlBtnBgHoverOrFocusOpa:0.2;--ec-frm-inlBtnBgActOpa:0.3;--ec-frm-inlBtnBrd:#24292e;--ec-frm-inlBtnBrdOpa:0.4;--ec-frm-tooltipSuccessBg:#208638;--ec-frm-tooltipSuccessFg:white;--ec-frm-copyIcon:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'black'%20stroke-width%3D'1.75'%3E%3Cpath%20d%3D'M3%2019a2%202%200%200%201-1-2V2a2%202%200%200%201%201-1h13a2%202%200%200%201%202%201'%2F%3E%3Crect%20x%3D'6'%20y%3D'5'%20width%3D'16'%20height%3D'18'%20rx%3D'1.5'%20ry%3D'1.5'%2F%3E%3C%2Fsvg%3E");--ec-frm-trmIcon:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2060%2016'%20preserveAspectRatio%3D'xMidYMid%20meet'%3E%3Ccircle%20cx%3D'8'%20cy%3D'8'%20r%3D'8'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'8'%20r%3D'8'%2F%3E%3Ccircle%20cx%3D'52'%20cy%3D'8'%20r%3D'8'%2F%3E%3C%2Fsvg%3E")}.expressive-code .ec-line :where(span[style^='--']:not([class])),:root:not([data-theme='github-light']) .expressive-code[data-theme='github-light'] .ec-line :where(span[style^='--']:not([class])){color:var(--0, inherit);background-color:var(--0bg, transparent);font-style:var(--0fs, inherit);font-weight:var(--0fw, inherit);text-decoration:var(--0td, inherit)}@media (prefers-color-scheme: dark){:root:not([data-theme='github-light']){--ec-brdCol:#1b1f23;--ec-codeBg:#24292e;--ec-codeFg:#e1e4e8;--ec-codeSelBg:#3392ff44;--ec-gtrFg:#727980;--ec-gtrBrdCol:#72798033;--ec-gtrHlFg:#e1e4e896;--ec-uiSelBg:#39414a;--ec-uiSelFg:#e1e4e8;--ec-focusBrd:#005cc5;--ec-sbThumbCol:#6a737d33;--ec-sbThumbHoverCol:#6a737dd1;--ec-tm-markBg:#264a8980;--ec-tm-insBg:#26561c80;--ec-tm-insDiffIndCol:#7eb070d0;--ec-tm-delBg:#81322b80;--ec-tm-delDiffIndCol:#e68a7ed0;--ec-frm-shdCol:#0000005b;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #0000005b;--ec-frm-edActTabBg:#24292e;--ec-frm-edActTabFg:#e1e4e8;--ec-frm-edActTabIndBtmCol:#24292e;--ec-frm-edTabBarBg:#1f2428;--ec-frm-edTabBarBrdCol:#1b1f23;--ec-frm-edTabBarBrdBtmCol:#1b1f23;--ec-frm-edBg:#24292e;--ec-frm-trmTtbFg:#e1e4e8;--ec-frm-trmTtbDotsFg:#e1e4e8;--ec-frm-trmTtbBg:#24292e;--ec-frm-trmTtbBrdBtmCol:#1b1f23;--ec-frm-trmBg:#1f2428;--ec-frm-inlBtnFg:#e1e4e8;--ec-frm-inlBtnBg:#e1e4e8;--ec-frm-inlBtnBrd:#e1e4e8;--ec-frm-tooltipSuccessBg:#228739}:root:not([data-theme='github-light']) .expressive-code .ec-line :where(span[style^='--']:not([class])){color:var(--1, inherit);background-color:var(--1bg, transparent);font-style:var(--1fs, inherit);font-weight:var(--1fw, inherit);text-decoration:var(--1td, inherit)}}:root[data-theme='github-dark'] .expressive-code:not([data-theme='github-light']),.expressive-code[data-theme='github-dark']{--ec-brdCol:#1b1f23;--ec-codeBg:#24292e;--ec-codeFg:#e1e4e8;--ec-codeSelBg:#3392ff44;--ec-gtrFg:#727980;--ec-gtrBrdCol:#72798033;--ec-gtrHlFg:#e1e4e896;--ec-uiSelBg:#39414a;--ec-uiSelFg:#e1e4e8;--ec-focusBrd:#005cc5;--ec-sbThumbCol:#6a737d33;--ec-sbThumbHoverCol:#6a737dd1;--ec-tm-markBg:#264a8980;--ec-tm-insBg:#26561c80;--ec-tm-insDiffIndCol:#7eb070d0;--ec-tm-delBg:#81322b80;--ec-tm-delDiffIndCol:#e68a7ed0;--ec-frm-shdCol:#0000005b;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #0000005b;--ec-frm-edActTabBg:#24292e;--ec-frm-edActTabFg:#e1e4e8;--ec-frm-edActTabIndBtmCol:#24292e;--ec-frm-edTabBarBg:#1f2428;--ec-frm-edTabBarBrdCol:#1b1f23;--ec-frm-edTabBarBrdBtmCol:#1b1f23;--ec-frm-edBg:#24292e;--ec-frm-trmTtbFg:#e1e4e8;--ec-frm-trmTtbDotsFg:#e1e4e8;--ec-frm-trmTtbBg:#24292e;--ec-frm-trmTtbBrdBtmCol:#1b1f23;--ec-frm-trmBg:#1f2428;--ec-frm-inlBtnFg:#e1e4e8;--ec-frm-inlBtnBg:#e1e4e8;--ec-frm-inlBtnBrd:#e1e4e8;--ec-frm-tooltipSuccessBg:#228739}:root[data-theme='github-dark'] .expressive-code:not([data-theme='github-light']) .ec-line :where(span[style^='--']:not([class])),.expressive-code[data-theme='github-dark'] .ec-line :where(span[style^='--']:not([class])){color:var(--1, inherit);background-color:var(--1bg, transparent);font-style:var(--1fs, inherit);font-weight:var(--1fw, inherit);text-decoration:var(--1td, inherit)}</style><script type="module">try{(()=>{function a(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var u=window.requestIdleCallback||(e=>setTimeout(e,1)),s=window.cancelIdleCallback||clearTimeout;function l(e){let t=new Set,r,n;return new ResizeObserver(c=>{c.forEach(o=>t.add(o.target)),r&&clearTimeout(r),n&&s(n),r=setTimeout(()=>{n&&s(n),n=u(()=>{t.forEach(o=>e(o)),t.clear()})},250)})}function i(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let n=r.parentElement;n&&t.observe(n)})}var d=l(a);i(document,d);var b=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{i(r,d)})));b.observe(document.body,{childList:!0,subtree:!0});document.addEventListener("astro:page-load",()=>{i(document,d)});})();}catch(e){console.error("[EC] tabindex-js-module failed:",e)}</script><script type="module">try{(()=>{function i(o){let e=document.createElement("pre");Object.assign(e.style,{opacity:"0",pointerEvents:"none",position:"absolute",overflow:"hidden",left:"0",top:"0",width:"20px",height:"20px",webkitUserSelect:"auto",userSelect:"all"}),e.ariaHidden="true",e.textContent=o,document.body.appendChild(e);let a=document.createRange();a.selectNode(e);let n=getSelection();if(!n)return!1;n.removeAllRanges(),n.addRange(a);let r=!1;try{r=document.execCommand("copy")}finally{n.removeAllRanges(),document.body.removeChild(e)}return r}async function l(o){let e=o.currentTarget,a=e.dataset,n=!1,r=a.code.replace(/\u007f/g,`
+`);try{await navigator.clipboard.writeText(r),n=!0}catch{n=i(r)}if(!n||e.parentNode?.querySelector(".feedback"))return;let t=document.createElement("div");t.classList.add("feedback"),t.append(a.copied),e.before(t),t.offsetWidth,requestAnimationFrame(()=>t?.classList.add("show"));let c=()=>!t||t.classList.remove("show"),d=()=>{!t||parseFloat(getComputedStyle(t).opacity)>0||(t.remove(),t=void 0)};setTimeout(c,1500),setTimeout(d,2500),e.addEventListener("blur",c),t.addEventListener("transitioncancel",d),t.addEventListener("transitionend",d)}function s(o){o.querySelectorAll?.(".expressive-code .copy button").forEach(e=>e.addEventListener("click",l))}s(document);var u=new MutationObserver(o=>o.forEach(e=>e.addedNodes.forEach(a=>{s(a)})));u.observe(document.body,{childList:!0,subtree:!0});document.addEventListener("astro:page-load",()=>{s(document)});})();}catch(e){console.error("[EC] copy-js-module failed:",e)}</script><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:14ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">node</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#005CC5;--1:#79B8FF">--version</span></div></div><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#005CC5;--1:#79B8FF">--version</span></div></div><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">git</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#005CC5;--1:#79B8FF">--version</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="node --versionnpm --versiongit --version"><div></div></button></div></figure></div>
+<h2 id="installation-methods">Installation Methods</h2>
+<h3>Method 1: Clone from Repository</h3>
+<ol>
+<li>
+<p><strong>Clone the repository:</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:67ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">git</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">clone</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">https://github.com/greenpandastudio/neutrino-electron.git</span></div></div><div class="ec-line"><div class="code"><span style="--0:#005CC5;--1:#79B8FF">cd</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">neutrino-electron</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="git clone https://github.com/greenpandastudio/neutrino-electron.gitcd neutrino-electron"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Install dependencies:</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:11ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">install</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm install"><div></div></button></div></figure></div>
+</li>
+</ol>
+<h3>Method 2: Download and Extract</h3>
+<ol>
+<li>Download the latest release from the GitHub repository</li>
+<li>Extract the archive to your desired location</li>
+<li>Navigate to the project directory</li>
+<li>Run <code>npm install</code></li>
+</ol>
+<h2 id="environment-configuration">Environment Configuration</h2>
+<h3>Setting Up Content Directory</h3>
+<p>Neutrino supports external content management through environment variables:</p>
+<ol>
+<li>
+<p><strong>Create a <code>.env</code> file</strong> in the project root:</p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:10ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">touch</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">.env</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="touch .env"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Configure the content path</strong> in your <code>.env</code> file:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="env" class="wrap" style="--ecMaxLine:53ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">NEUTRINO_CONTENT_PATH=/path/to/your/content/directory</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="NEUTRINO_CONTENT_PATH=/path/to/your/content/directory"><div></div></button></div></figure></div>
+<p>If you don't set this variable, Neutrino will use the default <code>content</code> directory.</p>
+</li>
+<li>
+<p><strong>Alternative: Edit site.json</strong></p>
+<p>You can also configure the content path directly in <code>src/_data/site.json</code>:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json" class="wrap" style="--ecMaxLine:49ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292E;--1:#E1E4E8">{</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"contentPath"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"/absolute/path/to/your/content"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#24292E;--1:#E1E4E8">}</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &quot;contentPath&quot;: &quot;/absolute/path/to/your/content&quot;}"><div></div></button></div></figure></div>
+</li>
+</ol>
+<h3>Theme Configuration</h3>
+<p>Set your preferred theme using the <code>THEME</code> environment variable:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="env" class="wrap" style="--ecMaxLine:28ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">THEME=neutrino-electron-core</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="THEME=neutrino-electron-core"><div></div></button></div></figure></div>
+<p>Available themes:</p>
+<ul>
+<li><code>neutrino-electron-core</code> (default)</li>
+<li><code>neutrino-brand-website</code></li>
+</ul>
+<h2 id="development-setup">Development Setup</h2>
+<h3>1. Start Development Server</h3>
+<p>Run the development server with CSS watching:</p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:13ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">run</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">serve</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm run serve"><div></div></button></div></figure></div>
+<p>This command will:</p>
+<ul>
+<li>Start Eleventy in serve mode</li>
+<li>Watch for CSS changes and recompile automatically</li>
+<li>Serve your site at <code>http://localhost:8080</code></li>
+</ul>
+<h3>2. Alternative Development Commands</h3>
+<ul>
+<li>
+<p><strong>Development without CSS watching:</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:11ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">run</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">dev</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm run dev"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>CSS-only watching:</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:17ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">run</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">watch:css</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm run watch:css"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>Build CSS only:</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:17ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">run</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">build:css</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm run build:css"><div></div></button></div></figure></div>
+</li>
+</ul>
+<h2 id="building-for-production">Building for Production</h2>
+<h3>Build the Site</h3>
+<p>Generate the production build:</p>
+<div class="expressive-code"><figure class="frame is-terminal"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre data-language="bash" class="wrap" style="--ecMaxLine:13ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">npm</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">run</span><span style="--0:#24292E;--1:#E1E4E8"> </span><span style="--0:#032F62;--1:#9ECBFF">build</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="npm run build"><div></div></button></div></figure></div>
+<p>This will:</p>
+<ul>
+<li>Compile all SCSS to CSS</li>
+<li>Process all templates and content</li>
+<li>Generate the static site in the <code>_site</code> directory</li>
+</ul>
+<h3>Build Output</h3>
+<p>The built site will be available in the <code>_site</code> directory, ready for deployment to any static hosting service.</p>
+<h2 id="content-management">Content Management</h2>
+<h3>Using Decap CMS</h3>
+<ol>
+<li>
+<p><strong>Access the admin panel:</strong>
+Navigate to <code>http://localhost:8080/admin</code> in your browser</p>
+</li>
+<li>
+<p><strong>Configure authentication:</strong>
+Follow the <a href="https://decapcms.org/docs/authentication-backends/">Decap CMS documentation</a> to set up authentication for your chosen backend</p>
+</li>
+<li>
+<p><strong>Content structure:</strong></p>
+<ul>
+<li>Posts: <code>src/content/posts/</code></li>
+<li>Pages: <code>src/content/pages/</code></li>
+<li>Projects: <code>src/content/projects/</code></li>
+<li>Documentation: <code>src/content/documentation/</code></li>
+</ul>
+</li>
+</ol>
+<h3>Manual Content Management</h3>
+<p>You can also manage content manually by editing Markdown files in the appropriate directories.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>Common Issues</h3>
+<ol>
+<li>
+<p><strong>Content directory not found:</strong></p>
+<ul>
+<li>Verify the path in your <code>.env</code> file or <code>site.json</code></li>
+<li>Ensure the directory exists and is accessible</li>
+</ul>
+</li>
+<li>
+<p><strong>CSS not compiling:</strong></p>
+<ul>
+<li>Check that all SCSS files are valid</li>
+<li>Ensure the theme directory exists</li>
+</ul>
+</li>
+<li>
+<p><strong>Port already in use:</strong></p>
+<ul>
+<li>Eleventy will automatically find an available port</li>
+<li>Check the terminal output for the actual URL</li>
+</ul>
+</li>
+</ol>
+<h3>Getting Help</h3>
+<ul>
+<li>Check the <a href="./troubleshooting.md">troubleshooting guide</a></li>
+<li>Review the <a href="./configuration.md">configuration documentation</a></li>
+<li>Open an issue on the GitHub repository</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>After successful installation:</p>
+<ol>
+<li>Read the <a href="./configuration.md">configuration guide</a></li>
+<li>Explore the <a href="./themes.md">theme system</a></li>
+<li>Set up <a href="./content-management.md">content management</a></li>
+<li>Learn about <a href="./deployment.md">deployment options</a></li>
+</ol>
+<h2 id="system-requirements">System Requirements</h2>
+<ul>
+<li><strong>Node.js:</strong> 18.0.0 or higher</li>
+<li><strong>npm:</strong> 8.0.0 or higher</li>
+<li><strong>Memory:</strong> 512MB RAM minimum</li>
+<li><strong>Disk Space:</strong> 100MB for the project, additional space for content</li>
+</ul>
+<h2 id="key-dependencies">Key Dependencies</h2>
+<p>Neutrino uses modern, well-maintained dependencies:</p>
+<ul>
+<li><strong>Eleventy:</strong> 3.0+ (Static site generator)</li>
+<li><strong>Decap CMS:</strong> Latest (Headless CMS)</li>
+<li><strong>Sass:</strong> 1.79+ (CSS preprocessor)</li>
+<li><strong>Expressive Code:</strong> 0.41+ (Syntax highlighting)</li>
+<li><strong>Markdown-it:</strong> 14.1+ (Markdown processor)</li>
+</ul>
+<h2 id="supported-platforms">Supported Platforms</h2>
+<ul>
+<li>Windows 10/11</li>
+<li>macOS 10.15+</li>
+<li>Linux (any distribution with Node.js 18+)</li>
+</ul>
+              
+                
+<nav class="documentation-nav-footer">
+  <div class="nav-wrapper">
+    
+      <div class="nav-item nav-prev">
+        <a href="/documentation/README/">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Documentation Overview</span>
+        </a>
+      </div>
+    
+    
+    
+      <div class="nav-item nav-next">
+        <a href="/documentation/configuration/">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Configuration Guide</span>
+        </a>
+      </div>
+    
+  </div>
+</nav>
+
+
+              
+            </div>
+            <aside>
+              
+              <nav class="documentation-toc">
+  <h3>On this page</h3>
+  <ul>
+    <li>
+      <a href="#prerequisites">Prerequisites</a>
+    </li>
+    <li>
+      <a href="#installation-methods">Installation Methods</a>
+    </li>
+    <li>
+      <a href="#environment-configuration">Environment Configuration</a>
+    </li>
+    <li>
+      <a href="#development-setup">Development Setup</a>
+    </li>
+    <li>
+      <a href="#building-for-production">Building for Production</a>
+    </li>
+    <li>
+      <a href="#content-management">Content Management</a>
+    </li>
+    <li>
+      <a href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li>
+      <a href="#next-steps">Next Steps</a>
+    </li>
+    <li>
+      <a href="#system-requirements">System Requirements</a>
+    </li>
+    <li>
+      <a href="#key-dependencies">Key Dependencies</a>
+    </li>
+    <li>
+      <a href="#supported-platforms">Supported Platforms</a>
+    </li>
+  </ul>
+</nav>
+            </aside>
+          </div>
+        
+      
+    </main>
+    
+      <aside><nav class="documentation-nav">
+  <h3>Documentation</h3>
+  <ul>
+    
+      <li><a href="/documentation/README/">Documentation Overview</a></li>
+    
+      <li><a href="/documentation/installation/">Installation Guide</a></li>
+    
+      <li><a href="/documentation/configuration/">Configuration Guide</a></li>
+    
+      <li><a href="/documentation/content-management/">Content Management Guide</a></li>
+    
+      <li><a href="/documentation/development/">Development Guide</a></li>
+    
+      <li><a href="/documentation/migration-tools/">Migration Tools</a></li>
+    
+      <li><a href="/documentation/themes/">Theme System</a></li>
+    
+      <li><a href="/documentation/deployment/">Deployment Guide</a></li>
+    
+      <li><a href="/documentation/seo/">SEO System</a></li>
+    
+      <li><a href="/documentation/troubleshooting/">Troubleshooting Guide</a></li>
+    
+      <li><a href="/documentation/api-reference/">API Reference</a></li>
+    
+  </ul>
+</nav></aside>
+    
+  </div>
+  <footer>
+    <div class="container boxed">
+        <p>© <a href="https://greenpanda.studio" target="_blank">Green Panda Studio</a></p>
+    </div>
+</footer>
+<script src="/assets/js/togglemode.js"></script>
+<script src="/assets/js/headerscroll.js"></script>
+<script src="/assets/js/mobile-menu.js"></script>
+<script src="/assets/js/search-popup.js"></script>
+  
+<div id="search-popup">
+  <div id="search">
+    <input id="q" type="search" placeholder="Search..." autocomplete="off">
+    <ul id="results" class="results"><ul>
+  </ul></ul></div>
+</div>
+<script src="/assets/js/minisearch.min.js"></script>
+<script src="/assets/js/search.js" type="module"></script>
+
+
+</body></html>

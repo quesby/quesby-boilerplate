@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="en" class="dark"><head>
+  <meta charset="utf-8">
+
+  <!-- Viewport per responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Enhanced SEO System --><!-- Dynamic Title -->
+  <title>SEO System</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Complete guide to the advanced SEO system implemented in Neutrino Electron">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/greenpandastudio/neutrino-electron/documentation/seo/">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neutrino - Electron">
+  <meta property="og:title" content="SEO System">
+  <meta property="og:description" content="Complete guide to the advanced SEO system implemented in Neutrino Electron">
+  <meta property="og:url" content="https://github.com/greenpandastudio/neutrino-electron/documentation/seo/">
+  
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SEO System">
+  
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@neutrino_electron">
+  <meta name="twitter:title" content="SEO System">
+  <meta name="twitter:description" content="Complete guide to the advanced SEO system implemented in Neutrino Electron">
+  <meta name="twitter:image" content="/assets/images/og-image.jpg">
+
+  <!-- Favicon e manifest -->
+  <link rel="icon" href="/assets/images/neutrino-logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+
+  <!-- Theme toggle -->
+  <script>
+    (function(){
+      var ls = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var root = document.documentElement;
+      if (ls === 'dark' || (!ls && prefersDark)) root.classList.add('dark');
+      else if (ls === 'sepia') root.classList.add('sepia');
+    })();
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/skin.css">
+  <link rel="stylesheet" href="/assets/css/expressive-code.css">
+</head>
+<body class="documentation">
+  <header>
+    <div class="container boxed">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/images/neutrino-logo.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="h-spacer"></div>
+        <div id="main-navigation" class="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/documentation/">Documentation</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/admin/">Admin</a></li>
+    </ul>
+</div>
+        <div class="button" id="search-trigger">
+            <span>Search...</span>
+        </div>
+        <div class="togglemode">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 15a5 5 0 100-10 5 5 0 000 10zm9-4a1 1 0 100-2h-2a1 1 0 100 2h2zM5 12a1 1 0 100-2H3a1 1 0 000 2h2zm12.364 6.364a1 1 0 10-1.414-1.414l-1.415 1.414a1 1 0 101.415 1.415l1.414-1.415zM7.465 6.05A1 1 0 106.05 7.465L7.464 8.88a1 1 0 001.415-1.414L7.464 6.05zm9.9 0l-1.415 1.415A1 1 0 0017.364 8.88L18.78 7.465A1 1 0 0017.364 6.05zM6.05 16.95l1.415-1.415A1 1 0 106.05 14.12L4.636 15.535A1 1 0 106.05 16.95z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="togglenav">
+            <button id="nav-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="ic_fluent_navigation_24_filled" fill="#212121" fill-rule="nonzero">
+                            <path d="M3,17 L21,17 C21.5522847,17 22,17.4477153 22,18 C22,18.5128358 21.6139598,18.9355072 21.1166211,18.9932723 L21,19 L3,19 C2.44771525,19 2,18.5522847 2,18 C2,17.4871642 2.38604019,17.0644928 2.88337887,17.0067277 L3,17 L21,17 L3,17 Z M2.99987969,11 L20.9998797,10.9978344 C21.5521644,10.9977679 22,11.4454293 22,11.997714 C22,12.5105499 21.6140635,12.9332676 21.1167397,12.9910926 L21.0001203,12.9978344 L3.00012031,13 C2.44783557,13.0000664 2.00000001,12.5524051 2.00000001,12.0001203 C2.00000001,11.4872845 2.38593645,11.0645667 2.88326032,11.0067418 L2.99987969,11 L20.9998797,10.9978344 L2.99987969,11 Z M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 C22,6.51283584 21.6139598,6.93550716 21.1166211,6.99327227 L21,7 L3,7 C2.44771525,7 2,6.55228475 2,6 C2,5.48716416 2.38604019,5.06449284 2.88337887,5.00672773 L3,5 L21,5 L3,5 Z" id="🎨-Color"></path>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+  <div class="layout-wrapper">
+    <main>
+      
+        
+          <div class="content-wrapper">
+            <div class="content">
+                
+                  <div class="last-updated">
+                    <small>Last updated: September 2025</small>
+                  </div>
+                
+              <h1>SEO System</h1>
+<p>Neutrino Electron includes a comprehensive SEO system inspired by modern best practices, providing automatic meta tag generation, social media optimization, and search engine optimization features.</p>
+<h2 id="overview">Overview</h2>
+<p>The SEO system automatically generates:</p>
+<ul>
+<li>Dynamic page titles with fallback system</li>
+<li>Meta descriptions with intelligent fallbacks</li>
+<li>Open Graph tags for social media sharing</li>
+<li>Twitter Cards for enhanced social presence</li>
+<li>Canonical URLs to prevent duplicate content</li>
+<li>Meta robots tags for indexing control</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<h3>Site Configuration</h3>
+<p>Configure your site's SEO settings in <code>src/_data/site.json</code>:</p>
+<div class="expressive-code"><style>.expressive-code{font-family:var(--ec-uiFontFml);font-size:var(--ec-uiFontSize);font-weight:var(--ec-uiFontWg);line-height:var(--ec-uiLineHt);text-size-adjust:none;-webkit-text-size-adjust:none}.expressive-code *:not(:is(svg, svg *)){all:revert;box-sizing:border-box}.expressive-code pre{display:flex;margin:0;padding:0;border:var(--ec-brdWd) solid var(--ec-brdCol);border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));background:var(--ec-codeBg)}.expressive-code pre:focus-visible{outline:3px solid var(--ec-focusBrd);outline-offset:-3px}.expressive-code pre > code{all:unset;display:block;flex:1 0 100%;padding:var(--ec-codePadBlk) 0;color:var(--ec-codeFg);font-family:var(--ec-codeFontFml);font-size:var(--ec-codeFontSize);font-weight:var(--ec-codeFontWg);line-height:var(--ec-codeLineHt)}.expressive-code pre{overflow-x:auto}.expressive-code pre.wrap .ec-line .code{white-space:pre-wrap;overflow-wrap:break-word;min-width:min(20ch, var(--ecMaxLine, 20ch))}.expressive-code pre.wrap .ec-line .code span.indent{white-space:pre}.expressive-code pre::-webkit-scrollbar,.expressive-code pre::-webkit-scrollbar-track{background-color:inherit;border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));border-top-left-radius:0;border-top-right-radius:0}.expressive-code pre::-webkit-scrollbar-thumb{background-color:var(--ec-sbThumbCol);border:4px solid transparent;background-clip:content-box;border-radius:10px}.expressive-code pre::-webkit-scrollbar-thumb:hover{background-color:var(--ec-sbThumbHoverCol)}.expressive-code .ec-line{direction:ltr;unicode-bidi:isolate;display:grid;grid-template-areas:'gutter code';grid-template-columns:auto 1fr;position:relative}.expressive-code .ec-line .gutter{grid-area:gutter;color:var(--ec-gtrFg)}.expressive-code .ec-line .gutter > *{pointer-events:none;user-select:none;-webkit-user-select:none}.expressive-code .ec-line .gutter ~ .code{--ecLineBrdCol:var(--ec-gtrBrdCol)}.expressive-code .ec-line.highlight .gutter{color:var(--ec-gtrHlFg)}.expressive-code .ec-line .code{grid-area:code;position:relative;box-sizing:content-box;padding-inline-start:calc(var(--ecIndent, 0ch) + var(--ec-codePadInl) - var(--ecGtrBrdWd));padding-inline-end:var(--ec-codePadInl);text-indent:calc(var(--ecIndent, 0ch) * -1)}.expressive-code .ec-line .code::before,.expressive-code .ec-line .code::after,.expressive-code .ec-line .code :where(*){text-indent:0}.expressive-code .ec-line .code{--ecGtrBrdWd:var(--ec-gtrBrdWd);border-inline-start:var(--ecGtrBrdWd) solid var(--ecLineBrdCol, transparent)}.expressive-code .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.expressive-code .ec-line.mark{--tmLineBgCol:var(--ec-tm-markBg)}.expressive-code .ec-line.mark .code{--ecLineBrdCol:var(--ec-tm-markBrdCol)}.expressive-code .ec-line.ins{--tmLineBgCol:var(--ec-tm-insBg);--tmLabel:var(--ec-tm-insDiffIndContent)}.expressive-code .ec-line.ins .code{--ecLineBrdCol:var(--ec-tm-insBrdCol)}.expressive-code .ec-line.ins .code::before{color:var(--ec-tm-insDiffIndCol)}.expressive-code .ec-line.del{--tmLineBgCol:var(--ec-tm-delBg);--tmLabel:var(--ec-tm-delDiffIndContent)}.expressive-code .ec-line.del .code{--ecLineBrdCol:var(--ec-tm-delBrdCol)}.expressive-code .ec-line.del .code::before{color:var(--ec-tm-delDiffIndCol)}.expressive-code .ec-line.mark,.expressive-code .ec-line.ins,.expressive-code .ec-line.del{background:var(--tmLineBgCol)}.expressive-code .ec-line.mark .code,.expressive-code .ec-line.ins .code,.expressive-code .ec-line.del .code{--ecGtrBrdWd:var(--ec-tm-lineMarkerAccentWd)}.expressive-code .ec-line.mark .code::before,.expressive-code .ec-line.ins .code::before,.expressive-code .ec-line.del .code::before{display:block;position:absolute;left:0;box-sizing:border-box;content:var(--tmLabel, ' ');padding-inline-start:var(--ec-tm-lineDiffIndMargLeft);text-align:center;white-space:pre}.expressive-code .ec-line.mark.tm-label .code::before,.expressive-code .ec-line.ins.tm-label .code::before,.expressive-code .ec-line.del.tm-label .code::before{background:var(--ecLineBrdCol);padding:0 calc(var(--ec-tm-lineMarkerLabelPadInl) + var(--ec-tm-lineMarkerAccentWd)) 0 var(--ec-tm-lineMarkerLabelPadInl);color:var(--ec-tm-lineMarkerLabelCol)}.expressive-code .ec-line mark{--tmInlineBgCol:var(--ec-tm-markBg);--tmInlineBrdCol:var(--ec-tm-markBrdCol)}.expressive-code .ec-line ins{--tmInlineBgCol:var(--ec-tm-insBg);--tmInlineBrdCol:var(--ec-tm-insBrdCol)}.expressive-code .ec-line del{--tmInlineBgCol:var(--ec-tm-delBg);--tmInlineBrdCol:var(--ec-tm-delBrdCol)}.expressive-code .ec-line mark,.expressive-code .ec-line ins,.expressive-code .ec-line del{all:unset;display:inline-block;position:relative;--tmBrdL:var(--ec-tm-inlMarkerBrdWd);--tmBrdR:var(--ec-tm-inlMarkerBrdWd);--tmRadL:var(--ec-tm-inlMarkerBrdRad);--tmRadR:var(--ec-tm-inlMarkerBrdRad);margin-inline:0.025rem;padding-inline:var(--ec-tm-inlMarkerPad);border-radius:var(--tmRadL) var(--tmRadR) var(--tmRadR) var(--tmRadL);background:var(--tmInlineBgCol);background-clip:padding-box}.expressive-code .ec-line mark.open-start,.expressive-code .ec-line ins.open-start,.expressive-code .ec-line del.open-start{margin-inline-start:0;padding-inline-start:0;--tmBrdL:0px;--tmRadL:0}.expressive-code .ec-line mark.open-end,.expressive-code .ec-line ins.open-end,.expressive-code .ec-line del.open-end{margin-inline-end:0;padding-inline-end:0;--tmBrdR:0px;--tmRadR:0}.expressive-code .ec-line mark::before,.expressive-code .ec-line ins::before,.expressive-code .ec-line del::before{content:'';position:absolute;pointer-events:none;display:inline-block;inset:0;border-radius:var(--tmRadL) var(--tmRadR) var(--tmRadR) var(--tmRadL);border:var(--ec-tm-inlMarkerBrdWd) solid var(--tmInlineBrdCol);border-inline-width:var(--tmBrdL) var(--tmBrdR)}.expressive-code .frame{all:unset;position:relative;display:block;--header-border-radius:calc(var(--ec-brdRad) + var(--ec-brdWd));--tab-border-radius:calc(var(--ec-frm-edTabBrdRad) + var(--ec-brdWd));--button-spacing:0.4rem;--code-background:var(--ec-frm-edBg);border-radius:var(--header-border-radius);box-shadow:var(--ec-frm-frameBoxShdCssVal)}.expressive-code .frame .header{display:none;z-index:1;position:relative;border-radius:var(--header-border-radius) var(--header-border-radius) 0 0}.expressive-code .frame.has-title pre,.expressive-code .frame.has-title code,.expressive-code .frame.is-terminal pre,.expressive-code .frame.is-terminal code{border-top:none;border-top-left-radius:0;border-top-right-radius:0}.expressive-code .frame .title:empty:before{content:'\a0'}.expressive-code .frame.has-title:not(.is-terminal){--button-spacing:calc(1.9rem + 2 * (var(--ec-uiPadBlk) + var(--ec-frm-edActTabIndHt)))}.expressive-code .frame.has-title:not(.is-terminal) .title{position:relative;color:var(--ec-frm-edActTabFg);background:var(--ec-frm-edActTabBg);background-clip:padding-box;margin-block-start:var(--ec-frm-edTabsMargBlkStart);padding:calc(var(--ec-uiPadBlk) + var(--ec-frm-edActTabIndHt)) var(--ec-uiPadInl);border:var(--ec-brdWd) solid var(--ec-frm-edActTabBrdCol);border-radius:var(--tab-border-radius) var(--tab-border-radius) 0 0;border-bottom:none;overflow:hidden}.expressive-code .frame.has-title:not(.is-terminal) .title::after{content:'';position:absolute;pointer-events:none;inset:0;border-top:var(--ec-frm-edActTabIndHt) solid var(--ec-frm-edActTabIndTopCol);border-bottom:var(--ec-frm-edActTabIndHt) solid var(--ec-frm-edActTabIndBtmCol)}.expressive-code .frame.has-title:not(.is-terminal) .header{display:flex;background:linear-gradient(to top, var(--ec-frm-edTabBarBrdBtmCol) var(--ec-brdWd), transparent var(--ec-brdWd)),linear-gradient(var(--ec-frm-edTabBarBg), var(--ec-frm-edTabBarBg));background-repeat:no-repeat;padding-inline-start:var(--ec-frm-edTabsMargInlStart)}.expressive-code .frame.has-title:not(.is-terminal) .header::before{content:'';position:absolute;pointer-events:none;inset:0;border:var(--ec-brdWd) solid var(--ec-frm-edTabBarBrdCol);border-radius:inherit;border-bottom:none}.expressive-code .frame.is-terminal{--button-spacing:calc(1.9rem + var(--ec-brdWd) + 2 * var(--ec-uiPadBlk));--code-background:var(--ec-frm-trmBg)}.expressive-code .frame.is-terminal .header{display:flex;align-items:center;justify-content:center;padding-block:var(--ec-uiPadBlk);padding-block-end:calc(var(--ec-uiPadBlk) + var(--ec-brdWd));position:relative;font-weight:500;letter-spacing:0.025ch;color:var(--ec-frm-trmTtbFg);background:var(--ec-frm-trmTtbBg);border:var(--ec-brdWd) solid var(--ec-brdCol);border-bottom:none}.expressive-code .frame.is-terminal .header::before{content:'';position:absolute;pointer-events:none;left:var(--ec-uiPadInl);width:2.1rem;height:0.56rem;line-height:0;background-color:var(--ec-frm-trmTtbDotsFg);opacity:var(--ec-frm-trmTtbDotsOpa);-webkit-mask-image:var(--ec-frm-trmIcon);-webkit-mask-repeat:no-repeat;mask-image:var(--ec-frm-trmIcon);mask-repeat:no-repeat}.expressive-code .frame.is-terminal .header::after{content:'';position:absolute;pointer-events:none;inset:0;border-bottom:var(--ec-brdWd) solid var(--ec-frm-trmTtbBrdBtmCol)}.expressive-code .frame pre{background:var(--code-background)}.expressive-code .copy{display:flex;gap:0.25rem;flex-direction:row;position:absolute;inset-block-start:calc(var(--ec-brdWd) + var(--button-spacing));inset-inline-end:calc(var(--ec-brdWd) + var(--ec-uiPadInl) / 2)}@media (scripting: none){.expressive-code .copy{display:none}}.expressive-code .copy{direction:ltr;unicode-bidi:isolate}.expressive-code .copy button{position:relative;align-self:flex-end;margin:0;padding:0;border:none;border-radius:0.2rem;z-index:1;cursor:pointer;transition-property:opacity, background, border-color;transition-duration:0.2s;transition-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94);width:2.5rem;height:2.5rem;background:var(--code-background);opacity:0.75}.expressive-code .copy button div{position:absolute;inset:0;border-radius:inherit;background:var(--ec-frm-inlBtnBg);opacity:var(--ec-frm-inlBtnBgIdleOpa);transition-property:inherit;transition-duration:inherit;transition-timing-function:inherit}.expressive-code .copy button::before{content:'';position:absolute;pointer-events:none;inset:0;border-radius:inherit;border:var(--ec-brdWd) solid var(--ec-frm-inlBtnBrd);opacity:var(--ec-frm-inlBtnBrdOpa)}.expressive-code .copy button::after{content:'';position:absolute;pointer-events:none;inset:0;background-color:var(--ec-frm-inlBtnFg);-webkit-mask-image:var(--ec-frm-copyIcon);-webkit-mask-repeat:no-repeat;mask-image:var(--ec-frm-copyIcon);mask-repeat:no-repeat;margin:0.475rem;line-height:0}.expressive-code .copy button:hover,.expressive-code .copy button:focus:focus-visible{opacity:1}.expressive-code .copy button:hover div,.expressive-code .copy button:focus:focus-visible div{opacity:var(--ec-frm-inlBtnBgHoverOrFocusOpa)}.expressive-code .copy button:active{opacity:1}.expressive-code .copy button:active div{opacity:var(--ec-frm-inlBtnBgActOpa)}.expressive-code .copy .feedback{--tooltip-arrow-size:0.35rem;--tooltip-bg:var(--ec-frm-tooltipSuccessBg);color:var(--ec-frm-tooltipSuccessFg);pointer-events:none;user-select:none;-webkit-user-select:none;position:relative;align-self:center;background-color:var(--tooltip-bg);z-index:99;padding:0.125rem 0.75rem;border-radius:0.2rem;margin-inline-end:var(--tooltip-arrow-size);opacity:0;transition-property:opacity, transform;transition-duration:0.2s;transition-timing-function:ease-in-out;transform:translate3d(0, 0.25rem, 0)}.expressive-code .copy .feedback::after{content:'';position:absolute;pointer-events:none;top:calc(50% - var(--tooltip-arrow-size));inset-inline-end:calc(-2 * (var(--tooltip-arrow-size) - 0.5px));border:var(--tooltip-arrow-size) solid transparent;border-inline-start-color:var(--tooltip-bg)}.expressive-code .copy .feedback.show{opacity:1;transform:translate3d(0, 0, 0)}@media (hover: hover){.expressive-code{}.expressive-code .copy button{opacity:0;width:2rem;height:2rem}.expressive-code .frame:hover .copy button:not(:hover),.expressive-code .frame:focus-within :focus-visible ~ .copy button:not(:hover),.expressive-code .frame .copy .feedback.show ~ button:not(:hover){opacity:0.75}}.expressive-code :nth-child(1 of .ec-line) .code{padding-inline-end:calc(2rem + var(--ec-codePadInl))}:root,:root:not([data-theme='github-light']) .expressive-code[data-theme='github-light']{--ec-brdRad:0.3rem;--ec-brdWd:1.5px;--ec-brdCol:#e1e4e8;--ec-codeFontFml:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;--ec-codeFontSize:0.85rem;--ec-codeFontWg:400;--ec-codeLineHt:1.65;--ec-codePadBlk:1rem;--ec-codePadInl:1.35rem;--ec-codeBg:#fff;--ec-codeFg:#24292e;--ec-codeSelBg:#0366d625;--ec-gtrFg:#1b1f2381;--ec-gtrBrdCol:#1b1f2333;--ec-gtrBrdWd:1.5px;--ec-gtrHlFg:#24292eab;--ec-uiFontFml:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';--ec-uiFontSize:0.9rem;--ec-uiFontWg:400;--ec-uiLineHt:1.65;--ec-uiPadBlk:0.25rem;--ec-uiPadInl:1rem;--ec-uiSelBg:#e2e5e9;--ec-uiSelFg:#2f363d;--ec-focusBrd:#2188ff;--ec-sbThumbCol:#959da533;--ec-sbThumbHoverCol:#959da5eb;--ec-tm-lineMarkerAccentMarg:0rem;--ec-tm-lineMarkerAccentWd:0.15rem;--ec-tm-lineMarkerLabelPadInl:0.2rem;--ec-tm-lineMarkerLabelCol:white;--ec-tm-lineDiffIndMargLeft:0.3rem;--ec-tm-inlMarkerBrdWd:1.5px;--ec-tm-inlMarkerBrdRad:0.2rem;--ec-tm-inlMarkerPad:0.15rem;--ec-tm-insDiffIndContent:'+';--ec-tm-delDiffIndContent:'-';--ec-tm-markBg:#9fb6ff80;--ec-tm-markBrdCol:#5570b3d0;--ec-tm-insBg:#94c68480;--ec-tm-insBrdCol:#4e7e41d0;--ec-tm-insDiffIndCol:#3a692fd0;--ec-tm-delBg:#fea09280;--ec-tm-delBrdCol:#ae594fd0;--ec-tm-delDiffIndCol:#97453dd0;--ec-frm-shdCol:#00000028;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #00000028;--ec-frm-edActTabBg:#fff;--ec-frm-edActTabFg:#2f363d;--ec-frm-edActTabBrdCol:transparent;--ec-frm-edActTabIndHt:1.5px;--ec-frm-edActTabIndTopCol:#f9826c;--ec-frm-edActTabIndBtmCol:#fff;--ec-frm-edTabsMargInlStart:0;--ec-frm-edTabsMargBlkStart:0;--ec-frm-edTabBrdRad:0.3rem;--ec-frm-edTabBarBg:#f6f8fa;--ec-frm-edTabBarBrdCol:#e1e4e8;--ec-frm-edTabBarBrdBtmCol:#e1e4e8;--ec-frm-edBg:#fff;--ec-frm-trmTtbFg:#2f363d;--ec-frm-trmTtbDotsFg:#2f363d;--ec-frm-trmTtbDotsOpa:0.15;--ec-frm-trmTtbBg:#fff;--ec-frm-trmTtbBrdBtmCol:#e1e4e8;--ec-frm-trmBg:#f6f8fa;--ec-frm-inlBtnFg:#24292e;--ec-frm-inlBtnBg:#24292e;--ec-frm-inlBtnBgIdleOpa:0;--ec-frm-inlBtnBgHoverOrFocusOpa:0.2;--ec-frm-inlBtnBgActOpa:0.3;--ec-frm-inlBtnBrd:#24292e;--ec-frm-inlBtnBrdOpa:0.4;--ec-frm-tooltipSuccessBg:#208638;--ec-frm-tooltipSuccessFg:white;--ec-frm-copyIcon:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2024%2024'%20fill%3D'none'%20stroke%3D'black'%20stroke-width%3D'1.75'%3E%3Cpath%20d%3D'M3%2019a2%202%200%200%201-1-2V2a2%202%200%200%201%201-1h13a2%202%200%200%201%202%201'%2F%3E%3Crect%20x%3D'6'%20y%3D'5'%20width%3D'16'%20height%3D'18'%20rx%3D'1.5'%20ry%3D'1.5'%2F%3E%3C%2Fsvg%3E");--ec-frm-trmIcon:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2060%2016'%20preserveAspectRatio%3D'xMidYMid%20meet'%3E%3Ccircle%20cx%3D'8'%20cy%3D'8'%20r%3D'8'%2F%3E%3Ccircle%20cx%3D'30'%20cy%3D'8'%20r%3D'8'%2F%3E%3Ccircle%20cx%3D'52'%20cy%3D'8'%20r%3D'8'%2F%3E%3C%2Fsvg%3E")}.expressive-code .ec-line :where(span[style^='--']:not([class])),:root:not([data-theme='github-light']) .expressive-code[data-theme='github-light'] .ec-line :where(span[style^='--']:not([class])){color:var(--0, inherit);background-color:var(--0bg, transparent);font-style:var(--0fs, inherit);font-weight:var(--0fw, inherit);text-decoration:var(--0td, inherit)}@media (prefers-color-scheme: dark){:root:not([data-theme='github-light']){--ec-brdCol:#1b1f23;--ec-codeBg:#24292e;--ec-codeFg:#e1e4e8;--ec-codeSelBg:#3392ff44;--ec-gtrFg:#727980;--ec-gtrBrdCol:#72798033;--ec-gtrHlFg:#e1e4e896;--ec-uiSelBg:#39414a;--ec-uiSelFg:#e1e4e8;--ec-focusBrd:#005cc5;--ec-sbThumbCol:#6a737d33;--ec-sbThumbHoverCol:#6a737dd1;--ec-tm-markBg:#264a8980;--ec-tm-insBg:#26561c80;--ec-tm-insDiffIndCol:#7eb070d0;--ec-tm-delBg:#81322b80;--ec-tm-delDiffIndCol:#e68a7ed0;--ec-frm-shdCol:#0000005b;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #0000005b;--ec-frm-edActTabBg:#24292e;--ec-frm-edActTabFg:#e1e4e8;--ec-frm-edActTabIndBtmCol:#24292e;--ec-frm-edTabBarBg:#1f2428;--ec-frm-edTabBarBrdCol:#1b1f23;--ec-frm-edTabBarBrdBtmCol:#1b1f23;--ec-frm-edBg:#24292e;--ec-frm-trmTtbFg:#e1e4e8;--ec-frm-trmTtbDotsFg:#e1e4e8;--ec-frm-trmTtbBg:#24292e;--ec-frm-trmTtbBrdBtmCol:#1b1f23;--ec-frm-trmBg:#1f2428;--ec-frm-inlBtnFg:#e1e4e8;--ec-frm-inlBtnBg:#e1e4e8;--ec-frm-inlBtnBrd:#e1e4e8;--ec-frm-tooltipSuccessBg:#228739}:root:not([data-theme='github-light']) .expressive-code .ec-line :where(span[style^='--']:not([class])){color:var(--1, inherit);background-color:var(--1bg, transparent);font-style:var(--1fs, inherit);font-weight:var(--1fw, inherit);text-decoration:var(--1td, inherit)}}:root[data-theme='github-dark'] .expressive-code:not([data-theme='github-light']),.expressive-code[data-theme='github-dark']{--ec-brdCol:#1b1f23;--ec-codeBg:#24292e;--ec-codeFg:#e1e4e8;--ec-codeSelBg:#3392ff44;--ec-gtrFg:#727980;--ec-gtrBrdCol:#72798033;--ec-gtrHlFg:#e1e4e896;--ec-uiSelBg:#39414a;--ec-uiSelFg:#e1e4e8;--ec-focusBrd:#005cc5;--ec-sbThumbCol:#6a737d33;--ec-sbThumbHoverCol:#6a737dd1;--ec-tm-markBg:#264a8980;--ec-tm-insBg:#26561c80;--ec-tm-insDiffIndCol:#7eb070d0;--ec-tm-delBg:#81322b80;--ec-tm-delDiffIndCol:#e68a7ed0;--ec-frm-shdCol:#0000005b;--ec-frm-frameBoxShdCssVal:0.1rem 0.1rem 0.2rem #0000005b;--ec-frm-edActTabBg:#24292e;--ec-frm-edActTabFg:#e1e4e8;--ec-frm-edActTabIndBtmCol:#24292e;--ec-frm-edTabBarBg:#1f2428;--ec-frm-edTabBarBrdCol:#1b1f23;--ec-frm-edTabBarBrdBtmCol:#1b1f23;--ec-frm-edBg:#24292e;--ec-frm-trmTtbFg:#e1e4e8;--ec-frm-trmTtbDotsFg:#e1e4e8;--ec-frm-trmTtbBg:#24292e;--ec-frm-trmTtbBrdBtmCol:#1b1f23;--ec-frm-trmBg:#1f2428;--ec-frm-inlBtnFg:#e1e4e8;--ec-frm-inlBtnBg:#e1e4e8;--ec-frm-inlBtnBrd:#e1e4e8;--ec-frm-tooltipSuccessBg:#228739}:root[data-theme='github-dark'] .expressive-code:not([data-theme='github-light']) .ec-line :where(span[style^='--']:not([class])),.expressive-code[data-theme='github-dark'] .ec-line :where(span[style^='--']:not([class])){color:var(--1, inherit);background-color:var(--1bg, transparent);font-style:var(--1fs, inherit);font-weight:var(--1fw, inherit);text-decoration:var(--1td, inherit)}</style><script type="module">try{(()=>{function a(e){if(!e)return;let t=e.getAttribute("tabindex")!==null,r=e.scrollWidth>e.clientWidth;r&&!t?(e.setAttribute("tabindex","0"),e.setAttribute("role","region")):!r&&t&&(e.removeAttribute("tabindex"),e.removeAttribute("role"))}var u=window.requestIdleCallback||(e=>setTimeout(e,1)),s=window.cancelIdleCallback||clearTimeout;function l(e){let t=new Set,r,n;return new ResizeObserver(c=>{c.forEach(o=>t.add(o.target)),r&&clearTimeout(r),n&&s(n),r=setTimeout(()=>{n&&s(n),n=u(()=>{t.forEach(o=>e(o)),t.clear()})},250)})}function i(e,t){e.querySelectorAll?.(".expressive-code pre > code").forEach(r=>{let n=r.parentElement;n&&t.observe(n)})}var d=l(a);i(document,d);var b=new MutationObserver(e=>e.forEach(t=>t.addedNodes.forEach(r=>{i(r,d)})));b.observe(document.body,{childList:!0,subtree:!0});document.addEventListener("astro:page-load",()=>{i(document,d)});})();}catch(e){console.error("[EC] tabindex-js-module failed:",e)}</script><script type="module">try{(()=>{function i(o){let e=document.createElement("pre");Object.assign(e.style,{opacity:"0",pointerEvents:"none",position:"absolute",overflow:"hidden",left:"0",top:"0",width:"20px",height:"20px",webkitUserSelect:"auto",userSelect:"all"}),e.ariaHidden="true",e.textContent=o,document.body.appendChild(e);let a=document.createRange();a.selectNode(e);let n=getSelection();if(!n)return!1;n.removeAllRanges(),n.addRange(a);let r=!1;try{r=document.execCommand("copy")}finally{n.removeAllRanges(),document.body.removeChild(e)}return r}async function l(o){let e=o.currentTarget,a=e.dataset,n=!1,r=a.code.replace(/\u007f/g,`
+`);try{await navigator.clipboard.writeText(r),n=!0}catch{n=i(r)}if(!n||e.parentNode?.querySelector(".feedback"))return;let t=document.createElement("div");t.classList.add("feedback"),t.append(a.copied),e.before(t),t.offsetWidth,requestAnimationFrame(()=>t?.classList.add("show"));let c=()=>!t||t.classList.remove("show"),d=()=>{!t||parseFloat(getComputedStyle(t).opacity)>0||(t.remove(),t=void 0)};setTimeout(c,1500),setTimeout(d,2500),e.addEventListener("blur",c),t.addEventListener("transitioncancel",d),t.addEventListener("transitionend",d)}function s(o){o.querySelectorAll?.(".expressive-code .copy button").forEach(e=>e.addEventListener("click",l))}s(document);var u=new MutationObserver(o=>o.forEach(e=>e.addedNodes.forEach(a=>{s(a)})));u.observe(document.body,{childList:!0,subtree:!0});document.addEventListener("astro:page-load",()=>{s(document)});})();}catch(e){console.error("[EC] copy-js-module failed:",e)}</script><figure class="frame"><figcaption class="header"></figcaption><pre data-language="json" class="wrap" style="--ecMaxLine:47ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292E;--1:#E1E4E8">{</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"name"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"Your Site Name"</span><span style="--0:#24292E;--1:#E1E4E8">,</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"url"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"https://yourdomain.com"</span><span style="--0:#24292E;--1:#E1E4E8">,</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"description"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"Your site description"</span><span style="--0:#24292E;--1:#E1E4E8">,</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"socialImage"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"/assets/images/og-image.jpg"</span><span style="--0:#24292E;--1:#E1E4E8">,</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"twitter"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"@yourhandle"</span><span style="--0:#24292E;--1:#E1E4E8">,</span></div></div><div class="ec-line" style="--ecIndent:2ch"><div class="code"><span class="indent">  </span><span style="--0:#005CC5;--1:#79B8FF">"language"</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"en-US"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#24292E;--1:#E1E4E8">}</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="{  &quot;name&quot;: &quot;Your Site Name&quot;,  &quot;url&quot;: &quot;https://yourdomain.com&quot;,  &quot;description&quot;: &quot;Your site description&quot;,  &quot;socialImage&quot;: &quot;/assets/images/og-image.jpg&quot;,  &quot;twitter&quot;: &quot;@yourhandle&quot;,  &quot;language&quot;: &quot;en-US&quot;}"><div></div></button></div></figure></div>
+<h3>SEO Fields</h3>
+<p>The system supports the following frontmatter fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+<th>Fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>seoTitle</code></td>
+<td>String</td>
+<td>Custom SEO title</td>
+<td><code>title</code> → <code>site.name</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>String</td>
+<td>Page description</td>
+<td><code>site.description</code></td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td>String</td>
+<td>Social sharing image</td>
+<td><code>site.socialImage</code></td>
+</tr>
+<tr>
+<td><code>noindex</code></td>
+<td>Boolean</td>
+<td>Exclude from search engines</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>postType</code></td>
+<td>String</td>
+<td>Open Graph type (article, website)</td>
+<td><code>website</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3>Basic Page</h3>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="yaml" class="wrap" style="--ecMaxLine:63ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">title</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"My Page Title"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">description</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"This is a great page about something interesting"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="---title: &quot;My Page Title&quot;description: &quot;This is a great page about something interesting&quot;---"><div></div></button></div></figure></div>
+<h3>Blog Post with Custom SEO</h3>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="yaml" class="wrap" style="--ecMaxLine:61ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">title</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"How to Build Amazing Websites"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">description</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"Learn the secrets of modern web development"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">seoTitle</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"Complete Guide: Building Amazing Websites in 2024"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">image</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"/images/amazing-websites.jpg"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">postType</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"article"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="---title: &quot;How to Build Amazing Websites&quot;description: &quot;Learn the secrets of modern web development&quot;seoTitle: &quot;Complete Guide: Building Amazing Websites in 2024&quot;image: &quot;/images/amazing-websites.jpg&quot;postType: &quot;article&quot;---"><div></div></button></div></figure></div>
+<h3>Private Page (No Index)</h3>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="yaml" class="wrap" style="--ecMaxLine:41ch"><code><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">title</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"Draft Content"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">description</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#032F62;--1:#9ECBFF">"This is a work in progress"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#1E7734;--1:#85E89D">noindex</span><span style="--0:#24292E;--1:#E1E4E8">: </span><span style="--0:#005CC5;--1:#79B8FF">true</span></div></div><div class="ec-line"><div class="code"><span style="--0:#6F42C1;--1:#B392F0">---</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="---title: &quot;Draft Content&quot;description: &quot;This is a work in progress&quot;noindex: true---"><div></div></button></div></figure></div>
+<h2 id="generated-meta-tags">Generated Meta Tags</h2>
+<p>The system automatically generates the following meta tags:</p>
+<h3>Basic SEO</h3>
+<ul>
+<li><code>&lt;title&gt;</code> - Dynamic title with fallback</li>
+<li><code>&lt;meta name="description"&gt;</code> - Page description</li>
+<li><code>&lt;meta name="robots"&gt;</code> - Indexing control</li>
+<li><code>&lt;link rel="canonical"&gt;</code> - Canonical URL</li>
+</ul>
+<h3>Open Graph</h3>
+<ul>
+<li><code>og:locale</code> - Page language</li>
+<li><code>og:type</code> - Content type (website/article)</li>
+<li><code>og:site_name</code> - Site name</li>
+<li><code>og:title</code> - Page title</li>
+<li><code>og:description</code> - Page description</li>
+<li><code>og:url</code> - Page URL</li>
+<li><code>og:image</code> - Social sharing image (if provided)</li>
+<li><code>og:image:width</code> - Image width (1200px)</li>
+<li><code>og:image:height</code> - Image height (630px)</li>
+<li><code>og:image:alt</code> - Image alt text</li>
+</ul>
+<h3>Twitter Cards</h3>
+<ul>
+<li><code>twitter:card</code> - Card type (summary/summary_large_image)</li>
+<li><code>twitter:site</code> - Twitter handle (if configured)</li>
+<li><code>twitter:title</code> - Page title</li>
+<li><code>twitter:description</code> - Page description</li>
+<li><code>twitter:image</code> - Social sharing image (if provided)</li>
+</ul>
+<h2 id="advanced-features">Advanced Features</h2>
+<h3>Fallback System</h3>
+<p>The SEO system uses an intelligent fallback hierarchy:</p>
+<ol>
+<li><strong>Title</strong>: <code>seoTitle</code> → <code>postTitle</code> → <code>title</code> → <code>site.name</code></li>
+<li><strong>Description</strong>: <code>postDescription</code> → <code>description</code> → <code>site.description</code></li>
+<li><strong>Image</strong>: <code>postImage</code> → <code>image</code> → <code>site.socialImage</code></li>
+</ol>
+<h3>Image Handling</h3>
+<p>Images are automatically processed:</p>
+<ul>
+<li>Relative URLs are converted to absolute URLs</li>
+<li>Social images default to 1200x630px for optimal sharing</li>
+<li>Alt text is automatically generated from the page title</li>
+</ul>
+<h3>Robots Control</h3>
+<p>Control search engine indexing:</p>
+<ul>
+<li><code>noindex: true</code> - Excludes page from search engines</li>
+<li><code>noindex: false</code> or omitted - Allows indexing (default)</li>
+</ul>
+<h2 id="seo-filters">SEO Filters</h2>
+<p>The system provides several Nunjucks filters for advanced usage:</p>
+<h3><code>canonical</code></h3>
+<p>Generate canonical URLs:
+{% raw %}</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="njk" class="wrap" style="--ecMaxLine:66ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">&lt;link rel="canonical" href="{{ page.url | canonical: site.url }}"&gt;</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="<link rel=&quot;canonical&quot; href=&quot;{{ page.url | canonical: site.url }}&quot;>"><div></div></button></div></figure></div>
+<h3><code>seoTitle</code></h3>
+<p>Build SEO titles with site name:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="njk" class="wrap" style="--ecMaxLine:48ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">&lt;title&gt;{{ title | seoTitle: site.name }}&lt;/title&gt;</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="<title>{{ title | seoTitle: site.name }}</title>"><div></div></button></div></figure></div>
+<h3><code>absoluteUrl</code></h3>
+<p>Convert relative URLs to absolute:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="njk" class="wrap" style="--ecMaxLine:72ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">&lt;meta property="og:image" content="{{ image | absoluteUrl: site.url }}"&gt;</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="<meta property=&quot;og:image&quot; content=&quot;{{ image | absoluteUrl: site.url }}&quot;>"><div></div></button></div></figure></div>
+<h3><code>seoDescription</code></h3>
+<p>Handle description fallbacks:</p>
+<div class="expressive-code"><figure class="frame"><figcaption class="header"></figcaption><pre data-language="njk" class="wrap" style="--ecMaxLine:88ch"><code><div class="ec-line"><div class="code"><span style="--0:#24292e;--1:#e1e4e8">&lt;meta name="description" content="{{ description | seoDescription: site.description }}"&gt;</span></div></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="<meta name=&quot;description&quot; content=&quot;{{ description | seoDescription: site.description }}&quot;>"><div></div></button></div></figure></div>
+<p>{% endraw %}</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3>Title Optimization</h3>
+<ul>
+<li>Keep titles under 60 characters</li>
+<li>Include your brand name when appropriate</li>
+<li>Use descriptive, keyword-rich titles</li>
+<li>Avoid keyword stuffing</li>
+</ul>
+<h3>Description Optimization</h3>
+<ul>
+<li>Write compelling descriptions (150-160 characters)</li>
+<li>Include a call-to-action when appropriate</li>
+<li>Make each description unique</li>
+<li>Use active voice and engaging language</li>
+</ul>
+<h3>Image Optimization</h3>
+<ul>
+<li>Use high-quality images (1200x630px recommended)</li>
+<li>Optimize file sizes for web</li>
+<li>Include descriptive alt text</li>
+<li>Use consistent branding</li>
+</ul>
+<h3>Content Structure</h3>
+<ul>
+<li>Use proper heading hierarchy (H1, H2, H3)</li>
+<li>Include relevant keywords naturally</li>
+<li>Write for humans first, search engines second</li>
+<li>Keep content fresh and updated</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3>Common Issues</h3>
+<p><strong>Meta tags not appearing:</strong></p>
+<ul>
+<li>Check that the page uses the <code>base.njk</code> layout</li>
+<li>Verify frontmatter fields are correctly formatted</li>
+<li>Ensure <code>site.json</code> is properly configured</li>
+</ul>
+<p><strong>Images not displaying in social shares:</strong></p>
+<ul>
+<li>Verify image URLs are absolute or properly configured</li>
+<li>Check image dimensions (1200x630px recommended)</li>
+<li>Test with social media debugging tools</li>
+</ul>
+<p><strong>Canonical URLs incorrect:</strong></p>
+<ul>
+<li>Ensure <code>site.url</code> is properly set in <code>site.json</code></li>
+<li>Check that URLs don't have trailing slashes issues</li>
+<li>Verify the <code>canonical</code> filter is working correctly</li>
+</ul>
+<h3>Testing Tools</h3>
+<p>Use these tools to test your SEO implementation:</p>
+<ul>
+<li><a href="https://developers.facebook.com/tools/debug/">Facebook Sharing Debugger</a></li>
+<li><a href="https://cards-dev.twitter.com/validator">Twitter Card Validator</a></li>
+<li><a href="https://search.google.com/test/rich-results">Google Rich Results Test</a></li>
+<li><a href="https://www.seoptimer.com/meta-tags">SEO Meta Tags Checker</a></li>
+</ul>
+<h2 id="migration-from-basic-seo">Migration from Basic SEO</h2>
+<p>If you're upgrading from the basic SEO system:</p>
+<ol>
+<li><strong>Update frontmatter</strong>: Add <code>seoTitle</code> and <code>image</code> fields where needed</li>
+<li><strong>Configure site.json</strong>: Add <code>socialImage</code> and <code>twitter</code> fields</li>
+<li><strong>Test thoroughly</strong>: Verify all meta tags are generating correctly</li>
+<li><strong>Update content</strong>: Add descriptions and images to existing content</li>
+</ol>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<p>The SEO system is designed to be lightweight and fast:</p>
+<ul>
+<li>Meta tags are generated at build time</li>
+<li>No runtime JavaScript required</li>
+<li>Minimal impact on page load speed</li>
+<li>Optimized for static site generation</li>
+</ul>
+<h2 id="future-enhancements">Future Enhancements</h2>
+<p>Planned improvements include:</p>
+<ul>
+<li>JSON-LD structured data support</li>
+<li>Automatic sitemap generation</li>
+<li>Advanced social media optimization</li>
+<li>SEO analytics integration</li>
+<li>A/B testing for meta descriptions</li>
+</ul>
+<hr>
+<p>For more information about content management and site configuration, see the <a href="/documentation/content-management/">Content Management</a> and <a href="/documentation/configuration/">Configuration</a> sections.</p>
+              
+                
+<nav class="documentation-nav-footer">
+  <div class="nav-wrapper">
+    
+      <div class="nav-item nav-prev">
+        <a href="/documentation/deployment/">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Deployment Guide</span>
+        </a>
+      </div>
+    
+    
+    
+      <div class="nav-item nav-next">
+        <a href="/documentation/troubleshooting/">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Troubleshooting Guide</span>
+        </a>
+      </div>
+    
+  </div>
+</nav>
+
+
+              
+            </div>
+            <aside>
+              
+              <nav class="documentation-toc">
+  <h3>On this page</h3>
+  <ul>
+    <li>
+      <a href="#overview">Overview</a>
+    </li>
+    <li>
+      <a href="#configuration">Configuration</a>
+    </li>
+    <li>
+      <a href="#usage-examples">Usage Examples</a>
+    </li>
+    <li>
+      <a href="#generated-meta-tags">Generated Meta Tags</a>
+    </li>
+    <li>
+      <a href="#advanced-features">Advanced Features</a>
+    </li>
+    <li>
+      <a href="#seo-filters">SEO Filters</a>
+    </li>
+    <li>
+      <a href="#best-practices">Best Practices</a>
+    </li>
+    <li>
+      <a href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li>
+      <a href="#migration-from-basic-seo">Migration from Basic SEO</a>
+    </li>
+    <li>
+      <a href="#performance-considerations">Performance Considerations</a>
+    </li>
+    <li>
+      <a href="#future-enhancements">Future Enhancements</a>
+    </li>
+  </ul>
+</nav>
+            </aside>
+          </div>
+        
+      
+    </main>
+    
+      <aside><nav class="documentation-nav">
+  <h3>Documentation</h3>
+  <ul>
+    
+      <li><a href="/documentation/README/">Documentation Overview</a></li>
+    
+      <li><a href="/documentation/installation/">Installation Guide</a></li>
+    
+      <li><a href="/documentation/configuration/">Configuration Guide</a></li>
+    
+      <li><a href="/documentation/content-management/">Content Management Guide</a></li>
+    
+      <li><a href="/documentation/development/">Development Guide</a></li>
+    
+      <li><a href="/documentation/migration-tools/">Migration Tools</a></li>
+    
+      <li><a href="/documentation/themes/">Theme System</a></li>
+    
+      <li><a href="/documentation/deployment/">Deployment Guide</a></li>
+    
+      <li><a href="/documentation/seo/">SEO System</a></li>
+    
+      <li><a href="/documentation/troubleshooting/">Troubleshooting Guide</a></li>
+    
+      <li><a href="/documentation/api-reference/">API Reference</a></li>
+    
+  </ul>
+</nav></aside>
+    
+  </div>
+  <footer>
+    <div class="container boxed">
+        <p>© <a href="https://greenpanda.studio" target="_blank">Green Panda Studio</a></p>
+    </div>
+</footer>
+<script src="/assets/js/togglemode.js"></script>
+<script src="/assets/js/headerscroll.js"></script>
+<script src="/assets/js/mobile-menu.js"></script>
+<script src="/assets/js/search-popup.js"></script>
+  
+<div id="search-popup">
+  <div id="search">
+    <input id="q" type="search" placeholder="Search..." autocomplete="off">
+    <ul id="results" class="results"><ul>
+  </ul></ul></div>
+</div>
+<script src="/assets/js/minisearch.min.js"></script>
+<script src="/assets/js/search.js" type="module"></script>
+
+
+</body></html>

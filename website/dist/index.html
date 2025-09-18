@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Viewport per responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Enhanced SEO System --><!-- Dynamic Title -->
+  <title>Neutrino - Electron | Home</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A modern Eleventy boilerplate with Decap CMS, built with content creators in mind">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/greenpandastudio/neutrino-electron/">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neutrino - Electron">
+  <meta property="og:title" content="Neutrino - Electron | Home">
+  <meta property="og:description" content="A modern Eleventy boilerplate with Decap CMS, built with content creators in mind">
+  <meta property="og:url" content="https://github.com/greenpandastudio/neutrino-electron/">
+  
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Neutrino - Electron | Home">
+  
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@neutrino_electron">
+  <meta name="twitter:title" content="Neutrino - Electron | Home">
+  <meta name="twitter:description" content="A modern Eleventy boilerplate with Decap CMS, built with content creators in mind">
+  <meta name="twitter:image" content="/assets/images/og-image.jpg">
+
+  <!-- Favicon e manifest -->
+  <link rel="icon" href="/assets/images/neutrino-logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  
+
+  <!-- Theme toggle -->
+  <script>
+    (function(){
+      var ls = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var root = document.documentElement;
+      if (ls === 'dark' || (!ls && prefersDark)) root.classList.add('dark');
+      else if (ls === 'sepia') root.classList.add('sepia');
+    })();
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/skin.css">
+  <link rel="stylesheet" href="/assets/css/expressive-code.css">
+</head>
+<body class="home">
+  <header>
+    <div class="container boxed">
+        <div class="logo">
+            <a href="/">
+                <img src="/assets/images/neutrino-logo.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="h-spacer"></div>
+        <div id="main-navigation" class="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/documentation/">Documentation</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/admin/">Admin</a></li>
+    </ul>
+</div>
+        <div class="button" id="search-trigger">
+            <span>Search...</span>
+        </div>
+        <div class="togglemode">
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 15a5 5 0 100-10 5 5 0 000 10zm9-4a1 1 0 100-2h-2a1 1 0 100 2h2zM5 12a1 1 0 100-2H3a1 1 0 000 2h2zm12.364 6.364a1 1 0 10-1.414-1.414l-1.415 1.414a1 1 0 101.415 1.415l1.414-1.415zM7.465 6.05A1 1 0 106.05 7.465L7.464 8.88a1 1 0 001.415-1.414L7.464 6.05zm9.9 0l-1.415 1.415A1 1 0 0017.364 8.88L18.78 7.465A1 1 0 0017.364 6.05zM6.05 16.95l1.415-1.415A1 1 0 106.05 14.12L4.636 15.535A1 1 0 106.05 16.95z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="togglenav">
+            <button id="nav-toggle" aria-label="Toggle theme">
+                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="🔍-Product-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="ic_fluent_navigation_24_filled" fill="#212121" fill-rule="nonzero">
+                            <path d="M3,17 L21,17 C21.5522847,17 22,17.4477153 22,18 C22,18.5128358 21.6139598,18.9355072 21.1166211,18.9932723 L21,19 L3,19 C2.44771525,19 2,18.5522847 2,18 C2,17.4871642 2.38604019,17.0644928 2.88337887,17.0067277 L3,17 L21,17 L3,17 Z M2.99987969,11 L20.9998797,10.9978344 C21.5521644,10.9977679 22,11.4454293 22,11.997714 C22,12.5105499 21.6140635,12.9332676 21.1167397,12.9910926 L21.0001203,12.9978344 L3.00012031,13 C2.44783557,13.0000664 2.00000001,12.5524051 2.00000001,12.0001203 C2.00000001,11.4872845 2.38593645,11.0645667 2.88326032,11.0067418 L2.99987969,11 L20.9998797,10.9978344 L2.99987969,11 Z M3,5 L21,5 C21.5522847,5 22,5.44771525 22,6 C22,6.51283584 21.6139598,6.93550716 21.1166211,6.99327227 L21,7 L3,7 C2.44771525,7 2,6.55228475 2,6 C2,5.48716416 2.38604019,5.06449284 2.88337887,5.00672773 L3,5 L21,5 L3,5 Z" id="🎨-Color"></path>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+  <div class="layout-wrapper">
+    <main>
+      
+        
+          <section id="main">
+    <div class="container boxed">
+        <h1>
+            <span>Neutrino</span>
+            <span>Electron</span>
+        </h1>
+        <h2>Git-powered content management made simple</h2>
+        <div class="paragraph-l">
+            <p>Realized with content creators in mind.</p>
+        </div>
+        <div class="v-spacer"></div>
+        <div class="cta-wrapper">
+            <a href="/documentation/installation/" class="button">Get started</a>
+            <a href="/documentation/" class="button secondary">Learn more</a>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+  <div class="container boxed">
+    <h2>Features</h2>
+    <div class="features-wrapper">
+      <div class="feature">
+        
+        <h3>Lightweight & Fast</h3>
+        <p>Built with Eleventy for optimal performance.</p>
+      </div>
+      <div class="feature">
+        
+        <h3>Git-based workflow</h3>
+        <p>Edit and publish with your existing Git workflow. No database needed.</p>
+      </div>
+      <div class="feature">
+        
+        <h3>Markdown & Front Matter</h3>
+        <p>Simple, structured content that works with any static site generator.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" height="800px" width="800px" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" class="seo-icon"
+<path d="M23.6,20.9L20,17.3c-0.6-0.6-1.5-0.6-2,0l-1.4-1.4c1.5-1.7,2.4-3.9,2.4-6.3C19,4.3,14.7,0,9.5,0S0,4.3,0,9.5S4.3,19,9.5,19
+	c2.4,0,4.7-0.9,6.3-2.4l1.4,1.4c-0.5,0.6-0.5,1.5,0,2l3.6,3.6c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l0.6-0.6
+	C24.1,22.4,24.1,21.4,23.6,20.9z M5.8,1.9l2.1,1.8L7.1,5.3C7,5.4,7,5.6,7,5.7S7.2,5.9,7.3,6l2.5,0.8l-0.7,2L7.7,8.1
+	C7.6,8,7.4,8,7.3,8S7.1,8.2,7,8.3L6.1,11H5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.1,0.3-0.1,0.4l0.4,1.7l-0.4,0.4l-1.6-1.6
+	C2.8,12.1,2.6,12,2.5,12H1.4C1.1,11.2,1,10.4,1,9.5C1,6.2,3,3.3,5.8,1.9z M1.8,13h0.5l1.9,1.9C4.2,15,4.4,15,4.5,15s0.3,0,0.4-0.1
+	l1-1C6,13.7,6,13.5,6,13.4L5.6,12h0.9c0.2,0,0.4-0.1,0.5-0.3l0.8-2.5l1.5,0.7C9.4,10,9.6,10,9.7,10C9.8,9.9,9.9,9.8,10,9.7l1-3
+	c0.1-0.3-0.1-0.5-0.3-0.6L8.2,5.2l0.7-1.5C9.1,3.5,9,3.3,8.8,3.1l-2-1.7C7.7,1.2,8.6,1,9.5,1c4.1,0,7.5,2.9,8.3,6.8l-2.5,1.3
+	C15.1,9.1,15,9.3,15,9.5v0.8L14.3,11h-1.8c-0.2,0-0.4,0.1-0.4,0.3l-1,2c-0.1,0.2-0.1,0.4,0.1,0.6l1,1c0.1,0.1,0.2,0.1,0.4,0.1h0.6
+	l0.6,1.8c-1.3,0.7-2.7,1.2-4.3,1.2C6.1,18,3.1,15.9,1.8,13z M14.6,16.3L14,14.3c-0.1-0.2-0.3-0.3-0.5-0.3h-0.8l-0.6-0.6l0.7-1.4h1.7
+	c0.1,0,0.3-0.1,0.4-0.1l1-1c0.1-0.1,0.1-0.2,0.1-0.4V9.8l2-1c0,0.2,0,0.4,0,0.7C18,12.3,16.7,14.7,14.6,16.3z M22.9,22.3l-0.6,0.6
+	c-0.2,0.2-0.5,0.2-0.7,0L18,19.3c-0.2-0.2-0.2-0.5,0-0.7l0.6-0.6c0.1-0.1,0.2-0.1,0.4-0.1s0.3,0,0.4,0.1l3.6,3.6
+	C23,21.8,23,22.1,22.9,22.3z"/>
+
+        </div>
+        <h3>SEO-friendly</h3>
+        <p>Clean URLs, semantic HTML, fast loading, and full control over metadata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        
+      
+    </main>
+    
+  </div>
+  <footer>
+    <div class="container boxed">
+        <p>© <a href="https://greenpanda.studio" target="_blank">Green Panda Studio</a></p>
+    </div>
+</footer>
+<script src="/assets/js/togglemode.js"></script>
+<script src="/assets/js/headerscroll.js"></script>
+<script src="/assets/js/mobile-menu.js"></script>
+<script src="/assets/js/search-popup.js"></script>
+  
+<div id="search-popup">
+  <div id="search">
+    <input id="q" type="search" placeholder="Search..." autocomplete="off" />
+    <ul id="results" class="results"><ul>
+  </div>
+</div>
+<script src="/assets/js/minisearch.min.js"></script>
+<script src="/assets/js/search.js" type="module"></script>
+
+</body>
+</html>

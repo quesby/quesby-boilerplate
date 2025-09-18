@@ -144,7 +144,7 @@ export function createEleventyConfig() {
     // Watch folders
     eleventyConfig.addWatchTarget("src/_data");
     eleventyConfig.addWatchTarget("src/scss");
-    eleventyConfig.addWatchTarget(`themes/${activeTheme}`);
+    eleventyConfig.addWatchTarget(`src/themes/${activeTheme}`); // Aggiunto src/
     eleventyConfig.addWatchTarget(localContentPath); // Watch content directory
 
     // Pass-through static files
