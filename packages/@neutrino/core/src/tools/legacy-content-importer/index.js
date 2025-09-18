@@ -64,6 +64,16 @@ function logVerbose(message) {
   }
 }
 
+function yamlQuote(value) {
+  const s = String(value ?? "");
+  // escape doppi apici
+  return `"${s.replace(/"/g, '\\"')}"`;
+}
+
+function isPlainObject(v) {
+  return v && typeof v === 'object' && !Array.isArray(v);
+}
+
 // Parse command line arguments
 const argv = yargs(hideBin(process.argv))
   .option('source', {
@@ -220,6 +230,10 @@ function convertFrontmatter(oldFrontmatter, filename) {
     aliases: []
   };
 
+  // SEO defaults (popoliamo se mancano)
+  newFrontmatter.seoTitle = oldFrontmatter.seoTitle || title;
+  newFrontmatter.seoDescription = oldFrontmatter.seoDescription || description;
+
   // Add image if present
   if (oldFrontmatter[fieldMappings.image]) {
     newFrontmatter.image = `${IMAGE_PATH}${oldFrontmatter[fieldMappings.image]}`;
@@ -258,6 +272,106 @@ function createSlug(title) {
     .replace(/\s+/g, '-') // Replace spaces with hyphens
     .replace(/-+/g, '-') // Replace multiple hyphens with single
     .trim();
+}
+
+/**
+ * Find assets referenced in markdown content
+ */
+function findPostAssets(markdownContent, sourceDir) {
+  const assets = [];
+  
+  // Find images in markdown
+  const imageRegex = /!\[.*?\]\((.*?)\)/g;
+  let match;
+  while ((match = imageRegex.exec(markdownContent)) !== null) {
+    const imagePath = match[1];
+    // Skip external URLs
+    if (!imagePath.startsWith('http') && !imagePath.startsWith('data:')) {
+      const fullPath = path.isAbsolute(imagePath) 
+        ? imagePath 
+        : path.resolve(sourceDir, imagePath);
+      
+      if (fs.existsSync(fullPath)) {
+        assets.push({
+          type: 'image',
+          source: fullPath,
+          originalPath: imagePath,
+          filename: path.basename(imagePath)
+        });
+      } else {
+        logWarning(`Asset not found: ${imagePath}`);
+      }
+    }
+  }
+  
+  return assets;
+}
+
+/**
+ * Copy post assets to target directory
+ */
+function copyPostAssets(assets, targetDir, postSlug) {
+  if (assets.length === 0) return [];
+  
+  const assetsDir = path.join(targetDir, 'assets');
+  const copiedAssets = [];
+  
+  for (const asset of assets) {
+    try {
+      // Create assets directory if it doesn't exist
+      if (!fs.existsSync(assetsDir)) {
+        fs.mkdirSync(assetsDir, { recursive: true });
+      }
+      
+      // Keep original filename
+      const targetPath = path.join(assetsDir, asset.filename);
+      
+      // Check if file already exists (from another post)
+      if (fs.existsSync(targetPath)) {
+        logWarning(`Asset already exists: ${asset.filename} (skipping copy)`);
+        // Still add to copiedAssets so paths get updated
+        copiedAssets.push({
+          ...asset,
+          targetPath: targetPath,
+          newPath: `assets/${asset.filename}`,
+          skipped: true
+        });
+        continue;
+      }
+      
+      // Copy the asset with original name
+      fs.copyFileSync(asset.source, targetPath);
+      
+      copiedAssets.push({
+        ...asset,
+        targetPath: targetPath,
+        newPath: `assets/${asset.filename}`
+      });
+      
+      logVerbose(`📁 Copied asset: ${asset.filename}`);
+    } catch (error) {
+      logError(`Failed to copy asset ${asset.filename}: ${error.message}`);
+    }
+  }
+  
+  return copiedAssets;
+}
+
+/**
+ * Update asset paths in markdown content
+ */
+function updateAssetPaths(content, copiedAssets) {
+  let updatedContent = content;
+  
+  for (const asset of copiedAssets) {
+    // Update markdown image references
+    const imageRegex = new RegExp(`!\\[.*?\\]\\(${asset.originalPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\)`, 'g');
+    updatedContent = updatedContent.replace(imageRegex, (match) => {
+      return match.replace(asset.originalPath, asset.newPath);
+    });
+  }
+  
+  return updatedContent;
 }
 
 /**
@@ -311,20 +425,48 @@ function parseFrontmatter(content) {
  */
 function writeMarkdownFile(filePath, frontmatter, content) {
   let frontmatterText = '---\n';
-  
+
+  const quoteKeys = new Set([
+    'title',
+    'description',
+    'author',
+    'seoTitle',
+    'seoDescription'
+  ]);
+
   for (const [key, value] of Object.entries(frontmatter)) {
     if (Array.isArray(value)) {
       frontmatterText += `${key}:\n`;
       for (const item of value) {
-        frontmatterText += `  - ${item}\n`;
+        // elementi array: se stringhe → quotale
+        if (typeof item === 'string') {
+          frontmatterText += `  - ${yamlQuote(item)}\n`;
+        } else {
+          frontmatterText += `  - ${item}\n`;
+        }
+      }
+    } else if (typeof value === 'boolean' || typeof value === 'number') {
+      frontmatterText += `${key}: ${value}\n`;
+    } else if (value == null) {
+      frontmatterText += `${key}: ""\n`;
+    } else if (isPlainObject(value)) {
+      // oggetti semplici → serializza chiavi stringa quotandole
+      frontmatterText += `${key}:\n`;
+      for (const [k2, v2] of Object.entries(value)) {
+        if (typeof v2 === 'string') {
+          frontmatterText += `  ${k2}: ${yamlQuote(v2)}\n`;
+        } else {
+          frontmatterText += `  ${k2}: ${v2}\n`;
+        }
       }
     } else {
-      frontmatterText += `${key}: ${value}\n`;
+      // stringhe
+      const needsQuote = quoteKeys.has(key) || typeof value === 'string';
+      frontmatterText += `${key}: ${needsQuote ? yamlQuote(value) : value}\n`;
     }
   }
-  
+
   frontmatterText += '---\n\n';
-  
   const fullContent = frontmatterText + content;
   fs.writeFileSync(filePath, fullContent, 'utf8');
 }

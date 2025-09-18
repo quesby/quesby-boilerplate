@@ -1,16 +1,25 @@
 // TYPOGRAPHY - defines all the typography
 @font-face {
-  font-family: 'Geist';
-  src: url('/assets/fonts/Geist-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'Rubik';
+  src: url('/assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype-variations');
   font-weight: 100 900;
   font-stretch: 75% 125%;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Geist Mono';
-  src: url('/assets/fonts/GeistMono-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'SpaceMono';
+  src: url('/assets/fonts/SpaceMono-Regular.ttf') format('truetype-variations');
   font-weight: 100 500;
   font-stretch: 75% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'SpaceMono-Bold';
+  src: url('/assets/fonts/SpaceMono-Bold.ttf') format('truetype-variations');
+  font-weight: 600 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
 }
 
 $typo-header-items: (
