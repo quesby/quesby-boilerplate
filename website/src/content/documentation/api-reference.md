@@ -207,7 +207,7 @@ Sorts an array by a specified attribute with support for nested properties and f
 - **Data Object Aware**: Works with Eleventy's data structure
 
 **Examples:**
-```njk
+```twig
 <!-- Sort posts by date (newest first) -->
 {% for post in collections.posts | sortBy("date", "desc") %}
   <article>{{ post.data.title }}</article>
@@ -239,7 +239,7 @@ Limits an array to the first n elements.
 - `n` (Number): Number of elements to keep
 
 **Example:**
-```njk
+```twig
 <!-- Show only the 5 most recent posts -->
 {% for post in collections.posts | sortBy("date", "desc") | limit(5) %}
   <article>{{ post.data.title }}</article>
@@ -261,7 +261,7 @@ Skips the first n elements of an array.
 - `n` (Number): Number of elements to skip
 
 **Example:**
-```njk
+```twig
 <!-- Skip the first 3 posts (for pagination) -->
 {% for post in collections.posts | sortBy("date", "desc") | offset(3) %}
   <article>{{ post.data.title }}</article>
@@ -272,7 +272,7 @@ Skips the first n elements of an array.
 
 These filters can be chained together for powerful data manipulation:
 
-```njk
+```twig
 <!-- Sort by date, skip first 5, then show next 10 -->
 {% for post in collections.posts | sortBy("date", "desc") | offset(5) | limit(10) %}
   <article>
@@ -401,7 +401,7 @@ Neutrino automatically creates collections for:
 Generates responsive images with multiple formats and sizes.
 
 **Syntax:**
-```njk
+```twig
 {% image "path/to/image.jpg", "Alt text", "sizes" %}
 ```
 
@@ -417,7 +417,7 @@ Generates responsive images with multiple formats and sizes.
 - Wraps in `<figure>` element
 
 **Example:**
-```njk
+```twig
 {% image "hero/cover.jpg", "Site hero image", "(min-width: 768px) 75vw, 100vw" %}
 ```
 
@@ -428,7 +428,7 @@ Generates responsive images with multiple formats and sizes.
 Embeds SVG files directly in HTML with optional CSS classes.
 
 **Syntax:**
-```njk
+```twig
 {% svg "path/to/icon.svg", "css-classes" %}
 ```
 
@@ -443,7 +443,7 @@ Embeds SVG files directly in HTML with optional CSS classes.
 - Perfect for icons and graphics
 
 **Example:**
-```njk
+```twig
 {% svg "assets/icons/github.svg", "w-6 h-6 text-gray-600" %}
 ```
 

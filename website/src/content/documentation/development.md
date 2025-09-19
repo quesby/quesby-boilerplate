@@ -406,7 +406,7 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 ```
 
 **Usage in Templates:**
-```njk
+```twig
 {% image "hero/cover.jpg", "Site hero image", "(min-width: 768px) 75vw, 100vw" %}
 ```
 
@@ -439,7 +439,7 @@ function svgShortcode(svgPath, className = "") {
 ```
 
 **Usage in Templates:**
-```njk
+```twig
 {% svg "assets/icons/github.svg", "w-6 h-6 text-gray-600" %}
 ```
 

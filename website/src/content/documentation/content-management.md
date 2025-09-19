@@ -434,7 +434,7 @@ src/content/media/
 Neutrino includes a powerful responsive image shortcode that automatically generates multiple formats and sizes for optimal performance.
 
 **Basic Usage:**
-```njk
+```twig
 {% raw %}
 {% image "hero/cover.jpg", "Site cover image", "(min-width: 768px) 75vw, 100vw" %}
 {% endraw %}
@@ -468,7 +468,7 @@ Neutrino includes a powerful responsive image shortcode that automatically gener
 For icons and graphics, use the SVG shortcode to inline SVG files with custom CSS classes.
 
 **Basic Usage:**
-```njk
+```twig
 {% raw %}
 {% svg "assets/icons/github.svg", "icon-lg text-neutral-700" %}
 {% endraw %}
@@ -485,7 +485,7 @@ For icons and graphics, use the SVG shortcode to inline SVG files with custom CS
 - **Scalable**: Perfect for icons and graphics
 
 **Example:**
-```njk
+```twig
 {% raw %}
 <!-- Icon with custom classes -->
 {% svg "assets/icons/star.svg", "w-6 h-6 text-yellow-500" %}

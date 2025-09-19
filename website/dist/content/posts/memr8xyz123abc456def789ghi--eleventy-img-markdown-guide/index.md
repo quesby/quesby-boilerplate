@@ -99,7 +99,7 @@ export default function(eleventyConfig) {
 From now on you can write:
 
 
-```njk
+```twig
 {% image "src/assets/images/hero.jpg", "Homepage hero image" %}
 ```
 

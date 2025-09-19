@@ -96,7 +96,7 @@ export default function(eleventyConfig) {
 
 Ora puoi usare lo shortcode nei tuoi template Nunjucks:
 
-```njk
+```twig
 {% raw %}
 {% image "src/assets/images/documentation/ai-gen.webp", "Descrizione dell'\''immagine" %}
 
@@ -274,7 +274,7 @@ eleventyConfig.addTransform("processImagePlaceholders", async function(content, 
 Ora hai un sistema completo che:
 
 ### ✅ Shortcode Nunjucks
-```njk
+```twig
 {% raw %}
 {% image "src/assets/images/example.jpg", "Descrizione" %}
 

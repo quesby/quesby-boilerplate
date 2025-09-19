@@ -104,13 +104,13 @@ export default function(eleventyConfig) {
 
 Responsive image (async shortcode):
 
-```njk
+```twig
 {% image "hero/cover.jpg", "Site cover image", "(min-width: 768px) 75vw, 100vw" %}
 ```
 
 Inline SVG with a custom class:
 
-```njk
+```twig
 {% svg "assets/icons/github.svg", "icon-lg text-neutral-700" %}
 ```
 
@@ -125,7 +125,7 @@ cfg.addShortcode("svg", svgShortcode);
 
 Then:
 
-```njk
+```twig
 {{ svg("assets/icons/github.svg", "icon-lg") | safe }}
 ```
 

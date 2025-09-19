@@ -145,25 +145,25 @@ The system provides several Nunjucks filters for advanced usage:
 ### `canonical`
 Generate canonical URLs:
 {% raw %}
-```njk
+```twig
 <link rel="canonical" href="{{ page.url | canonical: site.url }}">
 ```
 
 ### `seoTitle`
 Build SEO titles with site name:
-```njk
+```twig
 <title>{{ title | seoTitle: site.name }}</title>
 ```
 
 ### `absoluteUrl`
 Convert relative URLs to absolute:
-```njk
+```twig
 <meta property="og:image" content="{{ image | absoluteUrl: site.url }}">
 ```
 
 ### `seoDescription`
 Handle description fallbacks:
-```njk
+```twig
 <meta name="description" content="{{ description | seoDescription: site.description }}">
 ```
 {% endraw %}

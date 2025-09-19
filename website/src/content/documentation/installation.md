@@ -66,7 +66,7 @@ Neutrino supports external content management through environment variables:
    ```
 
 2. **Configure the content path** in your `.env` file:
-   ```env
+   ```bash
    NEUTRINO_CONTENT_PATH=/path/to/your/content/directory
    ```
 
@@ -85,7 +85,7 @@ Neutrino supports external content management through environment variables:
 
 Set your preferred theme using the `THEME` environment variable:
 
-```env
+```bash
 THEME=neutrino-electron-core
 ```
 
