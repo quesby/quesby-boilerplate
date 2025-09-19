@@ -1,49 +1,87 @@
 .home {
-    .layout-wrapper {
-        // main {}
-    }
-    h1 {
-        @include flex-container(column, center, center, wrap);
-        span:first-child {
-            font-size: 1.55em;
-            font-weight: 900;
-            letter-spacing: .2em;
+    // .layout-wrapper {
+    //     // main {}
+    // }
+
+    .page-header {
+        @include flex-container(row, center, center, center);
+        
+        h1 {
+          @include fluid-text(2rem, 10rem); // Mobile-first con typography fluida
+          font-weight: 900;
+          text-align: center;
+          text-transform: uppercase;
+          
+          // Override per breakpoints specifici se necessario
+          @include respond-to(smartphone) {
+            line-height: 1.1;
+          }
+          
+          @include respond-to(desktop) {
+            letter-spacing: -0.02em;
+          }
         }
-        span:last-child {
-            font-weight: 300;
-            letter-spacing: .75em;
+      }
+    
+      .hero-slider {
+        padding: $padding * 2;
+        max-height: 100vh;
+        &__progress {
+          display: none;
+          height: 0;
         }
-    }
-    h2 {
-        font-size: 1.1rem;
-        font-weight: 300;
-        text-transform: none;
-    }
+        &__counter {
+          left: 40px;
+        }
+        &__indicators {
+            display: none;
+        }
+      }
+
     // Sections
-    #main {
-        .container {
-            @include flex-container(column, center, center, wrap);
-            min-height: 100vh;        
+    #welcome {
+        @include container(tablet); // Container responsive
+        text-align: center;
+        
+        p {
+          font-weight: 300;
+          
+          @include respond-to(smartphone) {
+            font-size: 1.1rem;
+          }
+          
+          @include respond-to(tablet) {
+            font-size: 1.25rem;
+          }
         }
-    }
-
-    #features {
-        background-image: linear-gradient(to top, var(--cpal-3), var(--site-bg));
-        .features-wrapper {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: $margin * 2;
-            .feature {
-                padding: $padding * 2;
-                border-radius: $borderRadius-normal;
-                h3 {
-                    font-size: 1.5rem;
-                    font-weight: 900;
-                }
-            }
+      }
+    
+      section:is(#latest-news, #latest-content) {
+        text-align: center;
+        padding: ($padding * 2) 0;
+        @include respond-to(smartphone) {
+          padding: ($padding * 5) 0;
         }
-    }
+        .blog-wrapper {
+          margin: ($padding * 2) 0;
+          @include respond-to(smartphone) {
+            padding: ($padding * 5) 0;
+          }
+          .post-wrapper:hover {
+            filter: sepia(100%);
+            scale: 1.05;
+          }
+        }
+      }
+      #latest-news {
+        background-color: rgba(255,255,255,0.05);
+        margin-top: $margin * 2.5;
+        .post a {
+          border: 1px solid rgba(255,255,255,0.25);
+        }
+      }
 
+    // Media queries
     @include respond-to(laptop) {
         h2 {
             font-size: 2rem;

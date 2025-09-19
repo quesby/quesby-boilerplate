@@ -14,7 +14,7 @@ aliases:
   - "/blog/wipe-forzato-del-server/"
 seoTitle: "Wipe forzato del server"
 seoDescription: "Errore tecnico degli ingegneri di Bisect Hosting mi costa il mondo del server e tutte le costruzioni"
-image: "/img/wipe-server.webp"
+image: "wipe-server.webp"
 type: "news"
 ---
 

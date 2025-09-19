@@ -13,7 +13,7 @@ aliases:
   - "/blog/nuovi-negozi-admin-in-piazza-maggiore/"
 seoTitle: "Nuovi negozi admin in Piazza Maggiore"
 seoDescription: "Sono stati aggiunti numerosi nuovi punti di acquisto e vendita di prodotti nella Piazza Maggiore"
-image: "/img/Vintage Story Italia - 12.webp"
+image: "Vintage Story Italia - 12.webp"
 type: "news"
 ---
 

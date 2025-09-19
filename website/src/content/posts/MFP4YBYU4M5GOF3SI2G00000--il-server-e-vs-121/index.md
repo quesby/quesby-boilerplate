@@ -13,7 +13,7 @@ aliases:
   - "/blog/il-server-e-vs-121/"
 seoTitle: "Il server e VS 1.21"
 seoDescription: "Quando e come verrà aggiornato il server Vintage Story Italia alla versione 1.21 di Vintage Story"
-image: "/img/vs-1.21.webp"
+image: "vs-1.21.webp"
 type: "news"
 ---
 

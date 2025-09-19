@@ -13,7 +13,7 @@ aliases:
   - "/blog/vinconomy-5-alcune-funzionalit-interessanti/"
 seoTitle: "Vinconomy 5 aggiunge funzionalità interessanti per i server Vintage Story con economia"
 seoDescription: "Co-proprietari e coupon. Con Vinconomy 5 si può decidere chi compra dal proprio negozio"
-image: "/img/Rogue-house-docks.webp"
+image: "Rogue-house-docks.webp"
 type: "news"
 ---
 

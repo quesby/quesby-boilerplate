@@ -13,7 +13,7 @@ aliases:
   - "/blog/aggiornamento-del-server-a-vintage-story-121-impossibile-vi-spiego-perch/"
 seoTitle: "Aggiornamento del server a Vintage Story 1.21: impossibile. Vi spiego perché."
 seoDescription: "Chiarisco il motivo per cui non posso aggiornare Vintage Story Italia alla versione 1.21"
-image: "/img/problemi-aggiornamento-server-1.21.webp"
+image: "problemi-aggiornamento-server-1.21.webp"
 type: "news"
 ---
 

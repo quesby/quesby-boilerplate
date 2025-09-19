@@ -14,7 +14,7 @@ aliases:
   - "/blog/apertura-del-server/"
 seoTitle: "Apertura del server!"
 seoDescription: "Apertura del server!"
-image: "/img/apertura-server.webp"
+image: "apertura-server.webp"
 type: "news"
 ---
 

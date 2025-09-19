@@ -12,7 +12,7 @@ aliases:
   - "/blog/obsoleto-nuovo-sistema-di-viaggi-rapidi-multihometp/"
 seoTitle: "Nuovo sistema di viaggi rapidi - MultiHomeTP"
 seoDescription: "Multi Home TP: Una nuova mod per spostarsi rapidamente sul server Vintage Story Italia."
-image: "/img/negozio-trasporti-rapidi.webp"
+image: "negozio-trasporti-rapidi.webp"
 type: "news"
 ---
 

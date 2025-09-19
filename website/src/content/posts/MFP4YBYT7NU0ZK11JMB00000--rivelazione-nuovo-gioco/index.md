@@ -14,7 +14,7 @@ aliases:
   - "/blog/rivelazione-nuovo-gioco/"
 seoTitle: "Rivelazione nuovo gioco della Anego Studios"
 seoDescription: "La Anego Studios di Vintage Story ha rilasciato un trailer nel quale rivela lo sviluppo di un nuovo gioco."
-image: "/img/LIVE estratto - VS 1.21 e nuovo gioco.webp"
+image: "LIVE estratto - VS 1.21 e nuovo gioco.webp"
 type: "content"
 ---
 

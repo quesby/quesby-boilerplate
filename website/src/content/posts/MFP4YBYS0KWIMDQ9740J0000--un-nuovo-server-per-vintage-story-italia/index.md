@@ -13,7 +13,7 @@ aliases:
   - "/blog/un-nuovo-server-per-vintage-story-italia/"
 seoTitle: "Un nuovo server per Vintage Story Italia"
 seoDescription: "Un nuovo server per Vintage Story Italia"
-image: "/img/slider-01.webp"
+image: "slider-01.webp"
 type: "news"
 ---
 

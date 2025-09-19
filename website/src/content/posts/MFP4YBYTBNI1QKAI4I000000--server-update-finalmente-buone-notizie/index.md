@@ -14,7 +14,7 @@ aliases:
   - "/blog/server-update-finalmente-buone-notizie/"
 seoTitle: "Server Update: finalmente buone notizie!"
 seoDescription: "Finalmente delle buone notizie per il passaggio del server alla versione 1.21 di Vintage Story"
-image: "/img/aggiornamento-1.21-buone-notizie.webp"
+image: "aggiornamento-1.21-buone-notizie.webp"
 type: "news"
 ---
 

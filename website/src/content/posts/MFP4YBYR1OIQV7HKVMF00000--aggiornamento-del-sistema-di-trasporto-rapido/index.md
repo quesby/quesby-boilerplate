@@ -12,7 +12,7 @@ aliases:
   - "/blog/aggiornamento-del-sistema-di-trasporto-rapido/"
 seoTitle: "Aggiornamento del sistema di trasporto rapido"
 seoDescription: "Il nuovo sistema per spostarsi rapidamente sul server Vintage Story Italia."
-image: "/img/slider-03.webp"
+image: "slider-03.webp"
 type: "news"
 ---
 

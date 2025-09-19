@@ -14,7 +14,7 @@ aliases:
   - "/blog/richiesta-di-un-link-affiliato/"
 seoTitle: "Richiesta di un link affiliato agli sviluppatori di Vintage Story"
 seoDescription: "La Anego Studios offre un sistema di link affiliati per Vintage Story?"
-image: "/img/optim-r+ZA+y.webp"
+image: "optim-r+ZA+y.webp"
 type: "news"
 ---
 

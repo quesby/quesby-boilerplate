@@ -234,9 +234,12 @@ function convertFrontmatter(oldFrontmatter, filename) {
   newFrontmatter.seoTitle = oldFrontmatter.seoTitle || title;
   newFrontmatter.seoDescription = oldFrontmatter.seoDescription || description;
 
-  // Add image if present
+  // Add image if present - store only filename, no path
   if (oldFrontmatter[fieldMappings.image]) {
-    newFrontmatter.image = `${IMAGE_PATH}${oldFrontmatter[fieldMappings.image]}`;
+    // Extract just the filename from the path
+    const imagePath = oldFrontmatter[fieldMappings.image];
+    const filename = path.basename(imagePath);
+    newFrontmatter.image = filename;
   }
 
   // Add category as tag if configured

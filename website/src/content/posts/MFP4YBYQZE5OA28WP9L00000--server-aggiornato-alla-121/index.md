@@ -13,7 +13,7 @@ aliases:
   - "/blog/server-aggiornato-alla-121/"
 seoTitle: "Vintage Story Italia: server aggiornato alla 1.21"
 seoDescription: "Finalmente Vintage Story Italia è aggiornato alla versione 1.21 di Vintage Story!"
-image: "/img/Ros Maris - al Puledro Impennato.webp"
+image: "Ros Maris - al Puledro Impennato.webp"
 type: "news"
 ---
 

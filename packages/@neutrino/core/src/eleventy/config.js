@@ -114,7 +114,7 @@ export function createEleventyConfig() {
   const localContentPath = setupContentDirectory();
 
   // Image shortcode function
-  async function imageShortcode(src, alt, sizes = "100vw") {
+  async function imageShortcode(src, alt, sizes = "100vw", attributes = {}) {
     let metadata = await Image(src, {
       widths: [200, 480, 640, 960, 1280, "auto"],
       formats: ["avif", "webp", "jpeg"],
@@ -127,6 +127,7 @@ export function createEleventyConfig() {
       sizes,
       loading: "lazy",
       decoding: "async",
+      ...attributes // Merge any additional attributes
     };
 
     return Image.generateHTML(metadata, imageAttributes);
@@ -316,7 +317,7 @@ export function createEleventyConfig() {
         dt = DateTime.fromJSDate(new Date(dateObj));
       }
       
-      return dt.setZone("utc").setLocale("en").toFormat(format);
+      return dt.setZone("utc").setLocale("it").toFormat(format);
     });
 
     // Filter to include markdown files with Expressive Code support
