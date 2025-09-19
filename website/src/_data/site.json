@@ -1,13 +1,13 @@
 {
-    "name": "Neutrino - Electron",
-    "url": "https://github.com/greenpandastudio/neutrino-electron",
+    "name": "TheOddApe Italia",
+    "url": "https://theoddape.com",
     "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
-    "logo": "/assets/images/neutrino-logo.svg",
-    "favicon": "/assets/images/neutrino-logo.png",
+    "logo": "/assets/images/graphic/toaita-2024-95.webp",
+    "favicon": "/assets/images/graphic/toaita-2024.webp",
     "theme": "theoddape-website",
     "defaultVisualTheme": "dark",
     "contentPath": "${NEUTRINO_CONTENT_PATH}",
     "socialImage": "/assets/images/og-image.jpg",
-    "twitter": "@neutrino_electron",
-    "language": "en-US"
+    "twitter": "@theoddapeitalia",
+    "language": "it-IT"
 }

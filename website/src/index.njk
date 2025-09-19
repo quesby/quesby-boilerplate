@@ -1,53 +1,94 @@
 ---
-title: Neutrino - Electron | Home
 layout: layouts/base.njk
+title: TheOddApe Italia | Content Creator Gaming
+seoTitle: TheOddApe Italia | Content Creator Gaming
+description: Hub ufficiale di The Odd Ape Italia - news, server, video e community.
+noindex: false
 class: home
 style: home.css
 ---
-<section id="main">
-    <div class="container boxed">
-        <h1>
-            <span>Neutrino</span>
-            <span>Electron</span>
-        </h1>
-        <h2>Git-powered content management made simple</h2>
-        <div class="paragraph-l">
-            <p>Realized with content creators in mind.</p>
-        </div>
-        <div class="v-spacer"></div>
-        <div class="cta-wrapper">
-            <a href="/documentation/installation/" class="button">Get started</a>
-            <a href="/documentation/" class="button secondary">Learn more</a>
-        </div>
+<section class="hero">
+    {% set aspect_ratio = "16/9" %}
+    {% set posts_limit = 3 %}
+    {% set autoplay = true %}
+    {% set autoplay_speed = 5000 %}
+    {% set show_indicators = false %}
+    {% include "partials/hero-slider.njk" %}
+</section>
+
+
+
+<section class="page-header">
+    <div class="boxed">
+        <h1>The Odd Ape Italia</h1>
     </div>
 </section>
 
-<section id="features">
-  <div class="container boxed">
-    <h2>Features</h2>
-    <div class="features-wrapper">
-      <div class="feature">
-        {% image "lightweight-fast.svg", "Lightweight & Fast" %}
-        <h3>Lightweight & Fast</h3>
-        <p>Built with Eleventy for optimal performance.</p>
-      </div>
-      <div class="feature">
-        {% image "git-repo.svg", "Git-based workflow" %}
-        <h3>Git-based workflow</h3>
-        <p>Edit and publish with your existing Git workflow. No database needed.</p>
-      </div>
-      <div class="feature">
-        {% image "markdown.svg", "Markdown & Front Matter" %}
-        <h3>Markdown & Front Matter</h3>
-        <p>Simple, structured content that works with any static site generator.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          {% svg "/assets/images/seo.svg", "seo-icon" %}
-        </div>
-        <h3>SEO-friendly</h3>
-        <p>Clean URLs, semantic HTML, fast loading, and full control over metadata.</p>
-      </div>
+<section id="welcome">
+    <div class="boxed">
+        <h2 class="slogan">Il portale per contenuti e aggiornamenti sul gaming!</h2>
+        <p>Qui esploriamo insieme il mondo avvincente dei videogiochi, offrendoti un posto in prima fila tra le mie avventure, gli aggiornamenti del canale e i titoli più interessanti a cui sto giocando.</p>
+        <p>Che tu sia un appassionato di gaming, un fan dei miei contenuti o semplicemente curioso dell’universo videoludico, questo è il posto giusto per te. Resta connesso per aggiornamenti, recensioni e video gameplay coinvolgenti mentre esploriamo insieme i regni virtuali.</p>
     </div>
-  </div>
 </section>
+
+<section id="latest-news">
+    <div class="container boxed blog-wrapper cards-overlay">
+        <h2>Ultime news</h2>
+        {% for post in collections.posts | sortBy("date", "asc") | limit(4) %}
+        <div class="post">
+            <a href="/blog/{{ post.data.slug }}/">
+            <div class="post-wrapper">
+                {% if post.data.image %}
+                    {% image "/content/posts/{{ post.fileSlug }}/{{ post.data.image }}", "{{ post.data.title }}", "600" %}
+                {% endif %}
+
+                <div class="post-summary">
+                    <h2 class="post-title">{{ post.data.title }}</h2>
+                    <div class="post-date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
+                    <p class="post-excerpt">{{ post.data.description }}</p>
+                    </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {# <div class="boxed">
+        <h2>Ultime news</h2>
+        <div class="blog-wrapper cards-overlay">
+            {% assign newsPosts = collections.posts | where: "data.type", "news" | sort: "date" | reverse | slice: 0, 4 %}
+            {% for post in newsPosts %}
+                <div class="post">
+                    <a href="/blog/{{ post.fileSlug }}">
+                        {% assign myimage = "static/images/blog/" | append: post.data.image %}
+                        <div class="post-wrapper" style="background-image: url('{{ myimage }}')">
+                            <div class="bg-overlay"></div>
+                            <div class="post-summary">
+                                <h3 class="post-title">{{ post.data.page-title }}</h3>
+                                {% assign day = post.date | date: "%d" %}
+                                {% assign month = post.date | date: "%m" %}
+                                {% assign year = post.date | date: "%Y" %}
+                                <div class="post-info">
+                                    <span class="post-date">{{ day }} {{ months[month] }} {{ year }}</span> /
+                                    <span> {{ post.data.category }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div> #}
+        <button class="button">
+            <a href="/blog/index.html">
+                Tutte le news
+            </a>
+        </button>
+    </div>
+</section>
+
+<section id="events"></section>
+
+<section id="news"></section>
+
+{# {% include "popup" %}
+<script src="{{ '/static/js/closepopup.js' | url }}"></script> #}
