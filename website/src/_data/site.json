@@ -1,13 +1,30 @@
 {
-    "name": "TheOddApe Italia",
     "url": "https://theoddape.com",
-    "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
-    "logo": "/assets/images/graphic/toaita-2024-95.webp",
+    "companyName": "TheOddApe",
+    "name": "TheOddApe Italia",
+    "title": "TheOddApe Italia",
+    "description": "Hub ufficiale di The Odd Ape Italia: news, server, video e community.",
+    "logo": "/static/images/graphic/the_odd_ape_italia-2024.webp",
     "favicon": "/assets/images/graphic/toaita-2024.webp",
+    "lang": "it-IT",
     "theme": "theoddape-website",
     "defaultVisualTheme": "dark",
     "contentPath": "${NEUTRINO_CONTENT_PATH}",
     "socialImage": "/assets/images/og-image.jpg",
-    "twitter": "@theoddapeitalia",
-    "language": "it-IT"
+    "language": "it-IT",
+    "serverName": "Vintage Story Italia",
+    "email": "theoddapeitalia@gmail.com",
+    "carrdio": "https://theoddapeitalia.carrd.co/",
+    "youtube": "http://www.youtube.com/@TheOddApeItalia",
+    "twitch": "https://www.twitch.tv/the_odd_ape",
+    "tiktok": "https://www.tiktok.com/@theoddapeitalia",
+    "discord": "https://discord.gg/h8dNdBR6gA",
+    "telegram": "https://t.me/+QkrczEknOnhkYWI0",
+    "patreon": "https://www.patreon.com/theoddapeitalia",
+    "kofi": "https://ko-fi.com/theoddapeitalia",
+    "twitter": "TheOddApeIT",
+    "author": {
+        "name": "TheOddApe Italia",
+        "email": "theoddapeitalia@gmail.com"
+    }
 }

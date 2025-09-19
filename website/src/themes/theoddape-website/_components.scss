@@ -1,5 +1,5 @@
 // Social Rig
-#socialrig {
+.social-section {
     margin-top: $margin * 3;
     .social-wrapper {
         display: inline-flex;
@@ -7,6 +7,7 @@
         border-radius: $borderRadius-small;
         overflow: hidden;
         li {
+            margin-bottom: 0;
             &:not(:last-child):after {
                 position: absolute;
                 content: "";
