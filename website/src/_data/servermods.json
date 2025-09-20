@@ -1,0 +1,1158 @@
+[
+  {
+    "modid": 843,
+    "filename": "ACulinaryArtillery 1.2.5.zip",
+    "title": "A Culinary Artillery 1.2.5",
+    "description": "Adds an arsenal of tools to enhance the culinary experience.",
+    "installedVersion": "1.2.5",
+    "modUrl": "https://mods.vintagestory.at/aculinaryartillery",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 4151,
+    "downloads": 384144,
+    "follows": 3777,
+    "trendingpoints": 986,
+    "comments": 577,
+    "name": "A Culinary Artillery 1.2.5",
+    "summary": "Adds an arsenal of tools to enhance the culinary experience.",
+    "modidstrs": [
+      "aculinaryartillery"
+    ],
+    "author": "l33tmaan",
+    "urlalias": "aculinaryartillery",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/a+culinary+artillery_5403c8fea86d4fa7e815301740566b46.png",
+    "tags": [
+      "Crafting",
+      "Food",
+      "Furniture",
+      "Library",
+      "Technology"
+    ],
+    "lastreleased": "2025-02-27 23:48:27"
+  },
+  {
+    "modid": 253,
+    "filename": "Auto Map Markers 4.0.2 (Vintagestory 1.20).zip",
+    "title": "Auto Map Markers",
+    "description": "Automatically adds map markers to your map when you interact with certain objects.",
+    "installedVersion": "4.0.2 (Vintagestory 1.20)",
+    "modUrl": "https://mods.vintagestory.at/automapmarkers",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 797,
+    "downloads": 140809,
+    "follows": 2182,
+    "trendingpoints": 1193,
+    "comments": 292,
+    "name": "Auto Map Markers",
+    "summary": "Automatically adds map markers to your map when you interact with certain objects.",
+    "modidstrs": [
+      "egocaribautomapmarkers",
+      "egocaribresinmapmarkers"
+    ],
+    "author": "egocarib",
+    "urlalias": "automapmarkers",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/cover-image_5325552d8de398f4a1ca786e25cc5864.png",
+    "tags": [
+      "QoL",
+      "Simplification"
+    ],
+    "lastreleased": "2025-09-02 18:44:04"
+  },
+  {
+    "modid": 1087,
+    "filename": "BetterFirepit-1.1.6.zip",
+    "title": "Better Firepit",
+    "description": "Stops the firepit from resetting it's temperature after each item cooked",
+    "installedVersion": "1.1.6",
+    "modUrl": "https://mods.vintagestory.at/betterfirepit",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 5589,
+    "downloads": 196492,
+    "follows": 2053,
+    "trendingpoints": 1237,
+    "comments": 67,
+    "name": "Better Firepit",
+    "summary": "Stops the firepit from resetting it's temperature after each item cooked",
+    "modidstrs": [
+      "betterfirepit"
+    ],
+    "author": "Jameh",
+    "urlalias": "betterfirepit",
+    "side": "server",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/exampleImage_7312d009e39a3fa87cc309f3e730866f.png",
+    "tags": [
+      "Crafting",
+      "Tweak"
+    ],
+    "lastreleased": "2025-05-28 10:59:15"
+  },
+  {
+    "modid": 1594,
+    "filename": "BetterHoe_1.1.3.zip",
+    "title": "Better Hoe",
+    "description": "Adds function to create paths with the hoe.",
+    "installedVersion": "1.1.3",
+    "modUrl": "https://mods.vintagestory.at/betterhoe",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 8449,
+    "downloads": 9350,
+    "follows": 160,
+    "trendingpoints": 13,
+    "comments": 53,
+    "name": "Better Hoe",
+    "summary": "Adds function to create paths with the hoe.",
+    "modidstrs": [
+      "betterhoe"
+    ],
+    "author": "Teknik",
+    "urlalias": "betterhoe",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/BigMaison_480x320_55a1bba9814ae061a16ed827edc37376.png",
+    "tags": [
+      "Cosmetics",
+      "QoL",
+      "Tweak"
+    ],
+    "lastreleased": "2025-05-28 03:28:55"
+  },
+  {
+    "modid": 792,
+    "filename": "BetterRuinsv0.4.15.zip",
+    "title": "BetterRuins",
+    "description": "Adds many new ruins over and underground to your survival game world.",
+    "installedVersion": "0.4.15",
+    "modUrl": "https://mods.vintagestory.at/betterruins",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 3829,
+    "downloads": 514488,
+    "follows": 4269,
+    "trendingpoints": 4026,
+    "comments": 873,
+    "name": "BetterRuins",
+    "summary": "Adds many new ruins over and underground to your survival game world.",
+    "modidstrs": [
+      "betterruins"
+    ],
+    "author": "NiclAss",
+    "urlalias": "betterruins",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/modiconformoddb1_ec0c3cd0a8fb7f6fed21fc502c6ad4af.png",
+    "tags": [
+      "Crafting",
+      "Worldgen"
+    ],
+    "lastreleased": "2025-09-09 18:05:19"
+  },
+  {
+    "modid": 890,
+    "filename": "CarryOn-1.20.4_v1.8.2.zip",
+    "title": "Carry On",
+    "description": "Adds the capability to carry various things. Replaces CarryCapacity.",
+    "installedVersion": "1.20.4_v1.8.2",
+    "modUrl": "https://mods.vintagestory.at/carryon",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 4405,
+    "downloads": 486798,
+    "follows": 4173,
+    "trendingpoints": 5352,
+    "comments": 470,
+    "name": "Carry On",
+    "summary": "Adds the capability to carry various things. Replaces CarryCapacity.",
+    "modidstrs": [
+      "carryon"
+    ],
+    "author": "NerdScurvy",
+    "urlalias": "carryon",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/CarryOnLogo_aef8a4cbdf80f8b3851b5dc3b23e1a28.png",
+    "tags": [
+      "QoL"
+    ],
+    "lastreleased": "2025-09-19 09:17:20"
+  },
+  {
+    "modid": 604,
+    "filename": "chiseltools1.14.20.zip",
+    "title": "QP's Chisel Tools",
+    "description": "Unleash your creativity while chiseling! Invaluable, survival friendly tool set for chiselers!",
+    "installedVersion": "1.14.20",
+    "modUrl": "https://mods.vintagestory.at/chiseltools",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 2751,
+    "downloads": 360906,
+    "follows": 2806,
+    "trendingpoints": 2944,
+    "comments": 439,
+    "name": "QP's Chisel Tools",
+    "summary": "Unleash your creativity while chiseling! Invaluable, survival friendly tool set for chiselers!",
+    "modidstrs": [
+      "chiseltools"
+    ],
+    "author": "QPTech",
+    "urlalias": "chiseltools",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/modicon_910cef72d741fec6c488e5c5cf99f84f.png",
+    "tags": [
+      "Cosmetics",
+      "QoL",
+      "Utility"
+    ],
+    "lastreleased": "2025-08-26 10:55:28"
+  },
+  {
+    "modid": 641,
+    "filename": "coinage-1.14.1.zip",
+    "title": "Coinage",
+    "description": "Design and mint your own custom coins to trade with.",
+    "installedVersion": "1.14.1",
+    "modUrl": "https://mods.vintagestory.at/coinage",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 3001,
+    "downloads": 88708,
+    "follows": 475,
+    "trendingpoints": 906,
+    "comments": 91,
+    "name": "Coinage",
+    "summary": "Design and mint your own custom coins to trade with.",
+    "modidstrs": [
+      "coinage"
+    ],
+    "author": "Xel",
+    "urlalias": "coinage",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/titlecard-01_b7591639651e25548657bdcd5b76ff5c.png",
+    "tags": [
+      "Cosmetics",
+      "Crafting",
+      "Utility"
+    ],
+    "lastreleased": "2025-09-11 23:20:54"
+  },
+  {
+    "modid": 1065,
+    "filename": "CommonLib_VS1.20.0-rc.1_net7_v2.6.1.zip",
+    "title": "Common Lib",
+    "description": "Library for PlayerCorpse, TpNet and my other mods",
+    "installedVersion": "1.20.0-rc.1_net7_v2.6.1",
+    "modUrl": "https://mods.vintagestory.at/commonlib",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 5457,
+    "downloads": 392094,
+    "follows": 2272,
+    "trendingpoints": 5019,
+    "comments": 66,
+    "name": "Common Lib",
+    "summary": "Library for PlayerCorpse, TpNet and my other mods",
+    "modidstrs": [
+      "commonlib"
+    ],
+    "author": "DArkHekRoMaNT",
+    "urlalias": "commonlib",
+    "side": "both",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "Library"
+    ],
+    "lastreleased": "2025-09-13 02:18:18"
+  },
+  {
+    "modid": 1783,
+    "filename": "configlib_1.5.3.zip",
+    "title": "Config lib",
+    "description": "Config library for content mods",
+    "installedVersion": "1.5.3",
+    "modUrl": "https://mods.vintagestory.at/configlib",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 9551,
+    "downloads": 247011,
+    "follows": 2186,
+    "trendingpoints": 2946,
+    "comments": 87,
+    "name": "Config lib",
+    "summary": "Config library for content mods",
+    "modidstrs": [
+      "configlib"
+    ],
+    "author": "Maltiez",
+    "urlalias": "configlib",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/moddb_25fa98f09cd30c_5ce9015cc02c343e081f6a80309ce7ac.png",
+    "tags": [
+      "Library"
+    ],
+    "lastreleased": "2025-09-09 03:53:28"
+  },
+  {
+    "modid": 1282,
+    "filename": "Crateful_1.2.8.zip",
+    "title": "Crateful",
+    "description": "Improves crate storage mechanics",
+    "installedVersion": "1.2.8",
+    "modUrl": "https://mods.vintagestory.at/crateful",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 6690,
+    "downloads": 15866,
+    "follows": 244,
+    "trendingpoints": 23,
+    "comments": 28,
+    "name": "Crateful",
+    "summary": "Improves crate storage mechanics",
+    "modidstrs": [
+      "crateful"
+    ],
+    "author": "crittan",
+    "urlalias": "crateful",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/logo2_4ec2f7cad260e59b94d19d638a93cdf5.jpg",
+    "tags": [
+      "QoL",
+      "Storage",
+      "Tweak"
+    ],
+    "lastreleased": "2024-02-05 08:42:13"
+  },
+  {
+    "modid": 1006,
+    "filename": "DeepStorage_v0.0.6.zip",
+    "title": "Deep Storage Chest",
+    "description": "Adds a small chest with near perpetual food storage",
+    "installedVersion": "0.0.6",
+    "modUrl": "https://mods.vintagestory.at/deepstorage",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 5078,
+    "downloads": 5670,
+    "follows": 107,
+    "trendingpoints": 9,
+    "comments": 21,
+    "name": "Deep Storage Chest",
+    "summary": "Adds a small chest with near perpetual food storage",
+    "modidstrs": [
+      "DeepStorage"
+    ],
+    "author": "Lancer827",
+    "urlalias": "deepstorage",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/Screenshot+2023-01-2_d3ce8d2cf9ef12ab0c483f18647021ed.png",
+    "tags": [
+      "Food",
+      "QoL",
+      "Storage"
+    ],
+    "lastreleased": "2025-01-31 13:46:36"
+  },
+  {
+    "modid": 16,
+    "filename": "ExpandedFoods 1.7.4.zip",
+    "title": "Expanded Foods 1.7.4",
+    "description": "Adds a variety of new uses for existing foods.",
+    "installedVersion": "1.7.4",
+    "modUrl": "https://mods.vintagestory.at/expandedfoods",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 28,
+    "downloads": 403762,
+    "follows": 4094,
+    "trendingpoints": 829,
+    "comments": 1049,
+    "name": "Expanded Foods 1.7.4",
+    "summary": "Adds a variety of new uses for existing foods.",
+    "modidstrs": [
+      "expandedfoods"
+    ],
+    "author": "l33tmaan",
+    "urlalias": "expandedfoods",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/Expanded+Foods+thumb_8ffc067fdb715d4e94c7ff90a65f1d84.png",
+    "tags": [
+      "Crafting",
+      "Food",
+      "Other",
+      "Utility"
+    ],
+    "lastreleased": "2025-02-14 20:52:08"
+  },
+  {
+    "modid": 2383,
+    "filename": "foodshelves_2.2.1.zip",
+    "title": "Food Shelves",
+    "description": "Contains various food shelves and food storage, mainly made to be used alongside Expanded Foods.",
+    "installedVersion": "2.2.1",
+    "modUrl": "https://mods.vintagestory.at/foodshelves",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 13865,
+    "downloads": 217064,
+    "follows": 2573,
+    "trendingpoints": 3108,
+    "comments": 649,
+    "name": "Food Shelves",
+    "summary": "Contains various food shelves and food storage, mainly made to be used alongside Expanded Foods.",
+    "modidstrs": [
+      "foodshelves"
+    ],
+    "author": "SONZINA",
+    "urlalias": "foodshelves",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/thumbnailsmallnew_b2ff8d7ef92ea2060f7acb49a35f4ab2.png",
+    "tags": [
+      "Storage"
+    ],
+    "lastreleased": "2025-09-15 18:37:36"
+  },
+  {
+    "modid": 354,
+    "filename": "FromGoldenCombs-1.20.12-1.8.13.zip",
+    "title": "From Golden Combs",
+    "description": "Adds Ceramic Hives and Langstroth Hives with Configurable Production Rates and Times",
+    "installedVersion": "1.20.12-1.8.13",
+    "modUrl": "https://mods.vintagestory.at/fromgoldencombs",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 1373,
+    "downloads": 285579,
+    "follows": 2711,
+    "trendingpoints": 2724,
+    "comments": 793,
+    "name": "From Golden Combs",
+    "summary": "Adds Ceramic Hives and Langstroth Hives with Configurable Production Rates and Times",
+    "modidstrs": [
+      "fromgoldencombs"
+    ],
+    "author": "Vinter_Nacht",
+    "urlalias": "fromgoldencombs",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/FGC_ExternalLogo_dc9fc65b0c96a7ae910b328faca448e3.png",
+    "tags": [
+      "Food",
+      "QoL"
+    ],
+    "lastreleased": "2025-09-10 12:42:11"
+  },
+  {
+    "modid": 3061,
+    "filename": "gliderbackpack0.2.0.zip",
+    "title": "Glider Backpack (BackpackPackPlus compatible)",
+    "description": "Attach the backpack to the glider",
+    "installedVersion": "0.2.0",
+    "modUrl": "https://mods.vintagestory.at/gliderbackpack",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 18089,
+    "downloads": 1709,
+    "follows": 34,
+    "trendingpoints": 6,
+    "comments": 6,
+    "name": "Glider Backpack (BackpackPackPlus compatible)",
+    "summary": "Attach the backpack to the glider",
+    "modidstrs": [
+      "gliderbackpack"
+    ],
+    "author": "Tokamesab",
+    "urlalias": null,
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/1_71c9902ee8a1b3a9d6a1fbc57d9fa139.png",
+    "tags": [
+      ""
+    ],
+    "lastreleased": "2025-01-27 10:35:05"
+  },
+  {
+    "modid": 1602,
+    "filename": "herbarium_1.4.0.zip",
+    "title": "Herbarium",
+    "description": "A library of useful plant clases to be implemented by other mods. Does nothing on its own",
+    "installedVersion": "1.4.0",
+    "modUrl": "https://mods.vintagestory.at/herbarium",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 8496,
+    "downloads": 117760,
+    "follows": 1400,
+    "trendingpoints": 1186,
+    "comments": 104,
+    "name": "Herbarium",
+    "summary": "A library of useful plant clases to be implemented by other mods. Does nothing on its own",
+    "modidstrs": [
+      "herbarium"
+    ],
+    "author": "gabb",
+    "urlalias": "herbarium",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/herbarium_smallest_9b8bfc855aa0c7ad2fd72d3eb2e4bec4.png",
+    "tags": [
+      "Library"
+    ],
+    "lastreleased": "2025-09-17 07:00:34"
+  },
+  {
+    "modid": 690,
+    "filename": "loginprotection-1.2.0.zip",
+    "title": "Login Protection",
+    "description": "Prevent players from taking damage until they move after logging in",
+    "installedVersion": "1.2.0",
+    "modUrl": "https://mods.vintagestory.at/loginprotection",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 3323,
+    "downloads": 2680,
+    "follows": 41,
+    "trendingpoints": 3,
+    "comments": 9,
+    "name": "Login Protection",
+    "summary": "Prevent players from taking damage until they move after logging in",
+    "modidstrs": [
+      "loginprotection"
+    ],
+    "author": "Xel",
+    "urlalias": "loginprotection",
+    "side": "server",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "QoL",
+      "Tweak",
+      "Utility"
+    ],
+    "lastreleased": "2023-09-04 15:35:21"
+  },
+  {
+    "modid": 1607,
+    "filename": "OfflineFoodNoSpoil_1.4.0-1.20.zip",
+    "title": "No offline food spoil",
+    "description": "Prevent player inventory food from spoiling when the player is offline",
+    "installedVersion": "1.4.0-1.20",
+    "modUrl": "https://mods.vintagestory.at/offlinefoodnospoil",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 8523,
+    "downloads": 7000,
+    "follows": 217,
+    "trendingpoints": 41,
+    "comments": 36,
+    "name": "No offline food spoil",
+    "summary": "Prevent player inventory food from spoiling when the player is offline",
+    "modidstrs": [
+      "OfflineFoodNoSpoil"
+    ],
+    "author": "Wiltoga",
+    "urlalias": "offlinefoodnospoil",
+    "side": "server",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/OfflineFoodNoSpoil_fa0fde3fc35dc93b47e3419b35db6350.png",
+    "tags": [
+      "Food",
+      "QoL",
+      "Tweak"
+    ],
+    "lastreleased": "2025-08-13 20:44:11"
+  },
+  {
+    "modid": 51,
+    "filename": "PlayerCorpse_VS1.20.7_net7_v1.11.1.zip",
+    "title": "Player Corpse",
+    "description": "Creates a corpse with the player's inventory after death",
+    "installedVersion": "1.20.7_net7_v1.11.1",
+    "modUrl": "https://mods.vintagestory.at/playercorpse",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 115,
+    "downloads": 314991,
+    "follows": 2373,
+    "trendingpoints": 3815,
+    "comments": 214,
+    "name": "Player Corpse",
+    "summary": "Creates a corpse with the player's inventory after death",
+    "modidstrs": [
+      "playercorpse"
+    ],
+    "author": "DArkHekRoMaNT",
+    "urlalias": "playercorpse",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/playercorpse_86bd2916a59eeddb4b02df4d78a66304.png",
+    "tags": [
+      "Utility"
+    ],
+    "lastreleased": "2025-09-13 03:00:07"
+  },
+  {
+    "modid": 1424,
+    "filename": "PlayerList-2.1.5.zip",
+    "title": "PlayerList",
+    "description": "Shows a player list when you hold down tab (similar to Minecraft)",
+    "installedVersion": "2.1.5",
+    "modUrl": "https://mods.vintagestory.at/playerlist",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 7477,
+    "downloads": 96844,
+    "follows": 422,
+    "trendingpoints": 932,
+    "comments": 36,
+    "name": "PlayerList",
+    "summary": "Shows a player list when you hold down tab (similar to Minecraft)",
+    "modidstrs": [
+      "playerlist"
+    ],
+    "author": "BillyGalbreath",
+    "urlalias": "playerlist",
+    "side": "client",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/columns_e59ae01d813c7783fc069543a7dd996d.png",
+    "tags": [
+      "Other",
+      "QoL"
+    ],
+    "lastreleased": "2025-08-25 21:41:47"
+  },
+  {
+    "modid": 4286,
+    "filename": "purposefulstorage_1.3.0.zip",
+    "title": "Purposeful Storage",
+    "description": "Adds a variety of storage blocks designed for both aesthetic appeal and functional item organization",
+    "installedVersion": "1.3.0",
+    "modUrl": "https://mods.vintagestory.at/purposefulstorage",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 25347,
+    "downloads": 54094,
+    "follows": 1160,
+    "trendingpoints": 2291,
+    "comments": 122,
+    "name": "Purposeful Storage",
+    "summary": "Adds a variety of storage blocks designed for both aesthetic appeal and functional item organization",
+    "modidstrs": [
+      "purposefulstorage"
+    ],
+    "author": "SONZINA",
+    "urlalias": "purposefulstorage",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/thumbnailsmall_7a419d341fd9e4894f3ffb77d541789f.png",
+    "tags": [
+      "Storage"
+    ],
+    "lastreleased": "2025-09-15 18:37:46"
+  },
+  {
+    "modid": 1371,
+    "filename": "rpvoicechat_2.3.19.zip",
+    "title": "RP Voice Chat",
+    "description": "A mod for proximity VOIP. Shout at your friends!",
+    "installedVersion": "2.3.19",
+    "modUrl": "https://mods.vintagestory.at/rpvoicechat",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 7177,
+    "downloads": 139123,
+    "follows": 686,
+    "trendingpoints": 2799,
+    "comments": 208,
+    "name": "RP Voice Chat",
+    "summary": "A mod for proximity VOIP. Shout at your friends!",
+    "modidstrs": [
+      "rpvoicechat"
+    ],
+    "author": "Ridderrasmus",
+    "urlalias": "rpvoicechat",
+    "side": "both",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "Utility"
+    ],
+    "lastreleased": "2025-09-16 20:41:13"
+  },
+  {
+    "modid": 1919,
+    "filename": "sleepvote_1.0.9.zip",
+    "title": "Sleep Vote",
+    "description": "A mod that let the player vote to skip the day by going to bed",
+    "installedVersion": "1.0.9",
+    "modUrl": "https://mods.vintagestory.at/sleepvote",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 10448,
+    "downloads": 21257,
+    "follows": 34,
+    "trendingpoints": 53,
+    "comments": 7,
+    "name": "Sleep Vote",
+    "summary": "A mod that let the player vote to skip the day by going to bed",
+    "modidstrs": [
+      "sleepvote"
+    ],
+    "author": "Chilla55",
+    "urlalias": "sleepvote",
+    "side": "both",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "QoL",
+      "Tweak",
+      "Utility"
+    ],
+    "lastreleased": "2025-03-04 15:48:25"
+  },
+  {
+    "modid": 2878,
+    "filename": "SpeedBoat-1.0.0.zip",
+    "title": "SpeedBoat",
+    "description": "Control the speed of boats (and rafts)",
+    "installedVersion": "1.0.0",
+    "modUrl": "https://mods.vintagestory.at/speedboat",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 16789,
+    "downloads": 25246,
+    "follows": 94,
+    "trendingpoints": 97,
+    "comments": 19,
+    "name": "SpeedBoat",
+    "summary": "Control the speed of boats (and rafts)",
+    "modidstrs": [
+      "speedboat"
+    ],
+    "author": "BillyGalbreath",
+    "urlalias": "speedboat",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/image_d68f613b0da75c8a3292df82994fb474.png",
+    "tags": [
+      "QoL",
+      "Simplification",
+      "Tweak"
+    ],
+    "lastreleased": "2024-12-23 19:13:53"
+  },
+  {
+    "modid": 4282,
+    "filename": "stackabletemporalgear_1.0.1-1.20.x.zip",
+    "title": "Stackable Temporal Gears",
+    "description": "Super simple Json patch that makes temporal gears stackable up to 8 :)",
+    "installedVersion": "1.0.1-1.20.x",
+    "modUrl": "https://mods.vintagestory.at/stackabletemporalgears",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 25326,
+    "downloads": 2781,
+    "follows": 46,
+    "trendingpoints": 9,
+    "comments": 2,
+    "name": "Stackable Temporal Gears",
+    "summary": "Super simple Json patch that makes temporal gears stackable up to 8 :)",
+    "modidstrs": [
+      "stackabletemporalgears"
+    ],
+    "author": "WatermelonFrogy",
+    "urlalias": "stackabletemporalgears",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/modid+%281%29_674360b37edec275ccd701d3c1a44ccf.png",
+    "tags": [
+      "QoL"
+    ],
+    "lastreleased": "2025-06-11 23:18:32"
+  },
+  {
+    "modid": 1163,
+    "filename": "stonebakeoven_1.1.6.zip",
+    "title": "Stone Bake Oven",
+    "description": "You can create a Stone Bake Oven for all your large baking needs.",
+    "installedVersion": "1.1.6",
+    "modUrl": "https://mods.vintagestory.at/stonebakeoven",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 6038,
+    "downloads": 168604,
+    "follows": 1543,
+    "trendingpoints": 1688,
+    "comments": 166,
+    "name": "Stone Bake Oven",
+    "summary": "You can create a Stone Bake Oven for all your large baking needs.",
+    "modidstrs": [
+      "stonebakeoven"
+    ],
+    "author": "CaptainOats",
+    "urlalias": "stonebakeoven",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/Stone+Bake+Oven+Main_47d83533cb9af04ac2ee000e3bdea3b2.png",
+    "tags": [
+      "Food",
+      "Furniture"
+    ],
+    "lastreleased": "2025-08-27 12:11:01"
+  },
+  {
+    "modid": 395,
+    "filename": "StoneQuarry_VS1.20.1_net7_v3.4.3.zip",
+    "title": "Stone Quarry",
+    "description": "Allows you to dig a lot of stone and process into rock, bricks, polished rock, sand, gravel, etc",
+    "installedVersion": "1.20.1_net7_v3.4.3",
+    "modUrl": "https://mods.vintagestory.at/stonequarry",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 1592,
+    "downloads": 280191,
+    "follows": 2650,
+    "trendingpoints": 3749,
+    "comments": 257,
+    "name": "Stone Quarry",
+    "summary": "Allows you to dig a lot of stone and process into rock, bricks, polished rock, sand, gravel, etc",
+    "modidstrs": [
+      "stonequarry"
+    ],
+    "author": "DArkHekRoMaNT",
+    "urlalias": "stonequarry",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/0_logo_da467a7d63ab6cb4f9bd6c56b0fa02d9.png",
+    "tags": [
+      "Crafting",
+      "QoL",
+      "Utility"
+    ],
+    "lastreleased": "2025-09-13 16:05:31"
+  },
+  {
+    "modid": 876,
+    "filename": "TabletopGames-v2.10.5.zip",
+    "title": "Tabletop Games",
+    "description": "Play real-world tabletop games or create your own",
+    "installedVersion": "2.10.5",
+    "modUrl": "https://mods.vintagestory.at/tabletopgames",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 4342,
+    "downloads": 101747,
+    "follows": 815,
+    "trendingpoints": 1366,
+    "comments": 212,
+    "name": "Tabletop Games",
+    "summary": "Play real-world tabletop games or create your own",
+    "modidstrs": [
+      "tabletopgames"
+    ],
+    "author": "DanaCraluminum",
+    "urlalias": "tabletopgames",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/TabletopGamesSplash_100c5ee9623bbb36f53916048cd05ee8.png",
+    "tags": [
+      "Crafting",
+      "Furniture",
+      "Other",
+      "Storage",
+      "Tweak",
+      "Utility"
+    ],
+    "lastreleased": "2025-09-14 17:17:47"
+  },
+  {
+    "modid": 329,
+    "filename": "teleporation-runes-1.1.1.zip",
+    "title": "Teleportation Runes",
+    "description": "Teleportation Runes - balanced fast travel system",
+    "installedVersion": "1.1.1",
+    "modUrl": "https://mods.vintagestory.at/tprunes",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 1270,
+    "downloads": 35594,
+    "follows": 302,
+    "trendingpoints": 77,
+    "comments": 56,
+    "name": "Teleportation Runes",
+    "summary": "Teleportation Runes - balanced fast travel system",
+    "modidstrs": [
+      "tprunes"
+    ],
+    "author": "Kosher",
+    "urlalias": "tprunes",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/2021-09-07_00-16-55_2978cd4fb8b84948522c4d9a316712c8.png",
+    "tags": [
+      "Furniture",
+      "Magic",
+      "Technology"
+    ],
+    "lastreleased": "2025-01-18 17:00:15"
+  },
+  {
+    "modid": 334,
+    "filename": "th3essentials_2.11.0.zip",
+    "title": "Th3Essentials",
+    "description": "Integrate your server into discord. Adds managing and info commands/utilities.",
+    "installedVersion": "3essentials_2.11.0",
+    "modUrl": "https://mods.vintagestory.at/theessentials",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 1297,
+    "downloads": 20251,
+    "follows": 203,
+    "trendingpoints": 121,
+    "comments": 99,
+    "name": "Th3Essentials",
+    "summary": "Integrate your server into discord. Adds managing and info commands/utilities.",
+    "modidstrs": [
+      "Th3Essentials"
+    ],
+    "author": "Th3Dilli",
+    "urlalias": "theessentials",
+    "side": "server",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/th3essentials_crop_c1409de25691f7a0a88b802cf67457a1.png",
+    "tags": [
+      "Utility"
+    ],
+    "lastreleased": "2025-08-28 10:56:12"
+  },
+  {
+    "modid": 1580,
+    "filename": "vinconomy_0.4.0.zip",
+    "title": "Vinconomy - A Vintage Story Economy Mod",
+    "description": "Adds player shops, trading, and commerce.",
+    "installedVersion": "0.4.0",
+    "modUrl": "https://mods.vintagestory.at/vinconomy",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 8379,
+    "downloads": 109312,
+    "follows": 459,
+    "trendingpoints": 1891,
+    "comments": 223,
+    "name": "Vinconomy - A Vintage Story Economy Mod",
+    "summary": "Adds player shops, trading, and commerce.",
+    "modidstrs": [
+      "vinconomy"
+    ],
+    "author": "SeveredSkullz",
+    "urlalias": "vinconomy",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/Vinconomy-ModDBLogo2_aeba5d3e4663861032893d1cb56bf714.jpg",
+    "tags": [
+      "Crafting",
+      "Furniture",
+      "Other",
+      "QoL",
+      "Storage",
+      "Utility"
+    ],
+    "lastreleased": "2025-09-17 20:40:55"
+  },
+  {
+    "modid": 1745,
+    "filename": "vsimgui_1.1.8.zip",
+    "title": "ImGui",
+    "description": "Wrapper for GUI library",
+    "installedVersion": "1.1.8",
+    "modUrl": "https://mods.vintagestory.at/imgui",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 9329,
+    "downloads": 226671,
+    "follows": 1893,
+    "trendingpoints": 2567,
+    "comments": 46,
+    "name": "ImGui",
+    "summary": "Wrapper for GUI library",
+    "modidstrs": [
+      "vsimgui"
+    ],
+    "author": "Maltiez",
+    "urlalias": "imgui",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/moddb_d63d1a26c89ea1_b7915a3745472150677092b22b6f0911.png",
+    "tags": [
+      "Library",
+      "Utility"
+    ],
+    "lastreleased": "2025-08-15 22:34:18"
+  },
+  {
+    "modid": 1940,
+    "filename": "wildcraftherb_0.0.1.zip",
+    "title": "Wildcraft: Herbs and Spices",
+    "description": "Adds 50 new herb type plants in a variety of climate zones.",
+    "installedVersion": "0.0.1",
+    "modUrl": "https://mods.vintagestory.at/wildcraftherb",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 10655,
+    "downloads": 42151,
+    "follows": 891,
+    "trendingpoints": 129,
+    "comments": 89,
+    "name": "Wildcraft: Herbs and Spices",
+    "summary": "Adds 50 new herb type plants in a variety of climate zones.",
+    "modidstrs": [
+      "wildcraftherb"
+    ],
+    "author": "gabb",
+    "urlalias": "wildcraftherb",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/herb_logo2_be87dd7b34add099aa91639217e10fb8.png",
+    "tags": [
+      "Crafting",
+      "Food",
+      "Worldgen"
+    ],
+    "lastreleased": "2024-04-28 18:17:33"
+  },
+  {
+    "modid": 1856,
+    "filename": "wildcrafttree_1.3.1.zip",
+    "title": "Wildcraft: Trees and Shrubs",
+    "description": "Adds 50 new tree and shrub types for a variety of climate zones",
+    "installedVersion": "1.3.1",
+    "modUrl": "https://mods.vintagestory.at/wildcrafttree",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 9909,
+    "downloads": 54019,
+    "follows": 1067,
+    "trendingpoints": 346,
+    "comments": 176,
+    "name": "Wildcraft: Trees and Shrubs",
+    "summary": "Adds 50 new tree and shrub types for a variety of climate zones",
+    "modidstrs": [
+      "wildcrafttree"
+    ],
+    "author": "gabb",
+    "urlalias": "wildcrafttree",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/logo_ddb87fe12519842ccf7b0316e4c89801.png",
+    "tags": [
+      "Crafting",
+      "Worldgen"
+    ],
+    "lastreleased": "2025-08-28 08:35:12"
+  },
+  {
+    "modid": 1174,
+    "filename": "wildfarmingrevival_1.3.8.zip",
+    "title": "Wild Farming - Revival",
+    "description": "Seed extraction, farming of various plants & mushrooms, and more. ",
+    "installedVersion": "1.3.8",
+    "modUrl": "https://mods.vintagestory.at/wildfarmingrevival",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 6102,
+    "downloads": 174762,
+    "follows": 1903,
+    "trendingpoints": 1778,
+    "comments": 457,
+    "name": "Wild Farming - Revival",
+    "summary": "Seed extraction, farming of various plants & mushrooms, and more. ",
+    "modidstrs": [
+      "wildfarmingrevival"
+    ],
+    "author": "SpearAndFang",
+    "urlalias": "wildfarmingrevival",
+    "side": "both",
+    "type": "mod",
+    "logo": "https://moddbcdn.vintagestory.at/logo3_d0054c6b41e8dc1d1dec9f07780d731c.png",
+    "tags": [
+      "Crafting",
+      "QoL",
+      "Worldgen"
+    ],
+    "lastreleased": "2025-09-13 15:18:21"
+  },
+  {
+    "modid": 87,
+    "filename": "xlib_v0.8.16.zip",
+    "title": "XLib",
+    "description": "XLib provides an interface to add skills, abilities and effects to the game.",
+    "installedVersion": "0.8.16",
+    "modUrl": "https://mods.vintagestory.at/xlib",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 244,
+    "downloads": 288746,
+    "follows": 1575,
+    "trendingpoints": 1849,
+    "comments": 85,
+    "name": "XLib",
+    "summary": "XLib provides an interface to add skills, abilities and effects to the game.",
+    "modidstrs": [
+      "xlib"
+    ],
+    "author": "Xandu",
+    "urlalias": null,
+    "side": "both",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "Library"
+    ],
+    "lastreleased": "2025-09-09 17:07:56"
+  },
+  {
+    "modid": 88,
+    "filename": "xskills_v0.8.19.zip",
+    "title": "XSkills",
+    "description": "XSkills adds skills and abilities.",
+    "installedVersion": "0.8.19",
+    "modUrl": "https://mods.vintagestory.at/xskills",
+    "latestVersion": "",
+    "latestGameVersion": "",
+    "assetid": 247,
+    "downloads": 305730,
+    "follows": 2193,
+    "trendingpoints": 2038,
+    "comments": 994,
+    "name": "XSkills",
+    "summary": "XSkills adds skills and abilities.",
+    "modidstrs": [
+      "xskills"
+    ],
+    "author": "Xandu",
+    "urlalias": null,
+    "side": "both",
+    "type": "mod",
+    "logo": null,
+    "tags": [
+      "Other",
+      "QoL",
+      "Tweak"
+    ],
+    "lastreleased": "2025-09-09 17:09:40"
+  }
+]

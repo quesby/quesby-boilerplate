@@ -1,0 +1,23 @@
+---
+title: Supportami
+seoTitle: Supportami | TheOddApe Italia
+permalink: /supportami/
+style: supportami.css
+layout: layouts/base.njk
+class: supportami
+abbonamenti: abbonamenti.njk
+---
+<section id="page-title">
+    <div class="boxed">
+        <h1>Supporta i miei progetti</h1>
+        <h3 class="">Se ti piace quello che faccio, considera questo</h3>
+         {# {{ "supportami" | section("intro") | markdown }} #}
+         {{ "sections/supportami/intro.md" | includeMarkdown | safe }}
+    </div>
+</section>
+
+<section id="abbonamenti">
+    <div class="boxed">
+        {% include "partials/abbonamenti.njk" %}
+    </div>
+</section>

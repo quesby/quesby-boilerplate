@@ -1,0 +1,92 @@
+[
+  {
+    "nome":"Antracite",
+    "prezzo":16.0,
+    "quantità":8
+  },
+  {
+    "nome":"Bismuth",
+    "prezzo":1.0,
+    "quantità":20
+  },
+  {
+    "nome":"Carbone Marrone",
+    "prezzo":2.0,
+    "quantità":8
+  },
+  {
+    "nome":"Carbone Nero",
+    "prezzo":3.0,
+    "quantità":8
+  },
+  {
+    "nome":"Cassiterite",
+    "prezzo":1.0,
+    "quantità":20
+  },
+  {
+    "nome":"Carbonella",
+    "prezzo":1.0,
+    "quantità":8
+  },
+  {
+    "nome":"Carbone Coke",
+    "prezzo":2.5,
+    "quantità":8
+  },
+  {
+    "nome":"Rame",
+    "prezzo":1.0,
+    "quantità":20
+  },
+  {
+    "nome":"Legna da ardere",
+    "prezzo":1.0,
+    "quantità":32
+  },
+  {
+    "nome":"Lino: Fibra",
+    "prezzo":1.0,
+    "quantità":4
+  },
+  {
+    "nome":"Pelle: Enorme",
+    "prezzo":2.5,
+    "quantità":1
+  },
+  {
+    "nome":"Pelle: Grande",
+    "prezzo":1.5,
+    "quantità":1
+  },
+  {
+    "nome":"Pelle: Media",
+    "prezzo":1.0,
+    "quantità":1
+  },
+  {
+    "nome":"Pelle: Piccola",
+    "prezzo":0.5,
+    "quantità":1
+  },
+  {
+    "nome":"Pelle",
+    "prezzo":1.0,
+    "quantità":1
+  },
+  {
+    "nome":"Tronco di legno",
+    "prezzo":1,
+    "quantità":8
+  },
+  {
+    "nome":"Tife",
+    "prezzo":1.0,
+    "quantità":64
+  },
+  {
+    "nome":"Zinco",
+    "prezzo":1.0,
+    "quantità":20
+  }
+]

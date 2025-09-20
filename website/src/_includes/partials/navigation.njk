@@ -1,8 +1,19 @@
 <div id="main-navigation" class="navigation">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/documentation/">Documentation</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/admin/">Admin</a></li>
+        <li class="nav-item"><a href="{{ '/' | url }}">Home</a></li>
+        <li class="nav-item"><a href="{{ '/blog' | url }}">Blog</a></li>
+        <li class="nav-item isparent">
+            <a href="{{ '/server' | url }}">Il Server</a>
+            {# <ul class="sub-nav">
+                <li class="nav-item"><a href="{{ '/server/#economia' | url }}">Negozi e economia</a></li>
+                <li class="nav-item"><a href="{{ '/server/#modlist' | url }}">Lista delle Mod</a></li>
+                <li class="nav-item"><a href="{{ '/server/#supporto' | url }}">Limiti dei claim</a></li>
+            </ul>#}
+        </li>
+        {# <li class="nav-item"><a href="{{ '/terraumbrae' | url }}">Terra Umbrae</a></li> #}
+        {# <li class="nav-item"><a href="{{ '/#' | url }}">ApeCraft</a></li> #}
+        <li class="nav-item"><a href="{{ '/about' | url }}">Chi sono</a></li>
+        <li class="nav-item"><a href="{{ '/supportami' | url }}">Supportami</a></li>
+            <li class="nav-item"><a href="{{ '/contatto' | url }}">Contatto</a></li>
     </ul>
 </div>

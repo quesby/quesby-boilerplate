@@ -1,0 +1,35 @@
+<div class="abbonamenti-wrapper">
+    <h2>Supporta su Patreon</h2>
+    <div class="pricing-grid">
+    {% for tier in abbonamenti.patreon %}
+        <div class="pricing-card">
+        <h3>{{ tier.tier }}</h3>
+        <p class="price">{{ tier.prezzo }}</p>
+        <ul>
+            {% for b in tier.benefits %}
+            <li>{{ b }}</li>
+            {% endfor %}
+        </ul>
+        <div class="v-spacer"></div>
+        <a href="{{ site.patreon }}" class="button" target="_blank" rel="noreferrer noopen nofollow">Patreon</a>
+        </div>
+    {% endfor %}
+    </div>
+
+    {# <h2>Supporta su Twitch</h2>
+    <div class="pricing-grid">
+        {% for tier in abbonamenti.twitch %}
+            <div class="pricing-card">
+                <h3>{{ tier.tier }}</h3>
+                <p class="price">{{ tier.prezzo }}</p>
+                <ul>
+                    {% for b in tier.benefits %}
+            <li>{{ b }}</li>
+        {% endfor %}
+        </ul>
+        <div class="v-spacer"></div>
+        <a href="{{ site.twitch }}" class="button" target="_blank" rel="noreferrer noopen nofollow">Twitch</a>
+        </div>
+    {% endfor %}
+    </div> #}
+</div>

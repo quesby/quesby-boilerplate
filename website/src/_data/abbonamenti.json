@@ -1,0 +1,51 @@
+{
+  "patreon": [
+    {
+      "tier": "Premium",
+      "prezzo": "€ 4,-",
+      "benefits": ["Claim maggiorato livello Supporter", "+1 /home configurabile", "Titolo in chat e Discord"]
+    },
+    {
+      "tier": "VIP",
+      "prezzo": "€ 8,-",
+      "benefits": ["Claim maggiorato livello VIP", "+2 /home configurabili", "Mantenimento delle Skills", "Onoreficenza sul server"]
+    },
+    {
+      "tier": "Boss",
+      "prezzo": "€ 12,-",
+      "benefits": ["Claim maggiorato livello Boss", "+3 /home configurabili", "Mantenimento delle Skills", "Statua sul server", "Importazione claim 24x24"]
+    }
+  ],
+  "twitch": [
+    {
+      "tier": "Tier 1",
+      "prezzo": "€ 4.99",
+      "benefits": [
+        "Niente pubblicità",
+        "Accesso alle emoticon personalizzate",
+        "Accesso al canale Discord integrato",
+        "Supporto diretto al creator",
+        "Può dare accesso ai tuoi vantaggi in-game base", "Claim maggiorato livello Supporter"
+      ]
+    },
+    {
+      "tier": "Tier 2",
+      "prezzo": "€ 9.99",
+      "benefits": [
+        "Tutti i vantaggi del Tier 1",
+        "1 o 2 emoticon extra",
+        "Badge leggermente diverso",
+        "Vantaggi esclusivi", "Claim maggiorato livello VIP"
+      ]
+    },
+    {
+      "tier": "Tier 3",
+      "prezzo": "€ 24.99",
+      "benefits": [
+        "Tutti i vantaggi del Tier 2",
+        "Badge prestigioso",
+        "Emoticon Tier 3", "Claim maggiorato livello Boss"
+      ]
+    }
+  ]
+}
