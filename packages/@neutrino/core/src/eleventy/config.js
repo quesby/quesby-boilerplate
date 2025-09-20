@@ -346,6 +346,22 @@ export function createEleventyConfig() {
       }
     });
 
+    // Format number with thousands separator
+    eleventyConfig.addFilter("formatNumber", (num, options = {}) => {
+      if (typeof num !== 'number') return num;
+      
+      const {
+        thousandsSeparator = ".",
+        decimalSeparator = ",",
+        decimals = 0
+      } = options;
+      
+      return num.toLocaleString('it-IT', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      }).replace(/,/g, decimalSeparator).replace(/\./g, thousandsSeparator);
+    });
+
     eleventyConfig.addGlobalData("eleventyComputed", {
       permalink: (data) => {
         const input = (data.page?.inputPath || "").replace(/\\/g, "/");
