@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 // Read JSON data using fs.readFileSync
 const installedModsData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "src/_data/installedMods.json"), "utf8")
+  fs.readFileSync(path.join(__dirname, "src/_data/mods/installedMods.json"), "utf8")
 );
 
 const outputFile = path.join(__dirname, "src/_data/servermods.json");
