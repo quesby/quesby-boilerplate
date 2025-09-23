@@ -40,6 +40,13 @@
                     font-size: 1.5rem;
                     font-weight: 900;
                 }
+                svg {
+                    fill: var(--text-fg);
+                    height: 125px;
+                    path {
+                        fill: inherit;
+                    }
+                }
             }
         }
     }
