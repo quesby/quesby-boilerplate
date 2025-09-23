@@ -7,11 +7,7 @@
       "css:watch": "node scripts/watch.js",
       "dev": "eleventy --serve",
       "build": "npm run css:build && eleventy",
-      "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\"",
-      "extract:mods": "node scripts/extractMods.js",
-      "update:installed": "node scripts/updateInstalledMods.js",
-      "update:mods": "node --no-deprecation updateMods.js",
-      "update:mods:full": "npm run extract:mods && npm run update:installed && npm run update:mods"
+      "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
     },
     "dependencies": {
       "@neutrino/core": "workspace:*",
