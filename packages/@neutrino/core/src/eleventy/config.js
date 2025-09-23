@@ -113,30 +113,30 @@ export function createEleventyConfig() {
   // Setup content directory before Eleventy configuration
   const localContentPath = setupContentDirectory();
 
-  // Image shortcode function
-  async function imageShortcode(src, alt, sizes = "100vw", attributes = {}) {
-    let metadata = await Image(src, {
-      widths: [200, 480, 640, 960, 1280, "auto"],
-      formats: ["avif", "webp", "jpeg"],
-      outputDir: "./_site/assets/images/",
-      urlPath: "/assets/images/"
-    });
+  // // Image shortcode function
+  // async function imageShortcode(src, alt, sizes = "100vw", attributes = {}) {
+  //   let metadata = await Image(src, {
+  //     widths: [200, 480, 640, 960, 1280, "auto"],
+  //     formats: ["avif", "webp", "jpeg"],
+  //     outputDir: "./_site/assets/images/",
+  //     urlPath: "/assets/images/"
+  //   });
 
-    let imageAttributes = {
-      alt,
-      sizes,
-      loading: "lazy",
-      decoding: "async",
-      ...attributes // Merge any additional attributes
-    };
+  //   let imageAttributes = {
+  //     alt,
+  //     sizes,
+  //     loading: "lazy",
+  //     decoding: "async",
+  //     ...attributes // Merge any additional attributes
+  //   };
 
-    return Image.generateHTML(metadata, imageAttributes);
-  }
+  //   return Image.generateHTML(metadata, imageAttributes);
+  // }
 
   return function(eleventyConfig) {
-    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-    eleventyConfig.addLiquidShortcode("image", imageShortcode);
-    eleventyConfig.addJavaScriptFunction("image", imageShortcode);
+    // eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    // eleventyConfig.addLiquidShortcode("image", imageShortcode);
+    // eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
     // Load theme from site.json configuration
     const siteData = JSON.parse(fs.readFileSync(sitePath, 'utf8'));
@@ -421,16 +421,16 @@ export function createEleventyConfig() {
         const { fullMatch, src, alt, index } = placeholders[i];
         
         try {
-          // Resolve the image path
+          // Unified path resolution - same logic as shortcode
           let imagePath;
-          if (src.startsWith('/assets/images/')) {
-            imagePath = path.resolve('src/assets/images', src.replace('/assets/images/', ''));
-          } else if (src.startsWith('assets/images/')) {
-            imagePath = path.resolve('src/assets/images', src.replace('assets/images/', ''));
-          } else if (src.startsWith('./assets/images/')) {
-            imagePath = path.resolve('src/assets/images', src.replace('./assets/images/', ''));
+          if (src.startsWith('/')) {
+            imagePath = path.resolve(process.cwd(), "website", "src", src.substring(1));
+          } else if (src.startsWith('content/')) {
+            imagePath = path.resolve(process.cwd(), "website", "src", src);
+          } else if (src.startsWith('assets/')) {
+            imagePath = path.resolve(process.cwd(), "website", "src", src);
           } else {
-            imagePath = path.resolve('src/assets/images', src);
+            imagePath = path.resolve(process.cwd(), "website", "src", src);
           }
 
           // Check if image exists
@@ -443,8 +443,8 @@ export function createEleventyConfig() {
           const metadata = await Image(imagePath, {
             widths: [320, 640, 960, 1280, null],
             formats: ["avif", "webp", "jpeg"],
-            outputDir: "./_site/img/",
-            urlPath: "/img/",
+            outputDir: "./_site/assets/images/",
+            urlPath: "/assets/images/",
           });
 
           const imageAttributes = {
