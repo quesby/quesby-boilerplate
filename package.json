@@ -12,6 +12,8 @@
         "tools:import:dry": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --dry-run",
         "tools:import:config": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --config packages/@neutrino/core/src/tools/legacy-content-importer/vintagestoryitalia-config.yml",
         "tools:import:config:dry": "node packages/@neutrino/core/src/tools/legacy-content-importer/index.js --config packages/@neutrino/core/src/tools/legacy-content-importer/vintagestoryitalia-config.yml --dry-run"
+    },
+    "dependencies": {
+        "git-filter-repo": "^0.0.30"
     }
 }
-  
