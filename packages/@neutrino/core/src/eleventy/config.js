@@ -113,31 +113,7 @@ export function createEleventyConfig() {
   // Setup content directory before Eleventy configuration
   const localContentPath = setupContentDirectory();
 
-  // // Image shortcode function
-  // async function imageShortcode(src, alt, sizes = "100vw", attributes = {}) {
-  //   let metadata = await Image(src, {
-  //     widths: [200, 480, 640, 960, 1280, "auto"],
-  //     formats: ["avif", "webp", "jpeg"],
-  //     outputDir: "./_site/assets/images/",
-  //     urlPath: "/assets/images/"
-  //   });
-
-  //   let imageAttributes = {
-  //     alt,
-  //     sizes,
-  //     loading: "lazy",
-  //     decoding: "async",
-  //     ...attributes // Merge any additional attributes
-  //   };
-
-  //   return Image.generateHTML(metadata, imageAttributes);
-  // }
-
   return function(eleventyConfig) {
-    // eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-    // eleventyConfig.addLiquidShortcode("image", imageShortcode);
-    // eleventyConfig.addJavaScriptFunction("image", imageShortcode);
-
     // Load theme from site.json configuration
     const siteData = JSON.parse(fs.readFileSync(sitePath, 'utf8'));
     const activeTheme = siteData.theme || "neutrino-electron-core";

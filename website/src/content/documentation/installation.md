@@ -7,10 +7,10 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 2
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-09-23"
 ---
 
-# Installation Guide
+## Overview
 
 This guide will help you install and set up Neutrino, a privacy-first static site boilerplate built with Eleventy and Decap CMS.
 
@@ -19,8 +19,26 @@ This guide will help you install and set up Neutrino, a privacy-first static sit
 Before installing Neutrino, ensure you have the following installed on your system:
 
 - **Node.js** (version 18 or higher)
-- **npm** (comes with Node.js)
+- **pnpm** (version 9 or higher)
 - **Git** (for version control)
+
+### Installing pnpm
+
+If you don't have pnpm installed, you can activate it using Corepack (recommended):
+
+```bash
+# Enable Corepack (comes with Node.js 16.10+)
+corepack enable
+
+# Install pnpm
+corepack prepare pnpm@latest --activate
+```
+
+Alternatively, you can install pnpm globally:
+
+```bash
+npm install -g pnpm
+```
 
 ### Checking Prerequisites
 
@@ -28,7 +46,7 @@ Verify your installations:
 
 ```bash
 node --version
-npm --version
+pnpm --version
 git --version
 ```
 
@@ -37,14 +55,16 @@ git --version
 ### Method 1: Clone from Repository
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/greenpandastudio/neutrino-electron.git
    cd neutrino-electron
    ```
 
 2. **Install dependencies:**
+
    ```bash
-   npm install
+   pnpm install
    ```
 
 ### Method 2: Download and Extract
@@ -52,7 +72,7 @@ git --version
 1. Download the latest release from the GitHub repository
 2. Extract the archive to your desired location
 3. Navigate to the project directory
-4. Run `npm install`
+4. Run `pnpm install`
 
 ## Environment Configuration
 
@@ -61,11 +81,13 @@ git --version
 Neutrino supports external content management through environment variables:
 
 1. **Create a `.env` file** in the project root:
+
    ```bash
    touch .env
    ```
 
 2. **Configure the content path** in your `.env` file:
+
    ```bash
    NEUTRINO_CONTENT_PATH=/path/to/your/content/directory
    ```
@@ -73,8 +95,9 @@ Neutrino supports external content management through environment variables:
    If you don't set this variable, Neutrino will use the default `content` directory.
 
 3. **Alternative: Edit site.json**
-   
+
    You can also configure the content path directly in `src/_data/site.json`:
+
    ```json
    {
      "contentPath": "/absolute/path/to/your/content"
@@ -90,6 +113,7 @@ THEME=neutrino-electron-core
 ```
 
 Available themes:
+
 - `neutrino-electron-core` (default)
 - `neutrino-brand-website`
 
@@ -100,10 +124,11 @@ Available themes:
 Run the development server with CSS watching:
 
 ```bash
-npm run serve
+pnpm serve
 ```
 
 This command will:
+
 - Start Eleventy in serve mode
 - Watch for CSS changes and recompile automatically
 - Serve your site at `http://localhost:8080`
@@ -111,18 +136,21 @@ This command will:
 ### 2. Alternative Development Commands
 
 - **Development without CSS watching:**
+
   ```bash
-  npm run dev
+  pnpm dev
   ```
 
 - **CSS-only watching:**
+
   ```bash
-  npm run watch:css
+  pnpm -F @neutrino/website css:watch
   ```
 
 - **Build CSS only:**
+
   ```bash
-  npm run build:css
+  pnpm -F @neutrino/website css:build
   ```
 
 ## Building for Production
@@ -132,10 +160,11 @@ This command will:
 Generate the production build:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 This will:
+
 - Compile all SCSS to CSS
 - Process all templates and content
 - Generate the static site in the `_site` directory
@@ -155,6 +184,7 @@ The built site will be available in the `_site` directory, ready for deployment 
    Follow the [Decap CMS documentation](https://decapcms.org/docs/authentication-backends/) to set up authentication for your chosen backend
 
 3. **Content structure:**
+
    - Posts: `src/content/posts/`
    - Pages: `src/content/pages/`
    - Projects: `src/content/projects/`
@@ -198,7 +228,7 @@ After successful installation:
 ## System Requirements
 
 - **Node.js:** 18.0.0 or higher
-- **npm:** 8.0.0 or higher
+- **pnpm:** 9.0.0 or higher
 - **Memory:** 512MB RAM minimum
 - **Disk Space:** 100MB for the project, additional space for content
 

@@ -88,7 +88,7 @@ function imageShortcodeSync(src, alt = "", sizes = "100vw") {
 function svgShortcode(svgPath, className = "") {
   console.log(`[DEBUG] SVG shortcode called with: ${svgPath}, ${className}`);
   try {
-    const fullPath = path.join(process.cwd(), 'website', 'src', svgPath);
+    const fullPath = path.join(process.cwd(), 'src', svgPath);
     console.log(`[DEBUG] Full path: ${fullPath}`);
     const svgContent = fs.readFileSync(fullPath, 'utf8');
     console.log(`[DEBUG] SVG content length: ${svgContent.length}`);
