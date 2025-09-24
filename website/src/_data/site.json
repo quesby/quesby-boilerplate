@@ -4,7 +4,7 @@
     "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
     "logo": "/assets/images/neutrino-logo.svg",
     "favicon": "/assets/images/neutrino-logo.png",
-    "theme": "neutrino-brand-website",
+    "theme": "neutrino-electron-core",
     "defaultVisualTheme": "dark",
     "contentPath": "${NEUTRINO_CONTENT_PATH}",
     "socialImage": "/assets/images/og-image.jpg",

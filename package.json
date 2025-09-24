@@ -7,8 +7,5 @@
         "dev": "pnpm -F @neutrino/website dev",
         "serve": "pnpm -F @neutrino/website serve",
         "build": "pnpm -F @neutrino/website build"
-    },
-    "dependencies": {
-        "git-filter-repo": "^0.0.30"
     }
 }

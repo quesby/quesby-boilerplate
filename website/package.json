@@ -10,7 +10,7 @@
       "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
     },
     "dependencies": {
-      "@neutrino/core": "git+ssh://git@github-homewin:greenpandastudio/neutrino-core.git#main",
+      "neutrino-core": "git+ssh://git@github.com/greenpandastudio/neutrino-core.git#9f1d876d63a4e8b8568de5c00951cb432a2d5bf9",
       "@11ty/eleventy": "^3.0.0",
       "sass": "^1.77.0",
       "concurrently": "^9.2.1",
