@@ -4,16 +4,16 @@ layout: layouts/base.njk
 class: home
 style: home.css
 ---
+
 <section id="main">
     <div class="container boxed">
         <h1>
             <span>Neutrino</span>
             <span>Electron</span>
         </h1>
-        <h2>Git-powered content management made simple</h2>
-        <div class="paragraph-l">
-            <p>Realized with content creators in mind.</p>
-        </div>
+        <h2>Privacy-first static site boilerplate made simple</h2>
+        <div class="v-spacer"></div>
+        {{ "content-blocks/home/intro.md" | includeMarkdown | safe }}
         <div class="v-spacer"></div>
         <div class="cta-wrapper">
             <a href="/documentation/installation/" class="button">Get started</a>
@@ -22,32 +22,55 @@ style: home.css
     </div>
 </section>
 
-{# <section id="features">
-  <div class="container boxed">
-    <h2>Features</h2>
-    <div class="features-wrapper">
-      <div class="feature">
-        {% svg "assets/images/lightweight-fast.svg", "Lightweight & Fast" %}
-        <h3>Lightweight & Fast</h3>
-        <p>Built with Eleventy for optimal performance.</p>
-      </div>
-      <div class="feature">
-        {% svg "assets/images/git-repo.svg", "Git-based workflow" %}
-        <h3>Git-based workflow</h3>
-        <p>Edit and publish with your existing Git workflow. No database needed.</p>
-      </div>
-      <div class="feature">
-        {% svg "assets/images/markdown.svg", "Markdown & Front Matter" %}
-        <h3>Markdown & Front Matter</h3>
-        <p>Simple, structured content that works with any static site generator.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          {% svg "assets/images/seo.svg", "seo-icon" %}
-        </div>
-        <h3>SEO-friendly</h3>
-        <p>Clean URLs, semantic HTML, fast loading, and full control over metadata.</p>
+<section id="welcome">
+    <div class="container boxed">
+      <div class="getting-started">
+        <h3>Here are a few ideas on how to get started with Neutrino:</h3>
+        <ul class="getting-started-list">
+            <li>Edit this page in <code>src/index.njk</code></li>
+            <li>Customize your site settings in <code>src/_data/site.json</code></li>
+            <li>Add your content in <code>src/content/posts/</code> or use the CMS at <code>/admin/</code></li>
+            <li>Switch themes in <code>src/themes/</code> (neutrino-electron-core or neutrino-brand-website)</li>
+            <li>Configure your CMS in <code>src/admin/config.yml</code></li>
+            <li>Check out the documentation system in <code>src/content/documentation/</code></li>
+            <li>Customize the blog post layout in <code>src/_includes/layouts/single-post.njk</code></li>
+        </ul>
       </div>
     </div>
+    <div class="v-spacer"></div>
+    <div class="features-highlight">
+      <h3>What makes Neutrino special:</h3>
+      <div class="features-grid">
+          <div class="feature-item">
+              <strong>Privacy-First</strong> - No tracking, no analytics, no external dependencies
+          </div>
+          <div class="feature-item">
+              <strong>Git-Powered CMS</strong> - Edit content through Decap CMS, stored in your Git repository
+          </div>
+          <div class="feature-item">
+              <strong>Modular Themes</strong> - Switch between themes or create your own
+          </div>
+          <div class="feature-item">
+              <strong>SEO Optimized</strong> - Built-in meta tags, sitemaps, and social sharing
+          </div>
+          <div class="feature-item">
+              <strong>Migration Tools</strong> - Import content from other platforms easily
+          </div>
+          <div class="feature-item">
+              <strong>Developer Friendly</strong> - Modern tooling with Sass, Nunjucks, and Eleventy
+          </div>
+      </div>
+    </div>
+    <div class="v-spacer"></div>
+    <div class="next-steps">
+      <p>
+          <strong>Ready to dive deeper?</strong> Check out our comprehensive documentation or explore the 
+          <a href="/admin/">content management interface</a> to start adding your content right away.
+      </p>
+      <p>
+          Have questions? The <a href="/documentation/troubleshooting/">troubleshooting guide</a> 
+          covers common issues, or you can explore our <a href="/documentation/">complete documentation</a>.
+      </p>
+    </div>
   </div>
-</section> #}
+</section>

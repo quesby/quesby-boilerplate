@@ -1,9 +1,4 @@
 .home {
-    .layout-wrapper {
-        main {
-            // justify-content: center;
-        }
-    }
     h1 {
         @include flex-container(column, center, center, wrap);
         span:first-child {
@@ -25,7 +20,16 @@
     #main {
         .container {
             @include flex-container(column, center, center, wrap);
-            min-height: 100vh;        
+            font-size: 1.15rem;
+            text-align: center;
+            max-width: map-get($container-max-widths, tablet);
+        }
+    }
+    #welcome {
+        font-size: 1.15rem;
+        text-align: center;
+        .container {
+            max-width: map-get($container-max-widths, tablet);
         }
     }
 

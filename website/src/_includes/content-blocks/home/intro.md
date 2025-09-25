@@ -1,0 +1,3 @@
+ Welcome to **Neutrino Electron**, a modern static site boilerplate built with privacy and performance in mind. This template serves as a lightweight, feature-rich starting point for anyone looking to build a personal website, blog, or documentation site with **Eleventy** and **Decap CMS**.
+
+**Neutrino** comes with a powerful set of integrations already configured and ready to use. You can customize your setup with our modular theme system, content management tools, and migration utilities to create the perfect site for your needs. 

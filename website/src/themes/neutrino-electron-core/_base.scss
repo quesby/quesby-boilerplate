@@ -273,6 +273,16 @@ button {
     border-radius: $borderRadius-small;
     padding: 1em 2em;
 }
+code {
+    font-family: $font-mono;
+    font-size: .8em;
+    font-weight: 300;
+    color: var(--text-fg);
+    background-color: var(--site-bg-secondary);
+    border-radius: $borderRadius-small;
+    border: 1px solid var(--border);
+    padding: 0.1em 0.25em;
+}
 .expressive-code {
     margin-bottom: $margin * 2;
 }
