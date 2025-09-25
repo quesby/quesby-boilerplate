@@ -13,58 +13,11 @@
   font-stretch: 75% 125%;
 }
 
-$typo-header-items: (
-  style: normal,
-  variant: normal,
-  weight: 400,
-  size: 1.2rem,
-  lineHeight: 1,
-  family: $font-headers,
-  transform: uppercase
-);
-$typo-slogans: (
-  style: normal,
-  variant: normal,
-  weight: 700,
-  size: 2.75rem,
-  lineHeight: 1,
-  family: $font-slogans,
-  transform: uppercase
-);
-$typo-section-titles: (
-  style: normal,
-  variant: normal,
-  weight: 300,
-  size: 4rem,
-  lineHeight: 1,
-  family: $font-headers,
-  transform: uppercase
-);
-$typo-title-2: (
-  style: normal,
-  variant: normal,
-  weight: 100,
-  size: 6rem,
-  lineHeight: 1,
-  family: $font-headers,
-);
-$typo-title-4: (
-  style: normal,
-  variant: normal,
-  weight: 100,
-  size: 2.5rem,
-  lineHeight: 1,
-  family: $font-headers,
-);
-
 body {
     font-family: $font-text;
+    font-size: clamp(16px, 0.9rem + 0.5vw, 19px);
     font-weight: 300;
     font-style: normal;
-    font-size: 18px;
-    @include respond-to(laptop) {
-      font-size: 16px;
-    }
 }
 p {
   font-weight: 300;
@@ -72,34 +25,22 @@ p {
   margin-bottom: .25rem;
 }
 
-// Better scaling ratios (max 50% increase instead of 100%+)
 h1 {
-  font-size: 2.5rem;    // Mobile
-  @include respond-to(tablet) { font-size: 3rem; }    // +20%
-  @include respond-to(laptop) { font-size: 3.5rem; }  // +17%
-  @include respond-to(desktop) { font-size: 4rem; }   // +14%
+  font-size: clamp(1.5rem, 1.2rem + 2.4vw, 3rem);
 }
 
 h2 {
-  font-size: 2rem;      // Mobile  
-  @include respond-to(tablet) { font-size: 2.25rem; } // +12.5%
-  @include respond-to(laptop) { font-size: 2.5rem; }  // +11%
-  @include respond-to(desktop) { font-size: 2.75rem; } // +10%
+  font-size: clamp(1.25rem, 1rem + 1.6vw, 2rem);
 }
 
 h3 {
-  font-size: 1.5rem;    // Mobile
-  @include respond-to(tablet) { font-size: 1.75rem; } // +17%
-  @include respond-to(laptop) { font-size: 2rem; }    // +14%
-  @include respond-to(desktop) { font-size: 2.25rem; } // +12.5%
+  font-size: clamp(1.125rem, 0.9rem + 1.2vw, 1.75rem);
 }
 
 h4 {
-  font-size: 1.25rem;   // Mobile
-  @include respond-to(tablet) { font-size: 1.375rem; } // +10%
-  @include respond-to(laptop) { font-size: 1.5rem; }   // +9%
-  @include respond-to(desktop) { font-size: 1.625rem; } // +8%
+  font-size: clamp(1rem, 0.8rem + 0.8vw, 1.375rem);
 }
+
 
 h1 { font-weight: 800; } // Heavy - most important
 h2 { font-weight: 700; } // Bold - second level
@@ -125,16 +66,6 @@ body, p {
   line-height: 1.6;  // Better readability than current 1.5
 }
 
-// Current issue: All typography maps use lineHeight: 1 (too tight)
-
-// Fix body font-size (currently decreases on larger screens)
-body {
-  font-size: 16px;  // Mobile
-  @include respond-to(tablet) { font-size: 17px; }  // +6%
-  @include respond-to(laptop) { font-size: 18px; }  // +6%
-  @include respond-to(desktop) { font-size: 19px; } // +6%
-}
-
 a {
   text-decoration: none;
 }
@@ -143,21 +74,4 @@ strong {
 }
 .button {
   font-family: $font-headers;
-}
-
-//classes
-.material-symbols {
-  @include apply-map($typo-material);
-}
-.heading-2 {
-  @include font($typo-title-2);
-}
-.heading-4 {
-  @include font($typo-title-4);
-}
-#slogan {
-  .subtitle {
-    font-size: 2em;
-    font-weight: 200;
-  }
 }
