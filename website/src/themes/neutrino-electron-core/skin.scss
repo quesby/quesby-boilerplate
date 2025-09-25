@@ -1,13 +1,24 @@
 // Core (do not touch in themes)
 @use 'sass:map';
 @use 'sass:color';
-@import "@neutrino/core/sass/core";
 
+// core: reset HTML tags
+@import "@neutrino/core/sass/_reset";
+
+// theme: your variables
 @import "_theme-variables";
+
+// core: mixins and typography
+@import "@neutrino/core/sass/_mixins";
+@import "@neutrino/core/sass/_typography";
+
+// theme: your base styles
 @import "_theme-typography";
 @import "_base";
 @import "_forms";
+@import "_components";
 
+// theme: your main styles
 @import "_theme-header";
 @import "_page";
 @import "_home";
@@ -15,3 +26,5 @@
 @import "_search";
 @import "_documentation";
 @import "_responsive";
+
+

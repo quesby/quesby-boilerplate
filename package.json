@@ -2,7 +2,7 @@
     "name": "neutrino-electron",
     "private": true,
     "version": "0.1.0",
-    "packageManager": "pnpm@9.0.0",
+    "packageManager": "pnpm@10.2.0",
     "scripts": {
         "dev": "pnpm -F @neutrino/website dev",
         "serve": "pnpm -F @neutrino/website serve",
