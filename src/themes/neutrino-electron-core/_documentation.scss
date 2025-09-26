@@ -70,8 +70,12 @@
                 // gap: $margin * 2;
                 .content {
                     padding-top: $padding;
+                    .last-updated {
+                        font-size: 0.85rem;
+                        text-align: right;
+                    }
                     h1 {
-                        padding-top: $padding * 4;
+                        padding-top: $padding;
                     }
                     h2 {
                         scroll-margin-top: 2rem; // Offset for fixed header
@@ -93,7 +97,6 @@
                     position: sticky;
                     top: 85px;
                     height: fit-content;
-                    // padding: ($padding * 2) $padding;
                 }
             }
         }
@@ -213,22 +216,8 @@
         }
     }
     @include respond-to(tablet) {
-        .intro {
-            // @include flex-container(row, center, center, wrap);
-            // .flex-image {
-            //     width: 50%;
-            //     height: auto;
-            //     padding: $padding 0;
-            //     margin-right: $margin * 2;
-            //     img {
-            //         width: 100%;
-            //         height: auto;
-            //         object-fit: cover;
-            //     }
-            // }
-            // .flex-content {
-            //     width: 50%;
-            // }
+        aside {
+            height: 90vh !important;
         }
     }
 }
