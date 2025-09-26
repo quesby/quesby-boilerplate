@@ -53,6 +53,8 @@ The system supports the following frontmatter fields:
 | `noindex` | Boolean | Exclude from search engines | `false` |
 | `postType` | String | Open Graph type (article, website) | `website` |
 
+> **Note**: For detailed frontmatter configuration, see the [Content Management Guide](./content-management.md#frontmatter-schema).
+
 ## Usage Examples
 
 ### Basic Page
@@ -86,6 +88,50 @@ noindex: true
 ---
 ```
 
+## Complete HTML Output Example
+
+Here's what the generated HTML looks like for a blog post:
+
+```html
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Complete Guide: Building Amazing Websites in 2024</title>
+  <meta name="description" content="Learn the secrets of modern web development">
+  <meta name="keywords" content="web development, websites, programming">
+  <link rel="canonical" href="https://yourdomain.com/blog/amazing-websites">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Complete Guide: Building Amazing Websites in 2024">
+  <meta property="og:description" content="Learn the secrets of modern web development">
+  <meta property="og:image" content="https://yourdomain.com/images/amazing-websites.jpg">
+  <meta property="og:url" content="https://yourdomain.com/blog/amazing-websites">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Your Site Name">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yourhandle">
+  <meta name="twitter:title" content="Complete Guide: Building Amazing Websites in 2024">
+  <meta name="twitter:description" content="Learn the secrets of modern web development">
+  <meta name="twitter:image" content="https://yourdomain.com/images/amazing-websites.jpg">
+  
+  <!-- Additional Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Your Name">
+  <meta name="language" content="en-US">
+</head>
+<body>
+  <!-- Page content -->
+</body>
+</html>
+```
+```
+
 ## Generated Meta Tags
 
 The system automatically generates the following meta tags:
@@ -115,6 +161,12 @@ The system automatically generates the following meta tags:
 - `twitter:description` - Page description
 - `twitter:image` - Social sharing image (if provided)
 
+**Twitter Card Types:**
+- **`summary`**: Small card with title, description, and small image (120x120px)
+- **`summary_large_image`**: Large card with title, description, and large image (1200x630px)
+
+> **Note**: The system uses `summary_large_image` by default for better social media engagement.
+
 ## Advanced Features
 
 ### Fallback System
@@ -122,8 +174,8 @@ The system automatically generates the following meta tags:
 The SEO system uses an intelligent fallback hierarchy:
 
 1. **Title**: `seoTitle` → `postTitle` → `title` → `site.name`
-2. **Description**: `postDescription` → `description` → `site.description`
-3. **Image**: `postImage` → `image` → `site.socialImage`
+2. **Description**: `description` → `site.description`
+3. **Image**: `image` → `site.socialImage`
 
 ### Image Handling
 
@@ -136,6 +188,52 @@ Images are automatically processed:
 
 Control search engine indexing:
 - `noindex: true` - Excludes page from search engines
+
+### Structured Data (JSON-LD)
+
+The system includes structured data for better search engine understanding:
+
+**Blog Post Example:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Complete Guide: Building Amazing Websites in 2024",
+  "description": "Learn the secrets of modern web development",
+  "image": "https://yourdomain.com/images/amazing-websites.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Your Name"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Site Name",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yourdomain.com/assets/images/logo.png"
+    }
+  },
+  "datePublished": "2024-01-15",
+  "dateModified": "2024-01-15"
+}
+```
+
+**Website Example:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Your Site Name",
+  "url": "https://yourdomain.com",
+  "description": "Your site description",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Site Name"
+  }
+}
+```
+
+> **Note**: Structured data is automatically generated based on content type and frontmatter fields.
 - `noindex: false` or omitted - Allows indexing (default)
 
 ## SEO Filters
@@ -143,11 +241,24 @@ Control search engine indexing:
 The system provides several Nunjucks filters for advanced usage:
 
 ### `canonical`
-Generate canonical URLs:
+Generate canonical URLs with proper handling:
+
 {% raw %}
 ```twig
 <link rel="canonical" href="{{ page.url | canonical: site.url }}">
 ```
+{% endraw %}
+
+**Canonical URL Handling:**
+- **Trailing Slash**: Automatically adds trailing slash to URLs
+- **Query Parameters**: Removes query parameters for clean canonical URLs
+- **Protocol**: Uses HTTPS if `site.url` uses HTTPS
+- **Domain**: Converts relative URLs to absolute using `site.url`
+
+**Examples:**
+- `page.url = "/blog/post"` → `https://yourdomain.com/blog/post/`
+- `page.url = "/about?ref=home"` → `https://yourdomain.com/about/`
+- `page.url = "/contact/"` → `https://yourdomain.com/contact/`
 
 ### `seoTitle`
 Build SEO titles with site name:
@@ -240,14 +351,14 @@ The SEO system is designed to be lightweight and fast:
 - Minimal impact on page load speed
 - Optimized for static site generation
 
-## Future Enhancements
+## Additional Features
 
-Planned improvements include:
-- JSON-LD structured data support
-- Automatic sitemap generation
-- Advanced social media optimization
-- SEO analytics integration
-- A/B testing for meta descriptions
+The SEO system also includes:
+
+- **Automatic Sitemap Generation**: XML sitemap for search engines
+- **Robots.txt**: Automatic generation with proper directives
+- **Social Media Optimization**: Open Graph and Twitter Cards
+- **Performance**: Zero JavaScript overhead - all SEO is static
 
 ---
 

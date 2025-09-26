@@ -14,7 +14,15 @@ lastUpdated: "2025-09-12"
 
 This comprehensive guide covers all aspects of content management in Neutrino, from basic content creation to advanced CMS integration and workflow management.
 
-## Content Architecture
+## Quick Navigation
+
+- **[Content Basics](#content-basics)** - Content types, structure, and ULID system
+- **[CMS Integration](#cms-integration)** - Decap CMS setup and workflow
+- **[Media & Assets](#media--assets)** - Images, videos, and file handling
+- **[SEO & Performance](#seo--performance)** - Search optimization and metadata
+- **[Migration & Workflow](#content-migration)** - Importing content and version control
+
+## Content Basics
 
 ### Content Types
 
@@ -82,15 +90,6 @@ Neutrino uses **ULID (Universally Unique Lexicographically Sortable Identifier)*
 - **Collision-resistant**: Extremely low probability of duplicates
 
 ### ULID Benefits
-
-```javascript
-// Example ULID: 01J4QW0Z9K6QH8E6Z2GQW7C1ZR
-// Breakdown:
-// 01J4QW0Z9K6QH8E6Z2GQW7C1ZR
-// ^^^^^^^^^^^^ ^^^^^^^^^^^^^^
-// Timestamp    Randomness
-// (48 bits)    (80 bits)
-```
 
 **Advantages:**
 - **Sortable**: Natural chronological ordering
@@ -168,11 +167,13 @@ status: "completed"                 # Project status
 ---
 ```
 
-## Decap CMS Integration
+## CMS Integration
 
-### Configuration
+> **Note**: For detailed CMS configuration, see the [Configuration Guide](./configuration.md#decap-cms-configuration).
 
-Decap CMS is configured in `src/admin/config.yml`:
+### Basic Setup
+
+Decap CMS is pre-configured in `src/admin/config.yml` with:
 
 ```yaml
 backend:
@@ -405,7 +406,7 @@ src/content/documentation/content-management.md
 - **Avoid special characters** in directory names
 - **Use consistent structure** across content types
 
-## Media Management
+## Media & Assets
 
 ### Media Directory Structure
 
@@ -653,7 +654,32 @@ git push origin feature/new-post
 # Create pull request for review
 ```
 
-## SEO and Metadata
+#### External Content Repository
+
+Neutrino supports external content repositories for team collaboration:
+
+```bash
+# Set external content path
+echo 'NEUTRINO_CONTENT_PATH=/path/to/content/repo' >> .env
+
+# Work with separate content repo
+cd /path/to/content/repo
+git checkout -b feature/new-post
+# Edit content files
+git add posts/new-post/
+git commit -m "Add new blog post: Post Title"
+git push origin feature/new-post
+```
+
+**Benefits of External Content Repo:**
+- **Team collaboration**: Content editors work independently
+- **Content versioning**: Separate version control for content
+- **Deployment flexibility**: Content can be updated without code changes
+- **Access control**: Different permissions for content vs. code
+
+## SEO & Performance
+
+> **Important**: While technical SEO is important, **content quality remains the most critical factor** for search engine rankings. Focus on creating valuable, relevant content that serves your audience.
 
 ### SEO Fields
 
@@ -689,6 +715,8 @@ Neutrino automatically generates structured data for:
 
 ### Importing from Other Systems
 
+> **⚠️ Migration Limitations**: Migration tools may not preserve all custom fields, media paths, or formatting. Always review and test migrated content before going live.
+
 #### WordPress Export
 ```bash
 # Convert WordPress XML to Markdown
@@ -696,12 +724,24 @@ npm install wordpress-export-to-markdown
 npx wordpress-export-to-markdown export.xml output/
 ```
 
+**WordPress Migration Limitations:**
+- Custom fields may be lost
+- Media paths need manual adjustment
+- Plugin-specific content may not convert
+- Comments and custom post types require manual handling
+
 #### Ghost Export
 ```bash
 # Convert Ghost JSON to Markdown
 npm install ghost-to-markdown
 npx ghost-to-markdown ghost-export.json output/
 ```
+
+**Ghost Migration Limitations:**
+- Custom fields and tags may be lost
+- Media URLs need manual adjustment
+- Custom post types require manual handling
+- Comments and subscribers data not included
 
 ### Bulk Content Operations
 

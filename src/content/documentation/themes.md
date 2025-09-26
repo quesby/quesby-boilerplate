@@ -54,20 +54,16 @@ Configure your active theme in `src/_data/site.json`:
 
 ```json
 {
-  "name": "Neutrino - Electron",
-  "url": "https://theoddape.it",
-  "description": "An Eleventy boilerplate with Decap CMS",
-  "logo": "/assets/images/neutrino-logo.svg",
-  "favicon": "/assets/images/neutrino-logo.png",
-  "theme": "neutrino-brand-website",
-  "defaultVisualTheme": "dark",
-  "contentPath": "${NEUTRINO_CONTENT_PATH}"
+  "theme": "neutrino-electron-core",
+  "defaultVisualTheme": "dark"
 }
 ```
 
 **Available Themes:**
 - `neutrino-electron-core` (default)
 - `neutrino-brand-website`
+
+> **Note**: For detailed configuration options, see the [Configuration Guide](./configuration.md#theme-configuration).
 
 ### 2. Visual Theme Toggle
 
@@ -78,6 +74,29 @@ The system supports three visual themes that users can toggle:
 - **Sepia Theme**: Warm, paper-like appearance
 
 The theme toggle is handled by JavaScript in `src/assets/js/togglemode.js` and persists user preference in localStorage.
+
+**JavaScript Implementation:**
+```javascript
+// assets/js/togglemode.js
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  
+  // Apply saved theme
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  themeToggle?.addEventListener('click', function() {
+    const themes = ['light', 'dark', 'sepia'];
+    const currentIndex = themes.indexOf(currentTheme);
+    const nextTheme = themes[(currentIndex + 1) % themes.length];
+    
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  });
+});
+```
+
+**CSS Fallback**: Users without JavaScript will see the `defaultVisualTheme` from `site.json`.
 
 ## Theme Architecture
 
@@ -116,6 +135,9 @@ $theme-light: (
   bg: oklch(100% 0 0),
   // ... more colors
 );
+```
+
+> **SCSS Compatibility Note**: `color.adjust()` requires Dart Sass 1.27.0+. For older versions, use `lighten()`, `darken()`, or `mix()` functions instead.
 
 $theme-dark: (
   text-fg: oklch(93% 0 0),
@@ -174,6 +196,9 @@ npm run build:css
 npm run serve
 ```
 
+> **Note**: For detailed development workflow, see the [Development Guide](./development.md#development-workflow).
+```
+
 ### 2. Build Process
 
 The build system:
@@ -202,13 +227,23 @@ To create a new theme:
 
 ### 2. Essential Files
 
-Every theme must include:
-
-- `skin.scss` - Main entry point
-- `_theme-variables.scss` - Color definitions
+**Required Files (Hard Requirements):**
+- `skin.scss` - Main entry point (imports all other files)
+- `_theme-variables.scss` - Color definitions for all visual themes
 - `_theme-typography.scss` - Typography system
 - `_base.scss` - Base styles and CSS variables
+
+**Optional Files (Theme-specific):**
+- `_blog.scss` - Blog-specific styles (only if theme includes blog)
+- `_documentation.scss` - Documentation styles (only if theme includes docs)
+- `_home.scss` - Homepage styles (only if theme has custom homepage)
+- `_components.scss` - Reusable components
+- `_forms.scss` - Form elements
+- `_page.scss` - General page styles
 - `_responsive.scss` - Responsive breakpoints
+- `_theme-header.scss` - Header component
+
+> **Note**: A minimal theme only needs the 4 required files. Optional files can be omitted if not needed.
 
 ### 3. Color Customization
 
@@ -297,6 +332,8 @@ Use the responsive mixins and breakpoints:
 2. Run `npm run serve` for development
 3. Modify SCSS files in your theme directory
 4. Changes are automatically compiled and reloaded
+
+> **Note**: For detailed development workflow, see the [Development Guide](./development.md#development-workflow).
 
 ### 2. Testing Themes
 
@@ -390,12 +427,14 @@ The theme system integrates with Eleventy through:
 - **Asset Pipeline**: Compiled CSS is served as static assets
 - **Template Variables**: Theme information accessible in Nunjucks templates
 
-## Future Enhancements
+## Planned Ideas
 
-Planned improvements to the theme system:
+These are potential future improvements to the theme system (not commitments):
 
 - **Theme Marketplace**: Community-driven theme repository
 - **Visual Theme Builder**: Web-based theme creation tool
 - **Advanced Color Tools**: Color palette generators and contrast checkers
 - **Theme Validation**: Automated testing for theme compatibility
 - **Performance Monitoring**: Built-in CSS performance metrics
+
+> **Note**: These are ideas for future development. Implementation depends on community interest and project priorities.

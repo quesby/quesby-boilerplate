@@ -6,13 +6,43 @@ aside: aside-documentation.njk
 toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
-order: 10
+order: 11
 lastUpdated: "2025-09-12"
 ---
 
 # API Reference
 
 This comprehensive API reference covers all available functions, filters, shortcodes, and configuration options in Neutrino.
+
+> **Note**: This is a complete developer reference. For quick access, see the [API Cheat Sheet](#api-cheat-sheet) below.
+
+## API Cheat Sheet
+
+### Quick Reference - Most Used Functions
+
+**Filters:**
+- `{{ title | seoTitle: site.name }}` - SEO title with site name
+- `{{ page.url | canonical: site.url }}` - Canonical URL
+- `{{ content | absoluteUrl: site.url }}` - Convert relative to absolute URLs
+- `{{ date | formatDate: "YYYY-MM-DD" }}` - Format dates
+- `{{ content | excerpt: 160 }}` - Generate excerpts
+
+**Shortcodes:**
+- `{% image "path", "alt", "class" %}` - Responsive image
+- `{% svg "path", "class" %}` - Inline SVG
+- `{% code "language" %}...{% endcode %}` - Code block with syntax highlighting
+
+**Global Data:**
+- `{{ site.name }}` - Site name
+- `{{ site.url }}` - Site URL
+- `{{ site.theme }}` - Current theme
+- `{{ collections.posts }}` - All blog posts
+- `{{ collections.documentation }}` - All documentation pages
+
+**Environment Variables:**
+- `NEUTRINO_CONTENT_PATH` - Content directory path
+- `THEME` - Active theme name
+- `NODE_ENV` - Environment (development/production)
 
 ## Table of Contents
 
@@ -316,6 +346,8 @@ Global site configuration from `src/_data/site.json`.
 {{ site.contentPath }}    // "${NEUTRINO_CONTENT_PATH}"
 ```
 
+> **Note**: For detailed configuration options, see the [Configuration Guide](./configuration.md#site-configuration).
+
 ### Theme Data
 
 #### **`theme` Variable**
@@ -459,8 +491,8 @@ Embeds SVG files directly in HTML with optional CSS classes.
 <!doctype html>
 <html lang="en" class="{{ site.defaultVisualTheme }}">
 <head>
-  <title>{{ postTitle or title }}</title>
-  <meta name="description" content="{{ postDescription or description | safe }}">
+  <title>{{ seoTitle or title }}</title>
+  <meta name="description" content="{{ description | safe }}">
   <!-- SEO and social meta tags -->
 </head>
 <body class="{{ postClass or class }}">
@@ -483,7 +515,7 @@ Embeds SVG files directly in HTML with optional CSS classes.
 {% raw %}
 <!-- layouts/single-post.njk -->
 {% extends "layouts/base.njk" %}
-{% set postTitle = "Neutrino - Electron | " + title %}
+{% set seoTitle = "Neutrino - Electron | " + title %}
 {% set postClass = "single-post" %}
 {% set postType = "article" %}
 
@@ -531,71 +563,33 @@ Embeds SVG files directly in HTML with optional CSS classes.
 
 ## Decap CMS API
 
-### Configuration
+### Custom Widgets
 
-#### **`src/admin/config.yml`**
+#### **ULID Widget**
 
-Main CMS configuration file.
+Custom widget for generating ULID identifiers:
 
 ```yaml
-backend:
-  name: git-gateway
-  branch: main
-  repo: "username/repository"
-  site_domain: "yourdomain.com"
-
-# Local development
-local_backend: true
-
-media_folder: "src/content/media"
-public_folder: "/content/media"
-
+# In src/admin/config.yml
 collections:
   - name: "posts"
-    label: "Blog Posts"
-    folder: "src/content/posts"
-    create: true
-    slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "ULID", name: "ulid", widget: "ulid"}
 ```
 
-### Backend Options
-
-#### **Git Gateway**
-
-```yaml
-backend:
-  name: git-gateway
-  branch: main
-  repo: "username/repository"
-  site_domain: "yourdomain.com"
+**Widget Implementation:**
+```javascript
+// src/admin/ulid-widget.js
+CMS.registerWidget({
+  name: 'ulid',
+  controlComponent: ULIDControl,
+  previewComponent: ULIDPreview,
+});
 ```
 
-#### **Test Repository (Development)**
+> **Note**: For complete Decap CMS configuration, see the [Configuration Guide](./configuration.md#decap-cms-configuration).
 
-```yaml
-backend:
-  name: test-repo
-  branch: main
-```
-
-#### **Proxy Backend**
-
-```yaml
-backend:
-  name: proxy
-  proxy_url: "https://your-cms-backend.com/api/v1"
-  branch: main
-```
-
-### Widget Types
+## Build Scripts
 
 #### **String Widget**
 
@@ -693,7 +687,7 @@ collections:
 {
   "scripts": {
     "dev": "eleventy --serve",
-    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
+    "serve": "concurrently \"pnpm run css:watch\" \"npx @11ty/eleventy --serve\"",
     "serve:no-watch": "npx @11ty/eleventy --watch"
   }
 }
@@ -711,7 +705,7 @@ collections:
   "scripts": {
     "build": "eleventy",
     "build:css": "node scripts/build.js",
-    "build:prod": "NODE_ENV=production npm run build"
+    "build:prod": "NODE_ENV=production pnpm run build"
   }
 }
 ```
@@ -1269,17 +1263,20 @@ const command = `sass --no-source-map --style=compressed src/sass:src/assets/css
 
 #### **Asset Optimization**
 
+```javascript
+// Image optimization (available but not enabled by default)
+// To enable, uncomment and install @11ty/eleventy-img
+eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes) {
+  let stats = await Image(src, {
+    widths: [300, 600, 900],
+    formats: ["webp", "jpeg"],
+    outputDir: "./_site/assets/images/"
+  });
+  return `<img src="${stats.webp[0].url}" alt="${alt}" sizes="${sizes}">`;
+});
 ```
-// Image optimization (commented out in current config)
-// eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes) {
-//   let stats = await Image(src, {
-//     widths: [300, 600, 900],
-//     formats: ["webp", "jpeg"],
-//     outputDir: "./_site/assets/images/"
-//   });
-//   return `<img src="${stats.webp[0].url}" alt="${alt}" sizes="${sizes}">`;
-// });
-```
+
+> **Note**: Image optimization is available but requires `@11ty/eleventy-img` package. See [Development Guide](./development.md#image-optimization) for setup.
 
 ## Best Practices
 

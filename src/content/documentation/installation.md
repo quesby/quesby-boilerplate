@@ -14,13 +14,65 @@ lastUpdated: "2025-09-12"
 
 This guide will help you install and set up Neutrino, a privacy-first static site boilerplate built with Eleventy and Decap CMS.
 
+## Quick Start
+
+For experienced developers who want to get started immediately:
+
+```bash
+# 1. Clone and install
+git clone https://github.com/greenpandastudio/neutrino-electron.git
+cd neutrino-electron
+pnpm install
+
+# 2. Start development
+pnpm run serve
+
+# 3. Open browser
+open http://localhost:8080
+```
+
+> **New to static sites?** Follow the detailed guide below for step-by-step instructions.
+
 ## Prerequisites
 
 Before installing Neutrino, ensure you have the following installed on your system:
 
 - **Node.js** (version 18 or higher)
-- **npm** (comes with Node.js)
+- **pnpm** (recommended) or **npm** (comes with Node.js)
 - **Git** (for version control)
+
+### Package Manager Options
+
+Neutrino supports multiple package managers. Choose the one that best fits your workflow:
+
+| Package Manager | Speed | Disk Usage | Lock File | Recommended For |
+|----------------|-------|------------|-----------|-----------------|
+| **pnpm** | ⚡ Fast | 💾 Efficient | `pnpm-lock.yaml` | New projects, teams |
+| **npm** | 🐌 Slower | 📦 Standard | `package-lock.json` | Node.js defaults |
+| **yarn** | ⚡ Fast | 📦 Standard | `yarn.lock` | Existing yarn projects |
+
+#### Using Corepack (Recommended)
+
+Corepack is the easiest way to manage package managers automatically:
+
+```bash
+# Enable corepack (comes with Node.js 16.10+)
+corepack enable
+
+# The project will automatically use pnpm based on package.json configuration
+```
+
+#### Manual Installation
+
+If you prefer to install pnpm manually:
+
+```bash
+# Install pnpm globally
+npm install -g pnpm
+
+# Or using corepack
+corepack prepare pnpm@latest --activate
+```
 
 ### Checking Prerequisites
 
@@ -28,13 +80,22 @@ Verify your installations:
 
 ```bash
 node --version
-npm --version
+pnpm --version  # or npm --version
 git --version
 ```
 
 ## Installation Methods
 
-### Method 1: Clone from Repository
+Choose the method that best fits your workflow:
+
+| Method | Best For | Git History | Updates |
+|--------|----------|-------------|---------|
+| **Clone** | Development, contributions | ✅ Full history | `git pull` |
+| **Download** | Quick setup, production | ❌ No history | Manual download |
+
+### Method 1: Clone from Repository (Recommended)
+
+**Best for**: Developers, contributors, and anyone who wants to stay updated
 
 1. **Clone the repository:**
    ```bash
@@ -44,54 +105,99 @@ git --version
 
 2. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install    # Recommended: fast and efficient
+   # npm install   # Alternative: standard Node.js
+   # yarn install  # Alternative: yarn projects
    ```
+
+> **Note**: All examples in this guide show pnpm commands. Replace `pnpm` with `npm` or `yarn` if using a different package manager.
 
 ### Method 2: Download and Extract
 
-1. Download the latest release from the GitHub repository
+**Best for**: Quick setup, production deployments, or when you don't need git history
+
+1. Download the latest release from the [GitHub repository](https://github.com/greenpandastudio/neutrino-electron/releases)
 2. Extract the archive to your desired location
 3. Navigate to the project directory
-4. Run `npm install`
+4. Run `pnpm install` (or `npm install` / `yarn install`)
 
 ## Environment Configuration
 
 ### Setting Up Content Directory
 
-Neutrino supports external content management through environment variables:
+Neutrino supports external content management through multiple configuration methods:
+
+#### Configuration Priority
+
+The system checks configurations in this order (first found wins):
+
+1. **Environment variable** (`.env` file) - Highest priority
+2. **site.json** configuration - Fallback
+3. **Default** (`src/content`) - If neither is set
+
+#### Method 1: Environment Variable (Recommended)
 
 1. **Create a `.env` file** in the project root:
    ```bash
    touch .env
    ```
 
-2. **Configure the content path** in your `.env` file:
+2. **Configure the content path**:
    ```bash
    NEUTRINO_CONTENT_PATH=/path/to/your/content/directory
    ```
 
-   If you don't set this variable, Neutrino will use the default `content` directory.
+#### Method 2: site.json Configuration
 
-3. **Alternative: Edit site.json**
-   
-   You can also configure the content path directly in `src/_data/site.json`:
+Edit `src/_data/site.json`:
    ```json
    {
      "contentPath": "/absolute/path/to/your/content"
    }
    ```
 
+> **Tip**: Use environment variables for different environments (dev/staging/prod) and site.json for project defaults.
+
 ### Theme Configuration
 
-Set your preferred theme using the `THEME` environment variable:
+Neutrino comes with built-in themes and supports custom themes:
 
+#### Built-in Themes
+
+| Theme | Description | Location |
+|-------|-------------|----------|
+| `neutrino-electron-core` | Modern, minimalist design | `src/themes/neutrino-electron-core/` |
+| `neutrino-brand-website` | Brand-focused with enhanced visuals | `src/themes/neutrino-brand-website/` |
+
+#### Setting the Theme
+
+**Method 1: Environment Variable (Recommended)**
 ```bash
 THEME=neutrino-electron-core
 ```
 
-Available themes:
-- `neutrino-electron-core` (default)
-- `neutrino-brand-website`
+**Method 2: site.json Configuration**
+```json
+{
+  "theme": "neutrino-electron-core"
+}
+```
+
+#### Creating Custom Themes
+
+1. **Copy an existing theme**:
+   ```bash
+   cp -r src/themes/neutrino-electron-core src/themes/my-custom-theme
+   ```
+
+2. **Modify theme files** in `src/themes/my-custom-theme/`
+
+3. **Set your theme**:
+   ```bash
+   THEME=my-custom-theme
+   ```
+
+> **Learn more**: See [Theme Development Guide](/documentation/themes/) for detailed customization instructions.
 
 ## Development Setup
 
@@ -100,7 +206,7 @@ Available themes:
 Run the development server with CSS watching:
 
 ```bash
-npm run serve
+pnpm run serve
 ```
 
 This command will:
@@ -112,17 +218,17 @@ This command will:
 
 - **Development without CSS watching:**
   ```bash
-  npm run dev
+  pnpm run dev
   ```
 
 - **CSS-only watching:**
   ```bash
-  npm run watch:css
+  pnpm run css:watch
   ```
 
 - **Build CSS only:**
   ```bash
-  npm run build:css
+  pnpm run css:build
   ```
 
 ## Building for Production
@@ -132,7 +238,7 @@ This command will:
 Generate the production build:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 This will:
@@ -155,10 +261,18 @@ The built site will be available in the `_site` directory, ready for deployment 
    Follow the [Decap CMS documentation](https://decapcms.org/docs/authentication-backends/) to set up authentication for your chosen backend
 
 3. **Content structure:**
-   - Posts: `src/content/posts/`
-   - Pages: `src/content/pages/`
-   - Projects: `src/content/projects/`
-   - Documentation: `src/content/documentation/`
+   
+   Neutrino automatically creates collections based on your content structure:
+
+   | Collection | Directory | Required | Description |
+   |------------|-----------|----------|-------------|
+   | **Posts** | `src/content/posts/` | ✅ Yes | Blog articles and news |
+   | **Documentation** | `src/content/documentation/` | ✅ Yes | Help and guides |
+   | **Pages** | `src/content/pages/` | ❌ Optional | Static pages (About, Contact) |
+   | **Projects** | `src/content/projects/` | ❌ Optional | Portfolio showcases |
+   | **News** | `src/content/news/` | ❌ Optional | News articles |
+
+   > **Note**: Only `posts` and `documentation` are required. Other collections are optional and can be added as needed.
 
 ### Manual Content Management
 
@@ -168,52 +282,128 @@ You can also manage content manually by editing Markdown files in the appropriat
 
 ### Common Issues
 
-1. **Content directory not found:**
-   - Verify the path in your `.env` file or `site.json`
-   - Ensure the directory exists and is accessible
+#### 1. Content Directory Not Found
+**Error**: `❌ Content path not found`
 
-2. **CSS not compiling:**
-   - Check that all SCSS files are valid
-   - Ensure the theme directory exists
+**Solutions**:
+```bash
+# Check your configuration
+cat .env | grep NEUTRINO_CONTENT_PATH
+cat src/_data/site.json | grep contentPath
 
-3. **Port already in use:**
-   - Eleventy will automatically find an available port
-   - Check the terminal output for the actual URL
+# Verify directory exists
+ls -la /path/to/your/content/directory
+```
+
+#### 2. CSS Not Compiling
+**Error**: Styles not updating or SCSS errors
+
+**Solutions**:
+```bash
+# Check SCSS syntax
+pnpm run css:build
+
+# Verify theme exists
+ls -la src/themes/
+
+# Restart CSS watcher
+pnpm run css:watch
+```
+
+#### 3. Port Already in Use
+**Error**: Port 8080 is already in use
+
+**Solutions**:
+- Eleventy automatically finds an available port
+- Check terminal output for the actual URL
+- Or specify a different port: `pnpm run dev --port 3000`
+
+#### 4. Package Manager Issues
+**Error**: Command not found (pnpm/npm/yarn)
+
+**Solutions**:
+```bash
+# Enable corepack
+corepack enable
+
+# Or install manually
+npm install -g pnpm
+```
 
 ### Getting Help
 
-- Check the [troubleshooting guide](./troubleshooting.md)
-- Review the [configuration documentation](./configuration.md)
-- Open an issue on the GitHub repository
+- **Documentation**: [Troubleshooting Guide](./troubleshooting.md) | [Configuration Guide](./configuration.md)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/greenpandastudio/neutrino-electron/issues)
+- **Discussions**: [Community support](https://github.com/greenpandastudio/neutrino-electron/discussions)
+- **Quick Fixes**: Check the [Common Issues](./troubleshooting.md#common-issues) section below
 
 ## Next Steps
 
-After successful installation:
+After successful installation, here's what to do next:
 
-1. Read the [configuration guide](./configuration.md)
-2. Explore the [theme system](./themes.md)
-3. Set up [content management](./content-management.md)
-4. Learn about [deployment options](./deployment.md)
+### Immediate Actions
+1. **Verify installation**: Check that `http://localhost:8080` loads correctly
+2. **Explore the admin**: Visit `http://localhost:8080/admin` to see the CMS
+3. **Check content**: Browse the sample posts and documentation
+
+### Learning Path
+1. **[Configuration Guide](./configuration.md)** - Customize your site settings
+2. **[Theme System](./themes.md)** - Customize appearance and create themes
+3. **[Content Management](./content-management.md)** - Learn to manage content
+4. **[Development Guide](./development.md)** - Advanced customization
+5. **[Deployment Guide](./deployment.md)** - Publish your site
+
+### Quick Wins
+- **Change site name**: Edit `src/_data/site.json`
+- **Add your content**: Create posts in `src/content/posts/`
+- **Customize theme**: Modify files in `src/themes/neutrino-electron-core/`
+- **Set up CMS**: Configure authentication in `src/admin/config.yml`
 
 ## System Requirements
 
-- **Node.js:** 18.0.0 or higher
-- **npm:** 8.0.0 or higher
+### Minimum Requirements
+- **Node.js:** 18.0.0 or higher (includes corepack)
+- **Package Manager:** pnpm (recommended), npm, or yarn
 - **Memory:** 512MB RAM minimum
 - **Disk Space:** 100MB for the project, additional space for content
+
+### Recommended Setup
+- **Node.js:** 20.0.0 or higher (latest LTS)
+- **Package Manager:** pnpm with corepack
+- **Memory:** 1GB RAM or more
+- **Disk Space:** 500MB+ for development with dependencies
+
+### Corepack Requirements
+
+- **Node.js:** 16.10.0 or higher (corepack included)
+- **Corepack:** Automatically manages package managers
+- **No additional installation required** for pnpm, npm, or yarn
 
 ## Key Dependencies
 
 Neutrino uses modern, well-maintained dependencies:
 
-- **Eleventy:** 3.0+ (Static site generator)
-- **Decap CMS:** Latest (Headless CMS)
-- **Sass:** 1.79+ (CSS preprocessor)
-- **Expressive Code:** 0.41+ (Syntax highlighting)
-- **Markdown-it:** 14.1+ (Markdown processor)
+| Dependency | Version | Purpose |
+|------------|---------|---------|
+| **Eleventy** | 3.0+ | Static site generator |
+| **Decap CMS** | Latest | Headless content management |
+| **Sass** | 1.77+ | CSS preprocessor |
+| **Expressive Code** | 0.41+ | Syntax highlighting |
+| **Markdown-it** | 14.0+ | Markdown processor |
+| **Corepack** | Built-in | Package manager management |
 
 ## Supported Platforms
 
-- Windows 10/11
-- macOS 10.15+
-- Linux (any distribution with Node.js 18+)
+| Platform | Node.js | Corepack | Package Managers |
+|----------|---------|----------|------------------|
+| **Windows 10/11** | ✅ 18.0+ | ✅ 16.10+ | pnpm, npm, yarn |
+| **macOS 10.15+** | ✅ 18.0+ | ✅ 16.10+ | pnpm, npm, yarn |
+| **Linux (any distro)** | ✅ 18.0+ | ✅ 16.10+ | pnpm, npm, yarn |
+
+### Corepack Support
+
+Corepack is supported on all platforms where Node.js 16.10+ is available:
+
+- **Windows:** Full support with PowerShell and Command Prompt
+- **macOS:** Full support with Terminal and iTerm2
+- **Linux:** Full support with bash, zsh, and other shells

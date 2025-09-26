@@ -14,6 +14,23 @@ lastUpdated: "2025-01-20"
 
 Neutrino includes powerful tools to help you migrate content from other platforms and content management systems. These tools are designed to be standalone, configurable, and easy to use.
 
+## 3 Steps in 30 Seconds
+
+1. **Configure** - Set up your migration config
+2. **Test** - Run dry-run to preview changes  
+3. **Import** - Execute the migration
+
+```bash
+# Quick start
+cd tools/legacy-content-importer
+npm install
+cp config.example.yml my-config.yml
+node index.js --config my-config.yml --dry-run
+node index.js --config my-config.yml
+```
+
+> **Supported Platforms**: Jekyll, Hugo, Ghost, WordPress (XML export)
+
 ## Available Tools
 
 ### Legacy Content Importer
@@ -29,6 +46,8 @@ The Legacy Content Importer is a comprehensive tool that converts content from v
 - Backup functionality before import
 - Dry-run mode for safe testing
 - Support for multiple content sources
+
+> **Note**: For detailed information about ULID system and content structure, see the [Content Management Guide](./content-management.md).
 
 ## Quick Start
 
@@ -52,7 +71,7 @@ cp config.example.yml my-config.yml
 Always test with dry-run mode first:
 
 ```bash
-npm run tools:import:config:dry
+node index.js --config my-config.yml --dry-run
 ```
 
 ### 4. Run the Import
@@ -60,8 +79,10 @@ npm run tools:import:config:dry
 When you're satisfied with the test results:
 
 ```bash
-npm run tools:import:config
+node index.js --config my-config.yml
 ```
+
+> **Advanced**: For npm script integration, see [Advanced Usage](#advanced-usage) section.
 
 ## Supported Platforms
 
@@ -111,8 +132,17 @@ fieldMappings:
 
 ### WordPress
 
-For WordPress, first export your content to markdown using a plugin like "WP Markdown Exporter", then:
+**Option 1: Using wordpress-export-to-markdown (Recommended)**
+```bash
+# First, convert WordPress XML to Markdown
+npm install wordpress-export-to-markdown
+npx wordpress-export-to-markdown export.xml wordpress-export/
+```
 
+**Option 2: Using WP Markdown Exporter Plugin**
+Install the "WP Markdown Exporter" plugin in WordPress and export your content.
+
+**Configuration:**
 ```yaml
 # config.yml
 source: "./wordpress-export"
@@ -306,7 +336,9 @@ The tool won't overwrite existing content. Either:
 
 1. Use a different target directory
 2. Remove existing content first
-3. Use the `--force` flag (if available)
+3. Use the `--force` flag to overwrite existing files
+
+> **Note**: The `--force` flag is implemented and will overwrite existing content files. Use with caution and always backup first.
 
 #### "Field mapping errors"
 
@@ -325,6 +357,44 @@ fieldMappings:
 3. Use verbose mode: `node index.js --verbose`
 4. Check the project's GitHub issues
 
+## Advanced Usage
+
+### NPM Scripts Integration
+
+For projects that prefer npm scripts, you can add these to your `package.json`:
+
+```json
+{
+  "scripts": {
+    "tools:import:config": "cd tools/legacy-content-importer && node index.js --config",
+    "tools:import:config:dry": "cd tools/legacy-content-importer && node index.js --config --dry-run"
+  }
+}
+```
+
+**Usage:**
+```bash
+# Dry run
+npm run tools:import:config:dry my-config.yml
+
+# Import
+npm run tools:import:config my-config.yml
+```
+
+### Custom Field Processors
+
+You can extend the tool with custom field processors:
+
+```javascript
+// tools/legacy-content-importer/processors/custom.js
+module.exports = {
+  processCustomField: (value) => {
+    // Your custom processing logic
+    return value.toUpperCase();
+  }
+};
+```
+
 ## Contributing
 
 To contribute to migration tools:
@@ -334,6 +404,30 @@ To contribute to migration tools:
 3. Add your tool to the `tools/` directory
 4. Follow the tool requirements in `tools/README.md`
 5. Submit a pull request
+
+### Tool Requirements
+
+When contributing new migration tools:
+
+- **Language**: JavaScript/Node.js preferred
+- **Structure**: Follow existing tool structure in `tools/legacy-content-importer/`
+- **Documentation**: Include README.md with usage examples
+- **Testing**: Add test cases for your tool
+- **Configuration**: Use YAML configuration files
+- **Error Handling**: Implement proper error messages and logging
+- **CLI**: Support standard flags (`--help`, `--verbose`, `--dry-run`)
+
+### Example Tool Structure
+
+```
+tools/my-migration-tool/
+├── index.js              # Main tool file
+├── config.example.yml    # Example configuration
+├── README.md            # Tool documentation
+├── package.json         # Dependencies
+└── test/                # Test files
+    └── test.js
+```
 
 ## License
 

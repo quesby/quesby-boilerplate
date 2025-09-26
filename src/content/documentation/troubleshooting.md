@@ -14,6 +14,23 @@ lastUpdated: "2025-09-12"
 
 This comprehensive troubleshooting guide covers common issues, error messages, and solutions for Neutrino projects.
 
+## Quick Start - Top 10 Common Issues
+
+**Most frequent problems and quick fixes:**
+
+1. **Build fails** → Check Node.js version (18+), run `pnpm install`
+2. **CSS not loading** → Run `pnpm run css:build` or `pnpm run serve`
+3. **Content not showing** → Check `NEUTRINO_CONTENT_PATH` environment variable
+4. **Theme not applied** → Verify `theme` in `site.json`
+5. **Images not loading** → Check paths start with `/assets/`
+6. **CMS not working** → Verify `admin/config.yml` and GitHub Pages settings
+7. **Site not updating** → Clear cache, check file permissions
+8. **Port already in use** → Use `--port 8081` or kill existing process
+9. **SCSS errors** → Check syntax, run `pnpm run css:build`
+10. **Template errors** → Check Nunjucks syntax, verify data structure
+
+> **Need more details?** See the [Complete Troubleshooting Guide](#complete-troubleshooting-guide) below.
+
 ## Quick Diagnostic Checklist
 
 Before diving into specific issues, run through this quick checklist:
@@ -23,7 +40,7 @@ Before diving into specific issues, run through this quick checklist:
 node --version  # Should be 18 or higher
 
 # 2. Verify dependencies
-npm list --depth=0
+pnpm list --depth=0  # or npm list --depth=0
 
 # 3. Check environment variables
 echo $NEUTRINO_CONTENT_PATH
@@ -32,10 +49,52 @@ echo $NEUTRINO_CONTENT_PATH
 cat src/_data/site.json
 
 # 5. Test build process
-npm run build
+pnpm run build  # or npm run build
 ```
 
-## Installation Issues
+## Debugging Tools
+
+### Eleventy Debug Mode
+
+#### **Enable Debug Logging**
+
+```bash
+# Enable detailed Eleventy logging
+DEBUG=Eleventy* pnpm run serve  # or npm run serve
+
+# Enable specific debug categories
+DEBUG=Eleventy:Template* pnpm run serve
+```
+
+#### **Verbose Output**
+
+```bash
+# Show detailed build information
+pnpm run build --verbose  # or npm run build --verbose
+```
+
+### Browser Developer Tools
+
+#### **Network Tab**
+- Check for 404 errors on assets
+- Verify CSS/JS files are loading
+- Check response headers
+
+#### **Console Tab**
+- Look for JavaScript errors
+- Check for missing dependencies
+- Verify data structure
+
+### External Tools
+
+- **Eleventy Debug**: `npx @11ty/eleventy --debug`
+- **SCSS Linter**: `npx stylelint "src/**/*.scss"`
+- **HTML Validator**: Use W3C Markup Validator
+- **Lighthouse**: Performance and SEO analysis
+
+## Complete Troubleshooting Guide
+
+### Installation Issues
 
 ### Node.js Version Problems
 
@@ -113,6 +172,8 @@ nvm use 18
 /path/to/content
 
 Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH
+
+> **Note**: For detailed content configuration, see the [Content Management Guide](./content-management.md#content-basics).
 ```
 
 **Solutions:**
@@ -199,7 +260,7 @@ grep -r "@import" src/sass/
 grep -r "@import" src/themes/
 
 # 4. Rebuild CSS
-npm run build:css
+pnpm run css:build  # or npm run build:css
 
 # 5. Check for circular imports
 # Look for files importing each other
@@ -265,7 +326,7 @@ echo "# Test" > test.md
 **Solutions:**
 ```bash
 # 1. Generate Expressive Code CSS
-npm run gen:ec-css
+pnpm run gen:ec-css  # or npm run gen:ec-css
 
 # 2. Check if file was created
 ls -la src/assets/css/expressive-code.css
@@ -274,7 +335,7 @@ ls -la src/assets/css/expressive-code.css
 grep -r "expressive-code.css" src/_includes/
 
 # 4. Check build process
-npm run build:css
+pnpm run css:build  # or npm run build:css
 ```
 
 ## Development Server Issues
@@ -354,7 +415,7 @@ cat src/_data/site.json | grep theme
 # Some file systems don't support watching properly
 
 # 5. Use alternative approach
-npm run build:css  # Manual compilation
+pnpm run css:build  # or npm run build:css  # Manual compilation
 ```
 
 ## Content Management Issues
@@ -449,15 +510,14 @@ npm run build
 # 1. Generate ULID manually
 node -e "console.log(require('ulid').ulid())"
 
-# 2. Check ULID format
-# Should be 26 characters: 01J4QW0Z9K6QH8E6Z2GQW7C1ZR
+# 2. Check ULID format (26 characters)
+# Example: 01J4QW0Z9K6QH8E6Z2GQW7C1ZR
 
 # 3. Verify directory structure
 # Create: src/content/posts/[ulid]/index.md
-
-# 4. Check for duplicates
-# Ensure unique ULIDs for each content item
 ```
+
+> **Note**: For detailed ULID system information, see the [Content Management Guide](./content-management.md#ulid-system).
 
 ## Template Issues
 
@@ -645,31 +705,7 @@ npm run build
 # Clear CDN cache if using one
 ```
 
-## Debugging Tools
-
-### Eleventy Debug Mode
-
-#### **Enable Debug Logging**
-
-```bash
-# Enable detailed Eleventy logging
-DEBUG=Eleventy* npm run serve
-
-# Enable specific debug categories
-DEBUG=Eleventy:Template npm run serve
-DEBUG=Eleventy:Collection npm run serve
-DEBUG=Eleventy:Transform npm run serve
-```
-
-#### **Verbose Build Output**
-
-```bash
-# Verbose build with detailed output
-npm run build -- --verbose
-
-# Dry run to check what would be built
-npm run build -- --dryrun
-```
+## Prevention Strategies
 
 ### Browser Developer Tools
 
@@ -738,6 +774,8 @@ find src/content -name "index.md" | wc -l
 /path/to/content
 
 Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH
+
+> **Note**: For detailed content configuration, see the [Content Management Guide](./content-management.md#content-basics).
 ```
 
 **Solution:** Set correct `NEUTRINO_CONTENT_PATH` environment variable.
@@ -830,9 +868,9 @@ npm run serve -- --watch
 - [Nunjucks Documentation](https://mozilla.github.io/nunjucks/)
 
 #### **Support Channels**
-- GitHub Issues for bug reports
-- Community forums for questions
-- Stack Overflow for technical issues
+- **GitHub Issues**: For bug reports and feature requests
+- **GitHub Discussions**: For questions and community support
+- **Stack Overflow**: For technical issues (tag: `neutrino-electron`)
 
 ### Reporting Issues
 

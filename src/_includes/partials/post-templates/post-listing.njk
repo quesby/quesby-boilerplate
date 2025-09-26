@@ -1,0 +1,16 @@
+<div class="post post--listing">
+    <a href="/blog/{{ post.data.slug }}/">
+        <div class="post__wrapper">
+        {% if post.data.image %}
+            <div class="post__image">
+                {% imageSync "content/media/blog/" + post.data.image, post.data.title, 600 %}
+            </div>
+        {% endif %}
+        <div class="post__summary">
+            <div class="post__date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
+            <h2 class="post__title">{{ post.data.title }}</h2>
+            <p class="post__excerpt">{{ post.data.description }}</p>
+        </div>
+        </div>
+    </a>
+</div>

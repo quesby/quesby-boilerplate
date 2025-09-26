@@ -1,13 +1,13 @@
 ---
-id: 01k4yk0nf08w7yjbx7vb2a2c98
+id: "01k4yk0nf08w7yjbx7vb2a2c98"
 title: "Building a Custom ULID Widget for Decap CMS: A Complete Implementation Guide"
-slug: building-custom-ulid-widget-for-decap-cms
-description: Learn how to create a custom ULID widget for Decap CMS that
+slug: "building-custom-ulid-widget-for-decap-cms"
+description: "Learn how to create a custom ULID widget for Decap CMS that
   automatically generates unique identifiers for content entries. Complete
-  implementation with error handling and best practices.
-date: 2024-01-15T10:30:00.000Z
-author: Green Panda Studio
-image: /img/ulid-widget-preview.webp
+  implementation with error handling and best practices."
+date: "2024-01-15T10:30:00.000Z"
+author: "Green Panda Studio"
+image: "preview.webp"
 tags:
   - Decap CMS
   - ULID

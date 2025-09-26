@@ -14,60 +14,61 @@ lastUpdated: "2025-09-12"
 
 This comprehensive guide covers all aspects of developing with Neutrino, from setting up your development environment to advanced customization and deployment strategies.
 
+## Quick Navigation
+
+- **[Development Setup](#development-environment-setup)** - Environment and scripts
+- **[SCSS Architecture](#scss-architecture)** - Styling system and themes
+- **[Shortcodes & Filters](#shortcodes-system)** - Custom functionality
+- **[Template System](#template-system)** - Nunjucks templates
+- **[Theme Development](#theme-development)** - Creating custom themes
+- **[Workflow & Debugging](#development-workflow)** - Daily development process
+- **[Testing & QA](#testing-and-quality-assurance)** - Quality assurance
+- **[Deployment](#deployment-preparation)** - Publishing your site
+
 ## Development Environment Setup
 
-### Prerequisites
+> **Note**: For detailed installation and setup instructions, see the [Installation Guide](./installation.md).
 
-Before starting development, ensure you have the following installed:
+### Quick Start
 
-- **Node.js** (version 18 or higher)
-- **npm** (comes with Node.js)
-- **Git** (for version control)
-- **Code Editor** (VS Code recommended)
-
-### Initial Setup
-
-1. **Clone the repository:**
+1. **Clone and install:**
    ```bash
    git clone https://github.com/greenpandastudio/neutrino-electron.git
    cd neutrino-electron
+   pnpm install
    ```
 
-2. **Install dependencies:**
+2. **Start development:**
    ```bash
-   npm install
+   pnpm run serve
    ```
 
-3. **Configure environment:**
+3. **Open browser:**
    ```bash
-   # Create .env file
-   echo "NEUTRINO_CONTENT_PATH=./content" > .env
-   echo "THEME=neutrino-electron-core" >> .env
+   open http://localhost:8080
    ```
 
 ## Development Scripts
 
 ### Available Commands
 
-Neutrino provides several npm scripts for different development tasks:
+Neutrino provides several pnpm scripts for different development tasks:
 
 ```json
 {
   "scripts": {
+    "css:build": "node scripts/build.js",
+    "css:watch": "node scripts/watch.js",
     "dev": "eleventy --serve",
-    "build": "eleventy",
-    "watch:css": "node scripts/watch.js",
-    "build:css": "node scripts/build.js",
-    "gen:ec-css": "node scripts/gen-ec-css.js",
-    "serve": "concurrently \"npm run watch:css\" \"npx @11ty/eleventy --serve\"",
-    "serve:no-watch": "npx @11ty/eleventy --watch"
+    "build": "npm run css:build && eleventy",
+    "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
   }
 }
 ```
 
 ### Script Descriptions
 
-#### **`npm run serve`** - Full Development Server
+#### **`pnpm run serve`** - Full Development Server
 - **Purpose**: Complete development environment with CSS watching
 - **What it does**:
   - Starts Eleventy development server
@@ -76,7 +77,7 @@ Neutrino provides several npm scripts for different development tasks:
   - Serves site at `http://localhost:8080`
 - **Use case**: Primary development command
 
-#### **`npm run dev`** - Eleventy Only
+#### **`pnpm run dev`** - Eleventy Only
 - **Purpose**: Eleventy development server without CSS watching
 - **What it does**:
   - Starts Eleventy in serve mode
@@ -84,7 +85,7 @@ Neutrino provides several npm scripts for different development tasks:
   - No automatic CSS compilation
 - **Use case**: When working only on content/templates
 
-#### **`npm run watch:css`** - CSS Watching Only
+#### **`pnpm run css:watch`** - CSS Watching Only
 - **Purpose**: Watch and compile SCSS files
 - **What it does**:
   - Monitors SCSS files for changes
@@ -92,7 +93,7 @@ Neutrino provides several npm scripts for different development tasks:
   - Uses compressed output for development
 - **Use case**: When working only on styles
 
-#### **`npm run build:css`** - One-time CSS Build
+#### **`pnpm run css:build`** - One-time CSS Build
 - **Purpose**: Compile SCSS to CSS once
 - **What it does**:
   - Compiles all SCSS files to CSS
@@ -100,7 +101,7 @@ Neutrino provides several npm scripts for different development tasks:
   - No watching, single execution
 - **Use case**: Production builds or testing CSS compilation
 
-#### **`npm run gen:ec-css`** - Generate Expressive Code CSS
+#### **`pnpm run gen:ec-css`** - Generate Expressive Code CSS
 - **Purpose**: Generate syntax highlighting styles
 - **What it does**:
   - Creates CSS for code syntax highlighting
@@ -108,15 +109,15 @@ Neutrino provides several npm scripts for different development tasks:
   - Outputs to `src/assets/css/expressive-code.css`
 - **Use case**: When updating code highlighting themes
 
-#### **`npm run serve:no-watch`** - Eleventy Serve Without CSS Watching
-- **Purpose**: Start Eleventy development server without CSS compilation
+#### **`pnpm run dev`** - Eleventy Only
+- **Purpose**: Eleventy development server without CSS watching
 - **What it does**:
   - Starts Eleventy in serve mode
   - Watches for content and template changes
   - No automatic CSS compilation
-- **Use case**: When working only on content/templates without style changes
+- **Use case**: When working only on content/templates
 
-#### **`npm run build`** - Production Build
+#### **`pnpm run build`** - Production Build
 - **Purpose**: Create production-ready static site
 - **What it does**:
   - Compiles all SCSS to optimized CSS
@@ -196,6 +197,8 @@ neutrino-project/
   - Mixins
 
 ## SCSS Architecture
+
+> **Note**: For detailed SCSS customization, see the [Theme Development Guide](./themes.md).
 
 ### Core SCSS System
 
@@ -377,6 +380,8 @@ fs.writeFileSync(outPath, fullStyles, 'utf8');
 
 Neutrino includes powerful shortcodes for media handling and content optimization.
 
+> **⚠️ Security Note**: Shortcodes are implemented in the core package (`@neutrino/core`). For production use, avoid modifying core shortcodes directly. Instead, extend functionality through `eleventy.config.js` or create custom shortcodes.
+
 ### Image Shortcode
 
 #### **Responsive Images with `{% image %}`**
@@ -406,7 +411,7 @@ async function imageShortcode(src, alt, sizes = "100vw") {
 ```
 
 **Usage in Templates:**
-```twig
+```njk
 {% image "hero/cover.jpg", "Site hero image", "(min-width: 768px) 75vw, 100vw" %}
 ```
 
@@ -439,7 +444,7 @@ function svgShortcode(svgPath, className = "") {
 ```
 
 **Usage in Templates:**
-```twig
+```njk
 {% svg "assets/icons/github.svg", "w-6 h-6 text-gray-600" %}
 ```
 
@@ -473,9 +478,11 @@ The system processes images in all content directories:
 
 ## Template System
 
+> **Note**: For detailed template customization, see the [Theme Development Guide](./themes.md).
+
 ### Nunjucks Templates
 
-Neutrino uses Nunjucks as its template engine with a hierarchical layout system:
+Neutrino uses Nunjucks as its template engine with a hierarchical layout system. The project is configured to use Nunjucks for all template processing, including HTML and Markdown files.
 
 #### **Layout Structure**
 
@@ -495,23 +502,37 @@ src/includes/
 #### **Base Layout** (`layouts/base.njk`)
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="{{ site.defaultVisualTheme }}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title or site.name }}</title>
-  <link rel="stylesheet" href="/assets/css/core.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Enhanced SEO System -->
+  {%- set seoTitle = seoTitle or postTitle or title or site.name -%}
+  {%- set seoDescription = postDescription or description or site.description -%}
+  {%- set seoImage = postImage or image or site.socialImage -%}
+  {%- set pageUrl = site.url + page.url -%}
+  
+  <title>{{ seoTitle }}</title>
+  <meta name="description" content="{{ seoDescription }}">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/skin.css">
+  <link rel="stylesheet" href="/assets/css/expressive-code.css">
 </head>
-<body class="{{ class or '' }}">
+<body class="{{ postClass or class }}">
   {% include "partials/header.njk" %}
-  
-  <main>
-    {% block content %}{% endblock %}
-  </main>
-  
+  <div class="layout-wrapper">
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% if aside %}
+      <aside>{% include "partials/" + aside %}</aside>
+    {% endif %}
+  </div>
   {% include "partials/footer.njk" %}
+  {% include "partials/search.njk" %}
 </body>
 </html>
 ```
@@ -526,7 +547,7 @@ eleventyConfig.addFilter("date", function(date, format) {
   return DateTime.fromJSDate(date).toFormat(format);
 });
 
-// Usage in templates
+// Usage in Nunjucks templates
 {{ post.date | date("dd LLLL yyyy") }}
 {{ post.date | date("yyyy-MM-dd") }}
 ```
@@ -538,7 +559,7 @@ eleventyConfig.addFilter("slugify", function(str) {
   return slugify(str, { lower: true, strict: true });
 });
 
-// Usage in templates
+// Usage in Nunjucks templates
 {{ "My Post Title" | slugify }}
 // Output: "my-post-title"
 ```
@@ -551,7 +572,7 @@ eleventyConfig.addFilter("includeMarkdown", function(filePath) {
   return this.markdown.render(content);
 });
 
-// Usage in templates
+// Usage in Nunjucks templates
 {{ "partials/documentation/example.md" | includeMarkdown }}
 ```
 
@@ -613,6 +634,8 @@ collections.documentation // All docs from src/content/documentation/
 ```
 
 ## Theme Development
+
+> **Note**: For detailed theme customization, see the [Theme Development Guide](./themes.md).
 
 ### Creating Custom Themes
 
@@ -696,11 +719,11 @@ THEME=my-custom-theme npm run serve
 
 ```bash
 # Start full development environment
-npm run serve
+pnpm run serve    # or npm run serve / yarn serve
 
 # Or start components individually
-npm run watch:css    # CSS watching only
-npm run dev          # Eleventy only
+pnpm run css:watch    # CSS watching only
+pnpm run dev          # Eleventy only
 ```
 
 #### **2. Content Development**
@@ -774,10 +797,10 @@ git push origin content/new-post
 **Solutions:**
 ```bash
 # Check SCSS syntax
-npm run build:css
+pnpm run css:build    # or npm run css:build / yarn css:build
 
 # Restart CSS watcher
-npm run watch:css
+pnpm run css:watch    # or npm run css:watch / yarn css:watch
 
 # Check theme configuration
 cat src/_data/site.json | grep theme
@@ -799,7 +822,7 @@ ls -la src/content/posts/
 # Check YAML syntax in content files
 
 # Rebuild site
-npm run build
+pnpm run build
 ```
 
 #### **Template Errors**
@@ -811,12 +834,12 @@ npm run build
 
 **Solutions:**
 ```bash
-# Check template syntax
+# Check Nunjucks template syntax
 # Validate include paths
 # Check for missing partials
 
 # Enable debug mode
-DEBUG=Eleventy* npm run serve
+DEBUG=Eleventy* pnpm run serve
 ```
 
 ### Debug Tools
@@ -825,10 +848,10 @@ DEBUG=Eleventy* npm run serve
 
 ```bash
 # Enable detailed logging
-DEBUG=Eleventy* npm run serve
+DEBUG=Eleventy* pnpm run serve
 
 # Show build information
-npm run build -- --verbose
+pnpm run build -- --verbose
 ```
 
 #### **SCSS Debug Mode**
@@ -921,7 +944,22 @@ function validateFrontmatter(data) {
 ```bash
 # Check for broken links
 npx eleventy --dryrun
+
+# External link checking
+npx linkinator _site --recurse --silent
+
+# HTML validation
+npx html-validate _site/**/*.html
 ```
+
+#### **External Testing Tools**
+
+| Tool | Purpose | Installation | Usage |
+|------|---------|--------------|-------|
+| **linkinator** | Link checking | `pnpm add -D linkinator` | `npx linkinator _site` |
+| **html-validate** | HTML validation | `pnpm add -D html-validate` | `npx html-validate _site` |
+| **lighthouse** | Performance audit | `pnpm add -D lighthouse` | `npx lighthouse http://localhost:8080` |
+| **axe-core** | Accessibility testing | `pnpm add -D @axe-core/cli` | `npx axe _site` |
 
 ### Style Testing
 
@@ -953,13 +991,51 @@ npx eleventy --dryrun
 
 ```bash
 # Test production build
-npm run build
+pnpm run build
 
 # Check build output
 ls -la _site/
 
 # Verify all assets
 ls -la _site/assets/
+```
+
+### Deployment Platforms
+
+#### **GitHub Pages**
+```bash
+# Deploy to GitHub Pages
+pnpm run build
+git add _site/
+git commit -m "Deploy to GitHub Pages"
+git subtree push --prefix _site origin gh-pages
+```
+
+#### **Netlify**
+```yaml
+# netlify.toml
+[build]
+  command = "pnpm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
+```
+
+#### **Vercel**
+```json
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "_site",
+  "installCommand": "pnpm install"
+}
+```
+
+#### **Traditional Hosting (rsync)**
+```bash
+# Deploy via rsync
+pnpm run build
+rsync -av _site/ user@server:/path/to/site/
 ```
 
 #### **2. Content Validation**
@@ -1006,6 +1082,8 @@ NODE_ENV=production
 ```
 
 ## Utility Scripts
+
+> **Note**: For detailed script usage, see the [Content Management Guide](./content-management.md#content-migration).
 
 Neutrino includes several utility scripts for content management and migration tasks.
 
@@ -1098,5 +1176,14 @@ All utility scripts include:
 - **Create feature branches** for new development
 - **Document breaking changes** in commit messages
 - **Keep dependencies updated** regularly
+
+## Next Steps
+
+After mastering development with Neutrino:
+
+1. **[Content Management](./content-management.md)** - Learn to manage content effectively
+2. **[Theme Development](./themes.md)** - Create custom themes and designs
+3. **[Configuration](./configuration.md)** - Advanced configuration options
+4. **[Deployment](./deployment.md)** - Publish your site
 
 This comprehensive development guide covers all aspects of working with Neutrino, from basic setup to advanced customization and deployment strategies.

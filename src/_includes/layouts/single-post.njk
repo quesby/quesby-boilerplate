@@ -15,7 +15,7 @@
             {% endif %}
         </div>
         <div class="post-header boxed">
-            <div class="post-date">{{ date | date("dd LLLL yyyy") }}</div>
+            <div class="post-date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
             <h1 class="page-title">{{ title }}</h1>
             <p class="post-excerpt">{{ description }}</p>
         </div>

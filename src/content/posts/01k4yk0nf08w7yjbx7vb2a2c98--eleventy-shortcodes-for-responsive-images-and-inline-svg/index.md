@@ -1,10 +1,25 @@
 ---
-id: 01K4YK0NF08W7YJBX7VB2A2C98
-title: Eleventy shortcodes for responsive images and inline SVG
-slug: eleventy-responsive-images-and-inline-svg
-date: 2025-09-12T11:11:00.000+02:00
-author: Green Panda Studio
+id: "01K4YK0NF08W7YJBX7VB2A2C98"
+title: "Eleventy shortcodes for responsive images and inline SVG"
+slug: "eleventy-responsive-images-and-inline-svg"
+date: "2025-09-12T11:11:00.000+02:00"
+description: "A practical guide to integrate eleventy-img in Eleventy: custom Nunjucks shortcodes and automatic Markdown image processing with responsive sourcesets."
+author: "Green Panda Studio"
+type: "post"
+image: "cool-cat.webp"
+createdAt: "2025-09-12T12:00:00.000Z"
+aliases:
+  - /blog/eleventy-img-markdown-guide/
+tags:
+  - eleventy
+  - eleventy-img
+  - nunjucks
+  - markdown
+  - performance
+  - webp
+  - avif
 draft: false
+templateEngineOverride: "md"
 ---
 This guide shows how to add two production-ready shortcodes to Eleventy (ESM): a responsive image helper using `@11ty/eleventy-img` and an inline SVG helper that lets you inject CSS classes.
 

@@ -1,12 +1,13 @@
 ---
-id: memr8xyz123abc456def789ghi
+id: "memr8xyz123abc456def789ghi"
 title: "Implementing eleventy-img for Nunjucks Shortcodes and Markdown Images"
-slug: eleventy-img-markdown-guide
+slug: "eleventy-img-markdown-guide"
 description: "A practical guide to integrate eleventy-img in Eleventy: custom Nunjucks shortcodes and automatic Markdown image processing with responsive sourcesets."
-date: 2025-09-12
-author: Green Panda Studio
-type: post
-createdAt: 2025-09-12T12:00:00.000Z
+date: "2025-09-12"
+author: "Green Panda Studio"
+type: "post"
+image: "mouse.webp"
+createdAt: "2025-09-12T12:00:00.000Z"
 aliases:
   - /blog/eleventy-img-markdown-guide/
 tags:
