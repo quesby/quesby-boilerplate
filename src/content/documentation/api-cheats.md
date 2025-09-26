@@ -17,7 +17,7 @@ Quick reference for the most commonly used shortcodes, filters, and functions in
 ## Shortcodes
 
 ### Image Shortcode
-```njk
+```twig
 {% image "path/to/image.jpg", "Alt text", "css-class" %}
 {% image "/assets/images/hero.jpg", "Hero image", "hero-image" %}
 ```
@@ -33,7 +33,7 @@ Quick reference for the most commonly used shortcodes, filters, and functions in
 ```
 
 ### SVG Shortcode
-```njk
+```twig
 {% svg "path/to/icon.svg", "css-class" %}
 {% svg "/assets/images/logo.svg", "site-logo" %}
 ```
@@ -50,7 +50,7 @@ Quick reference for the most commonly used shortcodes, filters, and functions in
 ```
 
 ### Code Shortcode
-```njk
+```twig
 {% code "javascript" %}
 function hello() {
   console.log("Hello World!");
@@ -66,21 +66,21 @@ function hello() {
 ### SEO Filters
 
 #### `seoTitle`
-```njk
+```twig
 {{ title | seoTitle: site.name }}
 {{ "My Post" | seoTitle: "My Site" }}
 ```
 **Output:** `"My Post | My Site"`
 
 #### `canonical`
-```njk
+```twig
 {{ page.url | canonical: site.url }}
 {{ "/blog/post" | canonical: "https://example.com" }}
 ```
 **Output:** `"https://example.com/blog/post/"`
 
 #### `absoluteUrl`
-```njk
+```twig
 {{ "/assets/image.jpg" | absoluteUrl: site.url }}
 {{ content | absoluteUrl: site.url }}
 ```
@@ -89,7 +89,7 @@ function hello() {
 ### Date Filters
 
 #### `formatDate`
-```njk
+```twig
 {{ date | formatDate: "YYYY-MM-DD" }}
 {{ date | formatDate: "MMMM Do, YYYY" }}
 {{ date | formatDate: "relative" }}
@@ -99,21 +99,21 @@ function hello() {
 ### Content Filters
 
 #### `excerpt`
-```njk
+```twig
 {{ content | excerpt: 160 }}
 {{ content | excerpt: 300 }}
 ```
 **Output:** First 160/300 characters of content
 
 #### `stripHtml`
-```njk
+```twig
 {{ content | stripHtml }}
 {{ "<p>Hello <strong>World</strong></p>" | stripHtml }}
 ```
 **Output:** `"Hello World"`
 
 #### `slugify`
-```njk
+```twig
 {{ "My Awesome Post!" | slugify }}
 {{ "Hello World" | slugify }}
 ```
@@ -122,7 +122,7 @@ function hello() {
 ## Global Data
 
 ### Site Data
-```njk
+```twig
 {{ site.name }}              // "Neutrino - Electron"
 {{ site.url }}               // "https://example.com"
 {{ site.description }}       // "Site description"
@@ -137,7 +137,7 @@ function hello() {
 ```
 
 ### Collections
-```njk
+```twig
 {{ collections.posts }}           // All blog posts
 {{ collections.documentation }}   // All documentation pages
 {{ collections.pages }}           // All regular pages
@@ -146,7 +146,7 @@ function hello() {
 ```
 
 ### Page Data
-```njk
+```twig
 {{ page.url }}              // Current page URL
 {{ page.date }}             // Page creation date
 {{ page.inputPath }}        // Source file path
@@ -195,14 +195,14 @@ class: "custom-page-class"
 ## Template Variables
 
 ### Layout Variables
-```njk
+```twig
 {{ postClass }}             // CSS class for post pages
 {{ postType }}              // Open Graph type
 {{ class }}                 // Page-specific CSS class
 ```
 
 ### Theme Variables
-```njk
+```twig
 {{ theme }}                 // Current theme name
 {{ site.theme }}            // Same as above
 ```
@@ -217,7 +217,7 @@ NODE_ENV=development
 ```
 
 ### Usage in Templates
-```njk
+```twig
 {{ env.NEUTRINO_CONTENT_PATH }}
 {{ env.THEME }}
 {{ env.NODE_ENV }}
@@ -226,7 +226,7 @@ NODE_ENV=development
 ## Common Patterns
 
 ### Blog Post Loop
-```njk
+```twig
 {% for post in collections.posts %}
   <article>
     <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
@@ -237,7 +237,7 @@ NODE_ENV=development
 ```
 
 ### Navigation Menu
-```njk
+```twig
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
@@ -248,7 +248,7 @@ NODE_ENV=development
 ```
 
 ### Social Meta Tags
-```njk
+```twig
 <meta property="og:title" content="{{ seoTitle or title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:image" content="{{ image | absoluteUrl: site.url }}">
@@ -256,7 +256,7 @@ NODE_ENV=development
 ```
 
 ### Conditional Content
-```njk
+```twig
 {% if draft %}
   <div class="draft-notice">This is a draft</div>
 {% endif %}
