@@ -1,11 +1,20 @@
 {
-    "name": "neutrino-electron",
-    "private": true,
+    "name": "@neutrino/website",
     "version": "0.1.0",
-    "packageManager": "pnpm@10.2.0",
+    "type": "module",
     "scripts": {
-        "dev": "pnpm -F @neutrino/website dev",
-        "serve": "pnpm -F @neutrino/website serve",
-        "build": "pnpm -F @neutrino/website build"
+      "css:build": "node scripts/build.js",
+      "css:watch": "node scripts/watch.js",
+      "dev": "eleventy --serve",
+      "build": "npm run css:build && eleventy",
+      "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
+    },
+    "dependencies": {
+      "@neutrino/core": "github:greenpandastudio/neutrino-core.git#main",
+      "@11ty/eleventy": "^3.0.0",
+      "sass": "^1.77.0",
+      "concurrently": "^9.2.1",
+      "minisearch": "^7.0.0"
     }
-}
+  }
+  
