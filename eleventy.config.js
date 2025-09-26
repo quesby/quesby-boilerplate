@@ -9,7 +9,9 @@ export default function (eleventyConfig) {
     ...coreConfig,
     dir: { 
       input: "src", 
-      output: "_site"
+      output: "_site",
+      includes: "_includes",
+      data: "_data"
     }
   };
 }

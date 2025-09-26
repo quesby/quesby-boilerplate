@@ -2,6 +2,7 @@
     "name": "Neutrino - Electron",
     "url": "https://github.com/greenpandastudio/neutrino-electron",
     "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
+    "author": "Green Panda Studio",
     "logo": "/assets/images/neutrino-logo.svg",
     "favicon": "/assets/images/neutrino-logo.png",
     "theme": "neutrino-electron-core",
