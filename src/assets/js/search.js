@@ -14,9 +14,9 @@ async function load() {
       searchOptions: { fuzzy: 0.2, prefix: true, boost: { title: 4, tags: 2 } }
     })
     mini.addAll(docs)
-    console.log(`✅ Search index loaded with ${docs.length} documents`)
+    // Search index loaded successfully
   } catch (error) {
-    console.error('❌ Error loading search index:', error)
+    console.error('Error loading search index:', error)
     $list.innerHTML = '<li>Error loading search. Please refresh the page.</li>'
   }
 }

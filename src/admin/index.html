@@ -34,7 +34,7 @@
         };
         
         ulidScript.onerror = function() {
-          console.error('Failed to load ULID widget');
+          // Failed to load ULID widget
           // Still try to initialize Decap CMS even if ULID widget fails
           setTimeout(function() {
             if (typeof DecapCMS !== 'undefined') {

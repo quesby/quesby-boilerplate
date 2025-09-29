@@ -122,4 +122,4 @@ const UlidPreview = createClass({
 // Decap CMS Widget Registration
 CMS.registerWidget('ulid', UlidControl, UlidPreview);
 
-console.log('ULID Widget loaded successfully');
+// ULID widget registered

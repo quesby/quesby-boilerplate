@@ -1,12 +1,11 @@
 backend:
-  # name: git-gateway
-  # branch: main
-  # Per sviluppo locale, usa:
-  name: test-repo
+  # Production-ready example backend. Replace with your own provider.
+  # For GitHub: https://decapcms.org/docs/backends-overview/
+  name: git-gateway
   branch: main
 
-# Configurazione per sviluppo locale
-local_backend: true
+# Local development only. Remove or set to false in production.
+local_backend: false
 
 media_folder: "src/content/media"
 public_folder: "/content/media"
@@ -16,7 +15,7 @@ collections:
     folder: "src/content/posts"
     create: true
     slug: "{{id}}--{{slug}}"
-    path: "{{slug}}/index"   # dice a Decap dove scrivere i file
+    path: "{{slug}}/index"   # Tells Decap where to write the file
     extension: "md"
     fields:
       - {label: "ID (ULID)", name: "id", widget: "ulid"}

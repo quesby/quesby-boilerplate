@@ -4,14 +4,14 @@ import fs from "fs"
 const siteData = JSON.parse(fs.readFileSync("./src/_data/site.json", "utf-8"))
 const theme = siteData.theme || "default"
 
-// percorsi da compilare
+// Paths to compile
 const input1 = `src/themes/${theme}`
 const output = "src/assets/css"
 
-// load-path per Sass (es. per @neutrino/core/sass)
+// Load path for Sass (e.g. for @neutrino/core/sass)
 const loadPath = "--load-path=node_modules"
 
-// comando completo
+// Full command
 const command = `sass --watch ${loadPath} ${input1}:${output} --style=compressed`
 
 execSync(command, { stdio: "inherit" })
