@@ -6,7 +6,7 @@
     "css:build": "node scripts/build.js",
     "css:watch": "node scripts/watch.js",
     "dev": "eleventy --serve",
-    "build": "npm run css:build && eleventy",
+    "build": "rimraf .cache .img && npm run css:build && eleventy",
     "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
   },
   "dependencies": {
@@ -15,5 +15,8 @@
     "concurrently": "^9.2.1",
     "minisearch": "^7.0.0",
     "sass": "^1.77.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.10"
   }
 }

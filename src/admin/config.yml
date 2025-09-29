@@ -9,8 +9,8 @@ backend:
 # Local development only. Remove or set to false in production.
 local_backend: true
 
-media_folder: "src/content/media/blog"
-public_folder: ""
+media_folder: "../../media/blog"
+public_folder: "/content/media/blog"
 collections:
   - name: "posts"
     label: "Posts"
@@ -26,7 +26,7 @@ collections:
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Author", name: "author", widget: "string", required: false}
-      - {label: "Image", name: "image", widget: "image", required: false, media_folder: "src/content/media/blog", public_folder: ""}
+      - {label: "Image", name: "image", widget: "image", required: false, media_folder: "../../media/blog", public_folder: ""}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
       - {label: "Aliases", name: "aliases", widget: "list", required: false, hint: "Old URLs to redirect to this post"}
