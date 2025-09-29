@@ -13,7 +13,7 @@ permalink: /blog/
 
 <section id="blog">
   <div class="container boxed blog-wrapper">
-    {% for post in collections.posts | sortBy("date", "asc") %}
+    {% for post in collections.posts | sortBy("date", "desc") %}
       {% include "partials/post-templates/post-listing.njk" %}
     {% endfor %}
   </div>

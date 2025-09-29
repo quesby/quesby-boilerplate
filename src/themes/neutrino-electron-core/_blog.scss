@@ -87,4 +87,12 @@
             }
         }
     }
+    .post {
+        &__featured-image {
+            margin-bottom: $margin;
+        }
+        &__date {
+            font-size: 0.9rem;
+        }
+    }
 }

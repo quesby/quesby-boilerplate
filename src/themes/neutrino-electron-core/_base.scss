@@ -273,7 +273,7 @@ button {
     border-radius: $borderRadius-small;
     padding: 1em 2em;
 }
-code {
+code, .code {
     font-family: $font-mono;
     font-size: .8em;
     font-weight: 300;

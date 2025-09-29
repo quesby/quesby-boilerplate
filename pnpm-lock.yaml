@@ -12,8 +12,8 @@ importers:
         specifier: ^3.0.0
         version: 3.1.2
       '@neutrino/core':
-        specifier: github:greenpandastudio/neutrino-core.git#main
-        version: git+https://git@github.com:greenpandastudio/neutrino-core.git#b7a61d8a4d8596bb50347a68f73d948bda094e2f(sass@1.93.2)
+        specifier: github:greenpandastudio/neutrino-core#main
+        version: git+https://git@github.com:greenpandastudio/neutrino-core.git#b05dc1b1cfa2ec2ec2fc5f5fe5b82a1f05e59c17(sass@1.93.2)
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -197,8 +197,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#b7a61d8a4d8596bb50347a68f73d948bda094e2f':
-    resolution: {commit: b7a61d8a4d8596bb50347a68f73d948bda094e2f, repo: git@github.com:greenpandastudio/neutrino-core.git, type: git}
+  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#b05dc1b1cfa2ec2ec2fc5f5fe5b82a1f05e59c17':
+    resolution: {commit: b05dc1b1cfa2ec2ec2fc5f5fe5b82a1f05e59c17, repo: git@github.com:greenpandastudio/neutrino-core.git, type: git}
     version: 0.1.0
     peerDependencies:
       sass: ^1.77.0
@@ -1697,7 +1697,7 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#b7a61d8a4d8596bb50347a68f73d948bda094e2f(sass@1.93.2)':
+  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#b05dc1b1cfa2ec2ec2fc5f5fe5b82a1f05e59c17(sass@1.93.2)':
     dependencies:
       '@11ty/eleventy': 3.1.2
       '@11ty/eleventy-img': 4.0.2

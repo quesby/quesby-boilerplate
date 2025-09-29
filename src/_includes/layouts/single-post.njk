@@ -2,22 +2,19 @@
 {% set postTitle = "Neutrino - Electron | " + title %}
 {% set postClass = "single-post" %}
 {% set postType = "article" %}
-{% if image %}
-  {% set postImage = site.url + "/content/posts/" + page.fileSlug + "/" + image %}
-{% endif %}
 
 {% block content %}
 <div class="single-post container">
     <article class="post">
-        <div class="featured-image">
+        <div class="post__featured-image">
             {% if image %}
-                <img src="/content/posts/{{ page.fileSlug }}/{{ image }}" alt="{{ title }}" width="600" loading="lazy">
+                {% image "/content/media/blog/" + image, title, "600", { "loading": "lazy" } %}
             {% endif %}
         </div>
-        <div class="post-header boxed">
-            <div class="post-date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
-            <h1 class="page-title">{{ title }}</h1>
-            <p class="post-excerpt">{{ description }}</p>
+        <div class="post__header boxed">
+            <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
+            <h1 class="post__title">{{ title }}</h1>
+            <p class="post__excerpt">{{ description }}</p>
         </div>
         <div class="boxed">{{ content | safe }}</div>
         <footer></footer>
