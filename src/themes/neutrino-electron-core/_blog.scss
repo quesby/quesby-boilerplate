@@ -54,16 +54,12 @@
     // Single Post
 .single-post {
     main {
-        max-width: 1024px;
-        margin: 0 auto;
         .container {
-            max-width: 896px;
             &__summary {
                 h3 {
                     font-size: 1.5rem;
                 }
             }
-            padding: 0 ($padding * 3);
         }
         section {
             margin-bottom: $margin * 2;
@@ -93,6 +89,20 @@
         }
         &__date {
             font-size: 0.9rem;
+        }
+    }
+}
+
+// responsive
+@include respond-to(smartphone) {
+    .single-post {
+        main {
+            max-width: 1024px;
+            margin: 0 auto;
+            .container {
+                max-width: 896px;
+                padding: 0 ($padding * 3);
+            }
         }
     }
 }

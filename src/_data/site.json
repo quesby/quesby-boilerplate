@@ -4,7 +4,7 @@
     "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
     "author": "Green Panda Studio",
     "logo": "/assets/images/neutrino-logo-gray.svg",
-    "favicon": "/assets/images/neutrino-logo-gray.webp",
+    "favicon": "/assets/images/favicon.png",
     "theme": "neutrino-electron-core",
     "defaultVisualTheme": "dark",
     "contentPath": "${NEUTRINO_CONTENT_PATH}",

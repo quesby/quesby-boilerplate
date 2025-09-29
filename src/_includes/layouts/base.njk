@@ -79,7 +79,7 @@
                 {% include "partials/" + navfooter %}
               {% endif %}
             </div>
-            <aside>
+            <aside class="toc">
               {% set tocContent = content %}
               {% include "partials/" + toc %}
             </aside>
@@ -90,7 +90,7 @@
       {% endblock %}
     </main>
     {% if aside %}
-      <aside>{% include "partials/" + aside %}</aside>
+      <aside class="sidebar">{% include "partials/" + aside %}</aside>
     {% endif %}
   </div>
   {% include "partials/footer.njk" %}
