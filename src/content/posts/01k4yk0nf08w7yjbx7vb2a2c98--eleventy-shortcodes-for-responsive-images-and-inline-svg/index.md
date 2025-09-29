@@ -23,7 +23,7 @@ templateEngineOverride: "md"
 ---
 This guide shows how to add two production-ready shortcodes to Eleventy (ESM): a responsive image helper using `@11ty/eleventy-img` and an inline SVG helper that lets you inject CSS classes.
 
-![An AI generated image](/assets/images/documentation/ai-gen.webp)
+![An AI generated image](/content/media/documentation/ai-gen.webp)
 
 ## Prerequisites
 
