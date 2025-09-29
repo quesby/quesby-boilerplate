@@ -320,6 +320,24 @@ The widget is implemented in `src/admin/ulid-widget.js` and includes:
 
 ## Content Creation Workflow
 
+### Using the CLI Tool (Recommended)
+
+The fastest way to create new blog posts is using the built-in CLI tool:
+
+1. **Create New Post**
+   ```bash
+   npx neutrino new post "Your Post Title"
+   ```
+
+2. **Edit Content**
+   - Open the generated `index.md` file
+   - Fill in the front matter fields
+   - Write your content in Markdown
+
+3. **Publish**
+   - Set `draft: false` in frontmatter
+   - Commit and push to your repository
+
 ### Using Decap CMS
 
 1. **Access Admin Panel**
@@ -338,6 +356,62 @@ The widget is implemented in `src/admin/ulid-widget.js` and includes:
 4. **Save and Publish**
    - Save as draft for later editing
    - Publish immediately to make content live
+
+### CLI Content Creation
+
+#### **`npx neutrino new post "Title"`**
+
+The fastest way to create new blog posts with proper ULID generation and folder structure.
+
+**Usage:**
+```bash
+# Create a new blog post
+npx neutrino new post "Getting Started with Neutrino"
+
+# Example output:
+# ℹ️  Creating new post: "Getting Started with Neutrino"
+# ℹ️  ULID: 01K6A3V1WHREEEZ2BSEXDS6ZCF
+# ℹ️  Slug: getting-started-with-neutrino
+# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino
+# ✅ Post created successfully!
+# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/index.md
+# 🔗 URL: /blog/getting-started-with-neutrino/
+```
+
+**Features:**
+- **Automatic ULID Generation**: Creates unique 26-character identifiers
+- **Slug Generation**: Converts titles to URL-friendly slugs
+- **Folder Structure**: Creates `ULID--slug` format directories
+- **Complete Front Matter**: Pre-populated with all required fields
+- **Current Date**: Automatically sets today's date
+- **Error Handling**: Validates input and checks for conflicts
+
+**Generated Structure:**
+```
+src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+└── index.md
+```
+
+**Generated Front Matter:**
+```yaml
+---
+id: 01K6A3V1WHREEEZ2BSEXDS6ZCF
+title: "Getting Started with Neutrino"
+slug: getting-started-with-neutrino
+description: ""
+date: 2025-01-27T10:30:00.000Z
+author: ""
+image: ""
+tags: []
+draft: false
+aliases: []
+---
+
+# Getting Started with Neutrino
+
+Write your content here...
+```
 
 ### Manual Content Creation
 

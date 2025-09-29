@@ -1081,6 +1081,78 @@ NODE_ENV=production
 }
 ```
 
+## CLI Tools
+
+### New Post Generator
+
+Neutrino includes a powerful CLI tool for creating new blog posts with proper ULID generation and folder structure.
+
+#### **`npx neutrino new post "Title"`**
+
+Creates a new blog post with automatic ULID generation and proper folder structure.
+
+**Usage:**
+```bash
+# Create a new blog post
+npx neutrino new post "Getting Started with Neutrino"
+
+# Example output:
+# ℹ️  Creating new post: "Getting Started with Neutrino"
+# ℹ️  ULID: 01K6A3V1WHREEEZ2BSEXDS6ZCF
+# ℹ️  Slug: getting-started-with-neutrino
+# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino
+# ✅ Post created successfully!
+# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/index.md
+# 🔗 URL: /blog/getting-started-with-neutrino/
+```
+
+**Features:**
+- **Automatic ULID Generation**: Creates unique 26-character identifiers
+- **Slug Generation**: Converts titles to URL-friendly slugs
+- **Folder Structure**: Creates `ULID--slug` format directories
+- **Complete Front Matter**: Pre-populated with all required fields
+- **Current Date**: Automatically sets today's date
+- **Error Handling**: Validates input and checks for conflicts
+
+**Generated Structure:**
+```
+src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+└── index.md
+```
+
+**Generated Front Matter:**
+```yaml
+---
+id: 01K6A3V1WHREEEZ2BSEXDS6ZCF
+title: "Getting Started with Neutrino"
+slug: getting-started-with-neutrino
+description: ""
+date: 2025-01-27T10:30:00.000Z
+author: ""
+image: ""
+tags: []
+draft: false
+aliases: []
+---
+
+# Getting Started with Neutrino
+
+Write your content here...
+```
+
+**CLI Options:**
+```bash
+# Show help
+npx neutrino
+
+# Create post with quotes (handles spaces)
+npx neutrino new post "My Amazing Post Title"
+
+# Create post without quotes (single word)
+npx neutrino new post Tutorial
+```
+
 ## Utility Scripts
 
 > **Note**: For detailed script usage, see the [Content Management Guide](./content-management.md#content-migration).

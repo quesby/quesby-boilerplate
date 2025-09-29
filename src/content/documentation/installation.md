@@ -29,6 +29,9 @@ pnpm run serve
 
 # 3. Open browser
 open http://localhost:8080
+
+# 4. Create your first blog post
+npx neutrino new post "Welcome to Neutrino"
 ```
 
 > **New to static sites?** Follow the detailed guide below for step-by-step instructions.
@@ -343,8 +346,12 @@ After successful installation, here's what to do next:
 
 ### Immediate Actions
 1. **Verify installation**: Check that `http://localhost:8080` loads correctly
-2. **Explore the admin**: Visit `http://localhost:8080/admin` to see the CMS
-3. **Check content**: Browse the sample posts and documentation
+2. **Create your first post**: Use the CLI tool to create a new blog post
+   ```bash
+   npx neutrino new post "My First Post"
+   ```
+3. **Explore the admin**: Visit `http://localhost:8080/admin` to see the CMS
+4. **Check content**: Browse the sample posts and documentation
 
 ### Learning Path
 1. **[Configuration Guide](./configuration.md)** - Customize your site settings

@@ -6,6 +6,7 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 
 - **Static Site Generation** with Eleventy 3.0
 - **Headless CMS** with Decap CMS
+- **CLI Tools** for content creation (`npx neutrino new post`)
 - **Modular Theme System** with 2 included themes
 - **Privacy-First** approach
 - **SEO Optimized** with automatic sitemaps
@@ -56,6 +57,21 @@ pnpm serve
 **Note:** If you encounter Corepack signature errors, use Option 1 instead.
 
 Visit `http://localhost:8080` to see your site.
+
+## 🛠️ CLI Tools
+
+Neutrino includes a powerful CLI tool for creating new blog posts:
+
+```bash
+# Create a new blog post
+npx neutrino new post "My Amazing Post Title"
+
+# The tool will:
+# - Generate a unique ULID
+# - Create proper folder structure (ULID--slug)
+# - Generate complete front matter
+# - Set current date automatically
+```
 
 ## 📚 Documentation
 
