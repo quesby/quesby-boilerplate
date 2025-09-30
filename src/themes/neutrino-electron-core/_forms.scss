@@ -67,8 +67,10 @@
 }
 .form-container {
     max-width: 600px;
-    margin: 0 auto;
     padding: 2rem;
+    &.centered {
+        margin: 0 auto;
+    }
 }
 
 .form-group {

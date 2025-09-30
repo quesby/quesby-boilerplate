@@ -167,7 +167,7 @@ eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes
 
 2. **Build Settings:**
    ```
-   Build command: npm run build
+   Build command: pnpm build
    Publish directory: _site
    Node version: 18
    ```
@@ -348,7 +348,7 @@ jobs:
 2. **Build Settings:**
    ```
    Framework preset: None
-   Build command: npm run build
+   Build command: pnpm build
    Build output directory: _site
    Root directory: (leave empty)
    ```
@@ -389,7 +389,7 @@ Create `_redirects` file:
 
 1. **Build the site:**
    ```bash
-   npm run build
+   pnpm build
    ```
 
 2. **Upload files:**

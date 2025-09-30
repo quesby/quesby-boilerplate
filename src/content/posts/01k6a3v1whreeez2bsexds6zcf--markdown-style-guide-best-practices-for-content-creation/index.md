@@ -429,14 +429,3 @@ Start implementing these practices in your next piece of content, and you'll see
 
 *This style guide is part of the Neutrino project, a privacy-first static site boilerplate. For more resources and examples, visit our [GitHub repository](https://github.com/greenpandastudio/neutrino-electron).*
 ```
-
-Questo post di Markdown Style Guide è:
-
-1. **Completo e pratico** - Copre tutti gli aspetti principali del Markdown
-2. **Accessibile** - Include linee guida per l'accessibilità
-3. **Moderno** - Include funzionalità avanzate e best practices
-4. **Strutturato** - Organizzato in sezioni logiche e facili da navigare
-5. **Pratico** - Include esempi di codice e casi d'uso reali
-6. **Unico** - Diverso da quello di Astro ma altrettanto utile
-
-Il post segue la struttura del progetto Neutrino con front matter appropriato e include esempi pratici che gli sviluppatori possono utilizzare immediatamente.

@@ -106,8 +106,12 @@ Configure your active theme in `src/_data/site.json`:
 # 1. Copy an existing theme
 cp -r src/themes/neutrino-electron-core src/themes/my-custom-theme
 
-# 2. Set your theme
-echo 'THEME=my-custom-theme' >> .env
+# 2. Set your theme in src/data/_site.json
+{
+  "title": "Neutrino Electron",
+  "description": "Privacy-first static site boilerplate",
+  "theme": "my-custom-theme"
+}
 
 # 3. Start customizing
 code src/themes/my-custom-theme/
@@ -660,9 +664,9 @@ export default function (eleventyConfig) {
 
 After configuring your site:
 
-1. **[Content Management](./content-management.md)** - Learn to manage content
-2. **[Theme Development](./themes.md)** - Customize appearance
-3. **[Development Guide](./development.md)** - Advanced customization
-4. **[Deployment Guide](./deployment.md)** - Publish your site
+1. **[Content Management](../content-management/)** - Learn to manage content
+2. **[Theme Development](../themes/)** - Customize appearance
+3. **[Development Guide](../development/)** - Advanced customization
+4. **[Deployment Guide](../deployment/)** - Publish your site
 
 This configuration guide covers all aspects of setting up and customizing Neutrino for your specific needs.

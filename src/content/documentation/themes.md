@@ -20,22 +20,24 @@ The Neutrino theme system is a SCSS-based styling architecture that allows you t
 
 ```
 src/
-├── themes/                          # Theme directory
-│   ├── neutrino-electron-core/      # Default theme
-│   │   ├── _base.scss              # Base styles and CSS variables
-│   │   ├── _blog.scss              # Blog-specific styles
-│   │   ├── _components.scss        # Reusable components
-│   │   ├── _documentation.scss     # Documentation styles
-│   │   ├── _forms.scss             # Form elements
-│   │   ├── _home.scss              # Homepage styles
-│   │   ├── _page.scss              # General page styles
-│   │   ├── _responsive.scss        # Responsive breakpoints
-│   │   ├── _theme-header.scss      # Header component
-│   │   ├── _theme-typography.scss  # Typography system
-│   │   ├── _theme-variables.scss   # Theme color variables
-│   │   └── skin.scss               # Main theme file
-│   └── neutrino-brand-website/     # Alternative theme
-│       └── [same structure]
+└── themes/                          # Theme directory
+    ├── neutrino-electron-core/      # Default theme
+    │   ├── _base.scss              # Base styles and CSS variables
+    │   ├── _blog.scss              # Blog-specific styles
+    │   ├── _components.scss        # Reusable components
+    │   ├── _documentation.scss     # Documentation styles
+    │   ├── _forms.scss             # Form elements
+    │   ├── _home.scss              # Homepage styles
+    │   ├── _page.scss              # General page styles
+    │   ├── _responsive.scss        # Responsive breakpoints
+    │   ├── _theme-header.scss      # Header component
+    │   ├── _theme-typography.scss  # Typography system
+    │   ├── _theme-variables.scss   # Theme color variables
+    │   └── skin.scss               # Main theme file
+    └── neutrino-brand-website/     # Alternative theme
+        └── [same structure]
+
+@neutrino/core
 ├── sass/                           # Core SCSS files
 │   ├── _mixins.scss               # SCSS mixins
 │   ├── _reset.scss                # CSS reset
@@ -63,7 +65,7 @@ Configure your active theme in `src/_data/site.json`:
 - `neutrino-electron-core` (default)
 - `neutrino-brand-website`
 
-> **Note**: For detailed configuration options, see the [Configuration Guide](./configuration.md#theme-configuration).
+> **Note**: For detailed configuration options, see the [Configuration Guide](../configuration/#theme-configuration).
 
 ### 2. Visual Theme Toggle
 
@@ -108,19 +110,32 @@ Each theme follows this modular structure:
 // skin.scss - Main theme file
 @use 'sass:map';
 @use 'sass:color';
-@import '../../sass/core';           // Core styles
 
-@import "_theme-variables";          // Color definitions
-@import "_theme-typography";         // Typography system
-@import "_base";                     // Base styles
-@import "_forms";                    // Form elements
+// core: reset HTML tags
+@import "@neutrino/core/sass/_reset";
 
-@import "_theme-header";             // Header component
-@import "_page";                     // Page layouts
-@import "_home";                     // Homepage
-@import "_blog";                     // Blog styles
-@import "_documentation";            // Documentation
-@import "_responsive";               // Responsive design
+// theme: your variables
+@import "_theme-variables";
+
+// core: mixins
+@import "@neutrino/core/sass/_mixins";
+
+// theme: your base styles
+@import "_theme-typography";
+@import "_base";
+@import "_forms";
+@import "_tables";
+@import "_components";
+
+// theme: your main styles
+@import "_theme-header";
+@import "_footer";
+@import "_page";
+@import "_home";
+@import "_blog";
+@import "_search";
+@import "_documentation";
+@import "_responsive";
 ```
 
 ### 2. Color System
@@ -139,6 +154,7 @@ $theme-light: (
 
 > **SCSS Compatibility Note**: `color.adjust()` requires Dart Sass 1.27.0+. For older versions, use `lighten()`, `darken()`, or `mix()` functions instead.
 
+```scss
 $theme-dark: (
   text-fg: oklch(93% 0 0),
   link-fg: oklch(84% 27% 45),
@@ -196,8 +212,7 @@ npm run build:css
 npm run serve
 ```
 
-> **Note**: For detailed development workflow, see the [Development Guide](./development.md#development-workflow).
-```
+> **Note**: For detailed development workflow, see the [Development Guide](../development/development-workflow).
 
 ### 2. Build Process
 
@@ -333,7 +348,7 @@ Use the responsive mixins and breakpoints:
 3. Modify SCSS files in your theme directory
 4. Changes are automatically compiled and reloaded
 
-> **Note**: For detailed development workflow, see the [Development Guide](./development.md#development-workflow).
+> **Note**: For detailed development workflow, see the [Development Guide](../development/development-workflow).
 
 ### 2. Testing Themes
 
