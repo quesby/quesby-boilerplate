@@ -1,11 +1,8 @@
 // forms
-// Stili base per tutti i temi
-
 .form-container {
     animation: formSlideIn 0.6s ease-out;
 }
 
-// Stili per form di ricerca
 .search-form {
     position: relative;
     
@@ -33,7 +30,6 @@
     }
 }
 
-// Stili per form di contatto
 .contact-form {
     .form-group:last-child {
         margin-bottom: 2rem;

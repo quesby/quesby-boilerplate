@@ -65,8 +65,6 @@
         main {
             order: 1;
             .content-wrapper {
-                // max-width: calc(map.get($container-max-widths, desktop) - 15em);
-                // gap: $margin * 2;
                 .content {
                     order: 2;
                     padding-top: $padding;
@@ -78,7 +76,7 @@
                         padding-top: $padding;
                     }
                     h2 {
-                        scroll-margin-top: 2rem; // Offset for fixed header
+                        scroll-margin-top: 2rem;
                         margin-top: $margin * 2;
                         
                         &::before {
@@ -116,7 +114,6 @@
         margin-bottom: 2rem;
         h3 {
             margin: 0 0 1rem 0;
-            // font-size: 1.1rem;
             color: var(--text-fg);
         }
         ul {

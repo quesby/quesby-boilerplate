@@ -1,8 +1,7 @@
 @use 'sass:map';
-// _responsive.scss - Solo override globali
 @include respond-to(smartphone) {
     body {
-      font-size: 16px; // Previene zoom su iOS
+      font-size: 16px;
     }
     .boxed {
       max-width: map.get($container-max-widths, smartphone);

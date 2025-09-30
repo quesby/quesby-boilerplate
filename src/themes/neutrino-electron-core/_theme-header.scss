@@ -75,7 +75,6 @@ header {
                 height: auto;
                 width: auto;
                 flex-grow: 1;
-                // @include flex-container(row, space-between, center, wrap);
                 ul {
                     @include flex-container(row, flex-start, center, wrap);
                     li {

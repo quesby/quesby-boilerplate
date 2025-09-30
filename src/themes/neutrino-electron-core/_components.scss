@@ -76,7 +76,6 @@
         text-transform: uppercase;
         border: 1px solid var(--neutral-333);
         cursor: pointer;
-        // border-radius: 50%;
         transition: $transition;
         &:hover {
             opacity: 1;
@@ -106,7 +105,7 @@
         }
     }
     
-    // Aspect ratio dinamico
+    // Aspect ratio dynamic
     &[data-aspect-ratio="16/9"] {
         aspect-ratio: 16/9;
         height: auto;
@@ -132,7 +131,7 @@
         height: auto;
     }
     
-    // Fallback per browser che non supportano aspect-ratio
+    // Fallback for browsers that do not support aspect-ratio
     @supports not (aspect-ratio: 16/9) {
         &[data-aspect-ratio="16/9"] {
             height: 56.25vw; // 16:9 = 9/16 = 0.5625
@@ -476,7 +475,7 @@
     }
 }
 
-// Animazioni per il hero slider
+// Animations for the hero slider
 @keyframes slideContentIn {
     from {
         opacity: 0;
@@ -488,13 +487,13 @@
     }
 }
 
-// Responsive design per il hero slider
-@media (max-width: 1024px) {
+// Responsive design for the hero slider
+@media (max-width: map.get($breakpoints, tablet)) {
     .hero-slider {
-        // Mantieni aspect ratio su tablet, ma riduci min-height
+        // Keep aspect ratio on tablet, but reduce min-height
         min-height: 500px;
         
-        // Override per aspect ratio specifici su tablet
+        // Override for specific aspect ratio on tablet
         &[data-aspect-ratio="16/9"] {
             min-height: 450px;
         }
@@ -509,7 +508,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: map.get($breakpoints, smartphone)) {
     .hero-slider {
         // Mantieni aspect ratio su mobile, ma riduci min-height
         min-height: 400px;
