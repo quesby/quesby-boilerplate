@@ -50,7 +50,10 @@ $theme-dark: (
   site-bg-radial: radial-gradient(oklch(17.76% 0.000 89.9) 25%, black),
   // Text
   text-fg: oklch(93% 0 0),
-  text-highlight: oklch(100% 0 0),
+  mark-bg: oklch(97% 0.20 95),
+  mark-fg: oklch(16% 0% 0),
+  code-bg: oklch(22% 0 0),
+  code-fg: oklch(93% 0 0),
   // Links
   link-fg: oklch(0.75 0.1367 299.15),
   link-fg-hover: oklch(0.6 0.1367 299.15),
@@ -65,9 +68,15 @@ $theme-dark: (
   button-fg: white,
   button-bg: oklch(39.00% 0.012 320.6),
   button-bg-hover: oklch(25% 0 0),
+  button-primary-fg: white,
+  button-primary-bg: oklch(39.00% 0.012 320.6),
+  button-primary-bg-hover: oklch(25% 0 0),
   button-secondary-fg: black,
   button-secondary-bg: oklch(85% 0.000 0),
   button-secondary-bg-hover: oklch(25% 0 0),
+  button-tertiary-fg: white,
+  button-tertiary-bg: transparent,
+  button-tertiary-bg-hover: oklch(25% 0 0),
   // Forms
   form-bg: oklch(16% 0% 0),
   form-element-bg: oklch(25% 0 0),

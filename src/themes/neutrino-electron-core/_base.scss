@@ -214,16 +214,30 @@ button {
     border-radius: $borderRadius-normal;
     color: var(--button-fg);
     background-color: var(--button-bg);
+    transition: $transition;
+    &:hover {
+        opacity: 0.8;
+    }
     &.large {
         display: block;
         padding: 1em 1.75em;
         border-radius: $borderRadius-large;
         font-size: 2em;
     }
+    &.primary {
+        color: var(--button-primary-fg);
+        border: 1px solid color-mix(in oklch, var(--button-primary-bg), black 100%);
+        background-color: var(--button-primary-bg);     
+    }
     &.secondary {
         color: var(--button-secondary-fg);
         border: 1px solid color-mix(in oklch, var(--button-secondary-bg), black 100%);
         background-color: var(--button-secondary-bg);     
+    }
+    &.tertiary {
+        color: var(--button-tertiary-fg);
+        border: 1px solid;
+        background-color: var(--button-tertiary-bg);     
     }
 }
 .cta-wrapper {
@@ -277,12 +291,18 @@ code, .code {
     font-family: $font-mono;
     font-size: .8em;
     font-weight: 300;
-    color: var(--text-fg);
-    background-color: var(--site-bg-secondary);
+    color: var(--code-fg);
+    background-color: var(--code-bg);
     border-radius: $borderRadius-small;
     border: 1px solid var(--border);
     padding: 0.1em 0.25em;
 }
+mark, .mark {
+    background-color: var(--mark-bg);
+    color: var(--mark-fg);
+    padding: 0.1em 0.25em;
+    border-radius: $borderRadius-small;
+  }
 .expressive-code {
     margin-bottom: $margin * 2;
 }
