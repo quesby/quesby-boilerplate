@@ -89,27 +89,27 @@ ul, ol {
     }
 }
 
-/* Personalizza l'intera barra di scorrimento */
+/* Customize the entire scrollbar */
 ::-webkit-scrollbar {
-    width: 8px; /* Imposta la larghezza della barra di scorrimento */
-    height: 8px; /* Imposta l'altezza per le barre orizzontali, se necessario */
+    width: 8px; /* Set the scrollbar width */
+    height: 8px; /* Set the height for horizontal bars if needed */
 }
 
-/* Traccia dello scorrimento: parte della barra di scorrimento dove si muove il cursore */
+/* Scrollbar track: area where the thumb moves */
 ::-webkit-scrollbar-track {
-    background: var(--neutral-333); /* Colore di sfondo della traccia */
+    background: var(--neutral-333); /* Track background color */
 }
 
-/* Cursore della barra di scorrimento: parte della barra che effettivamente si muove */
+/* Scrollbar thumb: the part that actually moves */
 ::-webkit-scrollbar-thumb {
-    background-color: var(--neutral-aaa); /* Colore antracite del cursore */
-    border-radius: 10px; /* Angoli arrotondati del cursore */
-    border: 2px solid transparent; /* Bordi opzionali per il cursore */
+    background-color: var(--neutral-aaa); /* Anthracite color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid transparent; /* Optional borders for the thumb */
 }
 
-/* Effetto hover sul cursore della barra di scorrimento */
+/* Hover effect on the scrollbar thumb */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--neutral-555); /* Colore più scuro quando il cursore è in hover */
+    background-color: var(--neutral-555); /* Darker color on hover */
 }
 
 // Containers
@@ -133,39 +133,6 @@ ul, ol {
     width: 100%;
     max-width: 100%;
     padding: 0 50px;
-}
-
-
-
-// Responsive design per le form
-@media (max-width: 768px) {
-    .form-container {
-        padding: 1rem;
-    }
-    
-    .form-input,
-    .form-textarea,
-    .form-select {
-        padding: 0.75rem 0.875rem;
-        font-size: 16px; // Previene zoom su iOS
-    }
-    
-    .form-button {
-        width: 100%;
-        padding: 1rem 2rem;
-    }
-}
-
-// Animazioni per le form
-@keyframes formSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 // buttons
@@ -271,43 +238,13 @@ mark, .mark {
 .expressive-code {
     margin-bottom: $margin * 2;
 }
-.parallax-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    .background-video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -1;
-        transform: translate(-50%, -50%);
-        background: no-repeat;
-        background-size: cover;
-    }
-    .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(circle, var(--cpal-1) 10%, transparent 10%);
-        background-size: 5px 5px;
-        opacity: 0.2;
-        z-index: 1;
-    }
- }
- .bg-overlay {
+.bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: var(--site-bg-radial);
-    opacity: 0.7; /* Regola l'opacità secondo le tue esigenze */
+    opacity: 0.7; /* Adjust opacity as needed */
     z-index: 1;
 }
