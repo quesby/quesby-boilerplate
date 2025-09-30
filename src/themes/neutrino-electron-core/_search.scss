@@ -1,6 +1,6 @@
 // Search - MiniSearch
 #search-trigger {
-    color: white;
+    color: var(--text-fg);
     border: 1px solid var(--border);
     border-radius: $borderRadius-small;
     width: 12em;
@@ -41,7 +41,7 @@
         border-radius: $borderRadius-normal;
         box-shadow: 0 0 20px -12px black;
         #q {
-            color: white;
+            color: var(--text-fg);
             border: 1px solid var(--link-fg);
             border-radius: $borderRadius-small;
             width: 100%;
