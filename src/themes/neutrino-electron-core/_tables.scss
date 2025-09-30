@@ -1,0 +1,12 @@
+table {
+    td, th {
+        padding: ($padding * 0.25) ($padding * 0.5);
+        border: 1px solid var(--border);
+    }
+    thead, tfoot {
+        background-color: var(--site-bg-secondary);
+    }
+    tfoot {
+        font-size: 0.8rem;
+    }
+}

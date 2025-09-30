@@ -54,5 +54,8 @@ body {
         .showcase-group {
             margin-bottom: $margin * 2;
         }
+        picture {
+            max-width: 300px;
+        }
     }
 }

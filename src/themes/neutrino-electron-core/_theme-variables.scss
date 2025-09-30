@@ -144,7 +144,7 @@ $theme-sepia: (
   success: oklch(40.78% 1.2 140),
   warning: oklch(43.70% 0.199 37.3),
   info: oklch(68.49% 0.139 236.8),
-  // Form specific colors
+  // Forms
   form-bg: oklch(98% 0.01 60),
   form-focus-border: oklch(20% 0.01 0),
   form-placeholder: oklch(60% 0.05 60),
@@ -167,9 +167,10 @@ $theme-sepia: (
 $palette: (
   // Core palette
   cpal-1: black,
+  cpal-2: white,
   cpal-3: oklch(26.20% 0.145 281.1),
   cpal-4: oklch(50.28% 0.239 287.0),
-  cpal-5: oklch(100.00% 0.000 89.9),
+  cpal-5: oklch(65.1% 0.273 329.4),
   cpal-6: oklch(66.77% 0.132 161.8),
   // Brand
   // Neutral grays and blacks

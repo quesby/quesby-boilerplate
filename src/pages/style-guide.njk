@@ -244,6 +244,12 @@ function example() {
             <td>Inactive</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total</td>
+            <td>3</td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   </section>
@@ -254,10 +260,7 @@ function example() {
     
     <div class="showcase-group">
       <h3>Images</h3>
-      <figure>
-        <img src="/assets/images/neutrino-logo.svg" alt="Neutrino Logo" style="max-width: 200px; height: auto;">
-        <figcaption>Neutrino Electron Logo</figcaption>
-      </figure>
+      {% image "/assets/images/neutrino-logo.svg", "Neutrino Logo", "(max-width: 650px) 100vw, 50vw" %}
     </div>
 
     <div class="showcase-group">

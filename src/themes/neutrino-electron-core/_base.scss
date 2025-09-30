@@ -78,6 +78,9 @@ img {
     width: 100%;
     height: auto;
 }
+figure, picture {
+    display: block;
+}
 strong {
     font-weight: 700;
 }
