@@ -47,4 +47,12 @@ body {
             }
         }
     }
+    &.style-guide {
+        .showcase-section {
+            margin-bottom: $margin * 2;
+        }
+        .showcase-group {
+            margin-bottom: $margin * 2;
+        }
+    }
 }

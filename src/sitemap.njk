@@ -1,5 +1,8 @@
 ---
-permalink: /sitemap.xml
+layout: false
+title: "Sitemap"
+description: "XML sitemap for search engines"
+permalink: "/sitemap.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,6 +48,13 @@ eleventyExcludeFromCollections: true
     <lastmod>{{ "now" | w3cDate }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>{{ site.url }}/style-guide/</loc>
+    <lastmod>{{ "now" | w3cDate }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

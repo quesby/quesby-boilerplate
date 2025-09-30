@@ -1,0 +1,379 @@
+---
+layout: layouts/base.njk
+title: "Style Guide"
+description: "Complete style guide showcasing all HTML elements and components styled with Neutrino Electron theme"
+seoTitle: "Style Guide - Neutrino Electron"
+seoDescription: "Complete style guide with all HTML elements, typography, components, and design patterns for the Neutrino Electron theme. Perfect for developers and designers."
+class: "page style-guide"
+---
+
+<div class="container boxed">
+  <div class="page-header">
+    <h1>Style Guide</h1>
+    <p class="lead">Complete style guide showcasing all HTML elements and components styled with the Neutrino Electron theme</p>
+  </div>
+
+  <!-- Typography Section -->
+  <section class="showcase-section">
+    <h2>Typography</h2>
+    
+    <div class="showcase-group">
+      <h3>Headings</h3>
+      <h1>Heading 1 - Main Title</h1>
+      <h2>Heading 2 - Section Title</h2>
+      <h3>Heading 3 - Subsection</h3>
+      <h4>Heading 4 - Minor Heading</h4>
+      <h5>Heading 5 - Small Heading</h5>
+      <h6>Heading 6 - Smallest Heading</h6>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Text Elements</h3>
+      <p>This is a regular paragraph with <strong>strong text</strong>, <em>emphasized text</em>, and <a href="#links">a link</a>. It demonstrates the typography and line height of the theme.</p>
+      
+      <p>Here's another paragraph with <code>inline code</code> and <mark>highlighted text</mark>. The theme provides excellent readability with proper spacing and contrast.</p>
+      
+      <blockquote>
+        <p>This is a blockquote. It represents a section that is quoted from another source. The styling should make it visually distinct from regular paragraphs.</p>
+        <cite>— Author Name</cite>
+      </blockquote>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Lists</h3>
+      <div class="showcase-row">
+        <div class="showcase-col">
+          <h4>Unordered List</h4>
+          <ul>
+            <li>First list item</li>
+            <li>Second list item with <a href="#">a link</a></li>
+            <li>Third list item with <strong>strong text</strong></li>
+            <li>Nested list:
+              <ul>
+                <li>Nested item 1</li>
+                <li>Nested item 2</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="showcase-col">
+          <h4>Ordered List</h4>
+          <ol>
+            <li>First ordered item</li>
+            <li>Second ordered item</li>
+            <li>Third ordered item with nested list:
+              <ol>
+                <li>Nested ordered item 1</li>
+                <li>Nested ordered item 2</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Code</h3>
+      <pre><code>// This is a code block
+function example() {
+  console.log("Hello, Neutrino Electron!");
+  return true;
+}</code></pre>
+      
+      <p>Inline <code>code elements</code> are styled differently from code blocks.</p>
+    </div>
+  </section>
+
+  <!-- Buttons Section -->
+  <section class="showcase-section">
+    <h2>Buttons & Interactive Elements</h2>
+    
+    <div class="showcase-group">
+      <h3>Button Styles</h3>
+      <div class="button-group">
+        <button class="button">Primary Button</button>
+        <button class="button secondary">Secondary Button</button>
+        <br><br>
+        <button class="button large">Large Button</button>
+        <br>
+        <a href="#" class="button">Link as Button</a>
+        <button class="button" disabled>Disabled Button</button>
+      </div>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Form Buttons</h3>
+      <div class="button-group">
+        <button class="form-button">Form Button</button>
+        <button class="form-button primary">Primary Form Button</button>
+        <button class="form-button secondary">Secondary Form Button</button>
+        <button class="form-button outline">Outline Button</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms Section -->
+  <section class="showcase-section">
+    <h2>Form Elements</h2>
+    
+    <div class="form-container">
+      <form class="showcase-form">
+        <div class="form-group">
+          <label for="text-input" class="form-label">Text Input</label>
+          <input type="text" id="text-input" class="form-input" placeholder="Enter some text">
+        </div>
+
+        <div class="form-group">
+          <label for="email-input" class="form-label required">Email Input</label>
+          <input type="email" id="email-input" class="form-input" placeholder="your@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password-input" class="form-label">Password Input</label>
+          <input type="password" id="password-input" class="form-input" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+          <label for="textarea-input" class="form-label">Textarea</label>
+          <textarea id="textarea-input" class="form-textarea" placeholder="Enter a longer message here..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="select-input" class="form-label">Select Dropdown</label>
+          <select id="select-input" class="form-select">
+            <option value="">Choose an option</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox1" name="checkbox1">
+            <label for="checkbox1">Checkbox Option 1</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox2" name="checkbox2" checked>
+            <label for="checkbox2">Checkbox Option 2 (checked)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-radio">
+            <input type="radio" id="radio1" name="radio-group" value="radio1">
+            <label for="radio1">Radio Option 1</label>
+          </div>
+          <div class="form-radio">
+            <input type="radio" id="radio2" name="radio-group" value="radio2" checked>
+            <label for="radio2">Radio Option 2 (selected)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="form-button primary">Submit Form</button>
+          <button type="reset" class="form-button secondary">Reset Form</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Form States</h3>
+      <div class="form-container">
+        <div class="form-group">
+          <label class="form-label">Error State</label>
+          <input type="text" class="form-input error" value="Invalid input">
+          <div class="form-message error">This field has an error</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Success State</label>
+          <input type="text" class="form-input success" value="Valid input">
+          <div class="form-message success">This field is valid</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Info Message</label>
+          <input type="text" class="form-input" value="Some input">
+          <div class="form-message info">This is an info message</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tables Section -->
+  <section class="showcase-section">
+    <h2>Tables</h2>
+    
+    <div class="showcase-group">
+      <h3>Basic Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>john@example.com</td>
+            <td>Developer</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>jane@example.com</td>
+            <td>Designer</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Bob Johnson</td>
+            <td>bob@example.com</td>
+            <td>Manager</td>
+            <td>Inactive</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section class="showcase-section">
+    <h2>Media Elements</h2>
+    
+    <div class="showcase-group">
+      <h3>Images</h3>
+      <figure>
+        <img src="/assets/images/neutrino-logo.svg" alt="Neutrino Logo" style="max-width: 200px; height: auto;">
+        <figcaption>Neutrino Electron Logo</figcaption>
+      </figure>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Video</h3>
+      <video controls style="max-width: 100%; height: auto;">
+        <source src="/assets/videos/sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- Navigation Section -->
+  <section class="showcase-section">
+    <h2>Navigation Elements</h2>
+    
+    <div class="showcase-group">
+      <h3>Breadcrumbs</h3>
+      <nav aria-label="Breadcrumb">
+        <ol style="display: flex; list-style: none; padding: 0; margin: 0;">
+          <li><a href="#">Home</a></li>
+          <li style="margin: 0 0.5rem;">/</li>
+          <li><a href="#">Documentation</a></li>
+          <li style="margin: 0 0.5rem;">/</li>
+          <li aria-current="page">Showcase</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="showcase-group">
+      <h3>Pagination</h3>
+      <nav aria-label="Pagination">
+        <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 0.5rem;">
+          <li><a href="#" class="button secondary">&laquo; Previous</a></li>
+          <li><a href="#" class="button">1</a></li>
+          <li><a href="#" class="button secondary">2</a></li>
+          <li><a href="#" class="button secondary">3</a></li>
+          <li><a href="#" class="button secondary">Next &raquo;</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="showcase-section">
+    <h2>Card Components</h2>
+    
+    <div class="showcase-group">
+      <h3>Blog Post Cards</h3>
+      <div class="showcase-row">
+        <article class="blog post">
+          <div class="post__summary">
+            <div class="post__date">January 15, 2024</div>
+            <h3 class="post__title">Sample Blog Post</h3>
+            <p class="post__excerpt">This is a sample blog post excerpt that demonstrates the styling of post cards in the Neutrino Electron theme.</p>
+          </div>
+        </article>
+        
+        <article class="blog post">
+          <div class="post__summary">
+            <div class="post__date">January 10, 2024</div>
+            <h3 class="post__title">Another Blog Post</h3>
+            <p class="post__excerpt">Another example of a blog post card with different content to show the consistent styling.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alerts & Messages Section -->
+  <section class="showcase-section">
+    <h2>Alerts & Messages</h2>
+    
+    <div class="showcase-group">
+      <div class="form-message error">
+        <strong>Error:</strong> This is an error message with important information.
+      </div>
+      
+      <div class="form-message success">
+        <strong>Success:</strong> This is a success message indicating a positive outcome.
+      </div>
+      
+      <div class="form-message info">
+        <strong>Info:</strong> This is an informational message with helpful details.
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme Toggle Section -->
+  <section class="showcase-section">
+    <h2>Theme Demonstration</h2>
+    
+    <div class="showcase-group">
+      <p>This showcase demonstrates all HTML elements across different themes. Use the theme toggle in the header to switch between:</p>
+      <ul>
+        <li><strong>Light Theme:</strong> Clean, bright interface</li>
+        <li><strong>Dark Theme:</strong> Easy on the eyes for low-light environments</li>
+        <li><strong>Sepia Theme:</strong> Warm, paper-like appearance</li>
+      </ul>
+      
+      <p>All elements automatically adapt to the selected theme using CSS custom properties and the theme system built into Neutrino Electron.</p>
+    </div>
+  </section>
+
+  <!-- Accessibility Section -->
+  <section class="showcase-section">
+    <h2>Accessibility Features</h2>
+    
+    <div class="showcase-group">
+      <h3>Semantic HTML</h3>
+      <p>This showcase uses semantic HTML elements for better accessibility:</p>
+      <ul>
+        <li><code>&lt;main&gt;</code> for main content</li>
+        <li><code>&lt;section&gt;</code> for content sections</li>
+        <li><code>&lt;article&gt;</code> for blog posts</li>
+        <li><code>&lt;nav&gt;</code> for navigation</li>
+        <li><code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> for page structure</li>
+        <li><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for images</li>
+      </ul>
+    </div>
+
+    <div class="showcase-group">
+      <h3>ARIA Labels</h3>
+      <p>Interactive elements include proper ARIA labels and roles for screen readers and assistive technologies.</p>
+    </div>
+  </section>
+</div>
