@@ -99,7 +99,7 @@
 .form-select {
     width: 100%;
     padding: 0.875rem 1rem;
-    border: 2px solid transparent;
+    border: 2px solid var(--form-element-border);
     border-radius: 12px;
     font-size: 1rem;
     line-height: 1.5;
@@ -137,6 +137,10 @@
     &.info {
         border-color: var(--info);
         box-shadow: 0 0 0 4px var(--form-info-bg);
+    }
+    &.warning {
+        border-color: var(--warning);
+        box-shadow: 0 0 0 4px var(--form-warning-bg);
     }
 }
 
@@ -257,5 +261,10 @@
         background-color: var(--form-info-bg);
         color: var(--info);
         border: 1px solid var(--form-info-border);
+    }
+    &.warning {
+        background-color: var(--form-warning-bg);
+        color: var(--warning);
+        border: 1px solid var(--form-warning-border);
     }
 }

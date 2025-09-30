@@ -8,9 +8,8 @@
 // theme: your variables
 @import "_theme-variables";
 
-// core: mixins and typography
+// core: mixins
 @import "@neutrino/core/sass/_mixins";
-@import "@neutrino/core/sass/_typography";
 
 // theme: your base styles
 @import "_theme-typography";

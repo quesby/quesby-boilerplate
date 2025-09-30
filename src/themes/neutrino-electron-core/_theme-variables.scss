@@ -31,6 +31,10 @@ $theme-light: (
   warning: oklch(43.70% 0.199 37.3),
   info: oklch(68.49% 0.139 236.8),
   // Form specific colors
+  form-bg: oklch(97.5% 0.002 180),
+  form-focus-border: oklch(70% 0.15 240),
+  form-placeholder: oklch(50% 0.01 0),
+  form-accent: oklch(70% 0.15 240),
   form-focus-shadow: oklch(0.8 0.05 180),
   form-error-bg: oklch(0.9 0.05 15),
   form-error-border: oklch(0.8 0.1 15),
@@ -38,7 +42,11 @@ $theme-light: (
   form-success-border: oklch(0.8 0.1 140),
   form-info-bg: oklch(0.9 0.05 240),
   form-info-border: oklch(0.8 0.1 240),
-  form-select-arrow: oklch(0.5 0 0)
+  form-select-arrow: oklch(0.5 0 0),
+  button-bg-hover: oklch(92% 0.01 0),
+  accent-red: oklch(55% 0.2 15),
+  accent-green: oklch(50% 0.15 140),
+  accent-blue: oklch(50% 0.2 240)
 );
 
 // DARK THEME
@@ -83,10 +91,11 @@ $theme-dark: (
   form-element-bg-hover: oklch(25% 0 0),
   form-element-fg: oklch(31.85% 0.018 18.1),
   form-element-fg-hover: oklch(31.85% 0.018 18.1),
-  form-focus-border: oklch(25% 0 0),
+  form-element-border: oklch(25% 0 0),
+  form-focus-border: oklch(45% 0 0),
   form-focus-border-hover: oklch(25% 0 0),
-  form-placeholder: oklch(31.85% 0.018 18.1),
-  form-placeholder-hover: oklch(31.85% 0.018 18.1),
+  form-placeholder: oklch(70% 0 0),
+  form-placeholder-hover: oklch(80% 0 0),
   form-accent: oklch(31.85% 0.018 18.1),
   form-focus-shadow: oklch(0.3 0.05 180),
   form-error-bg: oklch(0.2 0.05 15),
@@ -95,15 +104,25 @@ $theme-dark: (
   form-success-border: oklch(0.3 0.1 140),
   form-info-bg: oklch(0.2 0.05 240),
   form-info-border: oklch(0.3 0.1 240),
+  form-warning-bg: oklch(0.2 0.05 83),
+  form-warning-border: oklch(0.3 0.1 83),
   form-select-arrow: oklch(0.6 0 0),
+  accent-red: oklch(70% 0.15 15),
+  accent-green: oklch(75% 0.12 140),
+  accent-blue: oklch(75% 0.15 240),
+  accent-orange: oklch(75% 0.10 83),
   // Borders & Dividers
   border: oklch(25% 0 0),
   divider: color.adjust(white, $lightness: -50%),
   // Alerts
-  error: oklch(62% 0.26 29),
-  success: oklch(70% 0.23 145),
-  warning: oklch(78% 0.19 83),
-  info: oklch(65% 0.24 259),
+  // error: oklch(62% 0.26 29),
+  // success: oklch(70% 0.23 145),
+  // warning: oklch(78% 0.19 83),
+  // info: oklch(65% 0.24 259),
+  error: oklch(70% 0.15 15),
+  success: oklch(75% 0.12 140),
+  info: oklch(75% 0.15 240),
+  warning: oklch(75% 0.10 83),
 );
 
 // SEPIA THEME
@@ -130,6 +149,10 @@ $theme-sepia: (
   warning: oklch(43.70% 0.199 37.3),
   info: oklch(68.49% 0.139 236.8),
   // Form specific colors
+  form-bg: oklch(98% 0.01 60),
+  form-focus-border: oklch(20% 0.01 0),
+  form-placeholder: oklch(60% 0.05 60),
+  form-accent: oklch(20% 0.01 0),
   form-focus-shadow: oklch(0.7 0.05 180),
   form-error-bg: oklch(0.8 0.05 15),
   form-error-border: oklch(0.7 0.1 15),
@@ -137,7 +160,11 @@ $theme-sepia: (
   form-success-border: oklch(0.7 0.1 140),
   form-info-bg: oklch(0.8 0.05 240),
   form-info-border: oklch(0.7 0.1 240),
-  form-select-arrow: oklch(0.5 0 0)
+  form-select-arrow: oklch(0.5 0 0),
+  button-bg-hover: oklch(90% 0.02 60),
+  accent-red: oklch(45% 0.15 15),
+  accent-green: oklch(55% 0.12 140),
+  accent-blue: oklch(50% 0.15 240)
 );
 
 // Color palette exposed as CSS variables

@@ -136,41 +136,6 @@ ul, ol {
 }
 
 
-// Variabili specifiche per i temi delle form
-:root {
-    --form-bg: #f8f9fa;
-    --form-focus-border: lightblue;
-    --form-placeholder: #6b7280;
-    --form-accent: lightblue;
-    --button-bg-hover: #e9ecef;
-    --accent-red: #dc3545;
-    --accent-green: #28a745;
-    --accent-blue: #007bff;
-}
-
-// Dark theme form override
-.dark {
-    --form-bg: #1a1a1a;
-    --form-focus-border: lightblue;
-    --form-placeholder: #9ca3af;
-    --form-accent: lightblue;
-    --button-bg-hover: #374151;
-    --accent-red: #f87171;
-    --accent-green: #4ade80;
-    --accent-blue: #60a5fa;
-}
-
-// Sepia theme form override
-.sepia {
-    --form-bg: #faf6f0;
-    --form-focus-border: black;
-    --form-placeholder: #8b7355;
-    --form-accent: black;
-    --button-bg-hover: #e6d7c3;
-    --accent-red: #c53030;
-    --accent-green: #2f855a;
-    --accent-blue: #2b6cb0;
-}
 
 // Responsive design per le form
 @media (max-width: 768px) {
