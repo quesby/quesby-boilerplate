@@ -148,7 +148,8 @@ button {
     background-color: var(--button-bg);
     transition: $transition;
     &:hover {
-        opacity: 0.8;
+        color: var(--button-fg-hover);
+        background-color: var(--button-bg-hover);
     }
     &.large {
         display: block;
@@ -159,17 +160,29 @@ button {
     &.primary {
         color: var(--button-primary-fg);
         border: 1px solid color-mix(in oklch, var(--button-primary-bg), black 100%);
-        background-color: var(--button-primary-bg);     
+        background-color: var(--button-primary-bg);
+        &:hover {
+            color: var(--button-primary-fg-hover);
+            background-color: var(--button-primary-bg-hover);
+        }
     }
     &.secondary {
         color: var(--button-secondary-fg);
         border: 1px solid color-mix(in oklch, var(--button-secondary-bg), black 100%);
-        background-color: var(--button-secondary-bg);     
+        background-color: var(--button-secondary-bg);
+        &:hover {
+            color: var(--button-secondary-fg-hover);
+            background-color: var(--button-secondary-bg-hover);
+        }
     }
     &.tertiary {
         color: var(--button-tertiary-fg);
         border: 1px solid;
-        background-color: var(--button-tertiary-bg);     
+        background-color: var(--button-tertiary-bg);
+        &:hover {
+            color: var(--button-tertiary-fg-hover);
+            background-color: var(--button-tertiary-bg-hover);
+        }
     }
 }
 .cta-wrapper {
