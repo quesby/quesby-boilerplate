@@ -13,7 +13,7 @@ importers:
         version: 3.1.2
       '@neutrino/core':
         specifier: github:greenpandastudio/neutrino-core#main
-        version: git+https://git@github.com:greenpandastudio/neutrino-core.git#ffbd26e818e4316d22bdd21abae593361d38f318(sass@1.93.2)
+        version: git+https://git@github.com:greenpandastudio/neutrino-core.git#3d650a81d519494839fad8cc18544991a21670ec(sass@1.93.2)
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -205,8 +205,8 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#ffbd26e818e4316d22bdd21abae593361d38f318':
-    resolution: {commit: ffbd26e818e4316d22bdd21abae593361d38f318, repo: git@github.com:greenpandastudio/neutrino-core.git, type: git}
+  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#3d650a81d519494839fad8cc18544991a21670ec':
+    resolution: {commit: 3d650a81d519494839fad8cc18544991a21670ec, repo: git@github.com:greenpandastudio/neutrino-core.git, type: git}
     version: 0.1.0
     peerDependencies:
       sass: ^1.77.0
@@ -1804,7 +1804,7 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#ffbd26e818e4316d22bdd21abae593361d38f318(sass@1.93.2)':
+  '@neutrino/core@git+https://git@github.com:greenpandastudio/neutrino-core.git#3d650a81d519494839fad8cc18544991a21670ec(sass@1.93.2)':
     dependencies:
       '@11ty/eleventy': 3.1.2
       '@11ty/eleventy-img': 4.0.2
