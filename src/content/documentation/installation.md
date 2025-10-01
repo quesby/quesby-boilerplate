@@ -20,12 +20,12 @@ For experienced developers who want to get started immediately:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/greenpandastudio/neutrino-electron.git
-cd neutrino-electron
+git clone https://github.com/greenpandastudio/neutrino-electron.git your-project
+cd your-project
 pnpm install
 
 # 2. Start development
-pnpm run serve
+pnpm serve
 
 # 3. Open browser
 open http://localhost:8080
@@ -115,6 +115,19 @@ Choose the method that best fits your workflow:
 
 > **Note**: All examples in this guide show pnpm commands. Replace `pnpm` with `npm` or `yarn` if using a different package manager.
 
+
+3. **Set up your own Git repository (optional)**
+   ```bash
+   # Remove the original remote
+   git remote remove origin
+
+   # Add your own repository
+   git remote add origin https://github.com/your-user/your-repo.git
+
+   # Push the initial commit
+   git push -u origin main
+   ```
+
 ### Method 2: Download and Extract
 
 **Best for**: Quick setup, production deployments, or when you don't need git history
@@ -159,7 +172,7 @@ Edit `src/_data/site.json`:
    }
    ```
 
-> **Tip**: Use environment variables for different environments (dev/staging/prod) and site.json for project defaults.
+> **Tip**: Environment variables are ideal when working across different machines or environments (dev/staging/prod), while site.json defines project-wide defaults.
 
 ### Theme Configuration
 
@@ -174,12 +187,7 @@ Neutrino comes with built-in themes and supports custom themes:
 
 #### Setting the Theme
 
-**Method 1: Environment Variable (Recommended)**
-```bash
-# Set your preferred theme
-```
-
-**Method 2: site.json Configuration**
+**Configuration in src/_data/site.json**
 ```json
 {
   "theme": "neutrino-electron-core"
@@ -196,9 +204,11 @@ Neutrino comes with built-in themes and supports custom themes:
 2. **Modify theme files** in `src/themes/my-custom-theme/`
 
 3. **Set your theme**:
-   ```bash
-   THEME=my-custom-theme
-   ```
+```json
+{
+  "theme": "my-custom-theme"
+}
+```
 
 > **Learn more**: See [Theme Development Guide](/documentation/themes/) for detailed customization instructions.
 
@@ -209,7 +219,7 @@ Neutrino comes with built-in themes and supports custom themes:
 Run the development server with CSS watching:
 
 ```bash
-pnpm run serve
+pnpm serve
 ```
 
 This command will:
@@ -221,17 +231,17 @@ This command will:
 
 - **Development without CSS watching:**
   ```bash
-  pnpm run dev
+  pnpm dev
   ```
 
 - **CSS-only watching:**
   ```bash
-  pnpm run css:watch
+  pnpm css:watch
   ```
 
 - **Build CSS only:**
   ```bash
-  pnpm run css:build
+  pnpm css:build
   ```
 
 ## Building for Production
@@ -241,7 +251,7 @@ This command will:
 Generate the production build:
 
 ```bash
-pnpm run build
+pnpm build
 ```
 
 This will:
@@ -304,13 +314,13 @@ ls -la /path/to/your/content/directory
 **Solutions**:
 ```bash
 # Check SCSS syntax
-pnpm run css:build
+pnpm css:build
 
 # Verify theme exists
 ls -la src/themes/
 
 # Restart CSS watcher
-pnpm run css:watch
+pnpm css:watch
 ```
 
 #### 3. Port Already in Use
@@ -319,7 +329,7 @@ pnpm run css:watch
 **Solutions**:
 - Eleventy automatically finds an available port
 - Check terminal output for the actual URL
-- Or specify a different port: `pnpm run dev --port 3000`
+- Or specify a different port: `pnpm dev --port 3000`
 
 #### 4. Package Manager Issues
 **Error**: Command not found (pnpm/npm/yarn)
