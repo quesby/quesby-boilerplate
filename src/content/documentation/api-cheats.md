@@ -218,7 +218,6 @@ NODE_ENV=development
 ### Usage in Templates
 ```twig
 {{ env.NEUTRINO_CONTENT_PATH }}
-{{ env.THEME }}
 {{ env.NODE_ENV }}
 ```
 
@@ -273,33 +272,33 @@ NODE_ENV=development
 
 ### Development
 ```bash
-pnpm run serve          # Start development server
-pnpm run dev            # Eleventy only (no CSS watch)
-pnpm run css:watch      # CSS watching only
+pnpm serve          # Start development server
+pnpm dev            # Eleventy only (no CSS watch)
+pnpm css:watch      # CSS watching only
 ```
 
 ### Build
 ```bash
-pnpm run build          # Production build
-pnpm run css:build      # CSS build only
+pnpm build          # Production build
+pnpm css:build      # CSS build only
 ```
 
 ### Utilities
 ```bash
-pnpm run gen:ec-css     # Generate Expressive Code CSS
+pnpm gen:ec-css     # Generate Expressive Code CSS
 ```
 
 ## Troubleshooting
 
 ### Common Issues
 - **Images not loading**: Check path starts with `/assets/`
-- **CSS not updating**: Run `pnpm run css:build`
+- **CSS not updating**: Run `pnpm css:build`
 - **Content not showing**: Check `NEUTRINO_CONTENT_PATH`
 - **Theme not applied**: Verify `theme` in `site.json`
 
 ### Debug Mode
 ```bash
-DEBUG=Eleventy* pnpm run serve
+DEBUG=Eleventy* pnpm serve
 ```
 
 ---

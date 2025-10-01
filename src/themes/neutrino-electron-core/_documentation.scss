@@ -184,17 +184,6 @@
                 }
             }
         }
-        
-        @include respond-to(smartphone) {
-            .nav-wrapper {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-                
-                .nav-item.nav-next {
-                    text-align: left;
-                }
-            }
-        }
     }
     
     @include respond-to(tablet) {
