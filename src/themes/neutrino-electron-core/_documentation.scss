@@ -182,7 +182,7 @@
             }
         }
         
-        @include respond-to(mobile) {
+        @include respond-to(smartphone) {
             .nav-wrapper {
                 grid-template-columns: 1fr;
                 gap: 1rem;

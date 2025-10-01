@@ -22,14 +22,14 @@
             @include flex-container(column, center, center, wrap);
             font-size: 1.15rem;
             text-align: center;
-            max-width: map-get($container-max-widths, tablet);
+            max-width: map.get($container-max-widths, tablet);
         }
     }
     #welcome {
         font-size: 1.15rem;
         text-align: center;
         .container {
-            max-width: map-get($container-max-widths, tablet);
+            max-width: map.get($container-max-widths, tablet);
         }
     }
 
