@@ -288,7 +288,7 @@ ls -la src/themes/neutrino-electron-core/
 ls -la src/themes/neutrino-electron-core/skin.scss
 
 # 5. Set theme via environment variable
-export THEME=neutrino-electron-core
+export THEME=your-theme-name
 ```
 
 ### Markdown Processing Issues

@@ -18,7 +18,7 @@ The Neutrino theme system is a SCSS-based styling architecture that allows you t
 
 ## System Structure
 
-```
+```text
 src/
 └── themes/                          # Theme directory
     ├── neutrino-electron-core/      # Default theme
@@ -108,37 +108,97 @@ Each theme follows this modular structure:
 
 ```scss
 // skin.scss - Main theme file
-@use 'sass:map';
-@use 'sass:color';
-
-// core: reset HTML tags
-@import "@neutrino/core/sass/_reset";
-
-// theme: your variables
-@import "_theme-variables";
-
-// core: mixins
-@import "@neutrino/core/sass/_mixins";
-
-// theme: your base styles
-@import "_theme-typography";
-@import "_base";
-@import "_forms";
-@import "_tables";
-@import "_components";
-
-// theme: your main styles
-@import "_theme-header";
-@import "_footer";
-@import "_page";
-@import "_home";
-@import "_blog";
-@import "_search";
-@import "_documentation";
-@import "_responsive";
+@use "variables";
+@use "@neutrino/core/sass/_reset";
+@use "@neutrino/core/sass/_mixins";
+@use "typography";
+@use "base";
+@use "forms";
+@use "tables";
+@use "components";
+@use "header";
+@use "footer";
+@use "page";
+@use "home";
+@use "blog";
+@use "search";
+@use "documentation";
+@use "responsive";
 ```
 
-### 2. Color System
+### 2. Modern Sass Module System
+
+The theme system uses the modern `@use` and `@forward` rules instead of the legacy `@import` system. This provides better performance, explicit dependencies, and namespace control.
+
+#### Key Benefits
+
+- **Explicit Dependencies**: Each file clearly declares what it needs
+- **Namespace Control**: Variables and mixins can be namespaced to avoid conflicts
+- **Better Performance**: Sass only compiles what's actually used
+- **Future-Proof**: `@import` is deprecated and will be removed in future Sass versions
+
+#### Module Structure
+
+**Main Entry Point (`skin.scss`):**
+```scss
+// Import core modules
+@use "variables";
+@use "@neutrino/core/sass/_reset";
+@use "@neutrino/core/sass/_mixins";
+
+// Import theme modules
+@use "typography";
+@use "base";
+@use "forms";
+// ... other modules
+```
+
+**Forward Declarations (`_forward.scss`):**
+```scss
+// Forward declarations for local theme modules
+// This file allows other modules to access theme variables and mixins
+
+@forward "variables";
+@forward "@neutrino/core/sass/_mixins";
+```
+
+**Module Files (e.g., `_components.scss`):**
+```scss
+@use "sass:map";
+@use "forward" as *;
+
+// Now you can use variables and mixins from the forwarded modules
+.component {
+    margin-top: $margin * 3;
+    @include respond-to(tablet) {
+        // responsive styles
+    }
+}
+```
+
+#### Namespace Usage
+
+When you need to access specific modules without importing everything:
+
+```scss
+@use "variables" as vars;
+@use "sass:map";
+
+.theme-specific {
+    color: map.get(vars.$theme-light, text-fg);
+}
+```
+
+#### Migration from @import
+
+If migrating from the old `@import` system:
+
+1. Replace `@import` with `@use`
+2. Create a `_forward.scss` file for shared variables and mixins
+3. Use `@use "forward" as *;` in files that need access to shared resources
+4. Update variable references to use namespaced syntax when needed
+
+### 3. Color System
 
 Themes use SCSS maps to define colors for different visual themes:
 
@@ -243,10 +303,11 @@ To create a new theme:
 ### 2. Essential Files
 
 **Required Files (Hard Requirements):**
-- `skin.scss` - Main entry point (imports all other files)
-- `_theme-variables.scss` - Color definitions for all visual themes
-- `_theme-typography.scss` - Typography system
+- `skin.scss` - Main entry point (uses all other files)
+- `_variables.scss` - Color definitions for all visual themes
+- `_typography.scss` - Typography system
 - `_base.scss` - Base styles and CSS variables
+- `_forward.scss` - Forward declarations for shared resources
 
 **Optional Files (Theme-specific):**
 - `_blog.scss` - Blog-specific styles (only if theme includes blog)
@@ -256,13 +317,13 @@ To create a new theme:
 - `_forms.scss` - Form elements
 - `_page.scss` - General page styles
 - `_responsive.scss` - Responsive breakpoints
-- `_theme-header.scss` - Header component
+- `_header.scss` - Header component
 
-> **Note**: A minimal theme only needs the 4 required files. Optional files can be omitted if not needed.
+> **Note**: A minimal theme needs the 5 required files. The `_forward.scss` file is essential for the modern `@use`/`@forward` system to work properly.
 
 ### 3. Color Customization
 
-Modify `_theme-variables.scss` to change colors:
+Modify `_variables.scss` to change colors:
 
 ```scss
 $theme-light: (
@@ -275,7 +336,7 @@ $theme-light: (
 
 ### 4. Typography Customization
 
-Update `_theme-typography.scss` for custom fonts:
+Update `_typography.scss` for custom fonts:
 
 ```scss
 :root {
@@ -321,23 +382,25 @@ Create custom component styles:
 
 ### 3. Responsive Design
 
-Use the responsive mixins and breakpoints:
+Use the responsive mixins and breakpoints with the modern module system:
 
 ```scss
-@import '../../sass/mixins';
+@use "forward" as *;
 
 .custom-layout {
   display: flex;
   
-  @include mobile {
+  @include respond-to(smartphone) {
     flex-direction: column;
   }
   
-  @include tablet {
+  @include respond-to(tablet) {
     flex-wrap: wrap;
   }
 }
 ```
+
+> **Note**: The responsive mixins are now available through the `_forward.scss` file, which forwards the core mixins module.
 
 ## Theme Development
 
@@ -390,9 +453,11 @@ Test your theme across:
 **Problem**: SCSS compilation fails
 **Solutions**:
 - Check SCSS syntax in theme files
-- Verify all imports exist and are correct
-- Ensure proper use of SCSS functions and mixins
-- Check for circular imports
+- Verify all `@use` statements reference existing files
+- Ensure `_forward.scss` file exists and forwards required modules
+- Check for circular dependencies in `@use` statements
+- Verify proper namespace usage when accessing variables/mixins
+- Ensure all required modules are properly forwarded in `_forward.scss`
 
 ### Responsive Issues
 
@@ -403,6 +468,21 @@ Test your theme across:
 - Test media queries in browser dev tools
 - Ensure proper viewport meta tag
 
+### Module System Issues
+
+**Problem**: Variables or mixins not found
+**Solutions**:
+- Ensure `_forward.scss` file exists and forwards the required modules
+- Check that files using variables/mixins have `@use "forward" as *;`
+- Verify the module being forwarded actually exports the required variables/mixins
+- Use namespaced imports (`@use "module" as name;`) for specific modules
+
+**Problem**: Circular dependency errors
+**Solutions**:
+- Avoid `@use` statements that create circular references
+- Use `_forward.scss` to break circular dependencies
+- Restructure modules to have clear dependency hierarchy
+
 ## Best Practices
 
 ### 1. Theme Organization
@@ -411,10 +491,12 @@ Test your theme across:
 - Use descriptive variable names
 - Comment complex SCSS logic
 - Maintain consistent naming conventions
+- Use `_forward.scss` to centralize shared resources
+- Keep module dependencies clear and minimal
 
 ### 2. Color Management
 
-- Define all colors in `_theme-variables.scss`
+- Define all colors in `_variables.scss`
 - Use semantic color names (text-fg, bg, link-fg)
 - Test colors in all visual themes
 - Ensure sufficient contrast ratios
@@ -426,7 +508,16 @@ Test your theme across:
 - Avoid deep nesting in SCSS
 - Optimize for critical rendering path
 
-### 4. Maintainability
+### 4. Module System
+
+- Use `@use` instead of `@import` for all new code
+- Create a `_forward.scss` file to share variables and mixins
+- Use `@use "forward" as *;` for files that need access to shared resources
+- Use namespaced imports (`@use "module" as name;`) when you need specific modules
+- Avoid circular dependencies between modules
+- Keep the `_forward.scss` file minimal and focused
+
+### 5. Maintainability
 
 - Document custom variables and mixins
 - Keep themes modular and focused

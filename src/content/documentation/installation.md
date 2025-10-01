@@ -176,7 +176,7 @@ Neutrino comes with built-in themes and supports custom themes:
 
 **Method 1: Environment Variable (Recommended)**
 ```bash
-THEME=neutrino-electron-core
+# Set your preferred theme
 ```
 
 **Method 2: site.json Configuration**

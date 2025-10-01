@@ -212,7 +212,6 @@ class: "custom-page-class"
 ### Available Variables
 ```bash
 NEUTRINO_CONTENT_PATH=/path/to/content
-THEME=neutrino-electron-core
 NODE_ENV=development
 ```
 

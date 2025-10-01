@@ -40,7 +40,7 @@ This comprehensive guide covers all aspects of developing with Neutrino, from se
 
 2. **Start development:**
    ```bash
-   pnpm run serve
+   pnpm serve
    ```
 
 3. **Open browser:**
@@ -68,7 +68,7 @@ Neutrino provides several pnpm scripts for different development tasks:
 
 ### Script Descriptions
 
-#### **`pnpm run serve`** - Full Development Server
+#### **`pnpm serve`** - Full Development Server
 - **Purpose**: Complete development environment with CSS watching
 - **What it does**:
   - Starts Eleventy development server
@@ -77,7 +77,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - Serves site at `http://localhost:8080`
 - **Use case**: Primary development command
 
-#### **`pnpm run dev`** - Eleventy Only
+#### **`pnpm dev`** - Eleventy Only
 - **Purpose**: Eleventy development server without CSS watching
 - **What it does**:
   - Starts Eleventy in serve mode
@@ -85,7 +85,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - No automatic CSS compilation
 - **Use case**: When working only on content/templates
 
-#### **`pnpm run css:watch`** - CSS Watching Only
+#### **`pnpm css:watch`** - CSS Watching Only
 - **Purpose**: Watch and compile SCSS files
 - **What it does**:
   - Monitors SCSS files for changes
@@ -93,7 +93,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - Uses compressed output for development
 - **Use case**: When working only on styles
 
-#### **`pnpm run css:build`** - One-time CSS Build
+#### **`pnpm css:build`** - One-time CSS Build
 - **Purpose**: Compile SCSS to CSS once
 - **What it does**:
   - Compiles all SCSS files to CSS
@@ -101,7 +101,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - No watching, single execution
 - **Use case**: Production builds or testing CSS compilation
 
-#### **`pnpm run gen:ec-css`** - Generate Expressive Code CSS
+#### **`pnpm gen:ec-css`** - Generate Expressive Code CSS
 - **Purpose**: Generate syntax highlighting styles
 - **What it does**:
   - Creates CSS for code syntax highlighting
@@ -109,7 +109,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - Outputs to `src/assets/css/expressive-code.css`
 - **Use case**: When updating code highlighting themes
 
-#### **`pnpm run dev`** - Eleventy Only
+#### **`pnpm dev`** - Eleventy Only
 - **Purpose**: Eleventy development server without CSS watching
 - **What it does**:
   - Starts Eleventy in serve mode
@@ -117,7 +117,7 @@ Neutrino provides several pnpm scripts for different development tasks:
   - No automatic CSS compilation
 - **Use case**: When working only on content/templates
 
-#### **`pnpm run build`** - Production Build
+#### **`pnpm build`** - Production Build
 - **Purpose**: Create production-ready static site
 - **What it does**:
   - Compiles all SCSS to optimized CSS
@@ -200,6 +200,16 @@ neutrino-project/
 
 > **Note**: For detailed SCSS customization, see the [Theme Development Guide](./themes.md).
 
+### Modern Sass Module System
+
+Neutrino uses the modern `@use` and `@forward` rules instead of the legacy `@import` system. This provides better performance, explicit dependencies, and namespace control.
+
+**Key Benefits:**
+- **Explicit Dependencies**: Each file clearly declares what it needs
+- **Namespace Control**: Variables and mixins can be namespaced to avoid conflicts
+- **Better Performance**: Sass only compiles what's actually used
+- **Future-Proof**: `@import` is deprecated and will be removed in future Sass versions
+
 ### Core SCSS System
 
 Neutrino uses a modular SCSS architecture with clear separation of concerns:
@@ -208,27 +218,28 @@ Neutrino uses a modular SCSS architecture with clear separation of concerns:
 
 ```scss
 // core.scss - Main entry point
-@import '_reset';        // CSS reset and normalization
-@import '_variables';    // Global variables and color schemes
-@import '_mixins';       // Reusable SCSS mixins
-@import '_typography';   // Typography system
+@use '_reset';        // CSS reset and normalization
+@use '_variables';    // Global variables and color schemes
+@use '_mixins';       // Reusable SCSS mixins
+@use '_typography';   // Typography system
 ```
 
 #### **Theme Files** (`src/themes/[theme-name]/`)
 
 ```scss
 // skin.scss - Theme entry point
-@import '../../sass/core';           // Import core styles
-@import "_theme-variables";          // Theme-specific variables
-@import "_theme-typography";         // Theme typography
-@import "_base";                     // Base theme styles
-@import "_forms";                    // Form styles
-@import "_theme-header";             // Header styles
-@import "_page";                     // Page layouts
-@import "_home";                     // Homepage styles
-@import "_blog";                     // Blog styles
-@import "_documentation";            // Documentation styles
-@import "_responsive";               // Responsive design
+@use "variables";
+@use "@neutrino/core/sass/_reset";
+@use "@neutrino/core/sass/_mixins";
+@use "typography";
+@use "base";
+@use "forms";
+@use "header";
+@use "page";
+@use "home";
+@use "blog";
+@use "documentation";
+@use "responsive";
 ```
 
 ### Variable System
@@ -644,11 +655,11 @@ collections.documentation // All docs from src/content/documentation/
 ```
 src/themes/my-custom-theme/
 ├── skin.scss # Main theme file
-├── theme-variables.scss # Theme-specific variables
-├── theme-typography.scss # Typography overrides
+├── _variables.scss # Theme-specific variables
+├── _typography.scss # Typography overrides
 ├── base.scss # Base styles
 ├── forms.scss # Form styles
-├── theme-header.scss # Header styles
+├── _header.scss # Header styles
 ├── page.scss # Page layouts
 ├── home.scss # Homepage styles
 ├── blog.scss # Blog styles
@@ -660,24 +671,21 @@ src/themes/my-custom-theme/
 
 ```scss
 // Core (do not touch in themes)
-@use 'sass:map';
-@use 'sass:color';
-@import '../../sass/core';
-
-// Theme-specific imports
-@import "_theme-variables";
-@import "_theme-typography";
-@import "_base";
-@import "_forms";
-@import "_theme-header";
-@import "_page";
-@import "_home";
-@import "_blog";
-@import "_documentation";
-@import "_responsive";
+@use "variables";
+@use "@neutrino/core/sass/_reset";
+@use "@neutrino/core/sass/_mixins";
+@use "typography";
+@use "base";
+@use "forms";
+@use "header";
+@use "page";
+@use "home";
+@use "blog";
+@use "documentation";
+@use "responsive";
 ```
 
-#### **3. Theme Variables** (`_theme-variables.scss`)
+#### **3. Theme Variables** (`_variables.scss`)
 
 ```scss
 // Override global variables
@@ -694,14 +702,7 @@ $custom-spacing: 2rem;
 
 ### Theme Switching
 
-#### **Environment Variable Method**
-
-```bash
-# Set theme via environment variable
-THEME=my-custom-theme npm run serve
-```
-
-#### **Site Configuration Method**
+#### **Site Configuration**
 
 ```json
 {
@@ -719,11 +720,11 @@ THEME=my-custom-theme npm run serve
 
 ```bash
 # Start full development environment
-pnpm run serve    # or npm run serve / yarn serve
+pnpm serve    # or npm run serve / yarn serve
 
 # Or start components individually
-pnpm run css:watch    # CSS watching only
-pnpm run dev          # Eleventy only
+pnpm css:watch    # CSS watching only
+pnpm dev          # Eleventy only
 ```
 
 #### **2. Content Development**
@@ -797,10 +798,10 @@ git push origin content/new-post
 **Solutions:**
 ```bash
 # Check SCSS syntax
-pnpm run css:build    # or npm run css:build / yarn css:build
+pnpm css:build    # or npm run css:build / yarn css:build
 
 # Restart CSS watcher
-pnpm run css:watch    # or npm run css:watch / yarn css:watch
+pnpm css:watch    # or npm run css:watch / yarn css:watch
 
 # Check theme configuration
 cat src/_data/site.json | grep theme
@@ -822,7 +823,7 @@ ls -la src/content/posts/
 # Check YAML syntax in content files
 
 # Rebuild site
-pnpm run build
+pnpm build
 ```
 
 #### **Template Errors**
@@ -839,7 +840,7 @@ pnpm run build
 # Check for missing partials
 
 # Enable debug mode
-DEBUG=Eleventy* pnpm run serve
+DEBUG=Eleventy* pnpm serve
 ```
 
 ### Debug Tools
@@ -848,10 +849,10 @@ DEBUG=Eleventy* pnpm run serve
 
 ```bash
 # Enable detailed logging
-DEBUG=Eleventy* pnpm run serve
+DEBUG=Eleventy* pnpm serve
 
 # Show build information
-pnpm run build -- --verbose
+pnpm build -- --verbose
 ```
 
 #### **SCSS Debug Mode**
@@ -991,7 +992,7 @@ npx html-validate _site/**/*.html
 
 ```bash
 # Test production build
-pnpm run build
+pnpm build
 
 # Check build output
 ls -la _site/
@@ -1005,7 +1006,7 @@ ls -la _site/assets/
 #### **GitHub Pages**
 ```bash
 # Deploy to GitHub Pages
-pnpm run build
+pnpm build
 git add _site/
 git commit -m "Deploy to GitHub Pages"
 git subtree push --prefix _site origin gh-pages
@@ -1015,7 +1016,7 @@ git subtree push --prefix _site origin gh-pages
 ```yaml
 # netlify.toml
 [build]
-  command = "pnpm run build"
+  command = "pnpm build"
   publish = "_site"
 
 [build.environment]
@@ -1025,7 +1026,7 @@ git subtree push --prefix _site origin gh-pages
 #### **Vercel**
 ```json
 {
-  "buildCommand": "pnpm run build",
+  "buildCommand": "pnpm build",
   "outputDirectory": "_site",
   "installCommand": "pnpm install"
 }
@@ -1034,7 +1035,7 @@ git subtree push --prefix _site origin gh-pages
 #### **Traditional Hosting (rsync)**
 ```bash
 # Deploy via rsync
-pnpm run build
+pnpm build
 rsync -av _site/ user@server:/path/to/site/
 ```
 
@@ -1066,7 +1067,6 @@ ls -lh _site/assets/images/
 ```bash
 # .env.production
 NEUTRINO_CONTENT_PATH=/path/to/production/content
-THEME=neutrino-electron-core
 NODE_ENV=production
 ```
 

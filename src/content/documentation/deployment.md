@@ -60,7 +60,6 @@ Create a production `.env` file:
 ```bash
 # .env.production
 NEUTRINO_CONTENT_PATH=/path/to/production/content
-THEME=neutrino-electron-core
 NODE_ENV=production
 ```
 
@@ -175,7 +174,6 @@ eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes
 3. **Environment Variables:**
    ```
    NEUTRINO_CONTENT_PATH=./content
-   THEME=neutrino-electron-core
    NODE_ENV=production
    ```
 
@@ -356,7 +354,6 @@ jobs:
 3. **Environment Variables:**
    ```
    NEUTRINO_CONTENT_PATH=./content
-   THEME=neutrino-electron-core
    NODE_ENV=production
    ```
 
