@@ -104,18 +104,13 @@
     background-color: var(--form-bg, var(--site-bg-2));
     color: var(--text-fg);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     
     &:focus {
         outline: none;
         border-color: var(--form-focus-border, var(--cpal-3));
-        box-shadow: 0 0 0 4px var(--form-focus-shadow);
-        transform: translateY(-1px);
     }
     
     &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-        transform: translateY(-1px);
     }
     
     &::placeholder {
