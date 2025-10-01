@@ -1,3 +1,5 @@
+@use "forward" as *;
+
 footer {
     .container {
         @include flex-container(row, center, center, wrap);

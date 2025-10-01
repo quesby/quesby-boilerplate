@@ -1,31 +1,21 @@
 // Core (do not touch in themes)
-@use 'sass:map';
-@use 'sass:color';
+// @use 'sass:map';
+// @use 'sass:color';
 
-// core: reset HTML tags
-@import "@neutrino/core/sass/_reset";
-
-// theme: your variables
-@import "_theme-variables";
-
-// core: mixins
-@import "@neutrino/core/sass/_mixins";
-
-// theme: your base styles
-@import "_theme-typography";
-@import "_base";
-@import "_forms";
-@import "_tables";
-@import "_components";
-
-// theme: your main styles
-@import "_theme-header";
-@import "_footer";
-@import "_page";
-@import "_home";
-@import "_blog";
-@import "_search";
-@import "_documentation";
-@import "_responsive";
-
-
+// @use "forward" as *;
+@use "variables";
+@use "@neutrino/core/sass/_reset";
+@use "@neutrino/core/sass/_mixins";
+@use "typography";
+@use "base";
+@use "forms";
+@use "tables";
+@use "components";
+@use "header";
+@use "footer";
+@use "page";
+@use "home";
+@use "blog";
+@use "search";
+@use "documentation";
+@use "responsive";

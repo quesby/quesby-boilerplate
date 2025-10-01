@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "forward" as *;
+
 .documentation {
     $asideWidth: 18em;
     .page-header {

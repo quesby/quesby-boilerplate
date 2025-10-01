@@ -1,4 +1,6 @@
-@use 'sass:map';
+@use "sass:map";
+@use "forward" as *;
+
 @include respond-to(smartphone) {
     body {
       font-size: 16px;

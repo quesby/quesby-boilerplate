@@ -1,4 +1,6 @@
 // COMMON - defines all the general style for images, containers and so on
+@use "forward" as *;
+
 // Light theme (default)
 :root {
     @each $name, $value in $theme-light {
@@ -142,7 +144,7 @@ button {
 .button {
     display: block;
     padding: .5em 1em;
-    border: 1px solid color-mix(in oklch, var(--button-bg), black 5%);
+    border: 1px solid #{'color-mix(in oklch, var(--button-bg), black 5%)'};
     border-radius: $borderRadius-normal;
     color: var(--button-fg);
     background-color: var(--button-bg);
@@ -159,7 +161,7 @@ button {
     }
     &.primary {
         color: var(--button-primary-fg);
-        border: 1px solid color-mix(in oklch, var(--button-primary-bg), black 100%);
+        border: 1px solid #{'color-mix(in oklch, var(--button-primary-bg), black 100%)'};
         background-color: var(--button-primary-bg);
         &:hover {
             color: var(--button-primary-fg-hover);
@@ -168,7 +170,7 @@ button {
     }
     &.secondary {
         color: var(--button-secondary-fg);
-        border: 1px solid color-mix(in oklch, var(--button-secondary-bg), black 100%);
+        border: 1px solid #{'color-mix(in oklch, var(--button-secondary-bg), black 100%)'};
         background-color: var(--button-secondary-bg);
         &:hover {
             color: var(--button-secondary-fg-hover);

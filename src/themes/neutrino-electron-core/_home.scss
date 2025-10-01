@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "forward" as *;
+
 .home {
     h1 {
         @include flex-container(column, center, center, wrap);

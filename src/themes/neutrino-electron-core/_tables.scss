@@ -1,3 +1,5 @@
+@use "forward" as *;
+
 table {
     td, th {
         padding: ($padding * 0.25) ($padding * 0.5);

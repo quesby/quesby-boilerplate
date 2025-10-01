@@ -1,3 +1,5 @@
+@use "forward" as *;
+
 // forms
 .form-container {
     animation: formSlideIn 0.6s ease-out;

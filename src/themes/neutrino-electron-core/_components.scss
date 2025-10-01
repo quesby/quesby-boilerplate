@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "forward" as *;
+
 // Social Rig
 #socialrig {
     margin-top: $margin * 3;
@@ -385,7 +388,7 @@
         &.active {
             .hero-slider__indicator-dot {
                 background-color: var(--cpal-3);
-                transform: scale(1.2);
+                transform: #{'scale(1.2)'};
             }
         }
     }
@@ -415,13 +418,13 @@
         &--next {
             transform: rotate(180deg);
             &:hover {
-                transform: rotate(180deg) translateX(-25%) scale(1.1);
+                transform: rotate(180deg) translateX(-25%) #{'scale(1.1)'};
             }
         }
         
         &--prev {
             &:hover {
-                transform: translateX(-25%) scale(1.1);
+                transform: translateX(-25%) #{'scale(1.1)'};
             }
         }
         

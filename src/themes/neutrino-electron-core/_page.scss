@@ -1,3 +1,5 @@
+@use "forward" as *;
+
 // generic styles
 body {
     @include flex-container(column, center, center, wrap);
