@@ -7,6 +7,7 @@ $font-slogans: 'Geist', sans-serif;
 $font-mono: 'Geist Mono', monospace;
 
 // COLORS
+$accent: oklch(40% 0.12 300);
 // LIGHT THEME
 $theme-light: (
   // Backgrounds
@@ -21,8 +22,8 @@ $theme-light: (
   code-bg: oklch(92% 0 0),
   code-fg: oklch(20% 0 0),
   // Links
-  link-fg: oklch(40% 0.1367 299.15),
-  link-fg-hover: oklch(30% 0.1367 299.15),
+  link-fg: $accent,
+  link-fg-hover: color.adjust($accent, $lightness: 15%),
   // Headlines
   headlines-fg: oklch(10% 0 0),
   // Navigation
@@ -65,18 +66,9 @@ $theme-light: (
   form-warning-bg: oklch(95% 0.05 83),
   form-warning-border: oklch(70% 0.13 83),
   form-select-arrow: oklch(0.3 0 0),
-  accent-red: oklch(55% 0.15 15),
-  accent-green: oklch(55% 0.12 140),
-  accent-blue: oklch(55% 0.15 240),
-  accent-orange: oklch(55% 0.10 83),
   // Borders & Dividers
   border: oklch(85% 0 0),
-  divider: color.adjust(black, $lightness: +50%),
-  // Alerts
-  error: oklch(55% 0.15 15),
-  success: oklch(55% 0.12 140),
-  info: oklch(55% 0.15 240),
-  warning: oklch(55% 0.13 83),
+  divider: color.adjust(black, $lightness: +50%)
 );
 
 // DARK THEME
@@ -93,8 +85,8 @@ $theme-dark: (
   code-bg: oklch(22% 0 0),
   code-fg: oklch(93% 0 0),
   // Links
-  link-fg: oklch(0.75 0.1367 299.15),
-  link-fg-hover: oklch(0.6 0.1367 299.15),
+  link-fg: $accent,
+  link-fg-hover: color.adjust($accent, $lightness: 15%),
   // Headlines
   headlines-fg: oklch(100.00% 0.000 89.9),
   // Navigation
@@ -137,20 +129,11 @@ $theme-dark: (
   form-warning-bg: oklch(0.2 0.05 83),
   form-warning-border: oklch(0.3 0.1 83),
   form-select-arrow: oklch(0.6 0 0),
-  accent-red: oklch(70% 0.15 15),
-  accent-green: oklch(75% 0.12 140),
-  accent-blue: oklch(75% 0.15 240),
-  accent-orange: oklch(75% 0.10 83),
   // Borders & Dividers
   border: oklch(25% 0 0),
-  divider: color.adjust(white, $lightness: -50%),
-  // Alerts
-  error: oklch(70% 0.15 15),
-  success: oklch(75% 0.12 140),
-  info: oklch(75% 0.15 240),
-  warning: oklch(75% 0.13 83),
-);
-
+  divider: color.adjust(white, $lightness: -50%)
+  );
+  
 // SEPIA THEME
 $theme-sepia: (
   // Backgrounds
@@ -209,22 +192,14 @@ $theme-sepia: (
   form-warning-bg: oklch(95% 0.05 83),
   form-warning-border: oklch(70% 0.13 83),
   form-select-arrow: oklch(0.3 0.05 40),
-  accent-red: oklch(60% 0.15 30),
-  accent-green: oklch(65% 0.12 140),
-  accent-blue: oklch(65% 0.15 240),
-  accent-orange: oklch(65% 0.13 83),
   // Borders & Dividers
   border: oklch(80% 0.05 85),
   divider: oklch(40% 0.05 40),
-  // Alerts
-  error: oklch(60% 0.15 30),
-  success: oklch(65% 0.12 140),
-  info: oklch(65% 0.15 240),
-  warning: oklch(65% 0.13 83),
-);
-
+ );
+  
 // Color palette exposed as CSS variables
 $palette: (
+  accent: $accent,
   // Core palette
   cpal-1: black,
   cpal-2: white,
@@ -233,6 +208,11 @@ $palette: (
   cpal-5: oklch(65.1% 0.273 329.4),
   cpal-6: oklch(66.77% 0.132 161.8),
   // Brand
+  // Alerts
+  error: oklch(70% 0.15 15),
+  success: oklch(75% 0.12 140),
+  info: oklch(75% 0.15 240),
+  warning: oklch(75% 0.13 83),
   // Neutral grays and blacks
   neutral-111: oklch(17.76% 0.000 89.9),
   neutral-191919: oklch(21.34% 0.000 89.9),

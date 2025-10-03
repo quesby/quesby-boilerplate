@@ -39,7 +39,7 @@
                     margin-right: .5em;
                 }
                 &:hover {
-                    color: var(--cpal-5);
+                    color: var(--success);
                     background-color: var(--neutral-191919);
                 }
             }
@@ -387,7 +387,7 @@
         
         &.active {
             .hero-slider__indicator-dot {
-                background-color: var(--cpal-3);
+                background-color: var(--accent);
                 transform: #{'scale(1.2)'};
             }
         }
@@ -472,7 +472,7 @@
     &__progress-bar {
         display: none;
         height: 100%;
-        background: linear-gradient(90deg, var(--cpal-3) 0%, var(--cpal-6) 100%);
+        background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%);
         width: 0%;
         transition: width 0.1s linear;
     }
