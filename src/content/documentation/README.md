@@ -1,13 +1,15 @@
 ---
+slug: README
 title: Documentation Overview
 description: Complete guide to Neutrino Electron - privacy-first static site boilerplate
+body: ''
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 1
-lastUpdated: "2025-09-12"
+lastUpdated: '2025-09-12'
 ---
 
 # Documentation Overview
