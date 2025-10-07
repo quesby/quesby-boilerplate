@@ -1,0 +1,116 @@
+# /content/content.yaml
+collections:
+  posts:
+    label: "Posts"
+    path: "posts"
+    extension: "md"
+    slug: "{{id}}--{{slug}}"
+    entry_template: "posts/{id}--{slug}/index.md"
+    create: true
+    fields:
+      - name: id
+        label: "ID (ULID)"
+        type: "ulid"
+
+      - name: title
+        label: "Title"
+        type: "string"
+
+      - name: slug
+        label: "Slug"
+        type: "string"
+        from: "title"
+        hint: "URL-friendly version of the title"
+
+      - name: description
+        label: "Description"
+        type: "text"
+        required: false
+
+      - name: date
+        label: "Date"
+        type: "datetime"
+
+      - name: author
+        label: "Author"
+        type: "string"
+        required: false
+
+      - name: image
+        label: "Image"
+        type: "image"
+        required: false
+        path: "../../media/blog"
+
+      - name: tags
+        label: "Tags"
+        type: "list"
+        required: false
+
+      - name: draft
+        label: "Draft"
+        type: "boolean"
+        default: false
+
+      - name: aliases
+        label: "Aliases"
+        type: "list"
+        required: false
+        hint: "Old URLs to redirect to this post"
+
+      - name: body
+        label: "Body"
+        type: "markdown"
+  documentation:
+    label: "Documentation"
+    path: "documentation"
+    extension: "md"
+    slug: "{{slug}}"
+    entry_template: "documentation/{slug}.md"
+    create: true
+    fields:
+      - name: slug
+        label: "Slug"
+        type: "string"
+        from: "title"
+        hint: "URL-friendly version of the title"
+
+      - name: title
+        label: "Title"
+        type: "string"
+
+      - name: description
+        label: "Description"
+        type: "text"
+
+      - name: body
+        label: "Body"
+        type: "markdown"
+
+      - name: layout
+        label: "Layout"
+        type: "string"
+
+      - name: aside
+        label: "Aside"
+        type: "string"
+
+      - name: toc
+        label: "TOC"
+        type: "string"
+
+      - name: navfooter
+        label: "Navfooter"
+        type: "string"
+
+      - name: class
+        label: "Class"
+        type: "string"
+
+      - name: order
+        label: "Order"
+        type: "number"
+
+      - name: lastUpdated
+        label: "Last Updated"
+        type: "datetime"
