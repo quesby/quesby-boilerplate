@@ -1,6 +1,6 @@
 ---
 title: Theme System
-description: Complete guide to Neutrino Electron theme system and customization
+description: Complete guide to Neutrino Boilerplate theme system and customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk

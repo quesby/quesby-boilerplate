@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Complete API reference for Neutrino Electron functions and filters
+description: Complete API reference for Neutrino Boilerplate functions and filters
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -336,12 +336,12 @@ Global site configuration from `src/_data/site.json`.
 
 ```javascript
 // Available in all templates
-{{ site.name }}           // "Neutrino - Electron"
+{{ site.name }}           // "Neutrino - Boilerplate"
 {{ site.url }}            // "https://theoddape.it"
 {{ site.description }}    // "An Eleventy boilerplate with Decap CMS"
 {{ site.logo }}           // "/assets/images/neutrino-logo.svg"
 {{ site.favicon }}        // "/assets/images/neutrino-logo.png"
-{{ site.theme }}          // "neutrino-electron-core"
+{{ site.theme }}          // "neutrino-Boilerplate-core"
 {{ site.defaultVisualTheme }} // "dark"
 {{ site.contentPath }}    // "${NEUTRINO_CONTENT_PATH}"
 ```
@@ -356,7 +356,7 @@ Current active theme name.
 
 ```javascript
 // Available in all templates
-{{ theme }} // "neutrino-electron-core" or "neutrino-brand-website"
+{{ theme }} // "neutrino-Boilerplate-core" or "neutrino-brand-website"
 ```
 
 ### Computed Data
@@ -515,7 +515,7 @@ Embeds SVG files directly in HTML with optional CSS classes.
 {% raw %}
 <!-- layouts/single-post.njk -->
 {% extends "layouts/base.njk" %}
-{% set seoTitle = "Neutrino - Electron | " + title %}
+{% set seoTitle = "Neutrino - Boilerplate | " + title %}
 {% set postClass = "single-post" %}
 {% set postType = "article" %}
 
@@ -810,7 +810,7 @@ THEME=neutrino-brand-website
 ```
 
 **Available Themes:**
-- `neutrino-electron-core` (default)
+- `neutrino-Boilerplate-core` (default)
 - `neutrino-brand-website`
 
 #### **`NODE_ENV`**

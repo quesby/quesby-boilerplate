@@ -1,6 +1,6 @@
 ---
 title: Development Guide
-description: Complete development guide for Neutrino Electron customization
+description: Complete development guide for Neutrino Boilerplate customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -33,8 +33,8 @@ This comprehensive guide covers all aspects of developing with Neutrino, from se
 
 1. **Clone and install:**
    ```bash
-   git clone https://github.com/greenpandastudio/neutrino-electron.git
-   cd neutrino-electron
+   git clone https://github.com/greenpandastudio/neutrino-Boilerplate.git
+   cd neutrino-Boilerplate
    pnpm install
    ```
 
@@ -157,7 +157,7 @@ neutrino-project/
 │ │ ├── variables.scss # Global variables
 │ │ └── core.scss # Core styles
 │ └── themes/ # Theme-specific styles
-│ ├── neutrino-electron-core/
+│ ├── neutrino-Boilerplate-core/
 │ └── neutrino-brand-website/
 ├── scripts/ # Build scripts
 │ ├── build.js # CSS build script
@@ -740,7 +740,7 @@ code src/content/posts/[ulid]/index.md
 
 ```scss
 // Edit theme files
-code src/themes/neutrino-electron-core/_base.scss
+code src/themes/neutrino-Boilerplate-core/_base.scss
 
 // Or core files
 code src/sass/_variables.scss

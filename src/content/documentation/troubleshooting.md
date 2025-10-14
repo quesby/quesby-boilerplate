@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Guide
-description: Complete troubleshooting guide for Neutrino Electron issues
+description: Complete troubleshooting guide for Neutrino Boilerplate issues
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk

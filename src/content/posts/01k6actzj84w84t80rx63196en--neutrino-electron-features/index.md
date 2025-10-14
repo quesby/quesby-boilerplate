@@ -1,9 +1,9 @@
 ---
 id: 01k6actzj84w84t80rx63196en
-title: Neutrino Electron Features
+title: Neutrino Boilerplate Features
 slug: neutrino-electron-features
 description: >-
-  Explore the powerful features that make Neutrino Electron the perfect choice
+  Explore the powerful features that make Neutrino Boilerplate the perfect choice
   for modern static site development. From performance optimization to content
   management.
 date: 2025-09-29T09:29:00.000Z
@@ -18,7 +18,7 @@ draft: false
 aliases: []
 body: ''
 ---
-Neutrino Electron packs a comprehensive set of features designed to make static site development efficient, enjoyable, and future-proof. Here's what makes it stand out in the crowded landscape of static site generators.
+Neutrino Boilerplate packs a comprehensive set of features designed to make static site development efficient, enjoyable, and future-proof. Here's what makes it stand out in the crowded landscape of static site generators.
 
 ## Core Features
 
@@ -213,10 +213,10 @@ Neutrino Electron packs a comprehensive set of features designed to make static 
 
 ## Get Started Today
 
-Ready to experience these features firsthand? [Install Neutrino Electron](/documentation/installation/) and start building your next project with confidence.
+Ready to experience these features firsthand? [Install Neutrino Boilerplate](/documentation/installation/) and start building your next project with confidence.
 
 Each feature is designed to work seamlessly together, creating a cohesive development experience that scales from simple blogs to complex documentation sites.
 
 ---
 
-*Neutrino Electron is continuously evolving. [Check our GitHub repository](https://github.com/greenpandastudio/neutrino-electron) for the latest features and updates.*
+*Neutrino Boilerplate is continuously evolving. [Check our GitHub repository](https://github.com/greenpandastudio/neutrino-electron) for the latest features and updates.*

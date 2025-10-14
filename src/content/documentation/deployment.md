@@ -1,6 +1,6 @@
 ---
 title: Deployment Guide
-description: Complete deployment guide for Neutrino Electron static sites
+description: Complete deployment guide for Neutrino Boilerplate static sites
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -74,7 +74,7 @@ Update `src/_data/site.json` for production:
   "description": "Your production site description",
   "logo": "/assets/images/your-logo.svg",
   "favicon": "/assets/images/your-favicon.png",
-  "theme": "neutrino-electron-core",
+  "theme": "neutrino-Boilerplate-core",
   "defaultVisualTheme": "dark",
   "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
@@ -243,7 +243,7 @@ Create `vercel.json`:
   "devCommand": "npm run serve",
   "env": {
     "NEUTRINO_CONTENT_PATH": "./content",
-    "THEME": "neutrino-electron-core",
+    "THEME": "neutrino-Boilerplate-core",
     "NODE_ENV": "production"
   },
   "headers": [
@@ -318,7 +318,7 @@ jobs:
       run: npm run build
       env:
         NEUTRINO_CONTENT_PATH: ./content
-        THEME: neutrino-electron-core
+        THEME: neutrino-Boilerplate-core
         NODE_ENV: production
         
     - name: Deploy to GitHub Pages
@@ -515,7 +515,7 @@ jobs:
       run: npm run build
       env:
         NEUTRINO_CONTENT_PATH: ./content
-        THEME: neutrino-electron-core
+        THEME: neutrino-Boilerplate-core
         NODE_ENV: production
         
     - name: Upload build artifacts

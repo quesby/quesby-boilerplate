@@ -1,6 +1,6 @@
 ---
 title: Configuration Guide
-description: Complete configuration guide for Neutrino Electron site settings
+description: Complete configuration guide for Neutrino Boilerplate site settings
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -27,7 +27,7 @@ Configure your site's basic information in `src/_data/site.json`:
   "description": "Your site description",
   "logo": "/assets/images/your-logo.svg",
   "favicon": "/assets/images/your-favicon.png",
-  "theme": "neutrino-electron-core",
+  "theme": "neutrino-Boilerplate-core",
   "defaultVisualTheme": "dark",
   "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
@@ -79,7 +79,7 @@ Neutrino comes with two built-in themes:
 
 | Theme | Description | Location |
 |-------|-------------|----------|
-| `neutrino-electron-core` | Modern, minimalist design | `src/themes/neutrino-electron-core/` |
+| `neutrino-Boilerplate-core` | Modern, minimalist design | `src/themes/neutrino-Boilerplate-core/` |
 | `neutrino-brand-website` | Brand-focused with enhanced visuals | `src/themes/neutrino-brand-website/` |
 
 ### Setting the Theme
@@ -88,7 +88,7 @@ Configure your active theme in `src/_data/site.json`:
 
 ```json
 {
-  "name": "Neutrino - Electron",
+  "name": "Neutrino - Boilerplate",
   "url": "https://theoddape.it",
   "description": "An Eleventy boilerplate with Decap CMS",
   "logo": "/assets/images/neutrino-logo.svg",
@@ -104,11 +104,11 @@ Configure your active theme in `src/_data/site.json`:
 **Quick Start:**
 ```bash
 # 1. Copy an existing theme
-cp -r src/themes/neutrino-electron-core src/themes/my-custom-theme
+cp -r src/themes/neutrino-Boilerplate-core src/themes/my-custom-theme
 
 # 2. Set your theme in src/data/_site.json
 {
-  "title": "Neutrino Electron",
+  "title": "Neutrino Boilerplate",
   "description": "Privacy-first static site boilerplate",
   "theme": "my-custom-theme"
 }

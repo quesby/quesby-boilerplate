@@ -1,6 +1,6 @@
 ---
 title: Installation Guide
-description: Complete installation and setup guide for Neutrino Electron
+description: Complete installation and setup guide for Neutrino Boilerplate
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk

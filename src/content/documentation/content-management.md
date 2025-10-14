@@ -1,6 +1,6 @@
 ---
 title: Content Management Guide
-description: Complete guide to content management in Neutrino Electron
+description: Complete guide to content management in Neutrino Boilerplate
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
