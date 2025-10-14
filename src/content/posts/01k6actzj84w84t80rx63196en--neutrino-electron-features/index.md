@@ -1,11 +1,12 @@
 ---
-id: 01K6ACTZJ84W84T80RX63196EN
+id: 01k6actzj84w84t80rx63196en
 title: Neutrino Electron Features
 slug: neutrino-electron-features
-description: Explore the powerful features that make Neutrino Electron the
-  perfect choice for modern static site development. From performance
-  optimization to content management.
-date: 2025-09-29T11:29:00.000+02:00
+description: >-
+  Explore the powerful features that make Neutrino Electron the perfect choice
+  for modern static site development. From performance optimization to content
+  management.
+date: 2025-09-29T09:29:00.000Z
 author: Green Panda Studio
 image: pexels-asim-razan-32997.webp
 tags:
@@ -14,6 +15,8 @@ tags:
   - eleventy
   - performance
 draft: false
+aliases: []
+body: ''
 ---
 Neutrino Electron packs a comprehensive set of features designed to make static site development efficient, enjoyable, and future-proof. Here's what makes it stand out in the crowded landscape of static site generators.
 
