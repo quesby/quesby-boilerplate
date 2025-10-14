@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+public/
+assets/**/*
+**/*.svg
+**/*.ico
+**/*.tif
+**/*.tiff
+**/*.bmp
+**/*.heic
+**/*.avif
+**/*.pdf
+**/*.psd
+content/media/**

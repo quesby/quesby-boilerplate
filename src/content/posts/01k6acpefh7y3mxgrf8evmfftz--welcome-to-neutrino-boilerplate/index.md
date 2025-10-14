@@ -1,7 +1,7 @@
 ---
 id: 01K6ACPEFH7Y3MXGRF8EVMFFTZ
 title: Welcome to Neutrino Boilerplate
-slug: welcome-to-neutrino-electron
+slug: welcome-to-neutrino-boilerplate
 description: Discover Neutrino Boilerplate, a modern Eleventy boilerplate designed
   for content creators. Learn how to get started with this privacy-first static
   site generator.
@@ -51,8 +51,8 @@ Getting started with Neutrino Boilerplate is straightforward:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/greenpandastudio/neutrino-electron.git
-cd neutrino-electron
+git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
+cd neutrino-boilerplate
 ```
 
 ### 2. Install Dependencies
@@ -141,7 +141,7 @@ Neutrino Boilerplate comes with a modern, customizable theme system:
 - [Deployment](/documentation/deployment/) - Deploy your site
 
 ### Join the Community
-- **GitHub**: [View source code and contribute](https://github.com/greenpandastudio/neutrino-electron)
+- **GitHub**: [View source code and contribute](https://github.com/neutrino-cms/neutrino-boilerplate)
 - **Issues**: Report bugs and request features
 - **Discussions**: Ask questions and share ideas
 
@@ -170,3 +170,6 @@ Neutrino Boilerplate is designed to get you up and running quickly while providi
 ---
 
 *Neutrino Boilerplate is an open-source project maintained by Green Panda Studio. We're committed to providing a privacy-first, performance-focused solution for modern web development.*
+
+
+

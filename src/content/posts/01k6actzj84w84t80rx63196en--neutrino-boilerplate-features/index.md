@@ -1,7 +1,7 @@
 ---
 id: 01k6actzj84w84t80rx63196en
 title: Neutrino Boilerplate Features
-slug: neutrino-electron-features
+slug: neutrino-boilerplate-features
 description: >-
   Explore the powerful features that make Neutrino Boilerplate the perfect choice
   for modern static site development. From performance optimization to content
@@ -219,4 +219,7 @@ Each feature is designed to work seamlessly together, creating a cohesive develo
 
 ---
 
-*Neutrino Boilerplate is continuously evolving. [Check our GitHub repository](https://github.com/greenpandastudio/neutrino-electron) for the latest features and updates.*
+*Neutrino Boilerplate is continuously evolving. [Check our GitHub repository](https://github.com/neutrino-cms/neutrino-boilerplate) for the latest features and updates.*
+
+
+
