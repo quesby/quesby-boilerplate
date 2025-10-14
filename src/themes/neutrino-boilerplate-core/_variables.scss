@@ -7,7 +7,7 @@ $font-slogans: 'Geist', sans-serif;
 $font-mono: 'Geist Mono', monospace;
 
 // COLORS
-$accent: oklch(40% 0.12 300);
+$accent: oklch(60% 0.12 300);
 // LIGHT THEME
 $theme-light: (
   // Backgrounds
@@ -85,8 +85,8 @@ $theme-dark: (
   code-bg: oklch(22% 0 0),
   code-fg: oklch(93% 0 0),
   // Links
-  link-fg: $accent,
-  link-fg-hover: color.adjust($accent, $lightness: 15%),
+  link-fg: color.adjust($accent, $lightness: 15%),
+  link-fg-hover: color.adjust($accent, $lightness: 5%),
   // Headlines
   headlines-fg: oklch(100.00% 0.000 89.9),
   // Navigation

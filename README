@@ -104,7 +104,7 @@ Complete documentation is available at `/documentation/` including:
 
 ## 📁 Project Structure
 
-```
+```bash
 src/
 ├── content/           # Content files (posts, pages, projects)
 ├── themes/           # Theme system
@@ -125,7 +125,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is open source and available under the [MIT License](LICENSE).
 
-##  Acknowledgments
+## Acknowledgments
 
 - Built with [Eleventy](https://www.11ty.dev/)
 - CMS powered by [Decap CMS](https://decapcms.org/)

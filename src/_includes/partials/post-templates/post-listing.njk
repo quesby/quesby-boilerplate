@@ -3,7 +3,7 @@
         <div class="post__wrapper">
         {% if post.data.image %}
             <div class="post__image">
-                {% imageSync "content/media/blog/" + post.data.image, post.data.title, 150 %}
+                {% imageSync "content/media/posts/" + post.data.image, post.data.title, 150 %}
             </div>
         {% endif %}
         <div class="post__summary">
