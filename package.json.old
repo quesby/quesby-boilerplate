@@ -1,14 +1,14 @@
 {
-  "name": "neutrino-electron",
+  "name": "neutrino-boilerplate",
   "version": "0.1.0",
   "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
-  "homepage": "https://github.com/greenpandastudio/neutrino-electron",
+  "homepage": "https://github.com/greenpandastudio/neutrino-boilerplate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greenpandastudio/neutrino-electron.git"
+    "url": "https://github.com/greenpandastudio/neutrino-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/greenpandastudio/neutrino-electron/issues"
+    "url": "https://github.com/greenpandastudio/neutrino-boilerplate/issues"
   },
   "private": false,
   "type": "module",
@@ -52,6 +52,6 @@
   "license": "MIT",
   "funding": {
     "type": "opencollective",
-    "url": "https://opencollective.com/neutrino-electron"
+    "url": "https://opencollective.com/neutrino-boilerplate"
   }
 }

@@ -21,7 +21,7 @@ The Neutrino theme system is a SCSS-based styling architecture that allows you t
 ```text
 src/
 └── themes/                          # Theme directory
-    ├── neutrino-electron-core/      # Default theme
+    ├── neutrino-boilerplate-core/      # Default theme
     │   ├── _base.scss              # Base styles and CSS variables
     │   ├── _blog.scss              # Blog-specific styles
     │   ├── _components.scss        # Reusable components
@@ -56,13 +56,13 @@ Configure your active theme in `src/_data/site.json`:
 
 ```json
 {
-  "theme": "neutrino-electron-core",
+  "theme": "neutrino-boilerplate-core",
   "defaultVisualTheme": "dark"
 }
 ```
 
 **Available Themes:**
-- `neutrino-electron-core` (default)
+- `neutrino-boilerplate-core` (default)
 - `neutrino-brand-website`
 
 > **Note**: For detailed configuration options, see the [Configuration Guide](../configuration/#theme-configuration).

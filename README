@@ -24,7 +24,7 @@ This project uses PNPM as package manager. Choose one of the following installat
 ```bash
 # Clone the repository
 git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
-cd neutrino-electron
+cd neutrino-boilerplate
 
 # Install PNPM globally
 npm install -g pnpm@9
@@ -41,7 +41,7 @@ pnpm serve
 ```bash
 # Clone the repository
 git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
-cd neutrino-electron
+cd neutrino-boilerplate
 
 # Enable Corepack and prepare PNPM
 corepack enable
@@ -86,7 +86,7 @@ Complete documentation is available at `/documentation/` including:
 
 ## 🎨 Themes
 
-- **neutrino-electron-core** (default) - Clean, modern design
+- **neutrino-boilerplate-core** (default) - Clean, modern design
 - **neutrino-brand-website** - Brand-focused layout
 
 ## 🛠️ Available Scripts

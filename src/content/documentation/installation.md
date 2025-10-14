@@ -20,7 +20,7 @@ For experienced developers who want to get started immediately:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/greenpandastudio/neutrino-electron.git your-project
+git clone https://github.com/greenpandastudio/neutrino-boilerplate.git your-project
 cd your-project
 pnpm install
 
@@ -102,8 +102,8 @@ Choose the method that best fits your workflow:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/greenpandastudio/neutrino-electron.git
-   cd neutrino-electron
+   git clone https://github.com/greenpandastudio/neutrino-boilerplate.git
+   cd neutrino-boilerplate
    ```
 
 2. **Install dependencies:**
@@ -132,7 +132,7 @@ Choose the method that best fits your workflow:
 
 **Best for**: Quick setup, production deployments, or when you don't need git history
 
-1. Download the latest release from the [GitHub repository](https://github.com/greenpandastudio/neutrino-electron/releases)
+1. Download the latest release from the [GitHub repository](https://github.com/greenpandastudio/neutrino-boilerplate/releases)
 2. Extract the archive to your desired location
 3. Navigate to the project directory
 4. Run `pnpm install` (or `npm install` / `yarn install`)
@@ -182,7 +182,7 @@ Neutrino comes with built-in themes and supports custom themes:
 
 | Theme | Description | Location |
 |-------|-------------|----------|
-| `neutrino-electron-core` | Modern, minimalist design | `src/themes/neutrino-electron-core/` |
+| `neutrino-boilerplate-core` | Modern, minimalist design | `src/themes/neutrino-boilerplate-core/` |
 | `neutrino-brand-website` | Brand-focused with enhanced visuals | `src/themes/neutrino-brand-website/` |
 
 #### Setting the Theme
@@ -190,7 +190,7 @@ Neutrino comes with built-in themes and supports custom themes:
 **Configuration in src/_data/site.json**
 ```json
 {
-  "theme": "neutrino-electron-core"
+  "theme": "neutrino-boilerplate-core"
 }
 ```
 
@@ -198,7 +198,7 @@ Neutrino comes with built-in themes and supports custom themes:
 
 1. **Copy an existing theme**:
    ```bash
-   cp -r src/themes/neutrino-electron-core src/themes/my-custom-theme
+   cp -r src/themes/neutrino-boilerplate-core src/themes/my-custom-theme
    ```
 
 2. **Modify theme files** in `src/themes/my-custom-theme/`
@@ -346,8 +346,8 @@ npm install -g pnpm
 ### Getting Help
 
 - **Documentation**: [Troubleshooting Guide](./troubleshooting.md) | [Configuration Guide](./configuration.md)
-- **GitHub Issues**: [Report bugs or request features](https://github.com/greenpandastudio/neutrino-electron/issues)
-- **Discussions**: [Community support](https://github.com/greenpandastudio/neutrino-electron/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/greenpandastudio/neutrino-boilerplate/issues)
+- **Discussions**: [Community support](https://github.com/greenpandastudio/neutrino-boilerplate/discussions)
 - **Quick Fixes**: Check the [Common Issues](./troubleshooting.md#common-issues) section below
 
 ## Next Steps
@@ -373,7 +373,7 @@ After successful installation, here's what to do next:
 ### Quick Wins
 - **Change site name**: Edit `src/_data/site.json`
 - **Add your content**: Create posts in `src/content/posts/`
-- **Customize theme**: Modify files in `src/themes/neutrino-electron-core/`
+- **Customize theme**: Modify files in `src/themes/neutrino-boilerplate-core/`
 - **Set up CMS**: Configure authentication in `src/admin/config.yml`
 
 ## System Requirements

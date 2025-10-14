@@ -253,7 +253,7 @@ head -20 src/content/posts/*/index.md
 sass --check src/sass/core.scss
 
 # 2. Validate theme files
-sass --check src/themes/neutrino-electron-core/skin.scss
+sass --check src/themes/neutrino-boilerplate-core/skin.scss
 
 # 3. Check for missing imports
 grep -r "@import" src/sass/
@@ -282,10 +282,10 @@ cat src/_data/site.json | grep theme
 ls -la src/themes/
 
 # 3. Check theme structure
-ls -la src/themes/neutrino-electron-core/
+ls -la src/themes/neutrino-boilerplate-core/
 
 # 4. Ensure skin.scss exists
-ls -la src/themes/neutrino-electron-core/skin.scss
+ls -la src/themes/neutrino-boilerplate-core/skin.scss
 
 # 5. Set theme via environment variable
 export THEME=your-theme-name
@@ -870,7 +870,7 @@ npm run serve -- --watch
 #### **Support Channels**
 - **GitHub Issues**: For bug reports and feature requests
 - **GitHub Discussions**: For questions and community support
-- **Stack Overflow**: For technical issues (tag: `neutrino-electron`)
+- **Stack Overflow**: For technical issues (tag: `neutrino-boilerplate`)
 
 ### Reporting Issues
 
