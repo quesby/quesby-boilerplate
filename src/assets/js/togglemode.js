@@ -5,21 +5,20 @@ const root = document.documentElement;
 const defaultTheme = root.classList.contains('dark') ? 'dark' : 
                     root.classList.contains('sepia') ? 'sepia' : 'light';
 
-// On startup: use saved preference, system preference, or default theme
+// On startup: use saved preference or default theme (ignore system preference)
 const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 // Clear any existing theme classes first
 root.classList.remove('dark', 'sepia');
 
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+if (savedTheme === 'dark') {
   root.classList.add('dark');
 } else if (savedTheme === 'sepia') {
   root.classList.add('sepia');
 } else if (savedTheme === 'light') {
   // Light theme - no class needed
 } else {
-  // No saved preference, use default theme
+  // No saved preference, use default theme from site.json
   if (defaultTheme === 'dark') {
     root.classList.add('dark');
   } else if (defaultTheme === 'sepia') {
