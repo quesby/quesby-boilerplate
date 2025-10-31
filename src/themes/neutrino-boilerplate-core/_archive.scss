@@ -1,0 +1,70 @@
+@use "forward" as *;
+
+.archive {
+    .post {
+        margin-bottom: $margin;
+        a {
+            display: block;
+        }
+        &:hover {
+            .post__title {
+                color: var(--link-hover);
+            }
+        }
+        &__summary {
+            padding: $padding * 0.5;
+        }
+        &__category {
+            font-size: 0.75rem;
+            color: var(--text-fg);
+        }
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: $padding * 0.5;
+            font-size: 0.9rem;
+            color: var(--text-fg);
+        }
+        &__author {
+            font-size: inherit;
+            color: inherit;
+        }
+        &__separator {
+            font-size: inherit;
+            color: inherit;
+        }
+        &__date {
+            font-size: inherit;
+            color: inherit;
+        }
+        &__title {
+            font-size: 1.35rem;
+            margin: ($margin * 0.5) 0;
+            transition: $transition;
+        }
+        &__excerpt {
+            color: var(--text-fg);
+        }
+        &__image {
+            img {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        &--listing {
+        }
+    }
+}
+
+// responsive
+@include respond-to(smartphone) {
+    .archive {
+        .posts-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $margin;
+        }
+    }
+}

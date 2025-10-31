@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+class: "archive category"
+style: "archive.css"
+pagination:
+  data: collections.categoryList
+  size: 1
+  alias: category
+permalink: "/category/{{ category.slug }}/"
+eleventyComputed:
+  title: "Posts in category: {{ category.name }}"
+---
+
+<section>
+    <div class="container boxed">
+        <h1 class="page-title">Category: {{ category.name }}</h1>
+    </div>
+</section>
+
+<section>
+    <div class="container boxed">
+        <ul class="taxonomy-list">
+          {% for category in collections.categoryList %}
+            <li><a href="/category/{{ category.slug }}/">{{ category.name }}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section id="blog">
+  <div class="container boxed posts-wrapper">
+    {% set posts = collections.postsByCategorySlug[category.slug] or [] %}
+    {% for post in posts | sortBy("date", "desc") %}
+      {% include "partials/post-templates/post-listing.njk" %}
+    {% endfor %}
+  </div>
+</section>

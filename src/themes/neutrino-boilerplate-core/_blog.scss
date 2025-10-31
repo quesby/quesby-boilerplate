@@ -3,52 +3,58 @@
 // Blog
 .blog {
     .post {
-        border: 1px solid var(--border);
-        border-radius: $borderRadius-small;
-        background-color: var(--site-bg-secondary);
-        padding: $padding * 0.5;
         margin-bottom: $margin;
         a {
             display: block;
         }
         &:hover {
-            background-color: var(--site-bg-hover);
+            .post__title {
+                color: var(--link-hover);
+            }
         }
         &__summary {
             padding: $padding * 0.5;
         }
-        &__date {
+        &__category {
             font-size: 0.75rem;
             color: var(--text-fg);
         }
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: $padding * 0.5;
+            font-size: 0.9rem;
+            color: var(--text-fg);
+        }
+        &__author {
+            font-size: inherit;
+            color: inherit;
+        }
+        &__separator {
+            font-size: inherit;
+            color: inherit;
+        }
+        &__date {
+            font-size: inherit;
+            color: inherit;
+        }
         &__title {
             font-size: 1.35rem;
-            margin-bottom: 0;
+            margin: ($margin * 0.5) 0;
+            transition: $transition;
         }
         &__excerpt {
             color: var(--text-fg);
         }
-        &--listing {
-            @include respond-to(smartphone) {
-                .post__wrapper {
-                    @include flex-container(row, flex-start, flex-start, wrap);
-                }
-                .post__image {
-                    flex-basis: 135px;
-                    flex-grow: 0;
-                    flex-shrink: 0;
-                    margin-right: $padding;
-                    img {
-                        aspect-ratio: 4/3;
-                        object-fit: cover;
-                        object-position: center;
-                    }
-                }
-                .post__excerpt {
-                    font-size: 0.9rem;
-                    line-height: 1.25;
-                }
+        &__image {
+            img {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                object-position: center;
             }
+        }
+        &--listing {
         }
     }
 }
@@ -57,40 +63,81 @@
 .single-post {
     main {
         .container {
-            &__summary {
-                h3 {
-                    font-size: 1.5rem;
-                }
-            }
         }
         section {
-            margin-bottom: $margin * 2;
-        }
-        .featured-image {
-            img {
-                width: 100%;
-                aspect-ratio: 16/7;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-        .page-header {
-            margin-top: -100px;
-            .container {
-                background-color: var(--site-bg);
-                padding: ($padding * 2) ($padding * 3);
-            }
-            &__date {
-                font-size: 0.75rem;
-            }
+            // margin-bottom: $margin * 2;
         }
     }
     .post {
-        &__featured-image {
+        &__header {
+            padding-bottom: $padding;
+            border-bottom: 1px solid var(--border);
+        }
+        &__image {
             margin-bottom: $margin;
+        }
+        &__title {}
+        &__info {
+            display: flex;
+            gap: $padding * 0.5;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-fg);
+            margin-bottom: $margin;
+        }
+        &__excerpt {
+            color: var(--text-fg-secondary);
+            font-style: italic;
+            font-size: .9rem;
         }
         &__date {
             font-size: 0.9rem;
+        }
+        &__content {
+            border-bottom: 1px solid var(--border);
+            padding-top: $padding * 2;
+            padding-bottom: $padding * 2;
+        }
+        &__share {}
+        &__tags {
+            @include flex-container(row, flex-start, flex-start, stretch, nowrap);
+            gap: $padding * 0.5;
+            font-size: .8rem;
+            .post__tags-title {
+                font-weight: 600;
+            }
+            .post__tags-list {
+                @include flex-container(row, flex-start, flex-start, flex-start, wrap);
+                gap: $padding * 0.5;
+                li {
+                    list-style: none;
+                    &:before {
+                        content: "#";
+                    }
+                }
+            }
+        }
+        &__back {
+            grid-area: back;
+            align-self: center;
+        }
+        &__related {
+            picture {
+                img {
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: $borderRadius-normal;
+                }
+            }
+            .post__title {
+                font-size: 1.2rem;
+                text-align: left;
+            }
         }
     }
 }
@@ -104,6 +151,50 @@
             .container {
                 max-width: 896px;
                 padding: 0 ($padding * 3);
+            }
+        }
+    }
+}
+@include respond-to(tablet) {
+    .blog {
+        .blog-wrapper {
+            display: grid;
+            gap: ($margin * 2);
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .post {
+        &__footer {
+            display: grid;
+            grid-template-areas:
+            "share share"
+            "tags back"
+            "related related";
+            grid-template-columns: 1fr auto;
+            gap: $padding;
+        }
+        &__related {
+            grid-area: related;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: $padding;
+            .post__related-title {
+                grid-column: 1 / -1;
+            }
+        }
+        &__share {
+            grid-area: share;
+        }
+        &__tags {
+            grid-area: tags;
+            align-self: center;
+        }
+        &__tag-list {
+            @include flex-container(row, flex-start, flex-start, flex-start, wrap);
+            gap: $padding * 0.5;
+            li {
+                list-style: none;
             }
         }
     }

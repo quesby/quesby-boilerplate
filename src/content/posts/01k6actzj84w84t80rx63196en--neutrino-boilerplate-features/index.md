@@ -9,6 +9,7 @@ description: >-
 date: 2025-09-29T09:29:00.000Z
 author: Green Panda Studio
 image: pexels-asim-razan-32997.webp
+category: "Neutrino"
 tags:
   - features
   - neutrino

@@ -8,6 +8,7 @@ description: A comprehensive guide to writing clean, consistent, and accessible
 date: 2025-09-29T08:52:00.000+02:00
 author: Green Panda Studio
 image: pexels-pixabay-256514.jpg
+category: "Markdown"
 tags:
   - Markdown
   - Content Writing

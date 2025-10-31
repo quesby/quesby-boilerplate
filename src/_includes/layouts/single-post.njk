@@ -6,18 +6,51 @@
 {% block content %}
 <div class="single-post container">
     <article class="post">
-        <div class="post__featured-image">
+        <div class="post__image">
             {% if image %}
                 {% image "/content/media/posts/" + image, title, "600", { "loading": "lazy" } %}
             {% endif %}
         </div>
         <div class="post__header boxed">
-            <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
             <h1 class="post__title">{{ title }}</h1>
+            <div class="post__category"><a href="/category/{{ category | slugify }}/">{{ category }}</a></div>
+            <div class="post__info">
+                <div class="post__author">{{ author }}</div>
+                <span class="post__separator">•</span>
+                <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
+            </div>
+            {# <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div> #}
             <p class="post__excerpt">{{ description }}</p>
         </div>
-        <div class="boxed">{{ content | safe }}</div>
-        <footer></footer>
+        <div class="boxed post__content">{{ content | safe }}</div>
+        <footer class="post__footer">
+            <div class="post__share">
+                <span class="post__share-title">Share this post</span>
+                <div class="post__share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" class="post__share-button">Facebook</a>
+                    <a href="https://www.twitter.com/share?url={{ url }}" class="post__share-button">Twitter</a>
+                    <a href="https://www.linkedin.com/shareArticle?url={{ url }}" class="post__share-button">LinkedIn</a>
+                </div>
+            </div>
+            {% if tags %}
+                <div class="post__tags">
+                    <span class="post__tags-title">Tags:</span>
+                    <ul class="post__tag-list">
+                        {% for tag in tags %}
+                        <li><a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <a class="post__button button" href="/blog">Back to blog</a>
+            <div class="post__related">
+                <h3 class="post__related-title">Related posts</h3>
+                {% for post in collections.posts | exclude(page) | sortBy("date", "desc") | limit(2) %}
+                {% include "partials/post-templates/post-listing-related.njk" %}
+                {% endfor %}
+            </div>
+        </footer>
     </article>
+
 </div>
 {% endblock %}

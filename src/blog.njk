@@ -14,6 +14,21 @@ permalink: "/blog/"
     </div>
 </section>
 
+{% set catList = collections.posts | categoryListFrom %}
+{% if catList %}
+<section>
+    <div class="container boxed">
+        <div class="blog-categories">
+          <ul class="category-list">
+            {% for category in catList %}
+              <li><a href="/category/{{ category.slug }}/">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+
 <section id="blog">
   <div class="container boxed blog-wrapper">
     {% for post in collections.posts | sortBy("date", "desc") %}

@@ -1,0 +1,20 @@
+<div class="post post--listing">
+    <a href="{{ post.url }}">
+        <div class="post__wrapper">
+        {% if post.data.image %}
+            <div class="post__image">
+                {% imageSync "content/media/posts/" + post.data.image, post.data.title, 150 %}
+            </div>
+        {% endif %}
+        <div class="post__summary">
+            <div class="post__category">{{ post.data.category }}</div>
+            <div class="post__info">
+                <div class="post__author">{{ post.data.author }}</div>
+                <span class="post__separator">•</span>
+                <div class="post__date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
+            </div>
+            <h2 class="post__title">{{ post.data.title }}</h2>
+        </div>
+        </div>
+    </a>
+</div>

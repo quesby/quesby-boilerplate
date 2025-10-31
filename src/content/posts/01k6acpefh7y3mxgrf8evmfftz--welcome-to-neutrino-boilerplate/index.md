@@ -8,6 +8,7 @@ description: Discover Neutrino Boilerplate, a modern Eleventy boilerplate design
 date: 2025-09-29T11:26:00.000+02:00
 author: Green Panda Studio
 image: neutrino-superhero.webp
+category: "Neutrino"
 tags:
   - neutrino
   - eleventy

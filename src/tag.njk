@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+class: "archive tag"
+style: "archive.css"
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag.slug }}/"
+eleventyComputed:
+  title: "Posts tagged: {{ tag.name }}"
+---
+
+<section>
+    <div class="container boxed">
+      <h1 class="page-title">Tag: {{ tag.name }}</h1>
+    </div>
+</section>
+
+<section>
+    <div class="container boxed">
+        <ul class="taxonomy-list">
+          {% for tag in collections.tagList %}
+            <li><a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section id="blog">
+  <div class="container boxed posts-wrapper">
+    {% set posts = collections.postsByTagSlug[tag.slug] or [] %}
+    {% for post in posts | sortBy("date", "desc") %}
+      {% include "partials/post-templates/post-listing.njk" %}
+    {% endfor %}
+  </div>
+</section>
