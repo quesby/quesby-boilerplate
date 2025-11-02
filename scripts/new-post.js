@@ -103,12 +103,11 @@ description: ""
 date: ${date}
 author: ""
 image: ""
+category: ""
 tags: []
 draft: false
 aliases: []
 ---
-
-# ${title}
 
 Write your content here...
 `;
