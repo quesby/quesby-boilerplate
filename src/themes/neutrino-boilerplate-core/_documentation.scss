@@ -14,6 +14,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: $margin * 2;
+        margin: 0 auto;
         aside {
             order: 1;
             top: 2rem;
@@ -146,7 +147,8 @@
         
         .nav-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            // grid-template-columns: 1fr 1fr;
+            grid-template-areas: "nav-back nav-forward";
             gap: 2rem;
             
             .nav-item {
@@ -179,7 +181,11 @@
                     }
                 }
                 
+                &.nav-prev {
+                    grid-area: nav-back;
+                }
                 &.nav-next {
+                    grid-area: nav-forward;
                     text-align: right;
                 }
             }

@@ -263,3 +263,20 @@ mark, .mark {
     opacity: 0.7;
     z-index: 1;
 }
+.taxonomy-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    a {
+        color: var(--text-fg);
+        text-decoration: none;
+        background-color: var(--button-bg);
+        padding: 0.5em 1em;
+        border-radius: $borderRadius-small;
+        transition: $transition;
+        &:hover {
+            background-color: var(--button-bg-hover);
+            color: var(--button-fg-hover);
+        }
+    }
+}

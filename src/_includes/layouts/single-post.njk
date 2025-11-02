@@ -35,14 +35,14 @@
             {% if tags %}
                 <div class="post__tags">
                     <span class="post__tags-title">Tags:</span>
-                    <ul class="post__tag-list">
+                    <ul class="post__tags-list">
                         {% for tag in tags %}
                         <li><a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             {% endif %}
-            <a class="post__button button" href="/blog">Back to blog</a>
+            <a class="post__back-to-blog button" href="/blog">Back to blog</a>
             <div class="post__related">
                 <h3 class="post__related-title">Related posts</h3>
                 {% for post in collections.posts | exclude(page) | sortBy("date", "desc") | limit(2) %}
