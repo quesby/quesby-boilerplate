@@ -9,8 +9,11 @@
     "css:build": "node scripts/build.js",
     "css:watch": "node scripts/watch.js",
     "dev": "eleventy --serve",
-    "build": "rimraf .cache .img && npm run css:build && eleventy",
-    "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\""
+    "build:images": "rimraf .cache .img && ELEVENTY_IMAGE_MODE=async eleventy",
+    "build": "ELEVENTY_IMAGE_MODE=sync eleventy",
+    "rebuild": "npm run build:images && npm run build",
+    "serve": "concurrently \"npm run css:watch\" \"npx @11ty/eleventy --serve\"",
+    "gen:scss-snippets": "node scripts/gen-scss-snippets.cjs"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
