@@ -20,7 +20,7 @@
     "@neutrino/core": "github:neutrino-cms/neutrino-core#v0.1.0",
     "concurrently": "^9.2.1",
     "minisearch": "^7.2.0",
-    "sass": "^1.93.3"
+    "sass": "^1.94.0"
   },
   "devDependencies": {
     "rimraf": "^5.0.10"

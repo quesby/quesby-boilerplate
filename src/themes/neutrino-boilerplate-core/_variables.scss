@@ -134,69 +134,6 @@ $theme-dark: (
   divider: color.adjust(white, $lightness: -50%)
   );
   
-// SEPIA THEME
-$theme-sepia: (
-  // Backgrounds
-  site-bg: oklch(95% 0.05 85),
-  site-bg-secondary: oklch(92% 0.05 85),
-  site-bg-hover: oklch(89% 0.05 85),
-  site-bg-radial: radial-gradient(oklch(93% 0.05 85) 25%, white),
-  // Text
-  text-fg: oklch(25% 0.05 40),
-  mark-bg: oklch(88% 0.1 90),
-  mark-fg: oklch(20% 0.05 40),
-  code-bg: oklch(92% 0.05 85),
-  code-fg: oklch(25% 0.05 40),
-  // Links
-  link-fg: oklch(45% 0.1 30),
-  link-fg-hover: oklch(35% 0.1 30),
-  // Headlines
-  headlines-fg: oklch(20% 0.05 40),
-  // Navigation
-  navigation-bg: oklch(95% 0.05 85),
-  nav-item-fg: oklch(25% 0.05 40),
-  nav-item-fg-hover: oklch(10% 0 0),
-  subnav-bg: color.adjust(white, $lightness: -15%),
-  // Buttons
-  button-fg: oklch(25% 0.05 40),
-  button-bg: oklch(90% 0.05 85),
-  button-bg-hover: oklch(75% 0.05 85),
-  button-primary-fg: white,
-  button-primary-bg: oklch(55% 0.1 30),
-  button-primary-bg-hover: oklch(40% 0.1 30),
-  button-secondary-fg: oklch(25% 0.05 40),
-  button-secondary-bg: oklch(92% 0.05 85),
-  button-secondary-bg-hover: oklch(85% 0.05 85),
-  button-tertiary-fg: oklch(25% 0.05 40),
-  button-tertiary-bg: transparent,
-  button-tertiary-bg-hover: oklch(92% 0.05 85),
-  // Forms
-  form-bg: oklch(95% 0.05 85),
-  form-element-bg: oklch(92% 0.05 85),
-  form-element-bg-hover: oklch(89% 0.05 85),
-  form-element-fg: oklch(25% 0.05 40),
-  form-element-fg-hover: oklch(25% 0.05 40),
-  form-element-border: oklch(80% 0.05 85),
-  form-focus-border: oklch(60% 0.05 85),
-  form-focus-border-hover: oklch(50% 0.05 85),
-  form-placeholder: oklch(55% 0.05 85),
-  form-placeholder-hover: oklch(40% 0.05 85),
-  form-accent: oklch(45% 0.1 30),
-  form-focus-shadow: oklch(0.7 0.05 60),
-  form-error-bg: oklch(95% 0.05 15),
-  form-error-border: oklch(70% 0.15 15),
-  form-success-bg: oklch(95% 0.05 140),
-  form-success-border: oklch(70% 0.12 140),
-  form-info-bg: oklch(95% 0.05 240),
-  form-info-border: oklch(70% 0.15 240),
-  form-warning-bg: oklch(95% 0.05 83),
-  form-warning-border: oklch(70% 0.13 83),
-  form-select-arrow: oklch(0.3 0.05 40),
-  // Borders & Dividers
-  border: oklch(80% 0.05 85),
-  divider: oklch(40% 0.05 40),
- );
-  
 // Color palette exposed as CSS variables
 $palette: (
   accent: $accent,

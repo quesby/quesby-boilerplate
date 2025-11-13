@@ -2,27 +2,22 @@ const toggleBtn = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
 // Get default theme from HTML class (set by site.defaultVisualTheme)
-const defaultTheme = root.classList.contains('dark') ? 'dark' : 
-                    root.classList.contains('sepia') ? 'sepia' : 'light';
+const defaultTheme = root.classList.contains('dark') ? 'dark' : 'light';
 
 // On startup: use saved preference or default theme (ignore system preference)
 const savedTheme = localStorage.getItem('theme');
 
 // Clear any existing theme classes first
-root.classList.remove('dark', 'sepia');
+root.classList.remove('dark');
 
 if (savedTheme === 'dark') {
   root.classList.add('dark');
-} else if (savedTheme === 'sepia') {
-  root.classList.add('sepia');
 } else if (savedTheme === 'light') {
   // Light theme - no class needed
 } else {
   // No saved preference, use default theme from site.json
   if (defaultTheme === 'dark') {
     root.classList.add('dark');
-  } else if (defaultTheme === 'sepia') {
-    root.classList.add('sepia');
   }
   // Light theme requires no class
 }
@@ -30,19 +25,13 @@ if (savedTheme === 'dark') {
 if (toggleBtn) {
   const cycleTheme = () => {
     const isDark = root.classList.contains('dark');
-    const isSepia = root.classList.contains('sepia');
     let next;
-    if (!isDark && !isSepia) {
+    if (!isDark) {
       next = 'dark';
       root.classList.add('dark');
-      root.classList.remove('sepia');
-    } else if (isDark) {
-      next = 'sepia';
-      root.classList.remove('dark');
-      root.classList.add('sepia');
     } else {
       next = 'light';
-      root.classList.remove('sepia');
+      root.classList.remove('dark');
     }
     localStorage.setItem('theme', next);
   };

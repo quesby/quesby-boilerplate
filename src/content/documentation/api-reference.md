@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 11
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-11-13"
 ---
 
 # API Reference
@@ -988,7 +988,6 @@ $custom-spacing: 1.5rem;
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var root = document.documentElement;
     if (ls === 'dark' || (!ls && prefersDark)) root.classList.add('dark');
-    else if (ls === 'sepia') root.classList.add('sepia');
   })();
 </script>
 ```

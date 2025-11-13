@@ -21,16 +21,6 @@
     }
 }
 
-// Sepia theme override
-.sepia {
-    @each $name, $value in $theme-sepia {
-        --#{$name}: #{$value};
-    }
-    @each $name, $value in $palette {
-      --#{$name}: #{$value};
-    }
-}
-
 * {
     position: relative;
     box-sizing: border-box;

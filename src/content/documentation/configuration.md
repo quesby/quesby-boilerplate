@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 3
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-11-13"
 ---
 
 # Configuration Guide
@@ -41,7 +41,7 @@ Configure your site's basic information in `src/_data/site.json`:
 - **`logo`**: Path to your logo image (relative to site root)
 - **`favicon`**: Path to your favicon image
 - **`theme`**: Active theme name (see [Theme Configuration](#theme-configuration))
-- **`defaultVisualTheme`**: Default color theme (`light`, `dark`, or `sepia`)
+- **`defaultVisualTheme`**: Default color theme (`light` or `dark`)
 - **`contentPath`**: Path to external content directory (supports environment variables)
 
 ## Environment Variables
@@ -141,12 +141,11 @@ Each theme supports multiple visual themes:
 
 - **`light`**: Clean, bright appearance
 - **`dark`**: Dark mode with high contrast
-- **`sepia`**: Warm, vintage appearance
 
 Set the default visual theme in `site.json`:
 ```json
 {
-  "defaultVisualTheme": "sepia"
+  "defaultVisualTheme": "dark"
 }
 ```
 
@@ -570,7 +569,7 @@ This will show any configuration errors during the build process.
 
 - Create theme-specific variable files
 - Use CSS custom properties for runtime theming
-- Test all visual themes (light, dark, sepia)
+- Test all visual themes (light, dark)
 
 ### Content Organization
 

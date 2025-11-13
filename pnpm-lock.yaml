@@ -13,7 +13,7 @@ importers:
         version: 3.1.2
       '@neutrino/core':
         specifier: github:neutrino-cms/neutrino-core#v0.1.0
-        version: git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.93.3)
+        version: git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.94.0)
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -21,8 +21,8 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0
       sass:
-        specifier: ^1.93.3
-        version: 1.93.3
+        specifier: ^1.94.0
+        version: 1.94.0
     devDependencies:
       rimraf:
         specifier: ^5.0.10
@@ -875,8 +875,8 @@ packages:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
     hasBin: true
 
-  js-yaml@4.1.0:
-    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+  js-yaml@4.1.1:
+    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
   json-buffer@3.0.1:
@@ -1318,8 +1318,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sass@1.93.3:
-    resolution: {integrity: sha512-elOcIZRTM76dvxNAjqYrucTSI0teAF/L2Lv0s6f6b7FOwcwIuA357bIE871580AjHJuSvLIRUosgV+lIWx6Rgg==}
+  sass@1.94.0:
+    resolution: {integrity: sha512-Dqh7SiYcaFtdv5Wvku6QgS5IGPm281L+ZtVD1U2FJa7Q0EFRlq8Z3sjYtz6gYObsYThUOz9ArwFqPZx+1azILQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1651,7 +1651,7 @@ snapshots:
       filesize: 10.1.6
       gray-matter: 4.0.3
       iso-639-1: 3.1.5
-      js-yaml: 4.1.0
+      js-yaml: 4.1.1
       kleur: 4.1.5
       liquidjs: 10.24.0
       luxon: 3.7.2
@@ -1804,7 +1804,7 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@neutrino/core@git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.93.3)':
+  '@neutrino/core@git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.94.0)':
     dependencies:
       '@11ty/eleventy': 3.1.2
       '@11ty/eleventy-img': 4.0.2
@@ -1819,7 +1819,7 @@ snapshots:
       remark-gfm: 4.0.1
       remark-parse: 11.0.0
       remark-rehype: 11.1.2
-      sass: 1.93.3
+      sass: 1.94.0
       slugify: 1.6.6
       unified: 11.0.5
     transitivePeerDependencies:
@@ -2502,7 +2502,7 @@ snapshots:
       argparse: 1.0.10
       esprima: 4.0.1
 
-  js-yaml@4.1.0:
+  js-yaml@4.1.1:
     dependencies:
       argparse: 2.0.1
 
@@ -3123,7 +3123,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass@1.93.3:
+  sass@1.94.0:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.4

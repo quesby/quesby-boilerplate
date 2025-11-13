@@ -7,14 +7,14 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 6
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-11-13"
 ---
 
 # Neutrino Theme System
 
 ## Overview
 
-The Neutrino theme system is a SCSS-based styling architecture that allows you to customize the visual appearance of your website. The system uses modular SCSS files and CSS custom properties to provide flexible theming with support for multiple visual themes (light, dark, sepia).
+The Neutrino theme system is a SCSS-based styling architecture that allows you to customize the visual appearance of your website. The system uses modular SCSS files and CSS custom properties to provide flexible theming with support for multiple visual themes (light, dark).
 
 ## System Structure
 
@@ -69,11 +69,10 @@ Configure your active theme in `src/_data/site.json`:
 
 ### 2. Visual Theme Toggle
 
-The system supports three visual themes that users can toggle:
+The system supports two visual themes that users can toggle:
 
 - **Light Theme**: Default light appearance
 - **Dark Theme**: Dark mode with inverted colors
-- **Sepia Theme**: Warm, paper-like appearance
 
 The theme toggle is handled by JavaScript in `src/assets/js/togglemode.js` and persists user preference in localStorage.
 
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.documentElement.setAttribute('data-theme', currentTheme);
   
   themeToggle?.addEventListener('click', function() {
-    const themes = ['light', 'dark', 'sepia'];
+    const themes = ['light', 'dark'];
     const currentIndex = themes.indexOf(currentTheme);
     const nextTheme = themes[(currentIndex + 1) % themes.length];
     
@@ -221,13 +220,6 @@ $theme-dark: (
   bg: oklch(15% 0 0),
   // ... more colors
 );
-
-$theme-sepia: (
-  text-fg: oklch(31.85% 0.018 18.1),
-  link-fg: color.adjust(oklch(31.85% 0.018 18.1), $lightness: -10%),
-  bg: oklch(98% 0.01 45),
-  // ... more colors
-);
 ```
 
 ### 3. CSS Custom Properties
@@ -244,12 +236,6 @@ Colors are converted to CSS custom properties for runtime theme switching:
 
 .dark {
   @each $name, $value in $theme-dark {
-    --#{$name}: #{$value};
-  }
-}
-
-.sepia {
-  @each $name, $value in $theme-sepia {
     --#{$name}: #{$value};
   }
 }
@@ -416,7 +402,7 @@ Use the responsive mixins and breakpoints with the modern module system:
 ### 2. Testing Themes
 
 Test your theme across:
-- Different visual themes (light/dark/sepia)
+- Different visual themes (light/dark)
 - Various screen sizes
 - Different browsers
 - Content types (blog, pages, documentation)
@@ -445,7 +431,7 @@ Test your theme across:
 **Solutions**:
 - Verify CSS custom properties are defined in `_base.scss`
 - Check JavaScript toggle functionality
-- Ensure theme classes (`.dark`, `.sepia`) are applied
+- Ensure theme classes (`.dark`) are applied
 - Test localStorage theme persistence
 
 ### Build Errors
