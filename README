@@ -1,4 +1,4 @@
-# Neutrino - Privacy-First Static Site Boilerplate
+# Quesby - Privacy-First Static Site Boilerplate
 
 A modern Eleventy boilerplate with Decap CMS, built with content creators in mind.
 
@@ -6,7 +6,7 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 
 - **Static Site Generation** with Eleventy 3.0
 - **Headless CMS** with Decap CMS
-- **CLI Tools** for content creation (`npx neutrino new post`)
+- **CLI Tools** for content creation (`npx quesby new post`)
 - **Modular Theme System** with 2 included themes
 - **Privacy-First** approach
 - **SEO Optimized** with automatic sitemaps
@@ -23,8 +23,8 @@ This project uses PNPM as package manager. Choose one of the following installat
 
 ```bash
 # Clone the repository
-git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
-cd neutrino-boilerplate
+git clone https://github.com/quesby/quesby-boilerplate.git
+cd quesby-boilerplate
 
 # Install PNPM globally
 npm install -g pnpm@9
@@ -40,8 +40,8 @@ pnpm serve
 
 ```bash
 # Clone the repository
-git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
-cd neutrino-boilerplate
+git clone https://github.com/quesby/quesby-boilerplate.git
+cd quesby-boilerplate
 
 # Enable Corepack and prepare PNPM
 corepack enable
@@ -60,11 +60,11 @@ Visit `http://localhost:8080` to see your site.
 
 ## 🛠️ CLI Tools
 
-Neutrino includes a powerful CLI tool for creating new blog posts:
+Quesby includes a powerful CLI tool for creating new blog posts:
 
 ```bash
 # Create a new blog post
-npx neutrino new post "My Amazing Post Title"
+npx quesby new post "My Amazing Post Title"
 
 # The tool will:
 # - Generate a unique ULID
@@ -86,8 +86,8 @@ Complete documentation is available at `/documentation/` including:
 
 ## 🎨 Themes
 
-- **neutrino-boilerplate-core** (default) - Clean, modern design
-- **neutrino-brand-website** - Brand-focused layout
+- **quesby-core** (default) - Clean, modern design
+- **quesby-brand-website** - Brand-focused layout
 
 ## 🛠️ Available Scripts
 
@@ -137,7 +137,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 💖 Support the Project
 
-If you find Neutrino useful, please consider supporting its development:
+If you find Quesby useful, please consider supporting its development:
 
 - [GitHub Sponsors](https://github.com/sponsors/greenpandastudio)
 - [Buy Me a Coffee](https://buymeacoffee.com/greenpandastudio)

@@ -1,7 +1,7 @@
 ---
 slug: README
 title: Documentation Overview
-description: Complete guide to Neutrino Boilerplate - privacy-first static site boilerplate
+description: Complete guide to Quesby Boilerplate - privacy-first static site boilerplate
 body: ''
 layout: layouts/base.njk
 aside: aside-documentation.njk
@@ -14,7 +14,7 @@ lastUpdated: '2025-09-12'
 
 # Documentation Overview
 
-Welcome to the Neutrino Boilerplate documentation! This comprehensive guide will help you understand, configure, and customize your privacy-first static site boilerplate.
+Welcome to the Quesby Boilerplate documentation! This comprehensive guide will help you understand, configure, and customize your privacy-first static site boilerplate.
 
 ## Quick Start
 
@@ -23,9 +23,9 @@ Welcome to the Neutrino Boilerplate documentation! This comprehensive guide will
 3. **[Content Management](/documentation/content-management/)** - Learn how to manage your content
 4. **[Themes](/documentation/themes/)** - Customize the appearance of your site
 
-## What is Neutrino Boilerplate?
+## What is Quesby Boilerplate?
 
-Neutrino Boilerplate is a modern, privacy-first static site boilerplate built with:
+Quesby Boilerplate is a modern, privacy-first static site boilerplate built with:
 
 - **Eleventy (11ty)** - Static site generator
 - **Decap CMS** - Headless content management
@@ -68,7 +68,7 @@ If you need assistance:
 
 ## Contributing
 
-Neutrino Boilerplate is an open-source project. Contributions are welcome! Please see our [Development](/documentation/development/) section for guidelines on contributing to the project.
+Quesby Boilerplate is an open-source project. Contributions are welcome! Please see our [Development](/documentation/development/) section for guidelines on contributing to the project.
 
 ---
 

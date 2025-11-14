@@ -1,6 +1,6 @@
 ---
 title: Theme System
-description: Complete guide to Neutrino Boilerplate theme system and customization
+description: Complete guide to Quesby Boilerplate theme system and customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -10,18 +10,18 @@ order: 6
 lastUpdated: "2025-11-13"
 ---
 
-# Neutrino Theme System
+# Quesby Theme System
 
 ## Overview
 
-The Neutrino theme system is a SCSS-based styling architecture that allows you to customize the visual appearance of your website. The system uses modular SCSS files and CSS custom properties to provide flexible theming with support for multiple visual themes (light, dark).
+The Quesby theme system is a SCSS-based styling architecture that allows you to customize the visual appearance of your website. The system uses modular SCSS files and CSS custom properties to provide flexible theming with support for multiple visual themes (light, dark).
 
 ## System Structure
 
 ```text
 src/
 └── themes/                          # Theme directory
-    ├── neutrino-boilerplate-core/      # Default theme
+    ├── quesby-core/                     # Default theme
     │   ├── _base.scss              # Base styles and CSS variables
     │   ├── _blog.scss              # Blog-specific styles
     │   ├── _components.scss        # Reusable components
@@ -34,10 +34,10 @@ src/
     │   ├── _theme-typography.scss  # Typography system
     │   ├── _theme-variables.scss   # Theme color variables
     │   └── skin.scss               # Main theme file
-    └── neutrino-brand-website/     # Alternative theme
+    └── quesby-brand-website/       # Alternative theme
         └── [same structure]
 
-@neutrino/core
+@quesby/core
 ├── sass/                           # Core SCSS files
 │   ├── _mixins.scss               # SCSS mixins
 │   ├── _reset.scss                # CSS reset
@@ -56,14 +56,14 @@ Configure your active theme in `src/_data/site.json`:
 
 ```json
 {
-  "theme": "neutrino-boilerplate-core",
+  "theme": "quesby-core",
   "defaultVisualTheme": "dark"
 }
 ```
 
 **Available Themes:**
-- `neutrino-boilerplate-core` (default)
-- `neutrino-brand-website`
+- `quesby-core` (default)
+- `quesby-brand-website`
 
 > **Note**: For detailed configuration options, see the [Configuration Guide](../configuration/#theme-configuration).
 
@@ -108,8 +108,8 @@ Each theme follows this modular structure:
 ```scss
 // skin.scss - Main theme file
 @use "variables";
-@use "@neutrino/core/sass/_reset";
-@use "@neutrino/core/sass/_mixins";
+@use "@quesby/core/sass/_reset";
+@use "@quesby/core/sass/_mixins";
 @use "typography";
 @use "base";
 @use "forms";
@@ -142,8 +142,8 @@ The theme system uses the modern `@use` and `@forward` rules instead of the lega
 ```scss
 // Import core modules
 @use "variables";
-@use "@neutrino/core/sass/_reset";
-@use "@neutrino/core/sass/_mixins";
+@use "@quesby/core/sass/_reset";
+@use "@quesby/core/sass/_mixins";
 
 // Import theme modules
 @use "typography";
@@ -158,7 +158,7 @@ The theme system uses the modern `@use` and `@forward` rules instead of the lega
 // This file allows other modules to access theme variables and mixins
 
 @forward "variables";
-@forward "@neutrino/core/sass/_mixins";
+@forward "@quesby/core/sass/_mixins";
 ```
 
 **Module Files (e.g., `_components.scss`):**

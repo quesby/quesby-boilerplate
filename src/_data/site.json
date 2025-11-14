@@ -1,14 +1,14 @@
 {
-    "name": "Neutrino Boilerplate",
-    "url": "https://github.com/neutrino-cms/neutrino-boilerplate",
+    "name": "Quesby Boilerplate",
+    "url": "https://github.com/quesby/quesby-boilerplate",
     "description": "A modern Eleventy boilerplate with Decap CMS, built with content creators in mind",
     "author": "Green Panda Studio",
-    "logo": "/assets/images/neutrino-logo-gray.svg",
+    "logo": "/assets/images/quesby-logo-gray.svg",
     "favicon": "/assets/images/favicon.png",
-    "theme": "neutrino-boilerplate-core",
+    "theme": "quesby-core",
     "defaultVisualTheme": "dark",
-    "contentPath": "${NEUTRINO_CONTENT_PATH}",
+    "contentPath": "${QUESBY_CONTENT_PATH}",
     "socialImage": "/assets/images/og-image.jpg",
-    "twitter": "@neutrino_electron",
+    "twitter": "@quesby",
     "language": "en-US"
 }

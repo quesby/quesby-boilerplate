@@ -1,6 +1,6 @@
 ---
 title: Migration Tools
-description: Complete guide to migrating content from other platforms to Neutrino
+description: Complete guide to migrating content from other platforms to Quesby
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-01-20"
 
 # Migration Tools
 
-Neutrino includes powerful tools to help you migrate content from other platforms and content management systems. These tools are designed to be standalone, configurable, and easy to use.
+Quesby includes powerful tools to help you migrate content from other platforms and content management systems. These tools are designed to be standalone, configurable, and easy to use.
 
 ## 3 Steps in 30 Seconds
 
@@ -35,7 +35,7 @@ node index.js --config my-config.yml
 
 ### Legacy Content Importer
 
-The Legacy Content Importer is a comprehensive tool that converts content from various platforms into Neutrino's ULID-based system.
+The Legacy Content Importer is a comprehensive tool that converts content from various platforms into Quesby's ULID-based system.
 
 **Features:**
 - Automatic ULID generation for all content
@@ -198,7 +198,7 @@ backup:
 
 #### Custom Field Mappings
 
-You can map any legacy field to any Neutrino field:
+You can map any legacy field to any Quesby field:
 
 ```yaml
 fieldMappings:
@@ -431,4 +431,4 @@ tools/my-migration-tool/
 
 ## License
 
-Migration tools are licensed under the same MIT license as Neutrino.
+Migration tools are licensed under the same MIT license as Quesby.

@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Complete API reference for Neutrino Boilerplate functions and filters
+description: Complete API reference for Quesby Boilerplate functions and filters
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-11-13"
 
 # API Reference
 
-This comprehensive API reference covers all available functions, filters, shortcodes, and configuration options in Neutrino.
+This comprehensive API reference covers all available functions, filters, shortcodes, and configuration options in Quesby.
 
 > **Note**: This is a complete developer reference. For quick access, see the [API Cheat Sheet](#api-cheat-sheet) below.
 
@@ -336,14 +336,14 @@ Global site configuration from `src/_data/site.json`.
 
 ```javascript
 // Available in all templates
-{{ site.name }}           // "Neutrino - Boilerplate"
+{{ site.name }}           // "Quesby - Boilerplate"
 {{ site.url }}            // "https://theoddape.it"
 {{ site.description }}    // "An Eleventy boilerplate with Decap CMS"
-{{ site.logo }}           // "/assets/images/neutrino-logo.svg"
-{{ site.favicon }}        // "/assets/images/neutrino-logo.png"
-{{ site.theme }}          // "neutrino-Boilerplate-core"
+{{ site.logo }}           // "/assets/images/quesby-logo.svg"
+{{ site.favicon }}        // "/assets/images/quesby-logo.png"
+{{ site.theme }}          // "quesby-core"
 {{ site.defaultVisualTheme }} // "dark"
-{{ site.contentPath }}    // "${NEUTRINO_CONTENT_PATH}"
+{{ site.contentPath }}    // "${QUESBY_CONTENT_PATH}"
 ```
 
 > **Note**: For detailed configuration options, see the [Configuration Guide](./configuration.md#site-configuration).
@@ -416,7 +416,7 @@ All blog posts from `src/content/posts/`.
 
 ### Automatic Collections
 
-Neutrino automatically creates collections for:
+Quesby automatically creates collections for:
 
 - **`collections.posts`** - Blog posts
 - **`collections.pages`** - Static pages
@@ -515,7 +515,7 @@ Embeds SVG files directly in HTML with optional CSS classes.
 {% raw %}
 <!-- layouts/single-post.njk -->
 {% extends "layouts/base.njk" %}
-{% set seoTitle = "Neutrino - Boilerplate | " + title %}
+{% set seoTitle = "Quesby - Boilerplate | " + title %}
 {% set postClass = "single-post" %}
 {% set postType = "article" %}
 
@@ -806,12 +806,12 @@ Override the active theme.
 
 ```bash
 # .env file
-THEME=neutrino-brand-website
+THEME=quesby-brand-website
 ```
 
 **Available Themes:**
-- `neutrino-Boilerplate-core` (default)
-- `neutrino-brand-website`
+- `quesby-core` (default)
+- `quesby-brand-website`
 
 #### **`NODE_ENV`**
 
@@ -1302,4 +1302,4 @@ eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes
 - Optimize build performance
 - Test across different environments
 
-This comprehensive API reference covers all available functions, filters, and configuration options in Neutrino, providing developers with complete documentation for extending and customizing the system.
+This comprehensive API reference covers all available functions, filters, and configuration options in Quesby, providing developers with complete documentation for extending and customizing the system.

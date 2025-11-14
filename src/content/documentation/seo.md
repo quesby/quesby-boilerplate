@@ -1,6 +1,6 @@
 ---
 title: SEO System
-description: Complete guide to the advanced SEO system implemented in Neutrino Boilerplate
+description: Complete guide to the advanced SEO system implemented in Quesby Boilerplate
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # SEO System
 
-Neutrino Boilerplate includes a comprehensive SEO system inspired by modern best practices, providing automatic meta tag generation, social media optimization, and search engine optimization features.
+Quesby Boilerplate includes a comprehensive SEO system inspired by modern best practices, providing automatic meta tag generation, social media optimization, and search engine optimization features.
 
 ## Overview
 

@@ -1,6 +1,6 @@
 ---
 title: Development Guide
-description: Complete development guide for Neutrino Boilerplate customization
+description: Complete development guide for Quesby Boilerplate customization
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # Development Guide
 
-This comprehensive guide covers all aspects of developing with Neutrino, from setting up your development environment to advanced customization and deployment strategies.
+This comprehensive guide covers all aspects of developing with Quesby, from setting up your development environment to advanced customization and deployment strategies.
 
 ## Quick Navigation
 
@@ -33,8 +33,8 @@ This comprehensive guide covers all aspects of developing with Neutrino, from se
 
 1. **Clone and install:**
    ```bash
-   git clone https://github.com/greenpandastudio/neutrino-Boilerplate.git
-   cd neutrino-Boilerplate
+   git clone https://github.com/quesby/quesby-boilerplate.git
+   cd quesby-boilerplate
    pnpm install
    ```
 
@@ -52,7 +52,7 @@ This comprehensive guide covers all aspects of developing with Neutrino, from se
 
 ### Available Commands
 
-Neutrino provides several pnpm scripts for different development tasks:
+Quesby provides several pnpm scripts for different development tasks:
 
 ```json
 {
@@ -131,7 +131,7 @@ Neutrino provides several pnpm scripts for different development tasks:
 ### Directory Organization
 
 ```
-neutrino-project/
+quesby-project/
 ├── src/ # Source files
 │ ├── data/ # Global data files
 │ │ └── site.json # Site configuration
@@ -157,8 +157,8 @@ neutrino-project/
 │ │ ├── variables.scss # Global variables
 │ │ └── core.scss # Core styles
 │ └── themes/ # Theme-specific styles
-│ ├── neutrino-Boilerplate-core/
-│ └── neutrino-brand-website/
+│ ├── quesby-core/
+│ └── quesby-brand-website/
 ├── scripts/ # Build scripts
 │ ├── build.js # CSS build script
 │ ├── watch.js # CSS watch script
@@ -202,7 +202,7 @@ neutrino-project/
 
 ### Modern Sass Module System
 
-Neutrino uses the modern `@use` and `@forward` rules instead of the legacy `@import` system. This provides better performance, explicit dependencies, and namespace control.
+Quesby uses the modern `@use` and `@forward` rules instead of the legacy `@import` system. This provides better performance, explicit dependencies, and namespace control.
 
 **Key Benefits:**
 - **Explicit Dependencies**: Each file clearly declares what it needs
@@ -212,7 +212,7 @@ Neutrino uses the modern `@use` and `@forward` rules instead of the legacy `@imp
 
 ### Core SCSS System
 
-Neutrino uses a modular SCSS architecture with clear separation of concerns:
+Quesby uses a modular SCSS architecture with clear separation of concerns:
 
 #### **Core Files** (`src/sass/`)
 
@@ -229,8 +229,8 @@ Neutrino uses a modular SCSS architecture with clear separation of concerns:
 ```scss
 // skin.scss - Theme entry point
 @use "variables";
-@use "@neutrino/core/sass/_reset";
-@use "@neutrino/core/sass/_mixins";
+@use "@quesby/core/sass/_reset";
+@use "@quesby/core/sass/_mixins";
 @use "typography";
 @use "base";
 @use "forms";
@@ -389,9 +389,9 @@ fs.writeFileSync(outPath, fullStyles, 'utf8');
 
 ## Shortcodes System
 
-Neutrino includes powerful shortcodes for media handling and content optimization.
+Quesby includes powerful shortcodes for media handling and content optimization.
 
-> **⚠️ Security Note**: Shortcodes are implemented in the core package (`@neutrino/core`). For production use, avoid modifying core shortcodes directly. Instead, extend functionality through `eleventy.config.js` or create custom shortcodes.
+> **⚠️ Security Note**: Shortcodes are implemented in the core package (`@quesby/core`). For production use, avoid modifying core shortcodes directly. Instead, extend functionality through `eleventy.config.js` or create custom shortcodes.
 
 ### Image Shortcode
 
@@ -467,7 +467,7 @@ function svgShortcode(svgPath, className = "") {
 
 ### Automatic Markdown Processing
 
-Neutrino automatically processes standard Markdown images through the responsive image system.
+Quesby automatically processes standard Markdown images through the responsive image system.
 
 **Markdown Syntax:**
 ```markdown
@@ -493,7 +493,7 @@ The system processes images in all content directories:
 
 ### Nunjucks Templates
 
-Neutrino uses Nunjucks as its template engine with a hierarchical layout system. The project is configured to use Nunjucks for all template processing, including HTML and Markdown files.
+Quesby uses Nunjucks as its template engine with a hierarchical layout system. The project is configured to use Nunjucks for all template processing, including HTML and Markdown files.
 
 #### **Layout Structure**
 
@@ -672,8 +672,8 @@ src/themes/my-custom-theme/
 ```scss
 // Core (do not touch in themes)
 @use "variables";
-@use "@neutrino/core/sass/_reset";
-@use "@neutrino/core/sass/_mixins";
+@use "@quesby/core/sass/_reset";
+@use "@quesby/core/sass/_mixins";
 @use "typography";
 @use "base";
 @use "forms";
@@ -740,7 +740,7 @@ code src/content/posts/[ulid]/index.md
 
 ```scss
 // Edit theme files
-code src/themes/neutrino-Boilerplate-core/_base.scss
+code src/themes/quesby-core/_base.scss
 
 // Or core files
 code src/sass/_variables.scss
@@ -1066,7 +1066,7 @@ ls -lh _site/assets/images/
 
 ```bash
 # .env.production
-NEUTRINO_CONTENT_PATH=/path/to/production/content
+QUESBY_CONTENT_PATH=/path/to/production/content
 NODE_ENV=production
 ```
 
@@ -1085,26 +1085,26 @@ NODE_ENV=production
 
 ### New Post Generator
 
-Neutrino includes a powerful CLI tool for creating new blog posts with proper ULID generation and folder structure.
+Quesby includes a powerful CLI tool for creating new blog posts with proper ULID generation and folder structure.
 
-#### **`npx neutrino new post "Title"`**
+#### **`npx quesby new post "Title"`**
 
 Creates a new blog post with automatic ULID generation and proper folder structure.
 
 **Usage:**
 ```bash
 # Create a new blog post
-npx neutrino new post "Getting Started with Neutrino"
+npx quesby new post "Getting Started with Quesby"
 
 # Example output:
-# ℹ️  Creating new post: "Getting Started with Neutrino"
+# ℹ️  Creating new post: "Getting Started with Quesby"
 # ℹ️  ULID: 01K6A3V1WHREEEZ2BSEXDS6ZCF
-# ℹ️  Slug: getting-started-with-neutrino
-# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino
+# ℹ️  Slug: getting-started-with-quesby
+# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby
 # ✅ Post created successfully!
-# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
-# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/index.md
-# 🔗 URL: /blog/getting-started-with-neutrino/
+# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/
+# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/index.md
+# 🔗 URL: /blog/getting-started-with-quesby/
 ```
 
 **Features:**
@@ -1117,7 +1117,7 @@ npx neutrino new post "Getting Started with Neutrino"
 
 **Generated Structure:**
 ```
-src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/
 └── index.md
 ```
 
@@ -1125,8 +1125,8 @@ src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
 ```yaml
 ---
 id: 01K6A3V1WHREEEZ2BSEXDS6ZCF
-title: "Getting Started with Neutrino"
-slug: getting-started-with-neutrino
+title: "Getting Started with Quesby"
+slug: getting-started-with-quesby
 description: ""
 date: 2025-01-27T10:30:00.000Z
 author: ""
@@ -1136,7 +1136,7 @@ draft: false
 aliases: []
 ---
 
-# Getting Started with Neutrino
+# Getting Started with Quesby
 
 Write your content here...
 ```
@@ -1144,20 +1144,20 @@ Write your content here...
 **CLI Options:**
 ```bash
 # Show help
-npx neutrino
+npx quesby
 
 # Create post with quotes (handles spaces)
-npx neutrino new post "My Amazing Post Title"
+npx quesby new post "My Amazing Post Title"
 
 # Create post without quotes (single word)
-npx neutrino new post Tutorial
+npx quesby new post Tutorial
 ```
 
 ## Utility Scripts
 
 > **Note**: For detailed script usage, see the [Content Management Guide](./content-management.md#content-migration).
 
-Neutrino includes several utility scripts for content management and migration tasks.
+Quesby includes several utility scripts for content management and migration tasks.
 
 ### ULID Migration Script
 
@@ -1251,11 +1251,11 @@ All utility scripts include:
 
 ## Next Steps
 
-After mastering development with Neutrino:
+After mastering development with Quesby:
 
 1. **[Content Management](./content-management.md)** - Learn to manage content effectively
 2. **[Theme Development](./themes.md)** - Create custom themes and designs
 3. **[Configuration](./configuration.md)** - Advanced configuration options
 4. **[Deployment](./deployment.md)** - Publish your site
 
-This comprehensive development guide covers all aspects of working with Neutrino, from basic setup to advanced customization and deployment strategies.
+This comprehensive development guide covers all aspects of working with Quesby, from basic setup to advanced customization and deployment strategies.

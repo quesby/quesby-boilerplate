@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * Neutrino CLI: New Post Generator
+ * Quesby CLI: New Post Generator
  * 
  * Creates a new blog post with ULID and proper folder structure
- * Usage: npx neutrino new post "My Title"
+ * Usage: npx quesby new post "My Title"
  */
 
 import fs from 'fs';
@@ -119,7 +119,7 @@ Write your content here...
 function createNewPost(title) {
   if (!title || title.trim() === '') {
     logError('Title is required');
-    log('Usage: npx neutrino new post "My Title"', 'yellow');
+    log('Usage: npx quesby new post "My Title"', 'yellow');
     process.exit(1);
   }
 
@@ -176,17 +176,17 @@ function createNewPost(title) {
 const args = process.argv.slice(2);
 
 if (args.length === 0 || args[0] !== 'new' || args[1] !== 'post') {
-  log('Neutrino CLI - New Post Generator', 'bright');
+  log('Quesby CLI - New Post Generator', 'bright');
   log('\nUsage:');
-  log('  npx neutrino new post "My Title"');
+  log('  npx quesby new post "My Title"');
   log('\nExample:');
-  log('  npx neutrino new post "Getting Started with Neutrino"');
+  log('  npx quesby new post "Getting Started with Quesby"');
   process.exit(0);
 }
 
 if (args.length < 3) {
   logError('Title is required');
-  log('Usage: npx neutrino new post "My Title"', 'yellow');
+  log('Usage: npx quesby new post "My Title"', 'yellow');
   process.exit(1);
 }
 

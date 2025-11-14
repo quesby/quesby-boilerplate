@@ -8,7 +8,7 @@ const theme = siteData.theme || "default"
 const input1 = `src/themes/${theme}`
 const output = "src/assets/css"
 
-// Load path for Sass (e.g. for @neutrino/core/sass)
+// Load path for Sass (e.g. for @quesby/core/sass)
 const loadPath = "--load-path=node_modules"
 
 // Full command

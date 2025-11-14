@@ -1,9 +1,26 @@
 {
-  "name": "@neutrino/website",
+  "name": "@quesby/boilerplate",
   "version": "0.1.0",
+  "description": "Privacy-first static site boilerplate built with Eleventy and Quesby Core",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quesby/quesby-boilerplate.git"
+  },
+  "homepage": "https://github.com/quesby/quesby-boilerplate#readme",
+  "bugs": {
+    "url": "https://github.com/quesby/quesby-boilerplate/issues"
+  },
+  "keywords": [
+    "quesby",
+    "boilerplate",
+    "eleventy",
+    "static-site",
+    "privacy-first"
+  ],
   "type": "module",
   "bin": {
-    "neutrino": "./scripts/new-post.js"
+    "quesby": "./scripts/new-post.js"
   },
   "scripts": {
     "css:build": "node scripts/build.js",
@@ -17,7 +34,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@neutrino/core": "github:neutrino-cms/neutrino-core#v0.1.0",
+    "@quesby/core": "github:quesby/quesby-core#v0.1.0",
     "concurrently": "^9.2.1",
     "minisearch": "^7.2.0",
     "sass": "^1.94.0"

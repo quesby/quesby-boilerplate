@@ -1,6 +1,6 @@
 ---
 title: Configuration Guide
-description: Complete configuration guide for Neutrino Boilerplate site settings
+description: Complete configuration guide for Quesby Boilerplate site settings
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-11-13"
 
 # Configuration Guide
 
-This guide covers all configuration options available in Neutrino, from basic site settings to advanced theme customization and content management.
+This guide covers all configuration options available in Quesby, from basic site settings to advanced theme customization and content management.
 
 ## Site Configuration
 
@@ -27,9 +27,9 @@ Configure your site's basic information in `src/_data/site.json`:
   "description": "Your site description",
   "logo": "/assets/images/your-logo.svg",
   "favicon": "/assets/images/your-favicon.png",
-  "theme": "neutrino-Boilerplate-core",
+  "theme": "quesby-core",
   "defaultVisualTheme": "dark",
-  "contentPath": "${NEUTRINO_CONTENT_PATH}"
+  "contentPath": "${QUESBY_CONTENT_PATH}"
 }
 ```
 
@@ -58,16 +58,16 @@ The system checks configurations in this order (first found wins):
 
 ### Available Environment Variables
 
-- **`NEUTRINO_CONTENT_PATH`**: Absolute or relative path to your content directory
+- **`QUESBY_CONTENT_PATH`**: Absolute or relative path to your content directory
 - **`THEME`**: Override the theme specified in `site.json`
 
 ### Environment Variable Expansion
 
-Neutrino supports environment variable expansion in configuration files using `${VARIABLE_NAME}` syntax:
+Quesby supports environment variable expansion in configuration files using `${VARIABLE_NAME}` syntax:
 
 ```json
 {
-  "contentPath": "${NEUTRINO_CONTENT_PATH}"
+  "contentPath": "${QUESBY_CONTENT_PATH}"
 }
 ```
 
@@ -75,12 +75,12 @@ Neutrino supports environment variable expansion in configuration files using `$
 
 ### Available Themes
 
-Neutrino comes with two built-in themes:
+Quesby comes with two built-in themes:
 
 | Theme | Description | Location |
 |-------|-------------|----------|
-| `neutrino-Boilerplate-core` | Modern, minimalist design | `src/themes/neutrino-Boilerplate-core/` |
-| `neutrino-brand-website` | Brand-focused with enhanced visuals | `src/themes/neutrino-brand-website/` |
+| `quesby-core` | Modern, minimalist design | `src/themes/quesby-core/` |
+| `quesby-brand-website` | Brand-focused with enhanced visuals | `src/themes/quesby-brand-website/` |
 
 ### Setting the Theme
 
@@ -88,14 +88,14 @@ Configure your active theme in `src/_data/site.json`:
 
 ```json
 {
-  "name": "Neutrino - Boilerplate",
-  "url": "https://theoddape.it",
-  "description": "An Eleventy boilerplate with Decap CMS",
-  "logo": "/assets/images/neutrino-logo.svg",
-  "favicon": "/assets/images/neutrino-logo.png",
-  "theme": "neutrino-brand-website",
-  "defaultVisualTheme": "dark",
-  "contentPath": "${NEUTRINO_CONTENT_PATH}"
+    "name": "Quesby - Boilerplate",
+    "url": "https://theoddape.it",
+    "description": "An Eleventy boilerplate with Decap CMS",
+    "logo": "/assets/images/quesby-logo.svg",
+    "favicon": "/assets/images/quesby-logo.png",
+    "theme": "quesby-brand-website",
+    "defaultVisualTheme": "dark",
+    "contentPath": "${QUESBY_CONTENT_PATH}"
 }
 ```
 
@@ -104,11 +104,11 @@ Configure your active theme in `src/_data/site.json`:
 **Quick Start:**
 ```bash
 # 1. Copy an existing theme
-cp -r src/themes/neutrino-Boilerplate-core src/themes/my-custom-theme
+cp -r src/themes/quesby-core src/themes/my-custom-theme
 
 # 2. Set your theme in src/data/_site.json
 {
-  "title": "Neutrino Boilerplate",
+  "title": "Quesby Boilerplate",
   "description": "Privacy-first static site boilerplate",
   "theme": "my-custom-theme"
 }
@@ -298,11 +298,11 @@ collections:
 
 ## Eleventy Configuration
 
-> **Note**: Eleventy configuration is handled by the `@neutrino/core` package. For advanced customization, see the [Development Guide](./development.md#eleventy-configuration).
+> **Note**: Eleventy configuration is handled by the `@quesby/core` package. For advanced customization, see the [Development Guide](./development.md#eleventy-configuration).
 
 ### Custom Filters
 
-Neutrino includes several custom filters defined in `node_modules/@neutrino/core/src/eleventy/filters.js`:
+Quesby includes several custom filters defined in `node_modules/@quesby/core/src/eleventy/filters.js`:
 
 #### Date Formatting
 ```javascript
@@ -339,7 +339,7 @@ To add custom filters, extend the Eleventy configuration in `eleventy.config.js`
 
 ```javascript
 export default function (eleventyConfig) {
-  const coreConfig = neutrino(eleventyConfig);
+  const coreConfig = quesby(eleventyConfig);
   
   // Add custom filter
   eleventyConfig.addFilter("myCustomFilter", function(value) {
@@ -355,7 +355,7 @@ export default function (eleventyConfig) {
 
 ### Collections
 
-Neutrino automatically creates collections defined in `node_modules/@neutrino/core/src/eleventy/config.js`:
+Quesby automatically creates collections defined in `node_modules/@quesby/core/src/eleventy/config.js`:
 
 - **`posts`**: All blog posts from `src/content/posts/`
 - **`projects`**: All projects from `src/content/projects/`
@@ -366,7 +366,7 @@ Neutrino automatically creates collections defined in `node_modules/@neutrino/co
 Collections are configured in the core package:
 
 ```javascript
-// In node_modules/@neutrino/core/src/eleventy/config.js
+// In node_modules/@quesby/core/src/eleventy/config.js
 eleventyConfig.addCollection('posts', collection => {
   const posts = collection.getFilteredByGlob([
     'src/content/posts/*/index.md',
@@ -380,7 +380,7 @@ eleventyConfig.addCollection('posts', collection => {
 
 ### URL Structure
 
-Custom URL patterns are configured in `node_modules/@neutrino/core/src/eleventy/config.js`:
+Custom URL patterns are configured in `node_modules/@quesby/core/src/eleventy/config.js`:
 
 - **Posts**: `/blog/[slug]/`
 - **Documentation**: `/documentation/[slug]/`
@@ -391,7 +391,7 @@ Custom URL patterns are configured in `node_modules/@neutrino/core/src/eleventy/
 URL patterns are defined in the core package:
 
 ```javascript
-// In node_modules/@neutrino/core/src/eleventy/config.js
+// In node_modules/@quesby/core/src/eleventy/config.js
 eleventyConfig.addGlobalData("eleventyComputed", {
   permalink: (data) => {
     const input = (data.page?.inputPath || "").replace(/\\/g, "/");
@@ -453,7 +453,7 @@ Available scripts in `package.json` (works with pnpm, npm, or yarn):
 
 ### Custom Markdown Processing
 
-Neutrino uses a unified processor for markdown processing with:
+Quesby uses a unified processor for markdown processing with:
 
 - **GitHub Flavored Markdown** support via remark-gfm
 - **Expressive Code** syntax highlighting via rehype-expressive-code
@@ -463,7 +463,7 @@ Neutrino uses a unified processor for markdown processing with:
 
 #### Markdown Configuration Location
 
-The markdown processor is configured in `node_modules/@neutrino/core/src/eleventy/config.js`:
+The markdown processor is configured in `node_modules/@quesby/core/src/eleventy/config.js`:
 
 ```javascript
 const processor = unified()
@@ -668,4 +668,4 @@ After configuring your site:
 3. **[Development Guide](../development/)** - Advanced customization
 4. **[Deployment Guide](../deployment/)** - Publish your site
 
-This configuration guide covers all aspects of setting up and customizing Neutrino for your specific needs.
+This configuration guide covers all aspects of setting up and customizing Quesby for your specific needs.

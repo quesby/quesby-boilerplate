@@ -1,6 +1,6 @@
 ---
 title: API Cheats Reference
-description: Quick reference for Neutrino Boilerplate shortcodes, filters, and common functions
+description: Quick reference for Quesby Boilerplate shortcodes, filters, and common functions
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-26"
 
 # API Cheats Reference
 
-Quick reference for the most commonly used shortcodes, filters, and functions in Neutrino Boilerplate.
+Quick reference for the most commonly used shortcodes, filters, and functions in Quesby Boilerplate.
 
 ## Shortcodes
 
@@ -123,13 +123,13 @@ function hello() {
 
 ### Site Data
 ```twig
-{{ site.name }}              // "Neutrino - Boilerplate"
+{{ site.name }}              // "Quesby - Boilerplate"
 {{ site.url }}               // "https://example.com"
 {{ site.description }}       // "Site description"
 {{ site.author }}            // "Author Name"
 {{ site.logo }}              // "/assets/images/logo.svg"
 {{ site.favicon }}           // "/assets/images/favicon.webp"
-{{ site.theme }}             // "neutrino-Boilerplate-core"
+{{ site.theme }}             // "quesby-core"
 {{ site.defaultVisualTheme }} // "dark"
 {{ site.socialImage }}       // "/assets/images/og-image.jpg"
 {{ site.twitter }}           // "@username"

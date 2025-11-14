@@ -1,8 +1,8 @@
-import neutrino from "@neutrino/core";
+import quesby from "@quesby/core";
 
 export default function (eleventyConfig) {
   // Register core configuration
-  const coreConfig = neutrino(eleventyConfig);
+  const coreConfig = quesby(eleventyConfig);
   
   // Return merged configuration
   return {

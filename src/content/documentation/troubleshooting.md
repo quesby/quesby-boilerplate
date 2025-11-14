@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting Guide
-description: Complete troubleshooting guide for Neutrino Boilerplate issues
+description: Complete troubleshooting guide for Quesby Boilerplate issues
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # Troubleshooting Guide
 
-This comprehensive troubleshooting guide covers common issues, error messages, and solutions for Neutrino projects.
+This comprehensive troubleshooting guide covers common issues, error messages, and solutions for Quesby projects.
 
 ## Quick Start - Top 10 Common Issues
 

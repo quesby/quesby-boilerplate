@@ -1,6 +1,6 @@
 ---
 title: Content Management Guide
-description: Complete guide to content management in Neutrino Boilerplate
+description: Complete guide to content management in Quesby Boilerplate
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # Content Management Guide
 
-This comprehensive guide covers all aspects of content management in Neutrino, from basic content creation to advanced CMS integration and workflow management.
+This comprehensive guide covers all aspects of content management in Quesby, from basic content creation to advanced CMS integration and workflow management.
 
 ## Quick Navigation
 

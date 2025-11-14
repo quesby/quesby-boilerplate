@@ -1,6 +1,6 @@
 ---
 title: Deployment Guide
-description: Complete deployment guide for Neutrino Boilerplate static sites
+description: Complete deployment guide for Quesby Boilerplate static sites
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # Deployment Guide
 
-This comprehensive guide covers all aspects of deploying Neutrino static sites, from preparation and build optimization to various hosting platforms and deployment strategies.
+This comprehensive guide covers all aspects of deploying Quesby static sites, from preparation and build optimization to various hosting platforms and deployment strategies.
 
 ## Pre-Deployment Preparation
 
@@ -74,7 +74,7 @@ Update `src/_data/site.json` for production:
   "description": "Your production site description",
   "logo": "/assets/images/your-logo.svg",
   "favicon": "/assets/images/your-favicon.png",
-  "theme": "neutrino-Boilerplate-core",
+  "theme": "quesby-core",
   "defaultVisualTheme": "dark",
   "contentPath": "${NEUTRINO_CONTENT_PATH}"
 }
@@ -243,7 +243,7 @@ Create `vercel.json`:
   "devCommand": "npm run serve",
   "env": {
     "NEUTRINO_CONTENT_PATH": "./content",
-    "THEME": "neutrino-Boilerplate-core",
+    "THEME": "quesby-core",
     "NODE_ENV": "production"
   },
   "headers": [

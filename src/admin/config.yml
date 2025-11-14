@@ -2,7 +2,7 @@ backend:
   # Production-ready example backend. Replace with your own provider.
   # For GitHub: https://decapcms.org/docs/backends-overview/
   # name: git-gateway
-  # repo: "greenpandastudio/neutrino-boilerplate"
+  # repo: "quesby/quesby-boilerplate"
   name: test-repo	
   branch: main
 

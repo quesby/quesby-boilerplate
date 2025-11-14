@@ -1,6 +1,6 @@
 ---
 title: Installation Guide
-description: Complete installation and setup guide for Neutrino Boilerplate
+description: Complete installation and setup guide for Quesby Boilerplate
 layout: layouts/base.njk
 aside: aside-documentation.njk
 toc: toc-documentation.njk
@@ -12,7 +12,7 @@ lastUpdated: "2025-09-12"
 
 # Installation Guide
 
-This guide will help you install and set up Neutrino, a privacy-first static site boilerplate built with Eleventy and Decap CMS.
+This guide will help you install and set up Quesby, a privacy-first static site boilerplate built with Eleventy and Decap CMS.
 
 ## Quick Start
 
@@ -20,7 +20,7 @@ For experienced developers who want to get started immediately:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/greenpandastudio/neutrino-boilerplate.git your-project
+git clone https://github.com/quesby/quesby-boilerplate.git your-project
 cd your-project
 pnpm install
 
@@ -31,14 +31,14 @@ pnpm serve
 open http://localhost:8080
 
 # 4. Create your first blog post
-npx neutrino new post "Welcome to Neutrino"
+npx quesby new post "Welcome to Quesby"
 ```
 
 > **New to static sites?** Follow the detailed guide below for step-by-step instructions.
 
 ## Prerequisites
 
-Before installing Neutrino, ensure you have the following installed on your system:
+Before installing Quesby, ensure you have the following installed on your system:
 
 - **Node.js** (version 18 or higher)
 - **pnpm** (recommended) or **npm** (comes with Node.js)
@@ -46,7 +46,7 @@ Before installing Neutrino, ensure you have the following installed on your syst
 
 ### Package Manager Options
 
-Neutrino supports multiple package managers. Choose the one that best fits your workflow:
+Quesby supports multiple package managers. Choose the one that best fits your workflow:
 
 | Package Manager | Speed | Disk Usage | Lock File | Recommended For |
 |----------------|-------|------------|-----------|-----------------|
@@ -102,8 +102,8 @@ Choose the method that best fits your workflow:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/greenpandastudio/neutrino-boilerplate.git
-   cd neutrino-boilerplate
+   git clone https://github.com/quesby/quesby-boilerplate.git
+   cd quesby-boilerplate
    ```
 
 2. **Install dependencies:**
@@ -132,7 +132,7 @@ Choose the method that best fits your workflow:
 
 **Best for**: Quick setup, production deployments, or when you don't need git history
 
-1. Download the latest release from the [GitHub repository](https://github.com/greenpandastudio/neutrino-boilerplate/releases)
+1. Download the latest release from the [GitHub repository](https://github.com/quesby/quesby-boilerplate/releases)
 2. Extract the archive to your desired location
 3. Navigate to the project directory
 4. Run `pnpm install` (or `npm install` / `yarn install`)
@@ -141,7 +141,7 @@ Choose the method that best fits your workflow:
 
 ### Setting Up Content Directory
 
-Neutrino supports external content management through multiple configuration methods:
+Quesby supports external content management through multiple configuration methods:
 
 #### Configuration Priority
 
@@ -190,7 +190,7 @@ Neutrino comes with built-in themes and supports custom themes:
 **Configuration in src/_data/site.json**
 ```json
 {
-  "theme": "neutrino-boilerplate-core"
+  "theme": "quesby-core"
 }
 ```
 
@@ -198,7 +198,7 @@ Neutrino comes with built-in themes and supports custom themes:
 
 1. **Copy an existing theme**:
    ```bash
-   cp -r src/themes/neutrino-boilerplate-core src/themes/my-custom-theme
+   cp -r src/themes/quesby-core src/themes/my-custom-theme
    ```
 
 2. **Modify theme files** in `src/themes/my-custom-theme/`
@@ -275,7 +275,7 @@ The built site will be available in the `_site` directory, ready for deployment 
 
 3. **Content structure:**
    
-   Neutrino automatically creates collections based on your content structure:
+   Quesby automatically creates collections based on your content structure:
 
    | Collection | Directory | Required | Description |
    |------------|-----------|----------|-------------|
@@ -346,8 +346,8 @@ npm install -g pnpm
 ### Getting Help
 
 - **Documentation**: [Troubleshooting Guide](./troubleshooting.md) | [Configuration Guide](./configuration.md)
-- **GitHub Issues**: [Report bugs or request features](https://github.com/greenpandastudio/neutrino-boilerplate/issues)
-- **Discussions**: [Community support](https://github.com/greenpandastudio/neutrino-boilerplate/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/quesby/quesby-boilerplate/issues)
+- **Discussions**: [Community support](https://github.com/quesby/quesby-boilerplate/discussions)
 - **Quick Fixes**: Check the [Common Issues](./troubleshooting.md#common-issues) section below
 
 ## Next Steps
@@ -358,7 +358,7 @@ After successful installation, here's what to do next:
 1. **Verify installation**: Check that `http://localhost:8080` loads correctly
 2. **Create your first post**: Use the CLI tool to create a new blog post
    ```bash
-   npx neutrino new post "My First Post"
+   npx quesby new post "My First Post"
    ```
 3. **Explore the admin**: Visit `http://localhost:8080/admin` to see the CMS
 4. **Check content**: Browse the sample posts and documentation
@@ -373,7 +373,7 @@ After successful installation, here's what to do next:
 ### Quick Wins
 - **Change site name**: Edit `src/_data/site.json`
 - **Add your content**: Create posts in `src/content/posts/`
-- **Customize theme**: Modify files in `src/themes/neutrino-boilerplate-core/`
+- **Customize theme**: Modify files in `src/themes/quesby-core/`
 - **Set up CMS**: Configure authentication in `src/admin/config.yml`
 
 ## System Requirements
@@ -398,7 +398,7 @@ After successful installation, here's what to do next:
 
 ## Key Dependencies
 
-Neutrino uses modern, well-maintained dependencies:
+Quesby uses modern, well-maintained dependencies:
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
