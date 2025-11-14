@@ -1,5 +1,5 @@
 
-### What makes Neutrino special:
+### What makes Quesby special:
 **Privacy-First** - No tracking, no analytics, no external dependencies
 
 **Git-Powered CMS** - Edit content through Decap CMS, stored in your Git repository

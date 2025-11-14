@@ -59,7 +59,7 @@ Create a production `.env` file:
 
 ```bash
 # .env.production
-NEUTRINO_CONTENT_PATH=/path/to/production/content
+QUESBY_CONTENT_PATH=/path/to/production/content
 NODE_ENV=production
 ```
 
@@ -76,7 +76,7 @@ Update `src/_data/site.json` for production:
   "favicon": "/assets/images/your-favicon.png",
   "theme": "quesby-core",
   "defaultVisualTheme": "dark",
-  "contentPath": "${NEUTRINO_CONTENT_PATH}"
+  "contentPath": "${QUESBY_CONTENT_PATH}"
 }
 ```
 
@@ -173,7 +173,7 @@ eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes
 
 3. **Environment Variables:**
    ```
-   NEUTRINO_CONTENT_PATH=./content
+   QUESBY_CONTENT_PATH=./content
    NODE_ENV=production
    ```
 
@@ -242,7 +242,7 @@ Create `vercel.json`:
   "installCommand": "npm install",
   "devCommand": "npm run serve",
   "env": {
-    "NEUTRINO_CONTENT_PATH": "./content",
+    "QUESBY_CONTENT_PATH": "./content",
     "THEME": "quesby-core",
     "NODE_ENV": "production"
   },
@@ -317,8 +317,8 @@ jobs:
     - name: Build site
       run: npm run build
       env:
-        NEUTRINO_CONTENT_PATH: ./content
-        THEME: neutrino-Boilerplate-core
+        QUESBY_CONTENT_PATH: ./content
+        THEME: quesby-core
         NODE_ENV: production
         
     - name: Deploy to GitHub Pages
@@ -353,7 +353,7 @@ jobs:
 
 3. **Environment Variables:**
    ```
-   NEUTRINO_CONTENT_PATH=./content
+   QUESBY_CONTENT_PATH=./content
    NODE_ENV=production
    ```
 
@@ -514,8 +514,8 @@ jobs:
     - name: Build site
       run: npm run build
       env:
-        NEUTRINO_CONTENT_PATH: ./content
-        THEME: neutrino-Boilerplate-core
+        QUESBY_CONTENT_PATH: ./content
+        THEME: quesby-core
         NODE_ENV: production
         
     - name: Upload build artifacts
@@ -809,7 +809,7 @@ npm run build 2>&1 | grep -i error
 
 ```bash
 # Check content path configuration
-echo $NEUTRINO_CONTENT_PATH
+echo $QUESBY_CONTENT_PATH
 
 # Verify content files exist
 ls -la src/content/
@@ -888,4 +888,4 @@ npx lighthouse http://localhost:8080 --output html
 - [ ] **Security updates**: Monitor for security patches
 - [ ] **Analytics review**: Regular performance analysis
 
-This comprehensive deployment guide covers all aspects of deploying Neutrino sites, from simple static hosting to advanced CI/CD pipelines and performance optimization.
+This comprehensive deployment guide covers all aspects of deploying Quesby sites, from simple static hosting to advanced CI/CD pipelines and performance optimization.

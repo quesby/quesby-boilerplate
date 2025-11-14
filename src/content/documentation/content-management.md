@@ -26,7 +26,7 @@ This comprehensive guide covers all aspects of content management in Quesby, fro
 
 ### Content Types
 
-Neutrino supports four main content types, each with specific purposes and metadata:
+Quesby supports four main content types, each with specific purposes and metadata:
 
 #### **Posts** - Blog Articles
 - **Purpose**: News, articles, and blog content
@@ -82,7 +82,7 @@ src/content/
 
 ### What is ULID?
 
-Neutrino uses **ULID (Universally Unique Lexicographically Sortable Identifier)** for content identification:
+Quesby uses **ULID (Universally Unique Lexicographically Sortable Identifier)** for content identification:
 
 - **26 characters**: Compact and URL-friendly
 - **Chronologically sortable**: Newer content has higher ULIDs
@@ -278,7 +278,7 @@ collections:
 
 ### Custom ULID Widget
 
-Neutrino includes a custom ULID widget for Decap CMS that automatically generates unique identifiers for content entries.
+Quesby includes a custom ULID widget for Decap CMS that automatically generates unique identifiers for content entries.
 
 #### Widget Features
 
@@ -326,7 +326,7 @@ The fastest way to create new blog posts is using the built-in CLI tool:
 
 1. **Create New Post**
    ```bash
-   npx neutrino new post "Your Post Title"
+   npx quesby new post "Your Post Title"
    ```
 
 2. **Edit Content**
@@ -359,24 +359,24 @@ The fastest way to create new blog posts is using the built-in CLI tool:
 
 ### CLI Content Creation
 
-#### **`npx neutrino new post "Title"`**
+#### **`npx quesby new post "Title"`**
 
 The fastest way to create new blog posts with proper ULID generation and folder structure.
 
 **Usage:**
 ```bash
 # Create a new blog post
-npx neutrino new post "Getting Started with Neutrino"
+npx quesby new post "Getting Started with Quesby"
 
 # Example output:
-# ℹ️  Creating new post: "Getting Started with Neutrino"
+# ℹ️  Creating new post: "Getting Started with Quesby"
 # ℹ️  ULID: 01K6A3V1WHREEEZ2BSEXDS6ZCF
-# ℹ️  Slug: getting-started-with-neutrino
-# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino
+# ℹ️  Slug: getting-started-with-quesby
+# ℹ️  Folder: 01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby
 # ✅ Post created successfully!
-# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
-# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/index.md
-# 🔗 URL: /blog/getting-started-with-neutrino/
+# 📁 Location: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/
+# 📝 File: /src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/index.md
+# 🔗 URL: /blog/getting-started-with-quesby/
 ```
 
 **Features:**
@@ -389,7 +389,7 @@ npx neutrino new post "Getting Started with Neutrino"
 
 **Generated Structure:**
 ```
-src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
+src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-quesby/
 └── index.md
 ```
 
@@ -397,8 +397,8 @@ src/content/posts/01K6A3V1WHREEEZ2BSEXDS6ZCF--getting-started-with-neutrino/
 ```yaml
 ---
 id: 01K6A3V1WHREEEZ2BSEXDS6ZCF
-title: "Getting Started with Neutrino"
-slug: getting-started-with-neutrino
+title: "Getting Started with Quesby"
+slug: getting-started-with-quesby
 description: ""
 date: 2025-01-27T10:30:00.000Z
 author: ""
@@ -408,7 +408,7 @@ draft: false
 aliases: []
 ---
 
-# Getting Started with Neutrino
+# Getting Started with Quesby
 
 Write your content here...
 ```
@@ -506,7 +506,7 @@ src/content/media/
 
 #### Responsive Image Shortcode
 
-Neutrino includes a powerful responsive image shortcode that automatically generates multiple formats and sizes for optimal performance.
+Quesby includes a powerful responsive image shortcode that automatically generates multiple formats and sizes for optimal performance.
 
 **Basic Usage:**
 ```twig
@@ -572,7 +572,7 @@ For icons and graphics, use the SVG shortcode to inline SVG files with custom CS
 
 #### Automatic Markdown Image Processing
 
-Neutrino automatically processes standard Markdown images through the responsive image system.
+Quesby automatically processes standard Markdown images through the responsive image system.
 
 **Markdown Syntax:**
 ```markdown
@@ -730,11 +730,11 @@ git push origin feature/new-post
 
 #### External Content Repository
 
-Neutrino supports external content repositories for team collaboration:
+Quesby supports external content repositories for team collaboration:
 
 ```bash
 # Set external content path
-echo 'NEUTRINO_CONTENT_PATH=/path/to/content/repo' >> .env
+echo 'QUESBY_CONTENT_PATH=/path/to/content/repo' >> .env
 
 # Work with separate content repo
 cd /path/to/content/repo
@@ -779,7 +779,7 @@ twitter_card: "summary_large_image"   # Twitter card type
 
 ### Structured Data
 
-Neutrino automatically generates structured data for:
+Quesby automatically generates structured data for:
 - **Blog posts**: Article schema
 - **Projects**: CreativeWork schema
 - **Pages**: WebPage schema
@@ -939,4 +939,4 @@ This will show any content-related errors during the build process.
 - **Use internal linking** to connect related content
 - **Keep content fresh** with regular updates
 
-This comprehensive content management guide covers all aspects of working with content in Neutrino, from basic creation to advanced optimization and troubleshooting.
+This comprehensive content management guide covers all aspects of working with content in Quesby, from basic creation to advanced optimization and troubleshooting.

@@ -211,13 +211,13 @@ class: "custom-page-class"
 
 ### Available Variables
 ```bash
-NEUTRINO_CONTENT_PATH=/path/to/content
+QUESBY_CONTENT_PATH=/path/to/content
 NODE_ENV=development
 ```
 
 ### Usage in Templates
 ```twig
-{{ env.NEUTRINO_CONTENT_PATH }}
+{{ env.QUESBY_CONTENT_PATH }}
 {{ env.NODE_ENV }}
 ```
 
@@ -293,7 +293,7 @@ pnpm gen:ec-css     # Generate Expressive Code CSS
 ### Common Issues
 - **Images not loading**: Check path starts with `/assets/`
 - **CSS not updating**: Run `pnpm css:build`
-- **Content not showing**: Check `NEUTRINO_CONTENT_PATH`
+- **Content not showing**: Check `QUESBY_CONTENT_PATH`
 - **Theme not applied**: Verify `theme` in `site.json`
 
 ### Debug Mode

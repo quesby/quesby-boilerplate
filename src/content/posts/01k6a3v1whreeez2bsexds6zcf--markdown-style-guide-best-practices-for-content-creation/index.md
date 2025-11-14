@@ -428,5 +428,5 @@ Start implementing these practices in your next piece of content, and you'll see
 
 ---
 
-*This style guide is part of the Neutrino project, a privacy-first static site boilerplate. For more resources and examples, visit our [GitHub repository](https://github.com/greenpandastudio/neutrino-boilerplate).*
+*This style guide is part of the Quesby project, a privacy-first static site boilerplate. For more resources and examples, visit our [GitHub repository](https://github.com/quesby/quesby-boilerplate).*
 ```

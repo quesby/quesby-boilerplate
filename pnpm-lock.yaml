@@ -11,9 +11,9 @@ importers:
       '@11ty/eleventy':
         specifier: ^3.1.2
         version: 3.1.2
-      '@neutrino/core':
-        specifier: github:neutrino-cms/neutrino-core#v0.1.0
-        version: git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.94.0)
+      '@quesby/core':
+        specifier: github:quesby/quesby-core#v0.1.1
+        version: git+https://git@github.com:quesby/quesby-core.git#eaa28400844a129975d7288d5a1f02f539ffad61(sass@1.94.0)
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -81,8 +81,8 @@ packages:
     resolution: {integrity: sha512-kzyuwOAQnXJNLS9PSyrk0CWk35nWJW/zl/6KvnTBMFK65gm7U1/Z5BqjxeapjZCIhQcM/DsrEmcbRwDyXyXK4A==}
     engines: {node: '>=14'}
 
-  '@emnapi/runtime@1.7.0':
-    resolution: {integrity: sha512-oAYoQnCYaQZKVS53Fq23ceWMRxq5EhQsE0x0RdQ55jT7wagMu5k+fS39v1fiSLrtrLQlXwVINenqhLMtTrV/1Q==}
+  '@emnapi/runtime@1.7.1':
+    resolution: {integrity: sha512-PVtJr5CmLwYAU9PZDMITZoR5iAOShYREoR45EyyLrbntV50mdePTgUn4AmOw90Ifcj+x2kRjdzr1HP3RrNiHGA==}
 
   '@expressive-code/core@0.41.3':
     resolution: {integrity: sha512-9qzohqU7O0+JwMEEgQhnBPOw5DtsQRBXhW++5fvEywsuX44vCGGof1SL5OvPElvNgaWZ4pFZAFSlkNOkGyLwSQ==}
@@ -205,12 +205,6 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@neutrino/core@git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812':
-    resolution: {commit: 8dd188b230f4fcbeafdcca1bc747b74678b93812, repo: git@github.com:neutrino-cms/neutrino-core.git, type: git}
-    version: 0.1.0
-    peerDependencies:
-      sass: ^1.77.0
-
   '@parcel/watcher-android-arm64@2.5.1':
     resolution: {integrity: sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==}
     engines: {node: '>= 10.0.0'}
@@ -296,6 +290,12 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@quesby/core@git+https://git@github.com:quesby/quesby-core.git#eaa28400844a129975d7288d5a1f02f539ffad61':
+    resolution: {commit: eaa28400844a129975d7288d5a1f02f539ffad61, repo: git@github.com:quesby/quesby-core.git, type: git}
+    version: 0.1.1-alpha.0
+    peerDependencies:
+      sass: '>=1.93.3 <2.0.0'
 
   '@shikijs/core@3.15.0':
     resolution: {integrity: sha512-8TOG6yG557q+fMsSVa8nkEDOZNTSxjbbR8l6lF2gyr6Np+jrPlslqDxQkN6rMXCECQ3isNPZAGszAfYoJOPGlg==}
@@ -1690,7 +1690,7 @@ snapshots:
 
   '@ctrl/tinycolor@4.2.0': {}
 
-  '@emnapi/runtime@1.7.0':
+  '@emnapi/runtime@1.7.1':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -1786,7 +1786,7 @@ snapshots:
 
   '@img/sharp-wasm32@0.33.5':
     dependencies:
-      '@emnapi/runtime': 1.7.0
+      '@emnapi/runtime': 1.7.1
     optional: true
 
   '@img/sharp-win32-ia32@0.33.5':
@@ -1803,30 +1803,6 @@ snapshots:
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
-
-  '@neutrino/core@git+https://git@github.com:neutrino-cms/neutrino-core.git#8dd188b230f4fcbeafdcca1bc747b74678b93812(sass@1.94.0)':
-    dependencies:
-      '@11ty/eleventy': 3.1.2
-      '@11ty/eleventy-img': 4.0.2
-      '@11ty/eleventy-plugin-rss': 1.2.0
-      cheerio: 1.1.2
-      dotenv: 16.6.1
-      luxon: 3.7.2
-      markdown-it: 14.1.0
-      markdown-it-link-attributes: 4.0.1
-      rehype-expressive-code: 0.41.3
-      rehype-stringify: 10.0.1
-      remark-gfm: 4.0.1
-      remark-parse: 11.0.0
-      remark-rehype: 11.1.2
-      sass: 1.94.0
-      slugify: 1.6.6
-      unified: 11.0.5
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
@@ -1891,6 +1867,30 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@quesby/core@git+https://git@github.com:quesby/quesby-core.git#eaa28400844a129975d7288d5a1f02f539ffad61(sass@1.94.0)':
+    dependencies:
+      '@11ty/eleventy': 3.1.2
+      '@11ty/eleventy-img': 4.0.2
+      '@11ty/eleventy-plugin-rss': 1.2.0
+      cheerio: 1.1.2
+      dotenv: 16.6.1
+      luxon: 3.7.2
+      markdown-it: 14.1.0
+      markdown-it-link-attributes: 4.0.1
+      rehype-expressive-code: 0.41.3
+      rehype-stringify: 10.0.1
+      remark-gfm: 4.0.1
+      remark-parse: 11.0.0
+      remark-rehype: 11.1.2
+      sass: 1.94.0
+      slugify: 1.6.6
+      unified: 11.0.5
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
 
   '@shikijs/core@3.15.0':
     dependencies:

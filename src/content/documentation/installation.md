@@ -160,7 +160,7 @@ The system checks configurations in this order (first found wins):
 
 2. **Configure the content path**:
    ```bash
-   NEUTRINO_CONTENT_PATH=/path/to/your/content/directory
+   QUESBY_CONTENT_PATH=/path/to/your/content/directory
    ```
 
 #### Method 2: site.json Configuration
@@ -176,14 +176,14 @@ Edit `src/_data/site.json`:
 
 ### Theme Configuration
 
-Neutrino comes with built-in themes and supports custom themes:
+Quesby comes with built-in themes and supports custom themes:
 
 #### Built-in Themes
 
 | Theme | Description | Location |
 |-------|-------------|----------|
-| `neutrino-boilerplate-core` | Modern, minimalist design | `src/themes/neutrino-boilerplate-core/` |
-| `neutrino-brand-website` | Brand-focused with enhanced visuals | `src/themes/neutrino-brand-website/` |
+| `quesby-core` | Modern, minimalist design | `src/themes/quesby-core/` |
+| `quesby-brand-website` | Brand-focused with enhanced visuals | `src/themes/quesby-brand-website/` |
 
 #### Setting the Theme
 
@@ -301,7 +301,7 @@ You can also manage content manually by editing Markdown files in the appropriat
 **Solutions**:
 ```bash
 # Check your configuration
-cat .env | grep NEUTRINO_CONTENT_PATH
+cat .env | grep QUESBY_CONTENT_PATH
 cat src/_data/site.json | grep contentPath
 
 # Verify directory exists

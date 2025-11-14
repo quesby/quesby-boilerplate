@@ -1,6 +1,6 @@
-### What is Neutrino Boilerplate?
+### What is Quesby Boilerplate?
 
-**Neutrino** is a modern boilerplate based on Eleventy that allows you to create fast and performant websites.
+**Quesby** is a modern boilerplate based on Eleventy that allows you to create fast and performant websites.
 
 ### Key Features
 
@@ -9,9 +9,9 @@
 - 📝 **Simple**: Content management with Markdown
 - 🔧 **Configurable**: Easy to customize
 
-### Why Neutrino?
+### Why Quesby?
 
-Neutrino was born from the need to have a boilerplate that combines:
+Quesby was born from the need to have a boilerplate that combines:
 
 1. **Ease of use** for content creators
 2. **Technical flexibility** for developers

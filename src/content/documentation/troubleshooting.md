@@ -20,7 +20,7 @@ This comprehensive troubleshooting guide covers common issues, error messages, a
 
 1. **Build fails** → Check Node.js version (18+), run `pnpm install`
 2. **CSS not loading** → Run `pnpm run css:build` or `pnpm run serve`
-3. **Content not showing** → Check `NEUTRINO_CONTENT_PATH` environment variable
+3. **Content not showing** → Check `QUESBY_CONTENT_PATH` environment variable
 4. **Theme not applied** → Verify `theme` in `site.json`
 5. **Images not loading** → Check paths start with `/assets/`
 6. **CMS not working** → Verify `admin/config.yml` and GitHub Pages settings
@@ -43,7 +43,7 @@ node --version  # Should be 18 or higher
 pnpm list --depth=0  # or npm list --depth=0
 
 # 3. Check environment variables
-echo $NEUTRINO_CONTENT_PATH
+echo $QUESBY_CONTENT_PATH
 
 # 4. Validate configuration
 cat src/_data/site.json
@@ -171,7 +171,7 @@ nvm use 18
 ❌ Content path not found:
 /path/to/content
 
-Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH
+Check your contentPath in site.json or the .env variable QUESBY_CONTENT_PATH
 
 > **Note**: For detailed content configuration, see the [Content Management Guide](./content-management.md#content-basics).
 ```
@@ -179,7 +179,7 @@ Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH
 **Solutions:**
 ```bash
 # 1. Check environment variable
-echo $NEUTRINO_CONTENT_PATH
+echo $QUESBY_CONTENT_PATH
 
 # 2. Verify .env file
 cat .env
@@ -192,7 +192,7 @@ mkdir -p content
 mkdir -p src/content
 
 # 5. Set correct path
-export NEUTRINO_CONTENT_PATH=./content
+export QUESBY_CONTENT_PATH=./content
 ```
 
 #### **Error: "Template not found"**
@@ -253,7 +253,7 @@ head -20 src/content/posts/*/index.md
 sass --check src/sass/core.scss
 
 # 2. Validate theme files
-sass --check src/themes/neutrino-boilerplate-core/skin.scss
+sass --check src/themes/quesby-core/skin.scss
 
 # 3. Check for missing imports
 grep -r "@import" src/sass/
@@ -282,10 +282,10 @@ cat src/_data/site.json | grep theme
 ls -la src/themes/
 
 # 3. Check theme structure
-ls -la src/themes/neutrino-boilerplate-core/
+ls -la src/themes/quesby-core/
 
 # 4. Ensure skin.scss exists
-ls -la src/themes/neutrino-boilerplate-core/skin.scss
+ls -la src/themes/quesby-core/skin.scss
 
 # 5. Set theme via environment variable
 export THEME=your-theme-name
@@ -665,7 +665,7 @@ node --version
 
 # 2. Verify environment variables
 echo $NODE_ENV
-echo $NEUTRINO_CONTENT_PATH
+echo $QUESBY_CONTENT_PATH
 
 # 3. Check production dependencies
 npm ci --production
@@ -689,7 +689,7 @@ npm run build
 **Solutions:**
 ```bash
 # 1. Check content path configuration
-echo $NEUTRINO_CONTENT_PATH
+echo $QUESBY_CONTENT_PATH
 
 # 2. Verify content files exist
 ls -la src/content/
@@ -773,12 +773,12 @@ find src/content -name "index.md" | wc -l
 ❌ Content path not found:
 /path/to/content
 
-Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH
+Check your contentPath in site.json or the .env variable QUESBY_CONTENT_PATH
 
 > **Note**: For detailed content configuration, see the [Content Management Guide](./content-management.md#content-basics).
 ```
 
-**Solution:** Set correct `NEUTRINO_CONTENT_PATH` environment variable.
+**Solution:** Set correct `QUESBY_CONTENT_PATH` environment variable.
 
 #### **"Template not found"**
 ```
@@ -870,7 +870,7 @@ npm run serve -- --watch
 #### **Support Channels**
 - **GitHub Issues**: For bug reports and feature requests
 - **GitHub Discussions**: For questions and community support
-- **Stack Overflow**: For technical issues (tag: `neutrino-boilerplate`)
+- **Stack Overflow**: For technical issues (tag: `quesby-boilerplate`)
 
 ### Reporting Issues
 
@@ -891,4 +891,4 @@ For feature requests, include:
 - Benefits of the feature
 - Implementation considerations
 
-This comprehensive troubleshooting guide should help you resolve most issues encountered while working with Neutrino. If you continue to experience problems, please refer to the community resources or create a detailed issue report.
+This comprehensive troubleshooting guide should help you resolve most issues encountered while working with Quesby. If you continue to experience problems, please refer to the community resources or create a detailed issue report.

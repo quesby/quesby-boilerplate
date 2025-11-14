@@ -1,27 +1,27 @@
 ---
 id: 01K6ACPEFH7Y3MXGRF8EVMFFTZ
-title: Welcome to Neutrino Boilerplate
-slug: welcome-to-neutrino-boilerplate
-description: Discover Neutrino Boilerplate, a modern Eleventy boilerplate designed
+title: Welcome to Quesby Boilerplate
+slug: welcome-to-quesby-boilerplate
+description: Discover Quesby Boilerplate, a modern Eleventy boilerplate designed
   for content creators. Learn how to get started with this privacy-first static
   site generator.
 date: 2025-09-29T11:26:00.000+02:00
 author: Green Panda Studio
-image: neutrino-superhero.webp
-category: "Neutrino"
+image: quesby-superhero.webp
+category: "Quesby"
 tags:
-  - neutrino
+  - quesby
   - eleventy
   - static site generator
   - getting started
   - web development
 draft: false
 ---
-Welcome to **Neutrino Boilerplate**, a modern, privacy-first static site boilerplate built with Eleventy and designed specifically for content creators who value performance, accessibility, and ease of use.
+Welcome to **Quesby Boilerplate**, a modern, privacy-first static site boilerplate built with Eleventy and designed specifically for content creators who value performance, accessibility, and ease of use.
 
-## What is Neutrino Boilerplate?
+## What is Quesby Boilerplate?
 
-Neutrino Boilerplate is a comprehensive Eleventy starter template that combines the power of static site generation with modern web development practices. It's designed to help you create fast, secure, and maintainable websites without the complexity of traditional content management systems.
+Quesby Boilerplate is a comprehensive Eleventy starter template that combines the power of static site generation with modern web development practices. It's designed to help you create fast, secure, and maintainable websites without the complexity of traditional content management systems.
 
 ### Key Highlights
 
@@ -32,7 +32,7 @@ Neutrino Boilerplate is a comprehensive Eleventy starter template that combines 
 - **Accessibility**: WCAG compliant out of the box
 - **SEO Ready**: Optimized for search engines
 
-## Why Choose Neutrino Boilerplate?
+## Why Choose Quesby Boilerplate?
 
 ### For Content Creators
 - **Easy Content Management**: Decap CMS integration allows non-technical users to manage content
@@ -48,12 +48,12 @@ Neutrino Boilerplate is a comprehensive Eleventy starter template that combines 
 
 ## Quick Start
 
-Getting started with Neutrino Boilerplate is straightforward:
+Getting started with Quesby Boilerplate is straightforward:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/neutrino-cms/neutrino-boilerplate.git
-cd neutrino-boilerplate
+git clone https://github.com/quesby/quesby-boilerplate.git
+cd quesby-boilerplate
 ```
 
 ### 2. Install Dependencies
@@ -90,7 +90,7 @@ Navigate to `http://localhost:8080` to see your site in action.
 
 ## Content Management
 
-Neutrino Boilerplate includes Decap CMS for easy content management:
+Quesby Boilerplate includes Decap CMS for easy content management:
 
 ### Admin Access
 - Visit `/admin` to access the content management interface
@@ -107,7 +107,7 @@ Neutrino Boilerplate includes Decap CMS for easy content management:
 ## Customization
 
 ### Themes
-Neutrino Boilerplate comes with a modern, customizable theme system:
+Quesby Boilerplate comes with a modern, customizable theme system:
 - **SCSS Architecture**: Modular and maintainable styles
 - **Dark/Light Mode**: Built-in theme switching
 - **Customizable Colors**: Easy color scheme customization
@@ -142,7 +142,7 @@ Neutrino Boilerplate comes with a modern, customizable theme system:
 - [Deployment](/documentation/deployment/) - Deploy your site
 
 ### Join the Community
-- **GitHub**: [View source code and contribute](https://github.com/neutrino-cms/neutrino-boilerplate)
+- **GitHub**: [View source code and contribute](https://github.com/quesby/quesby-boilerplate)
 - **Issues**: Report bugs and request features
 - **Discussions**: Ask questions and share ideas
 
@@ -153,24 +153,24 @@ Neutrino Boilerplate comes with a modern, customizable theme system:
 
 ## Why We Built This
 
-Neutrino Boilerplate was created to solve common problems in static site development:
+Quesby Boilerplate was created to solve common problems in static site development:
 
 - **Complexity**: Many static site generators are too complex for simple use cases
 - **Performance**: Most solutions don't prioritize performance out of the box
 - **Privacy**: Many tools include tracking and analytics by default
 - **Maintenance**: Keeping dependencies updated and secure is time-consuming
 
-We believe that creating great content shouldn't require a computer science degree. Neutrino Boilerplate provides all the tools you need without the complexity.
+We believe that creating great content shouldn't require a computer science degree. Quesby Boilerplate provides all the tools you need without the complexity.
 
 ## Ready to Get Started?
 
-Neutrino Boilerplate is designed to get you up and running quickly while providing the flexibility to grow with your needs. Whether you're a blogger, developer, or content creator, Neutrino Boilerplate provides the foundation for a modern, performant website.
+Quesby Boilerplate is designed to get you up and running quickly while providing the flexibility to grow with your needs. Whether you're a blogger, developer, or content creator, Quesby Boilerplate provides the foundation for a modern, performant website.
 
-[Get started now](/documentation/installation/) or [browse the documentation](/documentation/) to learn more about what Neutrino Boilerplate can do for your next project.
+[Get started now](/documentation/installation/) or [browse the documentation](/documentation/) to learn more about what Quesby Boilerplate can do for your next project.
 
 ---
 
-*Neutrino Boilerplate is an open-source project maintained by Green Panda Studio. We're committed to providing a privacy-first, performance-focused solution for modern web development.*
+*Quesby Boilerplate is an open-source project maintained by Green Panda Studio. We're committed to providing a privacy-first, performance-focused solution for modern web development.*
 
 
 

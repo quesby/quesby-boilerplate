@@ -40,7 +40,7 @@ This comprehensive API reference covers all available functions, filters, shortc
 - `{{ collections.documentation }}` - All documentation pages
 
 **Environment Variables:**
-- `NEUTRINO_CONTENT_PATH` - Content directory path
+- `QUESBY_CONTENT_PATH` - Content directory path
 - `THEME` - Active theme name
 - `NODE_ENV` - Environment (development/production)
 
@@ -356,7 +356,7 @@ Current active theme name.
 
 ```javascript
 // Available in all templates
-{{ theme }} // "neutrino-Boilerplate-core" or "neutrino-brand-website"
+{{ theme }} // "quesby-core" or "quesby-brand-website"
 ```
 
 ### Computed Data
@@ -786,18 +786,18 @@ fs.writeFileSync(outPath, fullStyles, 'utf8');
 
 ### Content Management
 
-#### **`NEUTRINO_CONTENT_PATH`**
+#### **`QUESBY_CONTENT_PATH`**
 
 Path to external content directory.
 
 ```bash
 # .env file
-NEUTRINO_CONTENT_PATH=/path/to/your/content/directory
+QUESBY_CONTENT_PATH=/path/to/your/content/directory
 ```
 
 **Usage:**
 - Supports absolute and relative paths
-- Used in `site.json` with `${NEUTRINO_CONTENT_PATH}` syntax
+- Used in `site.json` with `${QUESBY_CONTENT_PATH}` syntax
 - Automatically copied to `src/content/` during build
 
 #### **`THEME`**
@@ -840,7 +840,7 @@ function expandEnv(str) {
 }
 
 // Usage
-const contentPath = expandEnv("${NEUTRINO_CONTENT_PATH}");
+const contentPath = expandEnv("${QUESBY_CONTENT_PATH}");
 // Result: "/path/to/content" or fallback value
 ```
 
@@ -1223,7 +1223,7 @@ eleventyConfig.addTransform("addHeadingIdsAndTOC", function(content, outputPath)
 if (!fs.existsSync(contentPath)) {
   throw new Error(
     `❌ Content path not found:\n${contentPath}\n\n` +
-    `Check your contentPath in site.json or the .env variable NEUTRINO_CONTENT_PATH`
+    `Check your contentPath in site.json or the .env variable QUESBY_CONTENT_PATH`
   );
 }
 ```

@@ -1,25 +1,25 @@
 ---
 id: 01k6actzj84w84t80rx63196en
-title: Neutrino Boilerplate Features
-slug: neutrino-boilerplate-features
+title: Quesby Boilerplate Features
+slug: quesby-boilerplate-features
 description: >-
-  Explore the powerful features that make Neutrino Boilerplate the perfect choice
+  Explore the powerful features that make Quesby Boilerplate the perfect choice
   for modern static site development. From performance optimization to content
   management.
 date: 2025-09-29T09:29:00.000Z
 author: Green Panda Studio
 image: pexels-asim-razan-32997.webp
-category: "Neutrino"
+category: "Quesby"
 tags:
   - features
-  - neutrino
+  - quesby
   - eleventy
   - performance
 draft: false
 aliases: []
 body: ''
 ---
-Neutrino Boilerplate packs a comprehensive set of features designed to make static site development efficient, enjoyable, and future-proof. Here's what makes it stand out in the crowded landscape of static site generators.
+Quesby Boilerplate packs a comprehensive set of features designed to make static site development efficient, enjoyable, and future-proof. Here's what makes it stand out in the crowded landscape of static site generators.
 
 ## Core Features
 
@@ -214,13 +214,13 @@ Neutrino Boilerplate packs a comprehensive set of features designed to make stat
 
 ## Get Started Today
 
-Ready to experience these features firsthand? [Install Neutrino Boilerplate](/documentation/installation/) and start building your next project with confidence.
+Ready to experience these features firsthand? [Install Quesby Boilerplate](/documentation/installation/) and start building your next project with confidence.
 
 Each feature is designed to work seamlessly together, creating a cohesive development experience that scales from simple blogs to complex documentation sites.
 
 ---
 
-*Neutrino Boilerplate is continuously evolving. [Check our GitHub repository](https://github.com/neutrino-cms/neutrino-boilerplate) for the latest features and updates.*
+*Quesby Boilerplate is continuously evolving. [Check our GitHub repository](https://github.com/quesby/quesby-boilerplate) for the latest features and updates.*
 
 
 
