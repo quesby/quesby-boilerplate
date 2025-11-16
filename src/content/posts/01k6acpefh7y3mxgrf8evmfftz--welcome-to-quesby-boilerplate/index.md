@@ -7,7 +7,7 @@ description: Discover Quesby Boilerplate, a modern Eleventy boilerplate designed
   site generator.
 date: 2025-09-29T11:26:00.000+02:00
 author: Green Panda Studio
-image: quesby-superhero.webp
+image: cool-cat.webp
 category: "Quesby"
 tags:
   - quesby

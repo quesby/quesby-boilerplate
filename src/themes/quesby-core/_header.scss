@@ -1,5 +1,25 @@
 @use "forward" as *;
 
+// logo
+.logo {
+    &--dark {
+        display: none;
+    }
+    &--light {
+        display: block;
+    }
+}
+.dark {
+    .logo {
+        &--dark {
+            display: block;
+        }
+        &--light {
+            display: none;
+        }
+    }
+}
+
 header {
     position: sticky;
     top: 0;
@@ -10,7 +30,7 @@ header {
         @include flex-container(row, space-between, center, wrap);
         padding: $padding ($padding * 0.5);
         .logo {
-            width: 35px;
+            width: 105px;
         }
         .navigation {
             @include flex-container(column, flex-start, flex-start, wrap);
