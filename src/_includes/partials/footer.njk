@@ -1,9 +1,10 @@
 <footer>
     <div class="container boxed">
-        <p>© {{ "" | currentYear }} {{ site.name }} | <a href="{{ site.url }}" target="_blank">{{ site.author }}</a></p>
+        <p>© {{ "" | currentYear }} {{ site.name }} | <a href="{{ site.url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ site.author }} website">{{ site.author }}</a></p>
     </div>
 </footer>
-<script src="{{ '/assets/js/togglemode.js' | url }}"></script>
-<script src="{{ '/assets/js/headerscroll.js' | url }}"></script>
-<script src="{{ '/assets/js/mobile-menu.js' | url }}"></script>
-<script src="{{ '/assets/js/search-popup.js' | url }}"></script>
+<link rel="stylesheet" href="/assets/css/expressive-code.css">
+<script defer src="{{ '/assets/js/togglemode.js' | url }}"></script>
+<script defer src="{{ '/assets/js/headerscroll.js' | url }}"></script>
+<script defer src="{{ '/assets/js/mobile-menu.js' | url }}"></script>
+<script defer src="{{ '/assets/js/search-popup.js' | url }}"></script>

@@ -46,8 +46,12 @@
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/skin.css">
-  <link rel="stylesheet" href="/assets/css/expressive-code.css">
+  <link rel="preload" href="/assets/css/skin.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="/assets/css/expressive-code.css" as="style" onload="this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="/assets/css/skin.css">
+  </noscript>
 </head>
 <body class="{{ postClass or class }}">
   {% include "partials/header.njk" %}

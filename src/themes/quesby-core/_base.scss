@@ -82,6 +82,13 @@ ul, ol {
     }
 }
 
+:focus-visible {
+    outline: 2px solid var(--warning) !important;
+    outline-offset: 2px;
+    border-radius: $borderRadius-small;
+    transition: $transition;
+}
+
 /* Customize the entire scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
