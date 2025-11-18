@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 3
-lastUpdated: "2025-11-13"
+lastUpdated: "2025-11-18"
 ---
 
 # Configuration Guide
@@ -298,11 +298,11 @@ collections:
 
 ## Eleventy Configuration
 
-> **Note**: Eleventy configuration is handled by the `@quesby/core` package. For advanced customization, see the [Development Guide](./development.md#eleventy-configuration).
+> **Note**: Eleventy configuration is handled by the `@quesby/core` npm package (automatically installed as a dependency). For advanced customization, see the [Development Guide](./development.md#eleventy-configuration).
 
 ### Custom Filters
 
-Quesby includes several custom filters defined in `node_modules/@quesby/core/src/eleventy/filters.js`:
+Quesby includes several custom filters defined in the `@quesby/core` npm package at `node_modules/@quesby/core/src/eleventy/filters.js`:
 
 #### Date Formatting
 ```javascript
@@ -355,7 +355,7 @@ export default function (eleventyConfig) {
 
 ### Collections
 
-Quesby automatically creates collections defined in `node_modules/@quesby/core/src/eleventy/config.js`:
+Quesby automatically creates collections defined in the `@quesby/core` npm package at `node_modules/@quesby/core/src/eleventy/config.js`:
 
 - **`posts`**: All blog posts from `src/content/posts/`
 - **`projects`**: All projects from `src/content/projects/`
@@ -363,7 +363,7 @@ Quesby automatically creates collections defined in `node_modules/@quesby/core/s
 
 #### Collection Configuration Location
 
-Collections are configured in the core package:
+Collections are configured in the `@quesby/core` npm package:
 
 ```javascript
 // In node_modules/@quesby/core/src/eleventy/config.js
@@ -380,7 +380,7 @@ eleventyConfig.addCollection('posts', collection => {
 
 ### URL Structure
 
-Custom URL patterns are configured in `node_modules/@quesby/core/src/eleventy/config.js`:
+Custom URL patterns are configured in the `@quesby/core` npm package at `node_modules/@quesby/core/src/eleventy/config.js`:
 
 - **Posts**: `/blog/[slug]/`
 - **Documentation**: `/documentation/[slug]/`
@@ -388,7 +388,7 @@ Custom URL patterns are configured in `node_modules/@quesby/core/src/eleventy/co
 
 #### URL Configuration Location
 
-URL patterns are defined in the core package:
+URL patterns are defined in the `@quesby/core` npm package:
 
 ```javascript
 // In node_modules/@quesby/core/src/eleventy/config.js
@@ -463,7 +463,7 @@ Quesby uses a unified processor for markdown processing with:
 
 #### Markdown Configuration Location
 
-The markdown processor is configured in `node_modules/@quesby/core/src/eleventy/config.js`:
+The markdown processor is configured in the `@quesby/core` npm package at `node_modules/@quesby/core/src/eleventy/config.js`:
 
 ```javascript
 const processor = unified()

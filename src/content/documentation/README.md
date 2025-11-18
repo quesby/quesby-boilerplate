@@ -9,7 +9,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 1
-lastUpdated: '2025-09-12'
+lastUpdated: '2025-11-18'
 ---
 
 # Documentation Overview
@@ -27,6 +27,7 @@ Welcome to the Quesby Boilerplate documentation! This comprehensive guide will h
 
 Quesby Boilerplate is a modern, privacy-first static site boilerplate built with:
 
+- **@quesby/core** - Core npm package providing Eleventy configuration and utilities
 - **Eleventy (11ty)** - Static site generator
 - **Decap CMS** - Headless content management
 - **Sass/SCSS** - Advanced styling capabilities
