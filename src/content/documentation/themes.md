@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 6
-lastUpdated: "2025-11-13"
+lastUpdated: "2025-11-18"
 ---
 
 # Quesby Theme System
@@ -37,7 +37,7 @@ src/
     └── quesby-brand-website/       # Alternative theme
         └── [same structure]
 
-@quesby/core
+@quesby/core (npm package)
 ├── sass/                           # Core SCSS files
 │   ├── _mixins.scss               # SCSS mixins
 │   ├── _reset.scss                # CSS reset
@@ -47,6 +47,8 @@ src/
 └── _data/
     └── site.json                  # Site configuration
 ```
+
+> **Note**: `@quesby/core` is an npm package that is automatically installed when you run `pnpm install`. The SCSS files in `@quesby/core/sass/` are available because the package is listed as a dependency in `package.json`. This allows themes to import core styles using `@use "@quesby/core/sass/_reset"` and similar imports.
 
 ## Theme Configuration
 

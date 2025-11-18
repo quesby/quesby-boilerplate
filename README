@@ -5,6 +5,7 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 ## ✨ Features
 
 - **Static Site Generation** with Eleventy 3.0
+- **Quesby Core** - Built on `@quesby/core` npm package for Eleventy configuration and core functionality
 - **Headless CMS** with Decap CMS
 - **CLI Tools** for content creation (`npx quesby new post`)
 - **Modular Theme System** with 2 included themes

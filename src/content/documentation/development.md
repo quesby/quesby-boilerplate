@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 5
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-11-18"
 ---
 
 # Development Guide
@@ -391,7 +391,7 @@ fs.writeFileSync(outPath, fullStyles, 'utf8');
 
 Quesby includes powerful shortcodes for media handling and content optimization.
 
-> **⚠️ Security Note**: Shortcodes are implemented in the core package (`@quesby/core`). For production use, avoid modifying core shortcodes directly. Instead, extend functionality through `eleventy.config.js` or create custom shortcodes.
+> **⚠️ Security Note**: Shortcodes are implemented in the `@quesby/core` npm package. For production use, avoid modifying core shortcodes directly. Instead, extend functionality through `eleventy.config.js` or create custom shortcodes.
 
 ### Image Shortcode
 

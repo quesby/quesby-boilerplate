@@ -7,7 +7,7 @@ toc: toc-documentation.njk
 navfooter: documentation-nav-footer.njk
 class: documentation
 order: 2
-lastUpdated: "2025-09-12"
+lastUpdated: "2025-11-18"
 ---
 
 # Installation Guide
@@ -402,12 +402,15 @@ Quesby uses modern, well-maintained dependencies:
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
+| **@quesby/core** | 0.1.1+ | Core Eleventy configuration and utilities |
 | **Eleventy** | 3.0+ | Static site generator |
 | **Decap CMS** | Latest | Headless content management |
 | **Sass** | 1.77+ | CSS preprocessor |
 | **Expressive Code** | 0.41+ | Syntax highlighting |
 | **Markdown-it** | 14.0+ | Markdown processor |
 | **Corepack** | Built-in | Package manager management |
+
+> **Note**: `@quesby/core` is automatically installed when you run `pnpm install` (or `npm install` / `yarn install`). It provides the core Eleventy configuration, filters, collections, and SCSS utilities used throughout the boilerplate.
 
 ## Supported Platforms
 
