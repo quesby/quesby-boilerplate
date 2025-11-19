@@ -11,5 +11,5 @@
     "contentPath": "${QUESBY_CONTENT_PATH}",
     "socialImage": "/assets/images/og-image.jpg",
     "twitter": "@quesby",
-    "language": "en-US"
+    "language": "en_US"
 }

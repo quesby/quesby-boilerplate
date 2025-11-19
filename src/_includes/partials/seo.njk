@@ -1,52 +1,14 @@
-{# Basic SEO partial #}
+{# 
+  SEO partial - Thin wrapper around @quesby/core
+  Maintained only for backward compatibility.
+  New templates should call the SEO filters directly from layout/base.njk.
+#}
 
-{%- set baseUrl = site.url -%}
-{%- set pageUrl = baseUrl + page.url -%}
+{# Build SEO model using full Nunjucks context (this) #}
+{%- set seoModel = page | seoModel(site, this) -%}
 
-{# SEO Title with fallback #}
-{%- set seoTitle = seoTitle or title or site.name -%}
+{# Output meta tags and Open Graph/Twitter tags #}
+{{ seoModel | seoHeadHtml(site) | safe }}
 
-{# SEO Description with fallback #}
-{%- set seoDescription = description or site.description -%}
-
-{# SEO Image with fallback #}
-{%- set seoImage = image or site.socialImage -%}
-{%- if seoImage and seoImage contains 'http' == false -%}
-  {%- set seoImage = baseUrl + seoImage -%}
-{%- endif -%}
-
-{# Meta robots #}
-{%- set robotsContent = "index, follow" -%}
-{%- if noindex -%}
-  {%- set robotsContent = "noindex, nofollow, noarchive" -%}
-{%- endif -%}
-
-<title>{{ seoTitle }}</title>
-<meta name="description" content="{{ seoDescription }}">
-<meta name="robots" content="{{ robotsContent }}">
-<link rel="canonical" href="{{ pageUrl }}">
-
-<!-- Open Graph -->
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="{{ postType or 'website' }}">
-<meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:title" content="{{ seoTitle }}">
-<meta property="og:description" content="{{ seoDescription }}">
-<meta property="og:url" content="{{ pageUrl }}">
-{% if seoImage %}
-<meta property="og:image" content="{{ seoImage }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{{ seoTitle }}">
-{% endif %}
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="{% if seoImage %}summary_large_image{% else %}summary{% endif %}">
-{% if site.twitter %}
-<meta name="twitter:site" content="@{{ site.twitter | replace('@', '') }}">
-{% endif %}
-<meta name="twitter:title" content="{{ seoTitle }}">
-<meta name="twitter:description" content="{{ seoDescription }}">
-{% if seoImage %}
-<meta name="twitter:image" content="{{ seoImage }}">
-{% endif %}
+{# Output JSON-LD structured data #}
+{{ seoModel | seoJsonLd(site) | safe }}

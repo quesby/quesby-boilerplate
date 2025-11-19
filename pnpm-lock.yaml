@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@quesby/core': link:../../../../../AppData/Local/pnpm/global/5/node_modules/@quesby/core
+
 importers:
 
   .:
@@ -12,8 +15,8 @@ importers:
         specifier: ^3.1.2
         version: 3.1.2
       '@quesby/core':
-        specifier: ^0.1.1
-        version: 0.1.1(sass@1.94.0)
+        specifier: ^0.2.0
+        version: 0.2.0(sass@1.94.0)
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -291,8 +294,8 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@quesby/core@0.1.1':
-    resolution: {integrity: sha512-adz2nWPm9OPlo/3m18f73e1pyfL6K7yBj8PlRr7gFgVuLNxVgySjvZJOA3P6c2My0LhdhbXViUzCZhjsiOK6vw==}
+  '@quesby/core@0.2.0':
+    resolution: {integrity: sha512-Z5P5td6xQyPLll/qVTNHaLmjNT0nZ/dgqS7bvWu/wdNhtKh7AxHZqh3QUlYbRVKuSnquV2Ee4dssAB2hFvg5CA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       sass: '>=1.93.3 <2.0.0'
@@ -1868,7 +1871,7 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@quesby/core@0.1.1(sass@1.94.0)':
+  '@quesby/core@0.2.0(sass@1.94.0)':
     dependencies:
       '@11ty/eleventy': 3.1.2
       '@11ty/eleventy-img': 4.0.2

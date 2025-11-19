@@ -12,17 +12,20 @@ lastUpdated: "2025-09-12"
 
 # SEO System
 
-Quesby Boilerplate includes a comprehensive SEO system inspired by modern best practices, providing automatic meta tag generation, social media optimization, and search engine optimization features.
+Quesby Boilerplate includes a comprehensive SEO system powered by `@quesby/core`, providing automatic meta tag generation, social media optimization, JSON-LD structured data, and search engine optimization features.
 
 ## Overview
 
-The SEO system automatically generates:
+The SEO system is implemented as a **headless module** in `@quesby/core`, meaning it provides functions and filters that generate HTML strings, but doesn't enforce any specific template structure. This allows complete flexibility in how you integrate SEO into your layouts.
+
+The system automatically generates:
 - Dynamic page titles with fallback system
 - Meta descriptions with intelligent fallbacks
 - Open Graph tags for social media sharing
 - Twitter Cards for enhanced social presence
 - Canonical URLs to prevent duplicate content
 - Meta robots tags for indexing control
+- JSON-LD structured data (BlogPosting, WebSite, WebPage)
 
 ## Configuration
 
@@ -47,11 +50,23 @@ The system supports the following frontmatter fields:
 
 | Field | Type | Description | Fallback |
 |-------|------|-------------|----------|
-| `seoTitle` | String | Custom SEO title | `title` → `site.name` |
+| `seoTitle` | String | Custom SEO title | `postTitle` → `title` → `site.name` |
+| `postTitle` | String | Post title (alternative to title) | `title` → `site.name` |
+| `title` | String | Page title | `site.name` |
 | `description` | String | Page description | `site.description` |
+| `postDescription` | String | Post description (alternative) | `description` → `site.description` |
 | `image` | String | Social sharing image | `site.socialImage` |
+| `postImage` | String | Post image (alternative) | `image` → `site.socialImage` |
+| `ogImageAlt` | String | Custom alt text for og:image:alt | `title` |
 | `noindex` | Boolean | Exclude from search engines | `false` |
 | `postType` | String | Open Graph type (article, website) | `website` |
+| `schemaType` | String | JSON-LD schema type (BlogPosting, WebSite, WebPage) | Auto-detected from `postType` |
+| `author` | String | Content author name | `null` |
+| `date` | Date | Publication date | `null` |
+| `lastUpdated` | Date | Last modification date | `date` |
+| `tags` | Array | Content tags for keywords | `[]` |
+| `seoDisableCoreHead` | Boolean | Disable core meta tags generation | `false` |
+| `seoDisableCoreJsonLd` | Boolean | Disable JSON-LD generation | `false` |
 
 > **Note**: For detailed frontmatter configuration, see the [Content Management Guide](./content-management.md#frontmatter-schema).
 
@@ -74,6 +89,7 @@ title: "How to Build Amazing Websites"
 description: "Learn the secrets of modern web development"
 seoTitle: "Complete Guide: Building Amazing Websites in 2024"
 image: "/images/amazing-websites.jpg"
+ogImageAlt: "Screenshot showing amazing website design"
 postType: "article"
 ---
 ```
@@ -189,95 +205,175 @@ Images are automatically processed:
 Control search engine indexing:
 - `noindex: true` - Excludes page from search engines
 
-### Structured Data (JSON-LD)
+### JSON-LD Structured Data
 
-The system includes structured data for better search engine understanding:
+The system automatically generates JSON-LD structured data based on content type:
 
-**Blog Post Example:**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Complete Guide: Building Amazing Websites in 2024",
-  "description": "Learn the secrets of modern web development",
-  "image": "https://yourdomain.com/images/amazing-websites.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Your Name"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Your Site Name",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://yourdomain.com/assets/images/logo.png"
-    }
-  },
-  "datePublished": "2024-01-15",
-  "dateModified": "2024-01-15"
-}
+**Blog Post (BlogPosting):**
+- Automatically generated when `postType: "article"` or `schemaType: "BlogPosting"`
+- Includes headline, description, image, author, publisher, dates, keywords
+
+**Website (WebSite):**
+- Automatically generated when `schemaType: "WebSite"` (typically for homepage)
+- Includes site name, URL, description, publisher
+
+**Web Page (WebPage):**
+- Default schema type for regular pages
+- Includes page name, description, URL
+
+The JSON-LD is automatically inserted into the `<head>` section. You can disable it per-page using `seoDisableCoreJsonLd: true` in frontmatter.
+
+> **Note**: Structured data is automatically generated based on content type and frontmatter fields. The system detects the appropriate schema type from `postType` or uses `schemaType` if explicitly set.
+
+## Using the SEO System
+
+### Basic Usage in Layouts
+
+The SEO system is integrated into `layouts/base.njk` using filters from `@quesby/core`:
+
+```njk
+<!-- SEO system from @quesby/core -->
+{%- set seoModel = page | seoModel(site) -%}
+{{ seoModel | seoHeadHtml(site) | safe }}
+
+<!-- JSON-LD structured data -->
+{{ seoModel | seoJsonLd(site) | safe }}
 ```
 
-**Website Example:**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Your Site Name",
-  "url": "https://yourdomain.com",
-  "description": "Your site description",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Your Site Name"
-  }
-}
+### SEO Filters
+
+The system provides several Nunjucks filters:
+
+#### `seoModel`
+Builds a normalized SEO model from page, site, and frontmatter data:
+
+```njk
+{%- set seoModel = page | seoModel(site) -%}
 ```
 
-> **Note**: Structured data is automatically generated based on content type and frontmatter fields.
-- `noindex: false` or omitted - Allows indexing (default)
+Returns an object with all SEO data (title, description, image, url, etc.).
 
-## SEO Filters
+#### `seoHeadHtml`
+Generates HTML meta tags (title, description, robots, canonical, Open Graph, Twitter Cards):
 
-The system provides several Nunjucks filters for advanced usage:
+```njk
+{{ seoModel | seoHeadHtml(site) | safe }}
+```
 
-### `canonical`
-Generate canonical URLs with proper handling:
+#### `seoJsonLd`
+Generates JSON-LD structured data script tag:
 
-{% raw %}
-```twig
+```njk
+{{ seoModel | seoJsonLd(site) | safe }}
+```
+
+#### Legacy Filters (Backward Compatibility)
+
+The following filters are still available for backward compatibility:
+
+**`canonical`** - Generate canonical URLs:
+```njk
 <link rel="canonical" href="{{ page.url | canonical: site.url }}">
 ```
-{% endraw %}
 
-**Canonical URL Handling:**
-- **Trailing Slash**: Automatically adds trailing slash to URLs
-- **Query Parameters**: Removes query parameters for clean canonical URLs
-- **Protocol**: Uses HTTPS if `site.url` uses HTTPS
-- **Domain**: Converts relative URLs to absolute using `site.url`
-
-**Examples:**
-- `page.url = "/blog/post"` → `https://yourdomain.com/blog/post/`
-- `page.url = "/about?ref=home"` → `https://yourdomain.com/about/`
-- `page.url = "/contact/"` → `https://yourdomain.com/contact/`
-
-### `seoTitle`
-Build SEO titles with site name:
-```twig
+**`seoTitle`** - Build SEO titles with site name:
+```njk
 <title>{{ title | seoTitle: site.name }}</title>
 ```
 
-### `absoluteUrl`
-Convert relative URLs to absolute:
-```twig
+**`absoluteUrl`** - Convert relative URLs to absolute:
+```njk
 <meta property="og:image" content="{{ image | absoluteUrl: site.url }}">
 ```
 
-### `seoDescription`
-Handle description fallbacks:
-```twig
+**`seoDescription`** - Handle description fallbacks:
+```njk
 <meta name="description" content="{{ description | seoDescription: site.description }}">
 ```
-{% endraw %}
+
+## Customization and Overrides
+
+### Adding Custom Meta Tags
+
+You can add custom meta tags before or after the core SEO output:
+
+```njk
+<!-- SEO system from @quesby/core -->
+{%- set seoModel = page | seoModel(site) -%}
+{{ seoModel | seoHeadHtml(site) | safe }}
+
+<!-- Custom meta tags -->
+<meta name="custom-meta" content="{{ myCustomValue }}">
+<meta property="custom:property" content="{{ anotherValue }}">
+```
+
+### Extending JSON-LD
+
+You can add additional JSON-LD schemas alongside the core one:
+
+```njk
+<!-- Core JSON-LD -->
+{{ seoModel | seoJsonLd(site) | safe }}
+
+<!-- Custom Organization schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}"
+}
+</script>
+```
+
+### Modifying SEO Model
+
+You can modify the SEO model before generating HTML:
+
+```njk
+{%- set seoModel = page | seoModel(site) -%}
+{%- set seoModel = seoModel | merge({ title: seoModel.title + " | Custom Suffix" }) -%}
+{{ seoModel | seoHeadHtml(site) | safe }}
+```
+
+### Disabling Core SEO Components
+
+Use frontmatter flags to disable parts of the SEO system:
+
+```yaml
+---
+title: "My Page"
+seoDisableCoreJsonLd: true  # Disable JSON-LD generation
+seoDisableCoreHead: false   # Keep meta tags (default)
+---
+```
+
+### Custom Filters
+
+You can add custom filters in `eleventy.config.js` to post-process SEO data:
+
+```javascript
+export default function (eleventyConfig) {
+  const coreConfig = quesby(eleventyConfig);
+  
+  // Custom filter to add suffix to titles
+  eleventyConfig.addFilter("addTitleSuffix", (seoModel, suffix) => {
+    return {
+      ...seoModel,
+      title: `${seoModel.title} ${suffix}`
+    };
+  });
+  
+  return coreConfig;
+}
+```
+
+Then use it in templates:
+
+```njk
+{%- set seoModel = page | seoModel(site) | addTitleSuffix("| My Site") -%}
+{{ seoModel | seoHeadHtml(site) | safe }}
+```
 
 
 ## Best Practices
