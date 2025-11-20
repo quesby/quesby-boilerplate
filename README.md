@@ -7,6 +7,7 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 - **Static Site Generation** with Eleventy 3.0
 - **Quesby Core** - Built on `@quesby/core` npm package for Eleventy configuration and core functionality
 - **Headless CMS** with Decap CMS
+- **Project Scaffolder** (`npx create-quesby`) - Create new projects instantly
 - **CLI Tools** for content creation (`npx quesby new post`)
 - **Modular Theme System** with 2 included themes
 - **Privacy-First** approach
@@ -18,17 +19,12 @@ A modern Eleventy boilerplate with Decap CMS, built with content creators in min
 
 ## 🚀 Quick Start
 
-This project uses PNPM as package manager. Choose one of the following installation methods:
-
-### Option 1: Install PNPM globally (Recommended)
+The easiest way to create a new Quesby project is using the official scaffolder:
 
 ```bash
-# Clone the repository
-git clone https://github.com/quesby/quesby-boilerplate.git
-cd quesby-boilerplate
-
-# Install PNPM globally
-npm install -g pnpm@9
+# Create a new Quesby project
+npx create-quesby my-site
+cd my-site
 
 # Install dependencies
 pnpm install
@@ -36,28 +32,31 @@ pnpm install
 # Start development server
 pnpm serve
 ```
-
-### Option 2: Use Corepack (if you have Node 20.18+ or 22 LTS)
-
-```bash
-# Clone the repository
-git clone https://github.com/quesby/quesby-boilerplate.git
-cd quesby-boilerplate
-
-# Enable Corepack and prepare PNPM
-corepack enable
-corepack prepare pnpm@9 --activate
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm serve
-```
-
-**Note:** If you encounter Corepack signature errors, use Option 1 instead.
 
 Visit `http://localhost:8080` to see your site.
+
+### Alternative: Clone from Repository
+
+If you prefer to clone the repository directly:
+
+```bash
+# Clone the repository
+git clone https://github.com/quesby/quesby-boilerplate.git
+cd quesby-boilerplate
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm serve
+```
+
+**Note:** This project uses PNPM as package manager. If you don't have pnpm installed, you can use Corepack (comes with Node.js 16.10+):
+
+```bash
+corepack enable
+corepack prepare pnpm@9 --activate
+```
 
 ## 🛠️ CLI Tools
 
