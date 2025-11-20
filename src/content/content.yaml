@@ -61,56 +61,48 @@ collections:
       - name: body
         label: "Body"
         type: "markdown"
-  documentation:
-    label: "Documentation"
-    path: "documentation"
-    extension: "md"
-    slug: "{{slug}}"
-    entry_template: "documentation/{slug}.md"
-    create: true
-    fields:
-      - name: slug
-        label: "Slug"
-        type: "string"
-        from: "title"
-        hint: "URL-friendly version of the title"
-
-      - name: title
-        label: "Title"
-        type: "string"
-
-      - name: description
-        label: "Description"
-        type: "text"
-
-      - name: body
-        label: "Body"
-        type: "markdown"
-
-      - name: layout
-        label: "Layout"
-        type: "string"
-
-      - name: aside
-        label: "Aside"
-        type: "string"
-
-      - name: toc
-        label: "TOC"
-        type: "string"
-
-      - name: navfooter
-        label: "Navfooter"
-        type: "string"
-
-      - name: class
-        label: "Class"
-        type: "string"
-
-      - name: order
-        label: "Order"
-        type: "number"
-
-      - name: lastUpdated
-        label: "Last Updated"
-        type: "datetime"
+  # Documentation collection removed - documentation is now hosted at quesby.dev
+  # If you need to create documentation locally, you can uncomment and customize this section
+  # documentation:
+  #   label: "Documentation"
+  #   path: "documentation"
+  #   extension: "md"
+  #   slug: "{{slug}}"
+  #   entry_template: "documentation/{slug}.md"
+  #   create: true
+  #   fields:
+  #     - name: slug
+  #       label: "Slug"
+  #       type: "string"
+  #       from: "title"
+  #       hint: "URL-friendly version of the title"
+  #     - name: title
+  #       label: "Title"
+  #       type: "string"
+  #     - name: description
+  #       label: "Description"
+  #       type: "text"
+  #     - name: body
+  #       label: "Body"
+  #       type: "markdown"
+  #     - name: layout
+  #       label: "Layout"
+  #       type: "string"
+  #     - name: aside
+  #       label: "Aside"
+  #       type: "string"
+  #     - name: toc
+  #       label: "TOC"
+  #       type: "string"
+  #     - name: navfooter
+  #       label: "Navfooter"
+  #       type: "string"
+  #     - name: class
+  #       label: "Class"
+  #       type: "string"
+  #     - name: order
+  #       label: "Order"
+  #       type: "number"
+  #     - name: lastUpdated
+  #       label: "Last Updated"
+  #       type: "datetime"

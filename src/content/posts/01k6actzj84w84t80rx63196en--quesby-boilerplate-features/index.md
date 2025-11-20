@@ -214,7 +214,7 @@ Quesby Boilerplate packs a comprehensive set of features designed to make static
 
 ## Get Started Today
 
-Ready to experience these features firsthand? [Install Quesby Boilerplate](/documentation/installation/) and start building your next project with confidence.
+Ready to experience these features firsthand? [Install Quesby Boilerplate](https://quesby.dev/documentation/installation/) and start building your next project with confidence.
 
 Each feature is designed to work seamlessly together, creating a cohesive development experience that scales from simple blogs to complex documentation sites.
 

@@ -14,6 +14,6 @@
 
 
 #### Ready to dive deeper?
-#### Check out our [comprehensive documentation](/documentation/).
+#### Check out our [comprehensive documentation](https://quesby.dev/documentation/).
 
 Have questions? The troubleshooting guide covers common issues, or you can explore our complete documentation.

@@ -9,9 +9,10 @@ export function registerCollections(eleventyConfig) {
         return `/blog/${slug}/`;
       }
 
-      if (input.includes("/content/documentation/")) {
-        return `/documentation/${slug}/`;
-      }
+      // Documentation collection removed - documentation is now hosted at quesby.dev
+      // if (input.includes("/content/documentation/")) {
+      //   return `/documentation/${slug}/`;
+      // }
 
       return data.permalink;
     }

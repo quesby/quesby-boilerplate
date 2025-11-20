@@ -75,14 +75,14 @@ npx quesby new post "My Amazing Post Title"
 
 ## 📚 Documentation
 
-Complete documentation is available at `/documentation/` including:
+Complete documentation is available at [quesby.dev/documentation](https://quesby.dev/documentation/) including:
 
-- [Installation Guide](./src/content/documentation/installation.md)
-- [Configuration](./src/content/documentation/configuration.md)
-- [Theme System](./src/content/documentation/themes.md)
-- [Content Management](./src/content/documentation/content-management.md)
-- [Migration Tools](./src/content/documentation/migration-tools.md)
-- [Deployment](./src/content/documentation/deployment.md)
+- [Installation Guide](https://quesby.dev/documentation/installation/)
+- [Configuration](https://quesby.dev/documentation/configuration/)
+- [Theme System](https://quesby.dev/documentation/themes/)
+- [Content Management](https://quesby.dev/documentation/content-management/)
+- [Migration Tools](https://quesby.dev/documentation/migration-tools/)
+- [Deployment](https://quesby.dev/documentation/deployment/)
 
 ## 🎨 Themes
 

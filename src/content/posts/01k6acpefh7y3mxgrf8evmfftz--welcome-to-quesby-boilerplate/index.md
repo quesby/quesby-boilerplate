@@ -136,10 +136,10 @@ Quesby Boilerplate comes with a modern, customizable theme system:
 ## Next Steps
 
 ### Explore the Documentation
-- [Installation Guide](/documentation/installation/) - Detailed setup instructions
-- [Configuration](/documentation/configuration/) - Customize your site
-- [Content Management](/documentation/content-management/) - Learn about Decap CMS
-- [Deployment](/documentation/deployment/) - Deploy your site
+- [Installation Guide](https://quesby.dev/documentation/installation/) - Detailed setup instructions
+- [Configuration](https://quesby.dev/documentation/configuration/) - Customize your site
+- [Content Management](https://quesby.dev/documentation/content-management/) - Learn about Decap CMS
+- [Deployment](https://quesby.dev/documentation/deployment/) - Deploy your site
 
 ### Join the Community
 - **GitHub**: [View source code and contribute](https://github.com/quesby/quesby-boilerplate)
@@ -166,7 +166,7 @@ We believe that creating great content shouldn't require a computer science degr
 
 Quesby Boilerplate is designed to get you up and running quickly while providing the flexibility to grow with your needs. Whether you're a blogger, developer, or content creator, Quesby Boilerplate provides the foundation for a modern, performant website.
 
-[Get started now](/documentation/installation/) or [browse the documentation](/documentation/) to learn more about what Quesby Boilerplate can do for your next project.
+[Get started now](https://quesby.dev/documentation/installation/) or [browse the documentation](https://quesby.dev/documentation/) to learn more about what Quesby Boilerplate can do for your next project.
 
 ---
 
