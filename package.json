@@ -1,6 +1,6 @@
 {
   "name": "@quesby/boilerplate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Privacy-first static site boilerplate built with Eleventy and Quesby Core",
   "license": "MIT",
   "repository": {
