@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024.0002"
+   height="1023.9999"
+   viewBox="0 0 270.93339 270.93332"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="quesby-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.27496365"
+     inkscape:cx="263.67121"
+     inkscape:cy="687.36358"
+     inkscape:window-width="2560"
+     inkscape:window-height="1367"
+     inkscape:window-x="1080"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1502"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient18459">
+      <stop
+         style="stop-color:#000057;stop-opacity:1"
+         offset="0"
+         id="stop18455" />
+      <stop
+         style="stop-color:#5854ff;stop-opacity:0.98823529"
+         offset="1"
+         id="stop18457" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient15821">
+      <stop
+         style="stop-color:#000018;stop-opacity:1"
+         offset="0"
+         id="stop15817" />
+      <stop
+         style="stop-color:#5854ff;stop-opacity:0.98823529"
+         offset="1"
+         id="stop15819" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient15821"
+       id="linearGradient15825"
+       x1="116.78678"
+       y1="182.39168"
+       x2="127.05703"
+       y2="185.56136"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18459"
+       id="linearGradient18167"
+       gradientUnits="userSpaceOnUse"
+       x1="116.78139"
+       y1="184.09491"
+       x2="129.96956"
+       y2="188.31184"
+       gradientTransform="matrix(2.8903437,0,0,2.8903986,-211.44786,-330.51756)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-45.397521,-150.89957)">
+    <g
+       id="g1502"
+       transform="matrix(4.3211263,0,0,4.3211263,-437.95,-604.60672)"
+       style="opacity:1;fill:url(#linearGradient15825);fill-opacity:1">
+      <path
+         id="circle4460-3"
+         style="opacity:1;fill:url(#linearGradient18167);fill-opacity:1;stroke:none;stroke-width:2.92391;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 143.30796,174.8403 c -17.31394,-0.0561 -31.39509,13.93474 -31.45096,31.249 -0.0552,17.31366 13.93504,31.39399 31.2484,31.44984 4.32832,0.0145 7.68754,-0.16717 13.41114,-3.65574 -4.28482,-4.60087 -4.65223,-7.05218 -13.37104,-8.74286 -8.71884,-1.69069 -18.92194,-8.5457 -18.88807,-19.01148 0.0338,-10.46573 8.54525,-18.92221 19.01078,-18.88843 10.4655,0.0338 18.92188,8.54535 18.88807,19.01114 -0.0173,5.21291 -2.61157,10.40127 -6.03241,13.81996 l -12.06376,-12.14211 c -0.91958,0.19561 -1.68325,-0.0655 -2.75903,0.58762 l 28.19453,28.37067 c 0,0 1.30132,0.43077 1.70339,0.0297 0.40011,-0.39994 -0.0259,-1.69893 -0.0259,-1.69893 l -6.30997,-6.35087 c 5.67054,-5.65389 9.66497,-13.9391 9.69326,-22.57596 0.0561,-17.31427 -13.93453,-31.39564 -31.24841,-31.45157 z"
+         inkscape:export-filename="/media/theoddape/HD/12 - Quesby/quesby-logo-plain.svg"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
+  </g>
+</svg>

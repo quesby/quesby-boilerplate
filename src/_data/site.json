@@ -5,7 +5,7 @@
     "author": "Green Panda Studio",
     "logo": "/assets/images/quesby-logo-black.avif",
     "logoDark": "/assets/images/quesby-logo-white.avif",
-    "favicon": "/assets/images/favicon.avif",
+    "favicon": "/assets/images/quesby-favicon-active.png",
     "theme": "quesby-core",
     "defaultVisualTheme": "dark",
     "contentPath": "${QUESBY_CONTENT_PATH}",

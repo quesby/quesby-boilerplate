@@ -28,7 +28,7 @@ Quesby Boilerplate is a comprehensive Eleventy starter template that combines th
 - **Privacy-First**: No tracking, no analytics, no third-party dependencies
 - **Performance Optimized**: Built for speed with modern web standards
 - **Content Management**: Integrated Decap CMS for easy content editing
-- **Modern Stack**: Eleventy, Sass, and modern JavaScript
+- **Modern Stack**: @quesby/core, Eleventy 3.0+, Sass/SCSS, and modern JavaScript
 - **Accessibility**: WCAG compliant out of the box
 - **SEO Ready**: Optimized for search engines
 
@@ -41,37 +41,55 @@ Quesby Boilerplate is a comprehensive Eleventy starter template that combines th
 - **Search Functionality**: Built-in search with MiniSearch
 
 ### For Developers
+- **Easy Setup**: Create new projects with `npx create-quesby`
 - **Modern Tooling**: Latest Eleventy features and best practices
-- **Modular Architecture**: Clean, maintainable code structure
-- **Customizable Themes**: SCSS-based theming system
+- **Modular Architecture**: Clean, maintainable code structure with @quesby/core
+- **Customizable Themes**: SCSS-based theming system with multiple built-in themes
+- **CLI Tools**: Powerful command-line tools for content creation
 - **Build Optimization**: Automatic asset optimization and minification
 
 ## Quick Start
 
 Getting started with Quesby Boilerplate is straightforward:
 
-### 1. Clone the Repository
+### 1. Create a New Project
 ```bash
-git clone https://github.com/quesby/quesby-boilerplate.git
-cd quesby-boilerplate
+npx create-quesby my-site
+cd my-site
 ```
+
+> **Note**: Quesby recommends using **pnpm** as package manager. If you have Node.js 16.10+ or higher, you can use Corepack to automatically manage package managers:
+> ```bash
+> corepack enable
+> ```
 
 ### 2. Install Dependencies
 ```bash
-npm install
-# or
 pnpm install
+# or
+npm install
 ```
 
 ### 3. Start Development Server
 ```bash
-npm run dev
+pnpm serve
 # or
-pnpm dev
+npm run serve
 ```
 
 ### 4. Open Your Browser
 Navigate to `http://localhost:8080` to see your site in action.
+
+### 5. Create Your First Post
+```bash
+npx quesby new post "Welcome to Quesby"
+```
+
+This command will:
+- Generate a unique ULID for your post
+- Create proper folder structure (ULID--slug)
+- Generate complete front matter
+- Set current date automatically
 
 ## What You Get
 
@@ -84,13 +102,28 @@ Navigate to `http://localhost:8080` to see your site in action.
 
 ### Development Tools
 - **Live Reload**: Automatic browser refresh during development
-- **Sass Compilation**: Automatic SCSS to CSS compilation
+- **Sass Compilation**: Automatic SCSS to CSS compilation with watching
 - **Asset Optimization**: Image and asset optimization
 - **Build Pipeline**: Optimized production builds
+- **CLI Tools**: Create new posts with `npx quesby new post`
 
 ## Content Management
 
-Quesby Boilerplate includes Decap CMS for easy content management:
+Quesby Boilerplate includes Decap CMS for easy content management and a powerful CLI tool for content creation:
+
+### Using the CLI Tool (Recommended)
+
+The fastest way to create new blog posts:
+
+```bash
+npx quesby new post "Your Post Title"
+```
+
+This command will:
+- Generate a unique ULID for your post
+- Create proper folder structure (ULID--slug)
+- Generate complete front matter
+- Set current date automatically
 
 ### Admin Access
 - Visit `/admin` to access the content management interface
