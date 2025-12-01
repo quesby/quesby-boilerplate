@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+src/assets/css/
 
 # Build output
 _site/
