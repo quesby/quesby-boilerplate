@@ -1,112 +1,71 @@
 #!/usr/bin/env node
 
 /**
- * Quesby CLI: New Post Generator
+ * Quesby CLI: Post Generator
  * 
- * Creates a new blog post with ULID and proper folder structure
- * Usage: npx quesby new post "My Title"
+ * Creates new blog posts with ULID and proper folder structure.
+ * 
+ * Usage:
+ *   - npx quesby new post "My Title"
+ *   - npx quesby post "My Title"
+ *   - npx quesby create post "My Title"
+ * 
+ * Flags:
+ *   --draft
+ *   --category="Category Name"
+ *   --author="Author Name"
+ *   --date="YYYY-MM-DD"
  */
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// ULID implementation (copied from ulid-widget.js)
-class ULID {
-  static encodeTime(time, len = 10) {
-    const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-    let str = '';
-    while (len > 0) {
-      str = alphabet[time % 32] + str;
-      time = Math.floor(time / 32);
-      len--;
-    }
-    return str;
-  }
-
-  static encodeRandom(len = 16) {
-    const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-    let str = '';
-    for (let i = 0; i < len; i++) {
-      str += alphabet[Math.floor(Math.random() * 32)];
-    }
-    return str;
-  }
-
-  static generate() {
-    const timestamp = Date.now();
-    const timePart = this.encodeTime(timestamp);
-    const randomPart = this.encodeRandom();
-    return timePart + randomPart;
-  }
-}
-
-// Colors for console output
-const colors = {
-  reset: '\x1b[0m',
-  bright: '\x1b[1m',
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m',
-  cyan: '\x1b[36m'
-};
-
-function log(message, color = 'reset') {
-  console.log(`${colors[color]}${message}${colors.reset}`);
-}
-
-function logSuccess(message) {
-  log(`✅ ${message}`, 'green');
-}
-
-function logError(message) {
-  log(`❌ ${message}`, 'red');
-}
-
-function logInfo(message) {
-  log(`ℹ️  ${message}`, 'blue');
-}
+import {
+  ULID,
+  generateSlug,
+  getCurrentDate,
+  parseDate,
+  log,
+  logInfo,
+  logError,
+  logSuccess,
+  findProjectRoot,
+  loadConfig,
+  ensureDir,
+  escapeYamlString
+} from './quesby-cli-utils.js';
+import { parseArgs } from './cli-args.js';
 
 /**
- * Generate slug from title
+ * Create front matter template for blog posts
+ * All strings are properly quoted and YAML-safe
  */
-function generateSlug(title) {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .replace(/-+/g, '-') // Replace multiple hyphens with single
-    .trim();
-}
+function createPostFrontMatter(options) {
+  const {
+    ulid,
+    title,
+    slug,
+    date,
+    author = '',
+    category = '',
+    description = '',
+    image = '',
+    draft = false,
+    tags = [],
+    aliases = []
+  } = options;
 
-/**
- * Get current date in ISO format
- */
-function getCurrentDate() {
-  return new Date().toISOString();
-}
-
-/**
- * Create front matter template
- */
-function createFrontMatter(ulid, title, slug, date) {
   return `---
 id: ${ulid}
-title: "${title}"
-slug: ${slug}
-description: ""
-date: ${date}
-author: ""
-image: ""
-category: ""
-tags: []
-draft: false
-aliases: []
+title: ${escapeYamlString(title)}
+slug: ${escapeYamlString(slug)}
+description: ${escapeYamlString(description)} # fill manually
+date: ${escapeYamlString(date)}
+author: ${escapeYamlString(author)}
+image: ${escapeYamlString(image)} # fill manually
+category: ${escapeYamlString(category)}
+tags: ${JSON.stringify(tags)}
+draft: ${draft}
+aliases: ${JSON.stringify(aliases)}
 ---
 
 Write your content here...
@@ -116,39 +75,54 @@ Write your content here...
 /**
  * Main function to create new post
  */
-function createNewPost(title) {
+function createNewPost(title, flags = {}, config = {}) {
   if (!title || title.trim() === '') {
     logError('Title is required');
-    log('Usage: npx quesby new post "My Title"', 'yellow');
+    log('\nUsage:', 'yellow');
+    log('  npx quesby new post "My Title"');
+    log('  npx quesby post "My Title"');
+    log('  npx quesby create post "My Title"');
+    log('\nFlags:', 'yellow');
+    log('  --draft');
+    log('  --category="Category Name"');
+    log('  --author="Author Name"');
+    log('  --date="YYYY-MM-DD"');
     process.exit(1);
   }
 
+  const projectRoot = findProjectRoot();
   const trimmedTitle = title.trim();
   const ulid = ULID.generate();
   const slug = generateSlug(trimmedTitle);
-  const date = getCurrentDate();
-  
-  // Create folder name in format: ULID--slug
+
+  // Use date from flag, config, or current date
+  const date = flags.date ? parseDate(flags.date) : getCurrentDate();
+  const author = flags.author || config.defaultAuthor || '';
+  const category = flags.category || config.defaultCategory || '';
+  const draft = flags.draft === true || flags.draft === 'true' || config.defaultDraft || false;
+
+  // Build paths based on config
+  const contentDir = path.join(projectRoot, config.contentDir || 'src/content');
+  const postsDir = path.join(contentDir, config.postsDir || 'posts');
   const folderName = `${ulid}--${slug}`;
-  const postsDir = path.join(__dirname, '..', 'src', 'content', 'posts');
   const postDir = path.join(postsDir, folderName);
   const indexPath = path.join(postDir, 'index.md');
 
   logInfo(`Creating new post: "${trimmedTitle}"`);
   logInfo(`ULID: ${ulid}`);
   logInfo(`Slug: ${slug}`);
-  logInfo(`Folder: ${folderName}`);
 
   try {
-    // Check if posts directory exists
-    if (!fs.existsSync(postsDir)) {
-      logError(`Posts directory not found: ${postsDir}`);
-      process.exit(1);
+    // Ensure directories exist (create if missing)
+    const created = ensureDir(postsDir);
+    if (created) {
+      logInfo(`Created posts directory: ${postsDir}`);
     }
 
     // Check if folder already exists
     if (fs.existsSync(postDir)) {
       logError(`Post folder already exists: ${folderName}`);
+      log(`Location: ${postDir}`, 'yellow');
       process.exit(1);
     }
 
@@ -156,42 +130,102 @@ function createNewPost(title) {
     fs.mkdirSync(postDir, { recursive: true });
 
     // Create front matter and content
-    const content = createFrontMatter(ulid, trimmedTitle, slug, date);
+    const content = createPostFrontMatter({
+      ulid,
+      title: trimmedTitle,
+      slug,
+      date,
+      author,
+      category,
+      draft
+    });
 
-    // Write index.md file
-    fs.writeFileSync(indexPath, content, 'utf8');
+    // Write index.md file with UTF-8 encoding
+    fs.writeFileSync(indexPath, content, { encoding: 'utf8' });
 
-    logSuccess(`Post created successfully!`);
+    logSuccess('Post created successfully!');
     log(`📁 Location: ${postDir}`, 'cyan');
     log(`📝 File: ${indexPath}`, 'cyan');
     log(`🔗 URL: /blog/${slug}/`, 'cyan');
 
   } catch (error) {
     logError(`Failed to create post: ${error.message}`);
+    // Don't print stack trace for user-friendly errors
+    if (error.code === 'ENOENT') {
+      log(`Directory not found: ${error.path}`, 'yellow');
+    }
     process.exit(1);
   }
 }
 
 // Handle command line arguments
-const args = process.argv.slice(2);
+(async () => {
+  const args = process.argv.slice(2);
+  const parsed = parseArgs(args);
 
-if (args.length === 0 || args[0] !== 'new' || args[1] !== 'post') {
-  log('Quesby CLI - New Post Generator', 'bright');
-  log('\nUsage:');
-  log('  npx quesby new post "My Title"');
-  log('\nExample:');
-  log('  npx quesby new post "Getting Started with Quesby"');
-  process.exit(0);
-}
+  // Check if this is a post command
+  if (parsed.subcommand !== 'post') {
+    // Delegate to new-project.js if subcommand is "project"
+    if (parsed.subcommand === 'project') {
+      try {
+        const { createNewProject } = await import('./new-project.js');
+        const projectRoot = findProjectRoot();
+        const config = loadConfig(projectRoot);
+        
+        if (!parsed.title) {
+          logError('Title is required');
+          log('\nUsage:', 'yellow');
+          log('  npx quesby new project "My Project"');
+          log('  npx quesby project "My Project"');
+          log('  npx quesby create project "My Project"');
+          process.exit(1);
+        }
+        
+        createNewProject(parsed.title, parsed.flags, config);
+        return;
+      } catch (error) {
+        logError(`Failed to load project generator: ${error.message}`);
+        process.exit(1);
+      }
+    }
+    
+    // Show help if no valid command
+    if (args.length === 0 || (parsed.command && parsed.subcommand !== 'post')) {
+      log('Quesby CLI - Content Generator', 'bright');
+      log('\nUsage:');
+      log('  npx quesby new post "My Title"');
+      log('  npx quesby new project "My Project"');
+      log('  npx quesby post "My Title"');
+      log('  npx quesby project "My Project"');
+      log('\nFlags:');
+      log('  --draft                    Mark as draft');
+      log('  --category="Category"      Set category');
+      log('  --author="Author Name"     Set author (posts only)');
+      log('  --date="YYYY-MM-DD"        Set publication date');
+      log('\nExamples:');
+      log('  npx quesby new post "Getting Started" --category="Tutorial"');
+      log('  npx quesby new project "My Project" --draft');
+      process.exit(0);
+    }
+    
+    // Not a recognized command, exit silently
+    process.exit(0);
+  }
 
-if (args.length < 3) {
-  logError('Title is required');
-  log('Usage: npx quesby new post "My Title"', 'yellow');
-  process.exit(1);
-}
+  // Load config
+  const projectRoot = findProjectRoot();
+  const config = loadConfig(projectRoot);
 
-// Extract title from arguments (handle quotes)
-const titleArg = args.slice(2).join(' ');
-const title = titleArg.replace(/^["']|["']$/g, ''); // Remove surrounding quotes
+  // Validate title
+  if (!parsed.title) {
+    logError('Title is required');
+    log('\nUsage:', 'yellow');
+    log('  npx quesby new post "My Title"');
+    log('  npx quesby post "My Title"');
+    log('  npx quesby create post "My Title"');
+    process.exit(1);
+  }
 
-createNewPost(title);
+  // Create the post
+  createNewPost(parsed.title, parsed.flags, config);
+})();

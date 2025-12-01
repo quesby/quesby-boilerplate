@@ -5,46 +5,46 @@
 
 {% block content %}
 <div class="single-post container">
-    <article class="post">
-        <div class="post__image">
+    <article class="entry">
+        <div class="entry__image">
             {% if image %}
                 {% image "/content/media/posts/" + image, title, "600", { "loading": "lazy" } %}
             {% endif %}
         </div>
-        <div class="post__header boxed">
-            <h1 class="post__title">{{ title }}</h1>
-            <div class="post__category"><a href="/category/{{ category | slugify }}/">{{ category }}</a></div>
-            <div class="post__info">
-                <div class="post__author">{{ author }}</div>
-                <span class="post__separator">•</span>
-                <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
+        <div class="entry__header boxed">
+            <h1 class="entry__title">{{ title }}</h1>
+            <div class="entry__category"><a href="/category/{{ category | slugify }}/">{{ category }}</a></div>
+            <div class="entry__info">
+                <div class="entry__author">{{ author }}</div>
+                <span class="entry__separator">•</span>
+                <div class="entry__date">{{ date | date("dd LLLL yyyy", site.language) }}</div>
             </div>
-            {# <div class="post__date">{{ date | date("dd LLLL yyyy", site.language) }}</div> #}
-            <p class="post__excerpt">{{ description }}</p>
+            {# <div class="entry__date">{{ date | date("dd LLLL yyyy", site.language) }}</div> #}
+            <p class="entry__excerpt">{{ description }}</p>
         </div>
-        <div class="boxed post__content">{{ content | safe }}</div>
-        <footer class="post__footer">
-            <div class="post__share">
-                <span class="post__share-title">Share this post</span>
-                <div class="post__share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" class="post__share-button">Facebook</a>
-                    <a href="https://www.twitter.com/share?url={{ url }}" class="post__share-button">Twitter</a>
-                    <a href="https://www.linkedin.com/shareArticle?url={{ url }}" class="post__share-button">LinkedIn</a>
+        <div class="boxed entry__content">{{ content | safe }}</div>
+        <footer class="entry__footer">
+            <div class="entry__share">
+                <span class="entry__share-title">Share this post</span>
+                <div class="entry__share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" class="entry__share-button">Facebook</a>
+                    <a href="https://www.twitter.com/share?url={{ url }}" class="entry__share-button">Twitter</a>
+                    <a href="https://www.linkedin.com/shareArticle?url={{ url }}" class="entry__share-button">LinkedIn</a>
                 </div>
             </div>
             {% if tags %}
-                <div class="post__tags">
-                    <span class="post__tags-title">Tags:</span>
-                    <ul class="post__tags-list">
+                <div class="entry__tags">
+                    <span class="entry__tags-title">Tags:</span>
+                    <ul class="entry__tags-list">
                         {% for tag in tags %}
                         <li><a href="/tags/{{ tag | slugify }}/">#{{ tag }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
             {% endif %}
-            <a class="post__back-to-blog button" href="/blog">Back to blog</a>
-            <div class="post__related">
-                <h3 class="post__related-title">Related posts</h3>
+            <a class="entry__back-to-blog button" href="/blog">Back to blog</a>
+            <div class="entry__related">
+                <h3 class="entry__related-title">Related posts</h3>
                 {% for post in collections.posts | exclude(page) | sortBy("date", "desc") | limit(2) %}
                 {% include "partials/post-templates/post-listing-related.njk" %}
                 {% endfor %}

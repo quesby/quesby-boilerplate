@@ -2,13 +2,13 @@
 
 // Blog
 .blog {
-    .post {
+    .entry {
         margin-bottom: $margin;
         a {
             display: block;
         }
         &:hover {
-            .post__title {
+            .entry__title {
                 color: var(--link-hover);
             }
         }
@@ -68,7 +68,7 @@
             // margin-bottom: $margin * 2;
         }
     }
-    .post {
+    .entry {
         &__header {
             padding-bottom: $padding;
             border-bottom: 1px solid var(--border);
@@ -107,18 +107,15 @@
             gap: $padding * 0.5;
             font-size: .8rem;
             margin-bottom: $margin;
-            .post__tags-title {
+            .entry__tags-title {
                 font-weight: 600;
             }
-            .post__tags-list {
+            .entry__tags-list {
                 @include flex-container(row, flex-start, flex-start, flex-start, wrap);
                 gap: $padding * 0.5;
                 li {
                     list-style: none;
                     margin-bottom: 0;
-                    &:before {
-                        content: "#";
-                    }
                 }
             }
         }
@@ -142,7 +139,7 @@
                     border-radius: $borderRadius-normal;
                 }
             }
-            .post__title {
+            .entry__title {
                 font-size: 1.2rem;
                 text-align: left;
             }
@@ -171,7 +168,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
-    .post {
+    .entry {
         &__footer {
             display: grid;
             grid-template-areas:
@@ -190,7 +187,7 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
             gap: $padding;
-            .post__related-title {
+            .entry__related-title {
                 grid-column: 1 / -1;
             }
         }

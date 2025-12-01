@@ -139,14 +139,5 @@ This project is open source and available under the [MIT License](LICENSE).
 
 If you find Quesby useful, please consider supporting its development:
 
-- [GitHub Sponsors](https://github.com/sponsors/greenpandastudio)
-- [Buy Me a Coffee](https://buymeacoffee.com/greenpandastudio)
-- [Patreon](https://patreon.com/greenpandastudio)
-
-## 🎨 Premium Themes
-
-- **Corporate Pro** - Professional business theme
-- **E-commerce** - Online store template
-- **Portfolio** - Creative portfolio theme
-
-[View all premium themes →](https://greenpandastudio.com/themes)
+- [GitHub Sponsors](https://github.com/sponsors/quesby)
+- [Ko-Fi](https://ko-fi.com/quesby)

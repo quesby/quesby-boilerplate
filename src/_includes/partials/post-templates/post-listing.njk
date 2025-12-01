@@ -1,15 +1,15 @@
-<div class="post post--listing">
+<div class="entry entry--listing">
     <a href="/blog/{{ post.data.slug }}/">
-        <div class="post__wrapper">
+        <div class="entry__wrapper">
         {% if post.data.image %}
-            <div class="post__image">
+            <div class="entry__image">
                 {% imageSync "content/media/posts/" + post.data.image, post.data.title, 150 %}
             </div>
         {% endif %}
-        <div class="post__summary">
-            <div class="post__date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
-            <h2 class="post__title">{{ post.data.title }}</h2>
-            <p class="post__excerpt">{{ post.data.description }}</p>
+        <div class="entry__summary">
+            <div class="entry__date">{{ post.data.date | date("dd LLLL yyyy") }}</div>
+            <h2 class="entry__title">{{ post.data.title }}</h2>
+            <p class="entry__excerpt">{{ post.data.description }}</p>
         </div>
         </div>
     </a>
