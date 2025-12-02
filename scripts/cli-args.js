@@ -70,15 +70,26 @@ export function parseArgs(args) {
       }
     } else {
       // Handle quoted strings
-      if ((arg.startsWith('"') || arg.startsWith("'")) && !inQuotes) {
+      // Check if argument is a complete quoted string (starts and ends with same quote)
+      const startsWithQuote = arg.startsWith('"') || arg.startsWith("'");
+      const quoteCharAtStart = startsWithQuote ? arg[0] : '';
+      const endsWithSameQuote = quoteCharAtStart && arg.length > 1 && arg.endsWith(quoteCharAtStart);
+      
+      if (startsWithQuote && endsWithSameQuote && !inQuotes) {
+        // Complete quoted string in single argument: handle atomically
+        titleParts.push(arg.slice(1, -1)); // Remove both quote characters
+      } else if (startsWithQuote && !inQuotes) {
+        // Start of quoted string
         inQuotes = true;
-        quoteChar = arg[0];
+        quoteChar = quoteCharAtStart;
         titleParts.push(arg.slice(1));
       } else if (inQuotes && arg.endsWith(quoteChar)) {
+        // End of quoted string
         titleParts.push(arg.slice(0, -1));
         inQuotes = false;
         quoteChar = '';
       } else {
+        // Regular argument or continuation of quoted string
         titleParts.push(arg);
       }
     }

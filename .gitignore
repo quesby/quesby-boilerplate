@@ -1,10 +1,10 @@
 # Dependencies
 node_modules/
-src/assets/css/
 
 # Build output
 _site/
 dist/
+src/assets/css/
 
 # Logs
 npm-debug.log*
