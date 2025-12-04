@@ -1,5 +1,0 @@
-packages:
-  - website
-
-overrides:
-  '@quesby/core': link:../../../../../AppData/Local/pnpm/global/5/node_modules/@quesby/core
