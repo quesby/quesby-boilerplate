@@ -4,8 +4,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchPopup = document.getElementById('search-popup');
     const searchInput = document.getElementById('q');
     
+    let searchLoaded = false;
+    
+    // Load script dynamically
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+    }
+    
+    // Ensure search scripts are loaded
+    async function ensureSearchLoaded() {
+        if (searchLoaded) return;
+        
+        try {
+            // Load MiniSearch first (exposes window.MiniSearch)
+            await loadScript('/assets/js/minisearch.min.js');
+            // Then load search.js (uses MiniSearch and sets up search logic)
+            await loadScript('/assets/js/search.js');
+            searchLoaded = true;
+        } catch (error) {
+            console.error('Error loading search scripts:', error);
+            const results = document.getElementById('results');
+            if (results) {
+                results.innerHTML = '<li>Error loading search. Please refresh the page.</li>';
+            }
+        }
+    }
+    
     // Show search popup
-    function showSearch() {
+    async function showSearch() {
+        await ensureSearchLoaded();
         searchPopup.classList.add('active');
         // Focus on input after animation
         setTimeout(() => {
